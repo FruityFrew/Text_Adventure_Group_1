@@ -1,4 +1,4 @@
-# Text Adventure by Group 1
+﻿# Text Adventure by Group 1
 ![Stay Dead]!
 
 # Stay Dead
@@ -12,7 +12,8 @@ This game is an tribute to the movie "[Stay alive (2006)](https://en.wikipedia.o
 This game is a project for course "Project Course 1", as a part of the bachelor program in software development at the University of Kristianstad([HKR, Sweden](https://www.hkr.se)).
 It is not a commercial product.
 
-​	**Developers**
+
+	**Developers**
 
 - Akhmed Al-Saied
 - Robert Alm

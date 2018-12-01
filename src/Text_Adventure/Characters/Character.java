@@ -8,14 +8,19 @@ public class Character {
     private double hitChance;
     private int maxAttack;
 
-    //Set of constructors that are defined through setters (which show up later)
+
     public Character() {
         this(null, -1, 0.5, 50);
     }
+
     public Character(String name) {
         this(name, -1, 0.5, 50);
     }
-    public Character(String name, int index, double hitChance) { this(name, -1, hitChance, 50); }
+
+    public Character(String name, int index) { this(name, index, 0.5, 50); }
+
+    public Character(String name, int index, double hitChance) { this(name, index, hitChance, 50); }
+
     public Character(String name, int index, double hitChance, int attack) {
         setName(name);
         setRoomIndex(index);
@@ -23,25 +28,71 @@ public class Character {
         setMaxAttack(attack);
     }
 
-    //setters for name and roomIndex
+
+    /**
+     * Setter for name
+     * @param name
+     */
     public void setName(String name) { this.name = name; }
+
+    /**
+     * Setter for roomIndex
+     *
+     * @param index
+     */
     public void setRoomIndex(int index) { roomIndex = index; }
-    public void setHitChance(double chance) { hitChance = chance; }
+
+    /**
+     * Setter for hitChance
+     * @param hitChance
+     */
+    public void setHitChance(double hitChance) { this.hitChance = hitChance; }
+
+    /**
+     * Setter for maxAttack
+     * @param attack
+     */
     public void setMaxAttack(int attack) { maxAttack = attack; }
 
-    //getters for name and roomIndex
+
+    /**
+     * Getter for name
+     *
+     * @return name
+     */
     public String getName() { return name; }
+
+    /**
+     * Getter for roomIndex
+     *
+     * @return roomIndex
+     */
     public int getRoomIndex() { return roomIndex; }
+
+    /**
+     * Getter for hitChance
+     *
+     * @return hitChance
+     */
     public double getHitChance() { return hitChance; }
+
+    /**
+     * Getter for maxAttack
+     *
+     * @return
+     */
     public int getMaxAttack() { return maxAttack; }
 
+
+    /**
+     * Method that every character has; during a fight hero will be exchanging strikes with a monster and their
+     * dealt damage will be calculated with the following method.
+     *
+     * @return attackDamage
+     */
     public int doAttack() {
         Random number = new Random();
-        return (hitChance > number.nextDouble()) ? maxAttack - number.nextInt(maxAttack): 0;
-    }
-
-
-
-    public static void main(String[] args) {
+        int attackDamage = (hitChance > number.nextDouble()) ? maxAttack - number.nextInt(maxAttack): 0;
+        return attackDamage;
     }
 }

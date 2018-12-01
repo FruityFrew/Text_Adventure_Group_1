@@ -1,5 +1,7 @@
 package Text_Adventure.Items;
-
+/**
+ * @author Nemanja Negovanovic
+ */
 public class Weapon extends Item {
     private int damage;
     private String HeroType;

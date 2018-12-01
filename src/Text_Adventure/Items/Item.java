@@ -1,5 +1,8 @@
 package Text_Adventure.Items;
 
+/**
+ * @author Nemanja Negovanovic
+ */
 public class Item {
     private String Name;
 

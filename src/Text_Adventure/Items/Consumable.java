@@ -1,5 +1,7 @@
 package Text_Adventure.Items;
-
+/**
+ * @author Nemanja Negovanovic
+ */
 public class Consumable extends Item {
     private int healthModifier;
 Consumable coffee = new Consumable("Coffee", 100);

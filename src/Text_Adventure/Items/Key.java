@@ -1,5 +1,7 @@
 package Text_Adventure.Items;
-
+/**
+ * @author Nemanja Negovanovic
+ */
 public class Key extends Item {
     private int level ;
     //private int doorId;// More advanced ( if it belongs only to one door)

@@ -17,7 +17,7 @@ public class Key extends Item {
     /**
      * Nemanja: This returns the level of the key object.
      *
-     * @return int
+     * @return - int: Level of a key object
      */
     public int getLevel() {
         return level;

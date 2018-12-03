@@ -1,4 +1,4 @@
-package menuDevelopment1;
+package Text_Adventure.menuDevelopment;
 
 public class SavedGame {
     private String saveGameName;

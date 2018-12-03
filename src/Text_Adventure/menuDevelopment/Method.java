@@ -1,4 +1,6 @@
-package menuDevelopment1;
+package Text_Adventure.menuDevelopment;
+
+import Text_Adventure.Main;
 
 public class Method {
     public static Method myMethod = new Method();

@@ -1,13 +1,28 @@
 package Text_Adventure.menuDevelopment;
 
+import Text_Adventure.Characters.Hero;
 import Text_Adventure.Characters.Monster;
 import Text_Adventure.Items.Consumable;
 import Text_Adventure.Items.Item;
 import Text_Adventure.Main;
 import Text_Adventure.Room;
 
+import java.security.SecureRandom;
+
+
 public class Method {
+    //Robert: I added this line below me
+    SecureRandom random = new SecureRandom();
     public static Method myMethod = new Method();
+    //Robert: I will add bit code here
+    //================================
+    Monster monster = new Monster();
+    Item item1 = new Item("Greek coffee");
+    Room room1 = new Room(1,1, monster, item1);
+    Hero hero1 = new Hero(1);
+    //================================
+    //Robert: You will see bit code as well on the "go to a new room options"
+    //I added some imports as well
 
     /**
      * method chooseGameLevel
@@ -107,16 +122,11 @@ public class Method {
                 do {
                     //Robert: I will add bit code here
                     //================================
-
-                    Monster monster = new Monster();
-                    Item item1 = new Item("irish coffee");
-                    Room room1 = new Room(1,1, monster, item1);
                     room1.describeRoom();
                     //================================
                     //Robert: You will see bit code as well on the "go to a new room options"
                     //I added some imports as well
-
-                    System.out.println("\n\n\tWalk carefully in your first room\n\nHm... In this room you have a coffee");
+                    //System.out.println("\n\n\tWalk carefully in your first room\n\nHm... In this room you have a coffee");
                     Main.nbrDoors=3;//example
                     switch (Main.nbrDoors) { //room = door(s)
                         case 1:  // room = door(s)
@@ -157,13 +167,19 @@ public class Method {
                             switch (Main.choice) {
                                 case 1:
                                     System.out.println("The fightMonster method will be called");
+                                    //Robert: I added an advance fighting system here
+                                    myMethod.coinFight();
                                     break;
                                 case 2:
                                     System.out.println("The hero will lose health");
+                                    //robert: I added this line bellow me.
+                                    Main.playerHealth = Main.playerHealth - 25;
                                     break;
                                 case 3:
                                     System.out.println("The inventory of the backpack will be shown" +
                                             "\nThe h=method change item will be called");
+                                    //robert: I added this line bellow me.
+                                    hero1.viewContentsOfBackpack();
                                     break;
                                 case 4:
                                     System.out.println("The method changeRoom will be called");
@@ -187,13 +203,19 @@ public class Method {
                             switch (Main.choice) {
                                 case 1:
                                     System.out.println("The fightMonster method will be called");
+                                    //Robert: I added an advance fighting system here
+                                    myMethod.coinFight();
                                     break;
                                 case 2:
                                     System.out.println("The hero will lose health");
+                                    //robert: I added this line bellow me.
+                                    Main.playerHealth = Main.playerHealth - 25;
                                     break;
                                 case 3:
                                     System.out.println("The inventory of the backpack will be shown" +
                                             "\nThe h=method change item will be called");
+                                    //robert: I added this line bellow me.
+                                    hero1.viewContentsOfBackpack();
                                     break;
                                 case 4:
 
@@ -202,18 +224,22 @@ public class Method {
                                     //================================
                                     Monster monster2 = new Monster();
                                     Item item2 = new Item("french coffee");
-                                    Room room2 = new Room(1,1, monster, item2);
-                                    room2.describeRoom();
+                                    room1.setItem(item2);
+                                    room1.setMonster(null);
+                                    //room1.describeRoom();
                                     //================================
                                     //Robert: You will see bit code as well on the beginning of this function"
                                     //I added some imports as well
 
                                     break;
                                 case 5:
-                                    System.out.println("\n--------------------------------------------------------------------------------------" +
-                                            "\nYou just drunk this black coffee... hm, if you can call this dark liquid ..'coffee'!\n" +
-                                            "---------------------------------------------------------------------------------------\n");
-                                    Main.playerHealth += 50;// the Consumable Class is irrelevant in this form, it needs to be completed with different types of items, as we decided.
+                                    //System.out.println("\n--------------------------------------------------------------------------------------" +
+                                    //        "\nYou just drunk this black coffee... hm, if you can call this dark liquid ..'coffee'!\n" +
+                                    //        "---------------------------------------------------------------------------------------\n");
+
+                                    //robert: I added this line bellow me.
+                                    hero1.addItemToBackpack(room1.getItem());
+                                    //Main.playerHealth += 50;// the Consumable Class is irrelevant in this form, it needs to be completed with different types of items, as we decided.
                                     // Coffee = 50 health points.
                                     System.out.println("\n----------------------------------------\n\tYour health is now "+ Main.playerHealth+"." +
                                             "\n----------------------------------------");
@@ -276,6 +302,18 @@ public class Method {
                 Main.choice=10;
             default:
                 myMethod.exitOptions();
+        }
+    }
+
+    //Robert: I made this sorry excuse of fighting system;
+    public void coinFight(){
+        int coin = random.nextInt(2);
+        if (coin == 0){
+            System.out.println("the monster beat you in coins you loose 5 health");
+            Main.playerHealth = Main.playerHealth - 5;
+        } else {
+            System.out.println("you beated the monster in coins. it gives you 5 of his health");
+            Main.playerHealth = Main.playerHealth + 5;
         }
     }
 }

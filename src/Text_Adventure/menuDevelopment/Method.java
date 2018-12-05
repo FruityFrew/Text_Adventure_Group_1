@@ -1,6 +1,9 @@
 package Text_Adventure.menuDevelopment;
 
+import Text_Adventure.Characters.Monster;
+import Text_Adventure.Items.Item;
 import Text_Adventure.Main;
+import Text_Adventure.Room;
 
 public class Method {
     public static Method myMethod = new Method();
@@ -84,6 +87,7 @@ public class Method {
      */
     public void playGame(int gameOption) {
         Menu myMenu = new Menu();
+
         System.out.println("Even is nothing welcoming in the cellar,.. \n\t****    WELCOME!    ****" +
                 "\n\nAnytime you want to see your options\n\t\t<< ENTER 10 >>\n");
         switch (gameOption) {
@@ -91,6 +95,17 @@ public class Method {
                 do {
 
                     System.out.println("\n\n\tWalk carefully in your first room\n\nHm... in this room you have +INVENTORY(monster, item, door(s))");
+
+                    //Robert: I will add bit code here
+                    //================================
+                    Monster monster = new Monster();
+                    Item item1 = new Item("irish coffee");
+                    Room room1 = new Room(1,1, monster, item1);
+                    room1.describeRoom();
+                    //================================
+                    //Robert: You will see bit code as well on the "go to a new room options"
+                    //I added some imports as well
+
                     int room = 3; // room will be an object with attributes
                     // room value will be from 1 to 4
 
@@ -161,7 +176,18 @@ public class Method {
                                             "\nThe h=method change item will be called");
                                     break;
                                 case 4:
-                                    System.out.println("the method changeRoom will be called");
+
+                                    //System.out.println("the method changeRoom will be called");
+                                    //Robert: I will add bit code here and I commented out a line of code
+                                    //================================
+                                    Monster monster2 = new Monster();
+                                    Item item2 = new Item("french coffee");
+                                    Room room2 = new Room(1,1, monster, item2);
+                                    room2.describeRoom();
+                                    //================================
+                                    //Robert: You will see bit code as well on the beginning of this function"
+                                    //I added some imports as well
+
                                     break;
                                 case 5:
                                     System.out.println("The method pickItem will be called");

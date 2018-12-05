@@ -7,25 +7,29 @@ public class Character {
     private int roomIndex;
     private double hitChance;
     private int maxAttack;
+    private int health;
 
 
     public Character() {
-        this(null, -1, 0.5, 50);
+        this(null, -1, 0.5, 50, 200);
     }
 
     public Character(String name) {
-        this(name, -1, 0.5, 50);
+        this(name, -1, 0.5, 50, 200);
     }
 
-    public Character(String name, int index) { this(name, index, 0.5, 50); }
+    public Character(String name, int index) { this(name, index, 0.5, 50, 200); }
 
-    public Character(String name, int index, double hitChance) { this(name, index, hitChance, 50); }
+    public Character(String name, int index, double hitChance) { this(name, index, hitChance, 50, 200); }
 
-    public Character(String name, int index, double hitChance, int attack) {
+    public Character(String name, int index, double hitChance, int attack) { this(name, index, hitChance, attack, 200); }
+
+    public Character(String name, int index, double hitChance, int attack, int health) {
         setName(name);
         setRoomIndex(index);
         setHitChance(hitChance);
         setMaxAttack(attack);
+        setHealth(health);
     }
 
 
@@ -54,6 +58,11 @@ public class Character {
      */
     public void setMaxAttack(int attack) { maxAttack = attack; }
 
+    /**
+     * Setter for health
+     * @param health
+     */
+    public void setHealth(int health) { this.health = health; }
 
     /**
      * Getter for name
@@ -83,7 +92,12 @@ public class Character {
      */
     public int getMaxAttack() { return maxAttack; }
 
-
+    /**
+     * Getter for health
+     *
+     * @return
+     */
+    public int getHealth() { return health; }
     /**
      * Method that every character has; during a fight hero will be exchanging strikes with a monster and their
      * dealt damage will be calculated with the following method.
@@ -94,5 +108,17 @@ public class Character {
         Random number = new Random();
         int attackDamage = (hitChance > number.nextDouble()) ? maxAttack - number.nextInt(maxAttack): 0;
         return attackDamage;
+    }
+
+    /**
+     * Prints the info of the character
+     *
+     * @return
+     */
+    public String toString() {
+        return String.format("Character: %s%n" +
+                "Health: %d%n" +
+                "Hit-Chance: %.2f%n" +
+                "Max attack: %d%n", name, health, hitChance, maxAttack);
     }
 }

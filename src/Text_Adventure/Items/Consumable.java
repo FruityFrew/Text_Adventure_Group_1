@@ -4,7 +4,7 @@ package Text_Adventure.Items;
  */
 public class Consumable extends Item {
     private int healthModifier;
-Consumable coffee = new Consumable("Coffee", 100);
+
     /**
      * Nemanja: This is the constructor of the Consumable object.
      *
@@ -20,7 +20,7 @@ Consumable coffee = new Consumable("Coffee", 100);
      *
      * @return int
      */
-    public int getHealth() {
+    public int getHealthModifier() {
         return healthModifier;
     }
 }

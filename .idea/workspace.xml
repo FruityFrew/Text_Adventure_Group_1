@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="465747f6-19a7-4cc0-849a-18c779cce291" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjectCourse_1/Text_Adventure/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjectCourse_1/Text_Adventure/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Text_Adventure/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Text_Adventure/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Text_Adventure/menuDevelopment/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Text_Adventure/menuDevelopment/Menu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Text_Adventure/menuDevelopment/Method.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Text_Adventure/menuDevelopment/Method.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -20,17 +16,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Characters/Character.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1288">
+            <state relative-caret-position="68">
               <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
+            <state relative-caret-position="461">
+              <caret line="52" selection-start-line="52" selection-end-line="52" />
             </state>
           </provider>
         </entry>
@@ -38,36 +34,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Text_Adventure/menuDevelopment/Menu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="455">
-              <caret line="246" column="22" selection-start-line="246" selection-start-column="22" selection-end-line="246" selection-end-column="22" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="docComment;method#getPlayerName#0;class#Menu#0" />
-                <element signature="docComment;method#setPlayerName#0;class#Menu#0" />
-                <element signature="docComment;field#in#0;class#Menu#0" />
-                <element signature="docComment;method#Menu#0;class#Menu#0" />
-                <element signature="docComment;method#Menu#1;class#Menu#0" />
-                <element signature="docComment;method#getMenuName#0;class#Menu#0" />
-                <element signature="docComment;method#setMenuName#0;class#Menu#0" />
-                <element signature="docComment;method#playerName#0;class#Menu#0" />
-                <element signature="e#2801#2802#0" expanded="true" />
-                <element signature="e#2841#2842#0" expanded="true" />
-                <element signature="docComment;method#getHitChance#0;class#playerType#0;class#Menu#0" />
-                <element signature="docComment;method#getMaxAttack#0;class#playerType#0;class#Menu#0" />
-                <element signature="docComment;method#setMaxAttack#0;class#playerType#0;class#Menu#0" />
-                <element signature="docComment;method#setHitChance#0;class#playerType#0;class#Menu#0" />
-                <element signature="docComment;method#toString#0;class#playerType#0;class#Menu#0" />
-                <element signature="docComment;method#choosePlayerType#0;class#Menu#0" />
-              </folding>
+            <state relative-caret-position="1124">
+              <caret line="254" selection-start-line="254" selection-end-line="254" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Text_Adventure/menuDevelopment/Method.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
-              <caret line="211" column="39" lean-forward="true" selection-start-line="211" selection-start-column="39" selection-end-line="211" selection-end-column="39" />
+            <state relative-caret-position="378">
+              <caret line="209" column="84" lean-forward="true" selection-start-line="209" selection-start-column="84" selection-end-line="209" selection-end-column="84" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -76,7 +56,7 @@
         <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Room.java">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="23" lean-forward="true" selection-start-column="23" selection-end-line="1" />
+              <caret column="23" selection-start-column="23" selection-end-line="1" />
             </state>
           </provider>
         </entry>
@@ -84,8 +64,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Characters/Hero.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1054">
-              <caret line="63" selection-start-line="63" selection-end-line="63" />
+            <state relative-caret-position="425">
+              <caret line="26" column="26" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -94,7 +74,7 @@
         <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Items/Consumable.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="85">
-              <caret line="5" column="31" lean-forward="true" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
+              <caret line="5" column="31" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -102,7 +82,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Items/Item.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
+            <state relative-caret-position="340">
               <caret line="23" column="20" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
               <folding>
                 <element signature="e#436#437#0" expanded="true" />
@@ -162,7 +142,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -206,13 +186,13 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544033860188" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544038446223" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -393,14 +373,15 @@
       <workItem from="1544007285999" duration="5103000" />
       <workItem from="1544018575716" duration="3104000" />
       <workItem from="1544024917283" duration="8065000" />
+      <workItem from="1544035302570" duration="3122000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43396000" />
+    <option name="totallyTimeSpent" value="46518000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="-6" width="1549" height="846" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Learn" order="0" />
@@ -409,7 +390,7 @@
       <window_info id="UI Designer" order="3" />
       <window_info id="Capture Tool" order="4" />
       <window_info id="Favorites" order="5" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="6" sideWeight="0.492635" weight="0.22132796" />
+      <window_info content_ui="combo" id="Project" order="6" sideWeight="0.492635" visible="true" weight="0.22087745" />
       <window_info id="Structure" order="7" sideWeight="0.507365" side_tool="true" weight="0.21406959" />
       <window_info anchor="bottom" id="Version Control" order="0" />
       <window_info anchor="bottom" id="Terminal" order="1" />
@@ -418,7 +399,7 @@
       <window_info anchor="bottom" id="Messages" order="4" weight="0.3289689" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Find" order="6" />
-      <window_info anchor="bottom" id="Run" order="7" weight="0.54469275" />
+      <window_info anchor="bottom" id="Run" order="7" weight="0.7037643" />
       <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
@@ -489,51 +470,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Characters/Monster.java">
+    <entry file="file://$PROJECT_DIR$/src/Text_Adventure/menuDevelopment/Text.java" />
+    <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Characters/Character.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Text_Adventure/menuDevelopment/Text.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Room.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="23" lean-forward="true" selection-start-column="23" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Characters/Hero.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1054">
-          <caret line="63" selection-start-line="63" selection-end-line="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Characters/Character.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1288">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <caret column="23" selection-start-column="23" selection-end-line="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Items/Consumable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
-          <caret line="5" column="31" lean-forward="true" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
+          <caret line="5" column="31" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Items/Item.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
+        <state relative-caret-position="340">
           <caret line="23" column="20" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
           <folding>
             <element signature="e#436#437#0" expanded="true" />
@@ -542,43 +503,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Text_Adventure/menuDevelopment/Menu.java">
+    <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Characters/Monster.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
-          <caret line="246" column="22" selection-start-line="246" selection-start-column="22" selection-end-line="246" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;method#getPlayerName#0;class#Menu#0" />
-            <element signature="docComment;method#setPlayerName#0;class#Menu#0" />
-            <element signature="docComment;field#in#0;class#Menu#0" />
-            <element signature="docComment;method#Menu#0;class#Menu#0" />
-            <element signature="docComment;method#Menu#1;class#Menu#0" />
-            <element signature="docComment;method#getMenuName#0;class#Menu#0" />
-            <element signature="docComment;method#setMenuName#0;class#Menu#0" />
-            <element signature="docComment;method#playerName#0;class#Menu#0" />
-            <element signature="e#2801#2802#0" expanded="true" />
-            <element signature="e#2841#2842#0" expanded="true" />
-            <element signature="docComment;method#getHitChance#0;class#playerType#0;class#Menu#0" />
-            <element signature="docComment;method#getMaxAttack#0;class#playerType#0;class#Menu#0" />
-            <element signature="docComment;method#setMaxAttack#0;class#playerType#0;class#Menu#0" />
-            <element signature="docComment;method#setHitChance#0;class#playerType#0;class#Menu#0" />
-            <element signature="docComment;method#toString#0;class#playerType#0;class#Menu#0" />
-            <element signature="docComment;method#choosePlayerType#0;class#Menu#0" />
-          </folding>
+        <state relative-caret-position="68">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Text_Adventure/menuDevelopment/Method.java">
+    <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Characters/Hero.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="211" column="39" lean-forward="true" selection-start-line="211" selection-start-column="39" selection-end-line="211" selection-end-column="39" />
+        <state relative-caret-position="425">
+          <caret line="26" column="26" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
+        <state relative-caret-position="461">
+          <caret line="52" selection-start-line="52" selection-end-line="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Text_Adventure/menuDevelopment/Menu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1124">
+          <caret line="254" selection-start-line="254" selection-end-line="254" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Text_Adventure/menuDevelopment/Method.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="209" column="84" lean-forward="true" selection-start-line="209" selection-start-column="84" selection-end-line="209" selection-end-column="84" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -1,6 +1,7 @@
 package Text_Adventure.menuDevelopment;
 
 import Text_Adventure.Characters.Monster;
+import Text_Adventure.Items.Consumable;
 import Text_Adventure.Items.Item;
 import Text_Adventure.Main;
 import Text_Adventure.Room;
@@ -14,9 +15,9 @@ public class Method {
     public void chooseGameLevel() {
         System.out.println("\nNow give me your hand to tell your options! " +
                 "\n\tYou have three lines ... " +
-                "\n\ta short one (press 1) " +
-                "\n\tintersected with another, longer (press2)" +
-                "\n\tAnd a last one, HA HA HA! This will hurt! (press 3) ");
+                "\n[1]\ta short one " +
+                "\n[2]\tintersected with another, longer" +
+                "\n[3]\tAnd a last one, HA HA HA! This will hurt!  ");
         int choice = Main.in.nextInt();
         switch (choice) {
 // the game level settings needs to be implemented
@@ -35,23 +36,29 @@ public class Method {
     }
 
     /**
+     * Alex: This method allows the player to save the game, upload a saved game, start a new game, or exit the game.
      * method gameOption
      * @return int
      */
     public int gameOptions() {
         System.out.println("\t*** GAME OPTIONS ***" +
-                "\n1]\tStart Game\n2]\tSave\n3]\tLoad Game\n4]\tExit");
+                "\n[1]\tStart Game\n[2]\tSave\n[3]\tLoad Game\n[4]\tExit");
         int gameOption = Main.in.nextInt();
         return gameOption;
     }
+
+    /**
+     * Alex: This is a method that allows the player to stop the game during the session and exit the session.
+     *       This method is followed by method gameOption
+     */
     public int exitOptions(){
         System.out.println("Go to the game options?" +
-                "\n1]\tYES" +
-                "\n2]\tContinue to play");
+                "\n[1]\tYES" +
+                "\n[2]\tContinue to play");
         Main.choice = Main.in.nextInt();
         switch (Main.choice) {
             case 1:
-                Main.choice= 10;
+                myMethod.gameOptions();
                 break;
             case 2:
                 break;
@@ -63,11 +70,13 @@ public class Method {
     }
 
     /**
+     * Alex: This is a method that allows the player to stop the game during the session and exit the session.
+     *       This method is followed by method gameOption
      * method playOption
      * used during the player session
      */
     public void playOptions(){
-        System.out.println("\n1]\tContinue\n2]\tExit");
+        System.out.println("\n[1]\tContinue\n[2]\tExit");
         Main.choice= Main.in.nextInt();
         switch(Main.choice){
             case 1:
@@ -82,22 +91,23 @@ public class Method {
     }
 
     /**
+     * Alex: Inside this method the game is happening
      * method playGame
      * @param gameOption
      */
     public void playGame(int gameOption) {
-        Menu myMenu = new Menu();
+//        Menu myMenu = new Menu();
 
         System.out.println("Even is nothing welcoming in the cellar,.. \n\t****    WELCOME!    ****" +
-                "\n\nAnytime you want to see your options\n\t\t<< ENTER 10 >>\n");
+                "\n\nAnytime you want to see your options\n\t\t<< ENTER [10] >>\n");
+        System.out.println("\n\tHealth = "+ Main.playerHealth+".\n" +
+                "--------------------------------------------");
         switch (gameOption) {
             case 1: // START GAME
                 do {
-
-                    System.out.println("\n\n\tWalk carefully in your first room\n\nHm... in this room you have +INVENTORY(monster, item, door(s))");
-
                     //Robert: I will add bit code here
                     //================================
+
                     Monster monster = new Monster();
                     Item item1 = new Item("irish coffee");
                     Room room1 = new Room(1,1, monster, item1);
@@ -106,17 +116,20 @@ public class Method {
                     //Robert: You will see bit code as well on the "go to a new room options"
                     //I added some imports as well
 
-                    int room = 3; // room will be an object with attributes
-                    // room value will be from 1 to 4
-
-                    switch (room) { //room = door(s)
+                    System.out.println("\n\n\tWalk carefully in your first room\n\nHm... In this room you have a coffee");
+                    Main.nbrDoors=3;//example
+                    switch (Main.nbrDoors) { //room = door(s)
                         case 1:  // room = door(s)
                             System.out.println(" \t***    Choose door    ***" +
-                                    "\n1]\tNorth door" +//if the north door exists
-                                    "\n2]\tSouth door" +//if the south door exists
-                                    "\n3]\tWest door" +// if the west door exists
-                                    "\n4]\tEast door");// if the est door exists
-                            Main.choice = Main.in.nextInt();     // the selected door will move the hero in the correct room
+                                    "\n[1]\tNorth door" +//if the north door exists
+                                    "\n[2]\tSouth door" +//if the south door exists
+                                    "\n[3]\tWest door" +// if the west door exists
+                                    "\n[4]\tEast door");// if the est door exists
+                            Main.choice = Main.in.nextInt();// the selected door will move the hero in the correct room
+                            System.out.println("\n----------------------------------------------\n" +
+                                    "\tHealth = "+ Main.playerHealth+".\n" +
+                                    "--------------------------------------------");
+
                             switch(Main.choice){
                                 case 1:
                                     break;
@@ -132,11 +145,15 @@ public class Method {
                             break;
                         case 2:  // room = door(s), monster
                             System.out.println("\t***    Choose action   ***" +
-                                    "\n1]\tFight +MONSTER_TYPE" +
-                                    "\n2]\tAvoid fight" +
-                                    "\n3]\tChange weapon" +
-                                    "\n4]\tGo to a new room");
+                                    "\n[1]\tFight +MONSTER_TYPE" +
+                                    "\n[2]\tAvoid fight" +
+                                    "\n[3]\tChange weapon" +
+                                    "\n[4]\tGo to a new room");
+
                             Main.choice = Main.in.nextInt();
+                            System.out.println("\n----------------------------------------------\n" +
+                                    "\tHealth = "+ Main.playerHealth+".\n" +
+                                    "--------------------------------------------");
                             switch (Main.choice) {
                                 case 1:
                                     System.out.println("The fightMonster method will be called");
@@ -149,7 +166,7 @@ public class Method {
                                             "\nThe h=method change item will be called");
                                     break;
                                 case 4:
-                                    System.out.println("the method changeRoom will be called");
+                                    System.out.println("The method changeRoom will be called");
                                     break;
                                 default:
                                     myMethod.playOptions();
@@ -157,12 +174,15 @@ public class Method {
 
                             break;
                         case 3:  // room = door(s), monster, item
-                            System.out.println("\t***    Choose action   ***" +
-                                    "\n1]\tFight +MONSTER_TYPE" +
-                                    "\n2]\tAvoid fight" +
-                                    "\n3]\tChange weapon" +
-                                    "\n4]\tGo to a new room" +
-                                    "\n5]\tPick +ITEM");
+                            System.out.println("\n\t***    Choose action   ***" +
+                                    "\n[1]\tFight +MONSTER_TYPE" +
+                                    "\n[2]\tAvoid fight" +
+                                    "\n[3]\tChange weapon" +
+                                    "\n[4]\tGo to a new room" +
+                                    "\n[5]\tPick +ITEM\n");
+                            System.out.println("\n----------------------------------------------\n" +
+                                    "\tHealth = "+ Main.playerHealth+".\n" +
+                                    "--------------------------------------------");
                             Main.choice = Main.in.nextInt();
                             switch (Main.choice) {
                                 case 1:
@@ -190,7 +210,13 @@ public class Method {
 
                                     break;
                                 case 5:
-                                    System.out.println("The method pickItem will be called");
+                                    System.out.println("\n--------------------------------------------------------------------------------------" +
+                                            "\nYou just drunk this black coffee... hm, if you can call this dark liquid ..'coffee'!\n" +
+                                            "---------------------------------------------------------------------------------------\n");
+                                    Main.playerHealth += 50;// the Consumable Class is irrelevant in this form, it needs to be completed with different types of items, as we decided.
+                                    // Coffee = 50 health points.
+                                    System.out.println("\n----------------------------------------\n\tYour health is now "+ Main.playerHealth+"." +
+                                            "\n----------------------------------------");
                                     break;
                                 default:
                                     myMethod.playOptions();
@@ -198,8 +224,8 @@ public class Method {
                             break;
                         case 4: // room = item , door(s)
                             System.out.println("\t***    Choose action   ***" +
-                                    "\n1]\tPick +ITEM" +
-                                    "\n2]\tGo to a new room");
+                                    "\n[1]\tPick +ITEM" +
+                                    "\n[2]\tGo to a new room");
                             Main.choice = Main.in.nextInt();
                             switch (Main.choice) {
                                 case 1:
@@ -214,8 +240,8 @@ public class Method {
                             break;
                         default:
                             System.out.println("Go to the game options?" +
-                                    "\n1]\tYES" +
-                                    "\n2]\tContinue to play");
+                                    "\n[1]\tYES" +
+                                    "\n[2]\tContinue to play");
                             Main.choice = Main.in.nextInt();
                             switch (Main.choice) {
                                 case 1:

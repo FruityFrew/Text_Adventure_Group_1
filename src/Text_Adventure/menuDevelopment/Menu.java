@@ -1,5 +1,7 @@
 package Text_Adventure.menuDevelopment;
 
+import Text_Adventure.Main;
+
 import java.util.Scanner;
 
 public class Menu {
@@ -62,15 +64,19 @@ public class Menu {
      * used to set the player name
      */
     public void playerName() {
+
         System.out.println("The cellar of the Vicarage of Borgvattnet .." +
                 " \nAll over darkness has mastered this lost space, " +
                 " \nbetween dimensions, on the border of the living and the dead. \n" +
                 "\nThe space that once served life is now home of the monsters.");
         System.out.println("What is your name traveler?");
-        setPlayerName(in.nextLine());
+        Main.playerName= in.nextLine();
     }
 
+
     /**
+     * Alex: This enum does not need to be used
+     *       It was created in the beginning as an item to be used in development
      * enum playerType
      *
      */
@@ -105,6 +111,7 @@ public class Menu {
             return name;
         }
 
+
         /**
          * setter PlayerTypeName
          * @param name
@@ -113,6 +120,7 @@ public class Menu {
             this.name = name;
         }
 
+
         /**
          * playerRoomIndex getter
          * @return int
@@ -120,6 +128,7 @@ public class Menu {
         public int getRoomIndex() {
             return roomIndex;
         }
+
 
         /**
          * playerRoomIndex setter
@@ -175,14 +184,43 @@ public class Menu {
      * method choosePlayerType
      */
     public void choosePlayerType() {
-        System.out.println("Hmmm .."+getPlayerName()+", a household name, maybe fate brought you back .. or maybe just bad luck");
+
+        System.out.println("Hmmm .."+Main.playerName+", a household name, maybe fate brought you back .. or maybe just bad luck");
         System.out.println("What are you in this life .. " +
-                "\n\tA THIEF? (enter 1)" +
-                "\n\tA lost PRIEST in search of your lost faith?! HA HA HA!(enter 2)" +
-                "\n\tA haunted GHOST HUNTER ?(enter 3)" +
-                "\n\tOr maybe, just an annoying TOURIST? (enter 4)");
-        int choice = in.nextInt();
-        switch (choice) {
+                "\n[1]\tA THIEF? " +
+                "\n[2]\tA lost PRIEST in search of your lost faith?! HA HA HA!" +
+                "\n[3]\tA haunted GHOST HUNTER ?" +
+                "\n[4]\tOr maybe, just an annoying TOURIST?");
+        Main.choice = in.nextInt();
+
+        /**
+         * Alex:Sunday the Hero and Character was not functional
+         */
+        switch (Main.choice) {
+/*            case 1:
+                playerType.PLAYER.name = playerType.THIEF.name;
+                playerType.PLAYER.hitChance = playerType.THIEF.hitChance;
+                playerType.PLAYER.maxAttack = playerType.THIEF.maxAttack;
+                playerType.PLAYER.roomIndex = playerType.THIEF.roomIndex;
+                break;
+            case 2:
+                playerType.PLAYER.name = playerType.PRIEST.name;
+                playerType.PLAYER.hitChance = playerType.PRIEST.hitChance;
+                playerType.PLAYER.maxAttack = playerType.PRIEST.maxAttack;
+                playerType.PLAYER.roomIndex = playerType.PRIEST.roomIndex;
+                break;
+            case 3:
+                playerType.PLAYER.name = playerType.GHOST_HUNTER.name;
+                playerType.PLAYER.hitChance = playerType.GHOST_HUNTER.hitChance;
+                playerType.PLAYER.maxAttack = playerType.GHOST_HUNTER.maxAttack;
+                playerType.PLAYER.roomIndex = playerType.GHOST_HUNTER.roomIndex;
+                break;
+            case 4:
+                playerType.PLAYER.name = playerType.TOURIST.name;
+                playerType.PLAYER.hitChance = playerType.TOURIST.hitChance;
+                playerType.PLAYER.maxAttack = playerType.TOURIST.maxAttack;
+                playerType.PLAYER.roomIndex = playerType.TOURIST.roomIndex;
+                break;*/
             case 1:
                 playerType.PLAYER.name = playerType.THIEF.name;
                 playerType.PLAYER.hitChance = playerType.THIEF.hitChance;

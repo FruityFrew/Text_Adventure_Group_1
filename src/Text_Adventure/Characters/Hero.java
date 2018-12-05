@@ -60,24 +60,4 @@ public class Hero extends Character {
         }
     }
 
-//    public static void main(String[] args) {
-//        Hero newHero = new Hero(1);
-//
-//        System.out.println(newHero.toString());
-//        System.out.println("------------------------");
-//        newHero.viewContentsOfBackpack();
-//
-//        Consumable potion = new Consumable("Cup of tea", 100);
-//
-//        newHero.addItemToBackpack(potion);
-//        System.out.println("------------------------");
-//        newHero.viewContentsOfBackpack();
-//        System.out.println("------------------------");
-//
-//        System.out.println(newHero.toString());
-//        System.out.println("------------------------");
-//
-//        newHero.consumeItem(potion);
-//        System.out.println(newHero.toString());
-//    }
 }

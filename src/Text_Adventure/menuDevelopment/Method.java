@@ -1,5 +1,6 @@
 package Text_Adventure.menuDevelopment;
 
+import java.util.Scanner;
 import Text_Adventure.Characters.Hero;
 import Text_Adventure.Characters.Monster;
 import Text_Adventure.Items.Consumable;
@@ -11,6 +12,10 @@ import java.security.SecureRandom;
 
 
 public class Method {
+
+    public Scanner in = new Scanner(System.in);
+    Room myRoom = new Room(0,0);
+
     //Robert: I added this line below me
     SecureRandom random = new SecureRandom();
     public static Method myMethod = new Method();
@@ -48,6 +53,197 @@ public class Method {
             default:
                 System.out.println("MAKE A CHOICE BETWEEN 1,2 AND 3!");
         }
+    }
+
+    public void playerName() {
+
+        System.out.println("The cellar of the Vicarage of Borgvattnet .." +
+                " \nAll over darkness has mastered this lost space, " +
+                " \nbetween dimensions, on the border of the living and the dead. \n" +
+                "\nThe space that once served life is now home of the monsters.");
+        System.out.println("What is your name traveler?");
+        Main.playerName= in.nextLine();
+    }
+
+
+    /**
+     * Alex: This enum does not need to be used
+     *       It was created in the beginning as an item to be used in development
+     * enum playerType
+     *
+     */
+    public enum playerType {
+        THIEF("thief", 4, 0.5, 5,200), PRIEST("priest", 4, 0.5, 5,200
+        ), GHOST_HUNTER("ghost hunter", 4, 0.5, 5,200), TOURIST("tourist", 4, 0.5, 5,200),
+        PLAYER("player", 4, 0.5, 5,200);
+        private String name;
+        private int roomIndex;
+        private double hitChance;
+        private int maxAttack;
+        private int health;
+
+
+
+
+
+        /**
+         * constructor playerType
+         * @param name
+         * @param roomIndex
+         * @param hitChance
+         * @param maxAttack
+         */
+        playerType(String name, int roomIndex, double hitChance, int maxAttack,int health) {
+            this.name = name;
+            this.roomIndex = roomIndex;
+            this.hitChance = hitChance;
+            this.maxAttack = maxAttack;
+            this.health = health;
+        }
+
+        /**
+         * Alex: getter for player health
+         * @return
+         */
+        public int getHealth() {
+            return health;
+        }
+
+         /**
+         * Alex: sette for player health
+         * @param health
+         */
+        public void setHealth(int health) {
+            this.health = health;
+        }
+        /**
+         * getter playerTypeName
+         * @return name
+         */
+        public String getName() {
+            return name;
+        }
+
+
+        /**
+         * setter PlayerTypeName
+         * @param name
+         */
+        public void setName(String name) {
+            this.name = name;
+        }
+
+
+        /**
+         * playerRoomIndex getter
+         * @return int
+         */
+        public int getRoomIndex() {
+            return roomIndex;
+        }
+
+
+        /**
+         * playerRoomIndex setter
+         * @param roomIndex
+         */
+        public void setRoomIndex(int roomIndex) {
+            this.roomIndex = roomIndex;
+        }
+
+        /**
+         * getter playerHitChance
+         * @return double
+         */
+        public double getHitChance() {
+            return hitChance;
+        }
+
+        /**
+         * getter PlayerMaxAttack
+         * @return int
+         */
+        public int getMaxAttack() {
+            return maxAttack;
+        }
+
+        /**
+         * PlayerMaxAttack setter
+         * @param maxAttack
+         */
+        public void setMaxAttack(int maxAttack) {
+            this.maxAttack = maxAttack;
+        }
+
+        /**
+         *
+         * @param hitChance
+         */
+        public void setHitChance(double hitChance) {
+            this.hitChance = hitChance;
+        }
+
+        /**
+         *
+         * @return string
+         */
+        @Override
+        public String toString() {
+            return "playerType{}";
+        }
+    }
+
+    /**
+     * method choosePlayerType
+     */
+    public void choosePlayerType() {
+
+        System.out.println("Hmmm .."+Main.playerName+", a household name, maybe fate brought you back .. or maybe just bad luck");
+        System.out.println("What are you in this life .. " +
+                "\n[1]\tA THIEF? " +
+                "\n[2]\tA lost PRIEST in search of your lost faith?! HA HA HA!" +
+                "\n[3]\tA haunted GHOST HUNTER ?" +
+                "\n[4]\tOr maybe, just an annoying TOURIST?");
+        Main.choice = in.nextInt();
+
+        /**
+         * Alex:Sunday the Hero and Character was not functional
+         */
+        switch (Main.choice) {
+
+            case 1:
+                Method.playerType.PLAYER.name = Method.playerType.THIEF.name;
+                Method.playerType.PLAYER.hitChance = Method.playerType.THIEF.hitChance;
+                Method.playerType.PLAYER.maxAttack = Method.playerType.THIEF.maxAttack;
+                Method.playerType.PLAYER.roomIndex = Method.playerType.THIEF.roomIndex;
+                Method.playerType.PLAYER.health = Method.playerType.THIEF.health;
+                break;
+            case 2:
+                Method.playerType.PLAYER.name = Method.playerType.PRIEST.name;
+                Method.playerType.PLAYER.hitChance = Method.playerType.PRIEST.hitChance;
+                Method.playerType.PLAYER.maxAttack = Method.playerType.PRIEST.maxAttack;
+                Method.playerType.PLAYER.roomIndex = Method.playerType.PRIEST.roomIndex;
+                Method.playerType.PLAYER.health = Method.playerType.PRIEST.health;
+            break;
+            case 3:
+                Method.playerType.PLAYER.name = Method.playerType.GHOST_HUNTER.name;
+                Method.playerType.PLAYER.hitChance = Method.playerType.GHOST_HUNTER.hitChance;
+                Method.playerType.PLAYER.maxAttack = Method.playerType.GHOST_HUNTER.maxAttack;
+                Method.playerType.PLAYER.roomIndex = Method.playerType.GHOST_HUNTER.roomIndex;
+                Method.playerType.PLAYER.health = Method.playerType.GHOST_HUNTER.health;
+                break;
+            case 4:
+                Method.playerType.PLAYER.name = Method.playerType.TOURIST.name;
+                Method.playerType.PLAYER.hitChance = Method.playerType.TOURIST.hitChance;
+                Method.playerType.PLAYER.maxAttack = Method.playerType.TOURIST.maxAttack;
+                Method.playerType.PLAYER.roomIndex = Method.playerType.TOURIST.roomIndex;
+                Method.playerType.PLAYER.health = Method.playerType.TOURIST.health;
+                break;
+            default:
+                System.out.println("You just started playing and already shaking your hand!" +
+                        "\n\t MAKE A CHOICE BETWEEN 1,2,3 AND 4!");
+        }
+        System.out.println("OK... lets see how much a " + Method.playerType.PLAYER.getName() + " worth!");
     }
 
     /**
@@ -111,7 +307,6 @@ public class Method {
      * @param gameOption
      */
     public void playGame(int gameOption) {
-//        Menu myMenu = new Menu();
 
         System.out.println("Even is nothing welcoming in the cellar,.. \n\t****    WELCOME!    ****" +
                 "\n\nAnytime you want to see your options\n\t\t<< ENTER [10] >>\n");
@@ -127,7 +322,7 @@ public class Method {
                     //Robert: You will see bit code as well on the "go to a new room options"
                     //I added some imports as well
                     //System.out.println("\n\n\tWalk carefully in your first room\n\nHm... In this room you have a coffee");
-                    Main.nbrDoors=3;//example
+                    Main.nbrDoors=3;//example  Main.nbrDoors=myRoom.numberOfDoors(myRoom.describeRoom)
                     switch (Main.nbrDoors) { //room = door(s)
                         case 1:  // room = door(s)
                             System.out.println(" \t***    Choose door    ***" +

@@ -146,7 +146,7 @@ public class Room {
     public void describeRoom() {
         System.out.println("You entering the room as you are looking around carefully...");
         describeWalls();
-        //describeDoors(doorPosition[0], doorPosition[1], doorPosition[2], doorPosition[3]);
+        describeDoors(doorPosition[0], doorPosition[1], doorPosition[2], doorPosition[3]);
         describeItem();
         describeMonster();
     }

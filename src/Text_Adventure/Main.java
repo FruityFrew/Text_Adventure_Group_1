@@ -1,8 +1,5 @@
 package Text_Adventure;
 
-import Text_Adventure.Characters.Hero;
-import Text_Adventure.Items.Consumable;
-import Text_Adventure.menuDevelopment.Menu;
 import Text_Adventure.menuDevelopment.Method;
 import Text_Adventure.menuDevelopment.SavedGame;
 
@@ -17,7 +14,6 @@ public class Main {
     /**
      * Alex: instances
      */
-    private static Menu myMenu = new Menu();
     private static Method myMethod = new Method();
 
     /**
@@ -40,10 +36,13 @@ public class Main {
      */
 
     public static void main(String[] args) {
+
+        playerHealth=Method.playerType.PLAYER.getHealth();
+
         do{
-            playerHealth=200;
-            myMenu.playerName();
-            myMenu.choosePlayerType();
+
+            myMethod.playerName();
+            myMethod.choosePlayerType();
             myMethod.chooseGameLevel();
             myMethod.playGame(myMethod.gameOptions());
 

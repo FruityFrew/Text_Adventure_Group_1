@@ -1,7 +1,11 @@
 ﻿# Text Adventure by Group 1
 ![Stay Dead]!
 
+<<<<<<< HEAD
 # Stay Dead!
+=======
+# Stay Dead.... or not!
+>>>>>>> b3f2484798e31782ed1f6d30ed15aeff6fe31266
 
 > "If you received this message, that means that you just made a grave mistake. Your only way to survive the cellar of the Vicarage of Borgvattnet is to reveal the horrible truth, and... to help your dead enemies to Stay Dead!"
 

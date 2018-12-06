@@ -31,7 +31,7 @@ public class Character {
         setMaxAttack(attack);
         setHealth(health);
     }
-    
+
 
     /**
      * Setter for name

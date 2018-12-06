@@ -11,7 +11,7 @@ import Text_Adventure.Room;
 import java.security.SecureRandom;
 
 
-public class Method {
+public class Method  {
 
     public Scanner in = new Scanner(System.in);
     Room myRoom = new Room(0,0);

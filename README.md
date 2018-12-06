@@ -1,5 +1,5 @@
 ﻿# Text Adventure by Group 1
-![Stay Dead]!
+
 
 
 

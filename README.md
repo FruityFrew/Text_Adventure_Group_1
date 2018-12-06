@@ -4,9 +4,9 @@
 
 
 
-<<<<<<< HEAD
+
 # Stay Dead!
-=======
+
 
 # Stay  Dead!
 >>>>>>> 15f059ba28b8a63c3cec55e8e9c5473749dd8df2

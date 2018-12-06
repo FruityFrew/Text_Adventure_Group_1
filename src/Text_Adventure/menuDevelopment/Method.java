@@ -14,6 +14,7 @@ public class Method  {
     public Scanner in = new Scanner(System.in);
     Room myRoom = new Room(0,0);
 
+    
     //Robert: I added this line below me
     SecureRandom random = new SecureRandom();
     public static Method myMethod = new Method();

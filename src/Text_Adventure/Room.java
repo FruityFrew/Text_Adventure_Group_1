@@ -11,7 +11,7 @@ import java.util.ArrayList;
  */
 public class Room {
     SecureRandom random = new SecureRandom();
-    private int[] position = new int[2];
+    private int[] position =  new int[2];
     //private ArrayList<Door> doors = new ArrayList<>();
     private boolean[] doorPosition = new boolean[4];
     private Item item;

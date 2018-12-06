@@ -2,15 +2,14 @@ package Text_Adventure;
 
 import Text_Adventure.menuDevelopment.Method;
 import Text_Adventure.menuDevelopment.SavedGame;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Main {
+public class Main  {
     /**
      * Alex: A scanner object used throughout the game
      */
-    public static Scanner in = new Scanner(System.in);
+    public static Scanner in = new Scanner( System.in);
     /**
      * Alex: instances
      */
@@ -40,7 +39,6 @@ public class Main {
         playerHealth=Method.playerType.PLAYER.getHealth();
 
         do{
-
             myMethod.playerName();
             myMethod.choosePlayerType();
             myMethod.chooseGameLevel();

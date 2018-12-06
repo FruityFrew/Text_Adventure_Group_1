@@ -1,4 +1,4 @@
-﻿# Text Adventure in four, by Group 1
+﻿# Text Adventure by Group 1
 ![Stay Dead]!
 
 <<<<<<< HEAD

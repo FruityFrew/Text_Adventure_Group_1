@@ -7,9 +7,7 @@ import Text_Adventure.Items.Consumable;
 import Text_Adventure.Items.Item;
 import Text_Adventure.Main;
 import Text_Adventure.Room;
-
 import java.security.SecureRandom;
-
 
 public class Method  {
 

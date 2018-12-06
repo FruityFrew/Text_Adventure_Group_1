@@ -1,4 +1,4 @@
-﻿# Text Adventure by Group 1
+﻿# Text Adventure in four, by Group 1
 ![Stay Dead]!
 
 <<<<<<< HEAD
@@ -17,9 +17,9 @@ This game is a project for course "Project Course 1", as a part of the bachelor 
 It is not a commercial product.
 
 
-	**Developers**
+	***Developers***
 
-- Akhmed Al-Saied
+- Akhmed Al-Saied 
 - Robert Alm
 - Nemanja Negovanovic
 - Alex Oachesu

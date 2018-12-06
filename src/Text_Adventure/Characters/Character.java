@@ -31,7 +31,7 @@ public class Character {
         setMaxAttack(attack);
         setHealth(health);
     }
-
+    
 
     /**
      * Setter for name
@@ -102,12 +102,11 @@ public class Character {
      * Method that every character has; during a fight hero will be exchanging strikes with a monster and their
      * dealt damage will be calculated with the following method.
      *
-     * @return attackDamage
+     * @return
      */
-    public int doAttack() {
+    public int generateDamage() {
         Random number = new Random();
-        int attackDamage = (hitChance > number.nextDouble()) ? maxAttack - number.nextInt(maxAttack): 0;
-        return attackDamage;
+        return (hitChance > number.nextDouble()) ? maxAttack - number.nextInt(maxAttack): 0;
     }
 
     /**

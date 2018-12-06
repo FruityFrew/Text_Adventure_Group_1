@@ -1,9 +1,8 @@
 ﻿# Text Adventure by Group 1
 ![Stay Dead]!
 
-<<<<<<< HEAD
-# Stay Dead
-=======
+
+
 # Stay Dead!
 >>>>>>> b3f2484798e31782ed1f6d30ed15aeff6fe31266
 

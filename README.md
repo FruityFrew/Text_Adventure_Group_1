@@ -2,9 +2,6 @@
 
 
 
-
-
-
 # Stay Dead!
 
 
@@ -22,7 +19,7 @@ This game is a project for course "Project Course 1", as a part of the bachelor 
 It is not a commercial product.
 
 
-	***Developers***
+	**Developers**
 
 - Akhmed Al-Saied 
 - Robert Alm

@@ -2,7 +2,11 @@
 
 
 
+<<<<<<< HEAD
 # Stay Dead !
+=======
+#Stay dead!
+>>>>>>> edfe1b476c8c1945419da372abfa21c931f21f51
 
 
 # Stay  Dead!

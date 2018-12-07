@@ -13,7 +13,11 @@ public class Room {
     SecureRandom random = new SecureRandom();
     private int[] position =  new int[2];
     //private ArrayList<Door> doors = new ArrayList<>();
-    private boolean[] doorPosition = new boolean[4];
+    private int[] doorPosition = new int[4];
+    private int N;
+    private int E;
+    private int S;
+    private int W;
     private Item item;
     private Monster monster;
     private int spawnMonsterRate = 100;
@@ -30,10 +34,10 @@ public class Room {
         this.index = index;
         this.position[0] = x;
         this.position[1] = y;
-        this.doorPosition[0] = random.nextBoolean();
-        this.doorPosition[1] = random.nextBoolean();
-        this.doorPosition[2] = random.nextBoolean();
-        this.doorPosition[3] = random.nextBoolean();
+        this.N = random.nextInt(2);
+        this.E = random.nextInt(2);
+        this.S = random.nextInt(2);
+        this.W = random.nextInt(2);
     }
 
     /**
@@ -43,14 +47,14 @@ public class Room {
      *
      * @param {int} position[]      - int[]: The actual position of the room.
      */
-    public Room(int index, int x, int y, boolean N, boolean E, boolean S, boolean W) {
+    public Room(int index, int x, int y, int N, int E, int S, int W) {
         this.index = index;
         this.position[0] = x;
         this.position[1] = y;
-        this.doorPosition[0] = N;
-        this.doorPosition[1] = E;
-        this.doorPosition[2] = S;
-        this.doorPosition[3] = W;
+        this.N = N;
+        this.E = E;
+        this.S = S;
+        this.W = W;
     }
 
     /**
@@ -66,10 +70,10 @@ public class Room {
         this.position[0] = x;
         this.position[1] = y;
         this.item = item;
-        this.doorPosition[0] = random.nextBoolean();
-        this.doorPosition[1] = random.nextBoolean();
-        this.doorPosition[2] = random.nextBoolean();
-        this.doorPosition[3] = random.nextBoolean();
+        this.N = random.nextInt(2);
+        this.E = random.nextInt(2);
+        this.S = random.nextInt(2);
+        this.W = random.nextInt(2);
     }
 
     /**
@@ -85,10 +89,10 @@ public class Room {
         this.position[0] = x;
         this.position[1] = y;
         this.monster = monster;
-        this.doorPosition[0] = random.nextBoolean();
-        this.doorPosition[1] = random.nextBoolean();
-        this.doorPosition[2] = random.nextBoolean();
-        this.doorPosition[3] = random.nextBoolean();
+        this.N = random.nextInt(2);
+        this.E = random.nextInt(2);
+        this.S = random.nextInt(2);
+        this.W = random.nextInt(2);
     }
 
     /**
@@ -106,10 +110,10 @@ public class Room {
         this.position[1] = y;
         this.item = item;
         this.monster = monster;
-        this.doorPosition[0] = random.nextBoolean();
-        this.doorPosition[1] = random.nextBoolean();
-        this.doorPosition[2] = random.nextBoolean();
-        this.doorPosition[3] = random.nextBoolean();
+        this.N = random.nextInt(2);
+        this.E = random.nextInt(2);
+        this.S = random.nextInt(2);
+        this.W = random.nextInt(2);
     }
 
     /**
@@ -136,14 +140,14 @@ public class Room {
      * @param item    - Item: The item that can be found inside the room.
      * @param monster - Monster: The monster that can be found inside the room.
      */
-    public Room(int index, int x, int y, boolean N, boolean E, boolean S, boolean W, Monster monster, Item item) {
+    public Room(int index, int x, int y, int N, int E, int S, int W, Monster monster, Item item) {
         this.index = index;
         this.position[0] = x;
         this.position[1] = y;
-        this.doorPosition[0] = N;
-        this.doorPosition[1] = E;
-        this.doorPosition[2] = S;
-        this.doorPosition[3] = W;
+        this.N = N;
+        this.E = E;
+        this.S = S;
+        this.W = W;
         this.monster = monster;
         this.item = item;
     }
@@ -154,7 +158,7 @@ public class Room {
     public void describeRoom() {
         System.out.println("You entering the room as you are looking around carefully...");
         describeWalls();
-        describeDoors(doorPosition[0], doorPosition[1], doorPosition[2], doorPosition[3]);
+        describeDoors(N, E, S, W);
         describeItem();
         describeMonster();
     }
@@ -171,18 +175,18 @@ public class Room {
      *
      * @param {boolean} - The postion of the doors inside the room,( N, E, S, W).
      */
-    public void describeDoors(boolean N, boolean E, boolean S, boolean W) {
+    public void describeDoors(int N, int E, int S, int W) {
         System.out.println("you are looking out to find out how many doors they are...");
-        if (N) {
+        if (N==1) {
             System.out.println("One door stands on the North side of the room");
         }
-        if (E) {
+        if (E==1) {
             System.out.println("you can see one door on the East side of the room");
         }
-        if (N) {
+        if (N==1) {
             System.out.println("It seems that there is a room on the South side of the room");
         }
-        if (N) {
+        if (N==1) {
             System.out.println("and one door stands on the West side of the room as well");
         }
     }
@@ -239,7 +243,7 @@ public class Room {
      *
      * @param {boolean} doorPosition[] - boolean[]: The postion of the doors inside the room,( N, E, S, W).
      */
-    public void setDoorPosition(boolean[] doorPosition) {
+    public void setDoorPosition(int[] doorPosition) {
         this.doorPosition = doorPosition;
     }
 
@@ -248,7 +252,7 @@ public class Room {
      *
      * @return {int[]} doorPosition
      */
-    public boolean[] getDoorPosition() {
+    public int[] getDoorPosition() {
         return doorPosition;
     }
 
@@ -340,5 +344,21 @@ public class Room {
      */
     public int getIndex() {
         return index;
+    }
+
+    public int getN() {
+        return N;
+    }
+
+    public int getE() {
+        return E;
+    }
+
+    public int getS() {
+        return S;
+    }
+
+    public int getW() {
+        return W;
     }
 }

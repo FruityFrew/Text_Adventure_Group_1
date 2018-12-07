@@ -39,8 +39,15 @@ public class Map {
     //for testing purposes. it works
     public void printMap(){
         for (Room x:rooms){
-            System.out.println("Room's index: " + x.getIndex() + " postion x: " + x.getPosition()[0]
-                    + " postion y: " + x.getPosition()[1]);
+            System.out.println(" ");
+            System.out.println("==========");
+            System.out.println("Room's index: " + x.getIndex());
+            System.out.println("postion x: " + x.getPosition()[0]);
+            System.out.println("postion y: " + x.getPosition()[1]);
+            System.out.println("Doors: " + x.getDoorPosition());
+            x.describeRoom();
+            System.out.println(" ");
+            System.out.println("===========");
         }
     }
 }

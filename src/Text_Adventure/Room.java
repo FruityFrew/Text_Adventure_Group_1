@@ -18,6 +18,7 @@ public class Room {
     private Monster monster;
     private int spawnMonsterRate = 100;
     private int spawnItemRate = 100;
+    private int index; //this is the way to reffer to the room, (the position does not works. this is not DataBase :) )
 
     /**
      * Robert: This is the constructor for Room objects
@@ -25,7 +26,8 @@ public class Room {
      * @param {int}     position[]      - int[]: The actual position of the room.
      * @param {boolean} doorPosition[] - boolean[]: The postion of the doors inside the room,( N, E, S, W).
      */
-    public Room(int x, int y) {
+    public Room(int index, int x, int y) {
+        this.index = index;
         this.position[0] = x;
         this.position[1] = y;
         this.doorPosition[0] = random.nextBoolean();
@@ -41,7 +43,8 @@ public class Room {
      *
      * @param {int} position[]      - int[]: The actual position of the room.
      */
-    public Room(int x, int y, boolean N, boolean E, boolean S, boolean W) {
+    public Room(int index, int x, int y, boolean N, boolean E, boolean S, boolean W) {
+        this.index = index;
         this.position[0] = x;
         this.position[1] = y;
         this.doorPosition[0] = N;
@@ -58,7 +61,8 @@ public class Room {
      * @param {int} position[]      - int[]: The actual position of the room.
      * @param item  - Item: The item that can be found inside the room.
      */
-    public Room(int x, int y, Item item) {
+    public Room(int index, int x, int y, Item item) {
+        this.index = index;
         this.position[0] = x;
         this.position[1] = y;
         this.item = item;
@@ -76,7 +80,8 @@ public class Room {
      * @param {int}   position[]      - int[]: The actual position of the room.
      * @param monster - Monster: The monster that can be found inside the room.
      */
-    public Room(int x, int y, Monster monster) {
+    public Room(int index, int x, int y, Monster monster) {
+        this.index = index;
         this.position[0] = x;
         this.position[1] = y;
         this.monster = monster;
@@ -95,7 +100,8 @@ public class Room {
      * @param item    - Item: The item that can be found inside the room.
      * @param monster - Monster: The monster that can be found inside the room.
      */
-    public Room(int x, int y, Item item, Monster monster) {
+    public Room(int index, int x, int y, Item item, Monster monster) {
+        this.index = index;
         this.position[0] = x;
         this.position[1] = y;
         this.item = item;
@@ -113,7 +119,8 @@ public class Room {
      * @param item    - Item: The item that can be found inside the room.
      * @param monster - Monster: The monster that can be found inside the room.
      */
-    public Room(int x, int y, Monster monster, Item item) {
+    public Room(int index, int x, int y, Monster monster, Item item) {
+        this.index = index;
         this.position[0] = x;
         this.position[1] = y;
         this.monster = monster;
@@ -129,7 +136,8 @@ public class Room {
      * @param item    - Item: The item that can be found inside the room.
      * @param monster - Monster: The monster that can be found inside the room.
      */
-    public Room(int x, int y, boolean N, boolean E, boolean S, boolean W, Monster monster, Item item) {
+    public Room(int index, int x, int y, boolean N, boolean E, boolean S, boolean W, Monster monster, Item item) {
+        this.index = index;
         this.position[0] = x;
         this.position[1] = y;
         this.doorPosition[0] = N;
@@ -314,5 +322,23 @@ public class Room {
      */
     public int getSpawnMonsterRate() {
         return spawnMonsterRate;
+    }
+
+    /**
+     * Robert: This is the method that is sets the index of the room.
+     *
+     * @param index - int: The index of the room. Is used for refering to the room.
+     */
+    public void setIndex(int index) {
+        this.index = index;
+    }
+
+    /**
+     * Robert: This is the method that returns the index of the room.
+     *
+     * @return int index - int: The index of the room. Is used for refering to the room.
+     */
+    public int getIndex() {
+        return index;
     }
 }

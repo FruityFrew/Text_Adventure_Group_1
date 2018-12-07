@@ -12,7 +12,7 @@ import java.security.SecureRandom;
 public class Method  {
 
     public Scanner in = new Scanner(System.in);
-    Room myRoom = new Room(0,0);
+    Room myRoom = new Room(0,0,0);
 
     
     //Robert: I added this line below me
@@ -22,7 +22,7 @@ public class Method  {
     //================================
     Monster monster = new Monster();
     Item item1 = new Item("Greek coffee");
-    Room room1 = new Room(1,1, monster, item1);
+    Room room1 = new Room(1,1,1, monster, item1);
     Hero hero1 = new Hero(1);
     //================================
     //Robert: You will see bit code as well on the "go to a new room options"

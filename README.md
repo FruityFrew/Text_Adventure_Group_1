@@ -2,7 +2,7 @@
 
 
 
-# Stay Dead ...or not !
+#Stay dead!
 
 
 # Stay  Dead!

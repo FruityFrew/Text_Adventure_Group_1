@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="65b92c4b-3c5f-497c-9832-7d05e5231afa" name="Default Changelist" comment="Edited Key and created Door Class.">
+      <change beforePath="$PROJECT_DIR$/src/Text_Adventure/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Text_Adventure/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Text_Adventure/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Text_Adventure/Map.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Text_Adventure/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Text_Adventure/Room.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Text_Adventure/menuDevelopment/Method.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Text_Adventure/menuDevelopment/Method.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,11 +15,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="291">
-              <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
+            <state relative-caret-position="221">
+              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
             </state>
           </provider>
         </entry>
@@ -24,8 +27,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Text_Adventure/menuDevelopment/Method.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="24" column="28" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
+            <state relative-caret-position="34">
+              <caret line="469" column="92" lean-forward="true" selection-start-line="469" selection-start-column="92" selection-end-line="469" selection-end-column="92" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -36,14 +39,14 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Room.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2225">
-              <caret line="19" column="18" lean-forward="true" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
+            <state relative-caret-position="468">
+              <caret line="175" column="23" lean-forward="true" selection-start-line="175" selection-start-column="23" selection-end-line="175" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#11762#11763#0" expanded="true" />
-                <element signature="e#11811#11812#0" expanded="true" />
-                <element signature="e#11860#11861#0" expanded="true" />
-                <element signature="e#11909#11910#0" expanded="true" />
+                <element signature="e#11828#11829#0" expanded="true" />
+                <element signature="e#11877#11878#0" expanded="true" />
+                <element signature="e#11926#11927#0" expanded="true" />
+                <element signature="e#11975#11976#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -59,6 +62,15 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Characters/Hero.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Items/Key.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="134">
@@ -67,13 +79,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Map.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="376">
-              <caret line="132" column="9" lean-forward="true" selection-start-line="132" selection-start-column="9" selection-end-line="132" selection-end-column="9" />
+            <state relative-caret-position="187">
+              <caret line="11" column="27" lean-forward="true" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#156#162#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -97,10 +110,10 @@
         <option value="$PROJECT_DIR$/src/Text_Adventure/Door.java" />
         <option value="$PROJECT_DIR$/src/Text_Adventure/Items/Key.java" />
         <option value="$PROJECT_DIR$/src/Map.java" />
-        <option value="$PROJECT_DIR$/src/Text_Adventure/menuDevelopment/Method.java" />
-        <option value="$PROJECT_DIR$/src/Text_Adventure/Room.java" />
         <option value="$PROJECT_DIR$/src/Text_Adventure/Main.java" />
         <option value="$PROJECT_DIR$/src/Text_Adventure/Map.java" />
+        <option value="$PROJECT_DIR$/src/Text_Adventure/menuDevelopment/Method.java" />
+        <option value="$PROJECT_DIR$/src/Text_Adventure/Room.java" />
       </list>
     </option>
   </component>
@@ -138,6 +151,20 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Text_Adventure" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Text_Adventure_Group_1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Text_Adventure_Group_1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Text_Adventure" type="462c0819:PsiDirectoryNode" />
+              <item name="Characters" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Text_Adventure_Group_1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Text_Adventure_Group_1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Text_Adventure" type="462c0819:PsiDirectoryNode" />
+              <item name="menuDevelopment" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -147,7 +174,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544234760289" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544239234041" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
@@ -213,7 +240,7 @@
       <workItem from="1544115471283" duration="43000" />
       <workItem from="1544202936944" duration="1937000" />
       <workItem from="1544216681337" duration="2899000" />
-      <workItem from="1544219606687" duration="12671000" />
+      <workItem from="1544219606687" duration="17121000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1544112911801</created>
@@ -226,7 +253,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18053000" />
+    <option name="totallyTimeSpent" value="22503000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -247,7 +274,7 @@
       <window_info anchor="bottom" id="Docker" order="4" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Find" order="6" />
-      <window_info anchor="bottom" id="Run" order="7" weight="0.7070376" />
+      <window_info anchor="bottom" id="Run" order="7" weight="0.46153846" />
       <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
@@ -284,9 +311,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Characters/Hero.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Characters/Monster.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -299,34 +323,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Door.java" />
-    <entry file="file://$PROJECT_DIR$/src/Text_Adventure/menuDevelopment/Method.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="28" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Items/Weapon.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-202">
           <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Room.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2225">
-          <caret line="19" column="18" lean-forward="true" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#11762#11763#0" expanded="true" />
-            <element signature="e#11811#11812#0" expanded="true" />
-            <element signature="e#11860#11861#0" expanded="true" />
-            <element signature="e#11909#11910#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -337,20 +337,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Characters/Hero.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
+        <state relative-caret-position="68">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Text_Adventure/menuDevelopment/Method.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="469" column="92" lean-forward="true" selection-start-line="469" selection-start-column="92" selection-end-line="469" selection-end-column="92" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Map.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="132" column="9" lean-forward="true" selection-start-line="132" selection-start-column="9" selection-end-line="132" selection-end-column="9" />
+        <state relative-caret-position="187">
+          <caret line="11" column="27" lean-forward="true" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#156#162#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Room.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="175" column="23" lean-forward="true" selection-start-line="175" selection-start-column="23" selection-end-line="175" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#11828#11829#0" expanded="true" />
+            <element signature="e#11877#11878#0" expanded="true" />
+            <element signature="e#11926#11927#0" expanded="true" />
+            <element signature="e#11975#11976#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
         </state>
       </provider>
     </entry>

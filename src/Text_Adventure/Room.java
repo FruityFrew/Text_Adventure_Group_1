@@ -169,6 +169,7 @@ public class Room {
      * Robert: This is the method that describes that prints the description of the room
      */
     public void describeRoom() {
+        System.out.println("You are in the room: " + getIndex());
         System.out.println("You entering the room as you are looking around carefully...");
         describeWalls();
         describeDoors(N, E, S, W);

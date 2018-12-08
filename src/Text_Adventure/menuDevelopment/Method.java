@@ -6,6 +6,7 @@ import Text_Adventure.Characters.Monster;
 import Text_Adventure.Items.Consumable;
 import Text_Adventure.Items.Item;
 import Text_Adventure.Main;
+import Text_Adventure.Map;
 import Text_Adventure.Room;
 import java.security.SecureRandom;
 
@@ -18,11 +19,10 @@ public class Method  {
     //Robert: I added this line below me
     SecureRandom random = new SecureRandom();
     public static Method myMethod = new Method();
+
     //Robert: I will add bit code here
     //================================
-    Monster monster = new Monster();
-    Item item1 = new Item("Greek coffee");
-    Room room1 = new Room(1,1,1, monster, item1);
+    Map myMap;
     Hero hero1 = new Hero(1);
     //================================
     //Robert: You will see bit code as well on the "go to a new room options"
@@ -32,6 +32,8 @@ public class Method  {
      * method chooseGameLevel
      */
     public void chooseGameLevel() {
+        //Robert:I added the line of code below me
+        int diffLevel = 5;
         System.out.println("\nNow give me your hand to tell your options! " +
                 "\n\tYou have three lines ... " +
                 "\n[1]\ta short one " +
@@ -42,16 +44,44 @@ public class Method  {
 // the game level settings needs to be implemented
             case 1:
 //               gameLevel = level_easy;
+
+                //Robert: I will add bit code here
+                //================================
+                diffLevel = 5;
+                //================================
+                //Robert: You will see bit code as well on the "go to a new room options"
+                //I added some imports as well
                 break;
             case 2:
+                //Robert: I will add bit code here
+                //================================
+                diffLevel = 7;
+                //================================
+                //Robert: You will see bit code as well on the "go to a new room options"
+                //I added some imports as well
+
 //               gameLevel = level_normal;
                 break;
             case 3:
+                //Robert: I will add bit code here
+                //================================
+                diffLevel = 10;
+                //================================
+                //Robert: You will see bit code as well on the "go to a new room options"
+                //I added some imports as well
+
 //               gameLevel = level_hard;
                 break;
             default:
                 System.out.println("MAKE A CHOICE BETWEEN 1,2 AND 3!");
         }
+
+        //Robert: I will add bit code here
+        //================================
+        myMap = new Map(diffLevel);
+        //================================
+        //Robert: You will see bit code as well on the "go to a new room options"
+        //I added some imports as well
     }
 
     public void playerName() {
@@ -306,6 +336,12 @@ public class Method  {
      * @param gameOption
      */
     public void playGame(int gameOption) {
+        //Robert: I will add bit code here
+        //================================
+        Room room1 = myMap.rooms.get(0);
+        //================================
+        //Robert: You will see bit code as well on the "go to a new room options"
+        //I added some imports as well
 
         System.out.println("Even is nothing welcoming in the cellar,.. \n\t****    WELCOME!    ****" +
                 "\n\nAnytime you want to see your options\n\t\t<< ENTER [10] >>\n");
@@ -342,6 +378,7 @@ public class Method  {
                                 case 3:
                                     break;
                                 case 4:
+
                                     break;
                                 default:
                                     myMethod.playOptions();
@@ -355,6 +392,7 @@ public class Method  {
                                     "\n[4]\tGo to a new room");
 
                             Main.choice = Main.in.nextInt();
+                            in.nextLine();
                             System.out.println("\n----------------------------------------------\n" +
                                     "\tHealth = "+ Main.playerHealth+".\n" +
                                     "--------------------------------------------");
@@ -394,6 +432,7 @@ public class Method  {
                                     "\tHealth = "+ Main.playerHealth+".\n" +
                                     "--------------------------------------------");
                             Main.choice = Main.in.nextInt();
+                            in.nextLine();
                             switch (Main.choice) {
                                 case 1:
                                     System.out.println("The fightMonster method will be called");
@@ -416,11 +455,58 @@ public class Method  {
                                     //System.out.println("the method changeRoom will be called");
                                     //Robert: I will add bit code here and I commented out a line of code
                                     //================================
-                                    Monster monster2 = new Monster();
-                                    Item item2 = new Item("french coffee");
-                                    room1.setItem(item2);
-                                    room1.setMonster(null);
-                                    //room1.describeRoom();
+
+
+                                    //Robert: here starts lot of code
+                                    System.out.println(" \t***    Choose door    ***" +
+                                            "\n[1]\tNorth door" +//if the north door exists
+                                            "\n[2]\tSouth door" +//if the south door exists
+                                            "\n[3]\tWest door" +// if the west door exists
+                                            "\n[4]\tEast door");// if the est door exists
+                                    String choice1 = in.next();// the selected door will move the hero in the correct room
+                                    in.nextLine();
+                                    System.out.println("\n----------------------------------------------\n" +
+                                            "\tHealth = "+ Main.playerHealth+".\n" +
+                                            "--------------------------------------------");
+
+                                    switch(choice1){
+                                        case "1":
+                                            //Robert: I will add bit code here
+                                            //================================
+                                            room1 = myMap.rooms.get(myMap.moveNorth(room1.getPosition()[0],room1.getPosition()[1]));
+                                            //================================
+                                            //Robert: You will see bit code as well on the "go to a new room options"
+                                            //I added some imports as well
+                                            break;
+                                        case "2":
+                                            //Robert: I will add bit code here
+                                            //================================
+                                            room1 = myMap.rooms.get(myMap.moveSouth(room1.getPosition()[0],room1.getPosition()[1]));
+                                            //================================
+                                            //Robert: You will see bit code as well on the "go to a new room options"
+                                            //I added some imports as well
+                                            break;
+                                        case "3":
+                                            //Robert: I will add bit code here
+                                            //================================
+                                            room1 = myMap.rooms.get(myMap.moveWest(room1.getPosition()[0],room1.getPosition()[1]));
+                                            //================================
+                                            //Robert: You will see bit code as well on the "go to a new room options"
+                                            //I added some imports as well
+                                            break;
+                                        case "4":
+                                            //Robert: I will add bit code here
+                                            //================================
+                                            room1 = myMap.rooms.get(myMap.moveEast(room1.getPosition()[0],room1.getPosition()[1]));
+                                            //================================
+                                            //Robert: You will see bit code as well on the "go to a new room options"
+                                            //I added some imports as well
+                                            break;
+                                        default:
+                                            myMethod.playOptions();
+                                    }
+                                    //Robert: here ends the the lots of code
+
                                     //================================
                                     //Robert: You will see bit code as well on the beginning of this function"
                                     //I added some imports as well

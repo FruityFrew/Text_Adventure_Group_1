@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="65b92c4b-3c5f-497c-9832-7d05e5231afa" name="Default Changelist" comment="Edited Key and created Door Class.">
-      <change beforePath="$PROJECT_DIR$/src/Text_Adventure/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Text_Adventure/Room.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Text_Adventure/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Text_Adventure/Map.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,7 +33,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Room.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-34">
@@ -67,11 +67,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Map.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="410">
-              <caret line="50" column="9" lean-forward="true" selection-start-line="50" selection-start-column="9" selection-end-line="50" selection-end-column="9" />
+            <state relative-caret-position="512">
+              <caret line="95" column="9" lean-forward="true" selection-start-line="95" selection-start-column="9" selection-end-line="95" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -98,9 +98,9 @@
         <option value="$PROJECT_DIR$/src/Text_Adventure/Items/Key.java" />
         <option value="$PROJECT_DIR$/src/Map.java" />
         <option value="$PROJECT_DIR$/src/Text_Adventure/menuDevelopment/Method.java" />
-        <option value="$PROJECT_DIR$/src/Text_Adventure/Map.java" />
         <option value="$PROJECT_DIR$/src/Text_Adventure/Main.java" />
         <option value="$PROJECT_DIR$/src/Text_Adventure/Room.java" />
+        <option value="$PROJECT_DIR$/src/Text_Adventure/Map.java" />
       </list>
     </option>
   </component>
@@ -147,7 +147,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544228539792" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544230654266" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
@@ -213,7 +213,7 @@
       <workItem from="1544115471283" duration="43000" />
       <workItem from="1544202936944" duration="1937000" />
       <workItem from="1544216681337" duration="2899000" />
-      <workItem from="1544219606687" duration="7239000" />
+      <workItem from="1544219606687" duration="8587000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1544112911801</created>
@@ -226,10 +226,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12621000" />
+    <option name="totallyTimeSpent" value="13969000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Learn" order="0" />
       <window_info id="Image Layers" order="1" />
@@ -322,16 +323,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Map.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="50" column="9" lean-forward="true" selection-start-line="50" selection-start-column="9" selection-end-line="50" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="680">
@@ -349,6 +340,16 @@
             <element signature="e#11811#11812#0" expanded="true" />
             <element signature="e#11860#11861#0" expanded="true" />
             <element signature="e#11909#11910#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Map.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="512">
+          <caret line="95" column="9" lean-forward="true" selection-start-line="95" selection-start-column="9" selection-end-line="95" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

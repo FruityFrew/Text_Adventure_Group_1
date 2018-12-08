@@ -50,4 +50,49 @@ public class Map {
             System.out.println("===========");
         }
     }
+
+    //it works only for map objects. not exactly helpful
+    public boolean checkPostion(int x, int y){
+        if ((x >= 0 && x <= level)&&(y >= 0 && y <= level)){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean checkNorth(int x, int y){
+        y = y + 1;
+        if ((x >= 0 && x <= level)&&(y > 0 && y <= level)){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean checkSouth(int x, int y){
+        x = x - 1;
+        if ((x >= 0 && x <= level)&&(y > 0 && y <= level)){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean checkEast(int x, int y){
+        x = x + 10;
+        if ((x >= 0 && x <= level)&&(y > 0 && y <= level)){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean checkWest(int x, int y){
+        x = x - 10;
+        if ((x >= 0 && x <= level)&&(y > 0 && y <= level)){
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

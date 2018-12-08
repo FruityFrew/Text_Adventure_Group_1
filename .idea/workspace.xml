@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="65b92c4b-3c5f-497c-9832-7d05e5231afa" name="Default Changelist" comment="Edited Key and created Door Class.">
-      <change afterPath="$PROJECT_DIR$/src/Text_Adventure/Door.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Text_Adventure/Items/Key.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Text_Adventure/Items/Key.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Text_Adventure/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Text_Adventure/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Text_Adventure/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Text_Adventure/Map.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Text_Adventure/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Text_Adventure/Room.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Text_Adventure/menuDevelopment/Method.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Text_Adventure/menuDevelopment/Method.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,46 +13,13 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="338226249">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="1" />
-          <entry key="project.open.time.4" value="1" />
-          <entry key="project.opened" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="java" value="5" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="JAVA" value="5" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="java" value="1111" />
-          <entry key="txt" value="35" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="JAVA" value="1111" />
-          <entry key="PLAIN_TEXT" value="35" />
-        </counts>
-      </usages-collector>
-    </session>
-  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+            <state relative-caret-position="221">
+              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
             </state>
           </provider>
         </entry>
@@ -59,31 +27,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Text_Adventure/menuDevelopment/Method.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="291">
-              <caret line="421" column="53" selection-start-line="421" selection-start-column="53" selection-end-line="421" selection-end-column="53" />
+            <state relative-caret-position="34">
+              <caret line="469" column="92" lean-forward="true" selection-start-line="469" selection-start-column="92" selection-end-line="469" selection-end-column="92" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Door.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="329">
-              <caret line="33" column="26" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
-              <folding>
-                <element signature="method#Door#0;class#Door#0" />
-                <element signature="method#Door#1;class#Door#0" />
-                <element signature="method#Door#2;class#Door#0" />
-                <element signature="e#867#868#0" expanded="true" />
-                <element signature="e#894#895#0" expanded="true" />
-                <element signature="e#1015#1016#0" expanded="true" />
-                <element signature="e#1046#1047#0" expanded="true" />
-                <element signature="docComment;method#getRoom#0;class#Door#0" />
-                <element signature="docComment;method#isLocked#0;class#Door#0" />
-                <element signature="docComment;method#setLocked#0;class#Door#0" />
               </folding>
             </state>
           </provider>
@@ -92,10 +39,14 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Room.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
+            <state relative-caret-position="468">
+              <caret line="175" column="23" lean-forward="true" selection-start-line="175" selection-start-column="23" selection-end-line="175" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#11828#11829#0" expanded="true" />
+                <element signature="e#11877#11878#0" expanded="true" />
+                <element signature="e#11926#11927#0" expanded="true" />
+                <element signature="e#11975#11976#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -104,22 +55,38 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Items/Weapon.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
+            <state relative-caret-position="-202">
               <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Characters/Hero.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Items/Key.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
+            <state relative-caret-position="134">
               <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Map.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="27" lean-forward="true" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
               <folding>
-                <element signature="e#775#776#0" expanded="true" />
-                <element signature="e#804#805#0" expanded="true" />
-                <element signature="e#951#952#0" expanded="true" />
-                <element signature="e#987#988#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#156#162#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -140,30 +107,31 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Text_Adventure/Room.java" />
-        <option value="$PROJECT_DIR$/src/Text_Adventure/Main.java" />
         <option value="$PROJECT_DIR$/src/Text_Adventure/Door.java" />
         <option value="$PROJECT_DIR$/src/Text_Adventure/Items/Key.java" />
+        <option value="$PROJECT_DIR$/src/Map.java" />
+        <option value="$PROJECT_DIR$/src/Text_Adventure/Main.java" />
+        <option value="$PROJECT_DIR$/src/Text_Adventure/Map.java" />
+        <option value="$PROJECT_DIR$/src/Text_Adventure/menuDevelopment/Method.java" />
+        <option value="$PROJECT_DIR$/src/Text_Adventure/Room.java" />
       </list>
     </option>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
-  </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1912" />
+    <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -188,24 +156,35 @@
               <item name="Text_Adventure_Group_1" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Text_Adventure" type="462c0819:PsiDirectoryNode" />
-              <item name="Items" type="462c0819:PsiDirectoryNode" />
+              <item name="Characters" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Text_Adventure_Group_1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Text_Adventure_Group_1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Text_Adventure" type="462c0819:PsiDirectoryNode" />
+              <item name="menuDevelopment" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544203550385" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544239234041" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="Text_Adventure" />
+    </key>
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
@@ -260,6 +239,8 @@
       <workItem from="1544115047776" duration="60000" />
       <workItem from="1544115471283" duration="43000" />
       <workItem from="1544202936944" duration="1937000" />
+      <workItem from="1544216681337" duration="2899000" />
+      <workItem from="1544219606687" duration="17121000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1544112911801</created>
@@ -272,17 +253,18 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2483000" />
+    <option name="totallyTimeSpent" value="22503000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Learn" order="0" />
       <window_info id="Image Layers" order="1" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
       <window_info id="Capture Tool" order="4" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.25266525" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.2602118" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="0" />
@@ -292,7 +274,7 @@
       <window_info anchor="bottom" id="Docker" order="4" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Find" order="6" />
-      <window_info anchor="bottom" id="Run" order="7" visible="true" weight="0.1670282" />
+      <window_info anchor="bottom" id="Run" order="7" weight="0.46153846" />
       <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
@@ -313,9 +295,6 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
-  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="commit" />
     <option name="LAST_COMMIT_MESSAGE" value="commit" />
@@ -332,30 +311,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Characters/Hero.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Characters/Monster.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/.git/logs/refs/heads/alex1" />
-    <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Text_Adventure/menuDevelopment/Method.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="421" column="53" selection-start-line="421" selection-start-column="53" selection-end-line="421" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Items/Item.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -363,52 +322,67 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Door.java" />
     <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Items/Weapon.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
+        <state relative-caret-position="-202">
           <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Room.java">
+    <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Items/Key.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
+        <state relative-caret-position="134">
+          <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Characters/Hero.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Text_Adventure/menuDevelopment/Method.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="469" column="92" lean-forward="true" selection-start-line="469" selection-start-column="92" selection-end-line="469" selection-end-column="92" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Door.java">
+    <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Map.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="33" column="26" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
+        <state relative-caret-position="187">
+          <caret line="11" column="27" lean-forward="true" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
           <folding>
-            <element signature="method#Door#0;class#Door#0" />
-            <element signature="method#Door#1;class#Door#0" />
-            <element signature="method#Door#2;class#Door#0" />
-            <element signature="e#867#868#0" expanded="true" />
-            <element signature="e#894#895#0" expanded="true" />
-            <element signature="e#1015#1016#0" expanded="true" />
-            <element signature="e#1046#1047#0" expanded="true" />
-            <element signature="docComment;method#getRoom#0;class#Door#0" />
-            <element signature="docComment;method#isLocked#0;class#Door#0" />
-            <element signature="docComment;method#setLocked#0;class#Door#0" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#156#162#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Items/Key.java">
+    <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Room.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
+        <state relative-caret-position="468">
+          <caret line="175" column="23" lean-forward="true" selection-start-line="175" selection-start-column="23" selection-end-line="175" selection-end-column="23" />
           <folding>
-            <element signature="e#775#776#0" expanded="true" />
-            <element signature="e#804#805#0" expanded="true" />
-            <element signature="e#951#952#0" expanded="true" />
-            <element signature="e#987#988#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#11828#11829#0" expanded="true" />
+            <element signature="e#11877#11878#0" expanded="true" />
+            <element signature="e#11926#11927#0" expanded="true" />
+            <element signature="e#11975#11976#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
         </state>
       </provider>
     </entry>

@@ -37,11 +37,8 @@ public class Main  {
     public static void main(String[] args) {
 
         playerHealth=Method.playerType.PLAYER.getHealth();
-        Map myMap = new Map();
-        System.out.println("The index 0f x=3 and y = 5 is " +  myMap.positionToIndex( 3,5));
-        System.out.println("The x from the index 35 is " + myMap.xFromIndex(35));
-        System.out.println("The y from the index 35 is " + myMap.yFromIndex(35));
-        myMap.generateMap(5);
+        Map myMap = new Map(5);
+        //myMap.generateMap(5);
         myMap.printMap();
 
         do{

@@ -61,7 +61,7 @@ public class Map {
 
     //it works only for map objects. not exactly helpful
     public boolean checkPostion(int x, int y){
-        if ((x >= 0 && x <= level)&&(y >= 0 && y <= level)){
+        if ((x >= 0 && x < level)&&(y >= 0 && y < level)){
             return true;
         } else {
             return false;
@@ -72,7 +72,7 @@ public class Map {
         y = y + 1;
         //System.out.println("checkN(X) " + x);
         //System.out.println("checkN(Y): " + y);
-        if ((y >= 0) && (y <= level)){
+        if ((y >= 0) && (y < level)){
             return true;
         } else {
             return false;
@@ -83,7 +83,7 @@ public class Map {
         y = y - 1;
         //System.out.println("checkS(X) " + x);
         //System.out.println("checkS(Y): " + y);
-        if ((y >= 0) && (y <= level)){
+        if ((y >= 0) && (y < level)){
             return true;
         } else {
             return false;
@@ -94,7 +94,7 @@ public class Map {
         x = x + 1;
         //System.out.println("checkE(X) " + x);
         //System.out.println("checkE(Y): " + y);
-        if ((x >= 0) && (x <= level)){
+        if ((x >= 0) && (x < level)){
             return true;
         } else {
             return false;
@@ -105,7 +105,7 @@ public class Map {
         x = x - 1;
         //System.out.println("checkW(X) " + x);
         //System.out.println("checkW(Y): " + y);
-        if ((x >= 0) && (x <= level)){
+        if ((x >= 0) && (x < level)){
             return true;
         } else {
             return false;

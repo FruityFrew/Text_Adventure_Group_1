@@ -39,10 +39,12 @@ public class Room {
         this.dLevel = level;
         this.position[0] = x;
         this.position[1] = y;
-        if(dCheckNorth(x, y, level)){ this.N = random.nextInt(4); }
-        if(dCheckEast(x, y, level)){ this.E = random.nextInt(4); }
-        if(dCheckSouth(x, y, level)){ this.S = random.nextInt(4); }
-        if(dCheckWest(x, y, level)){ this.W = random.nextInt(4); }
+        while ((N < 1)&&(E < 1)&&(S < 1)&&(W < 1)){
+            if(dCheckNorth(x, y, level)){ this.N = random.nextInt(2); }
+            if(dCheckEast(x, y, level)){ this.E = random.nextInt(2); }
+            if(dCheckSouth(x, y, level)){ this.S = random.nextInt(2); }
+            if(dCheckWest(x, y, level)){ this.W = random.nextInt(2); }
+        }
         int n = random.nextInt(100);
         if (n < spawnMonsterRate){
             this.monster = new Monster();
@@ -222,16 +224,16 @@ public class Room {
      */
     public void describeDoors(int N, int E, int S, int W) {
         System.out.println("you are looking out to find out how many doors they are...");
-        if (N>=1) {
+        if (N!=0) {
             System.out.println("One door stands on the North side of the room");
         }
-        if (E>=1) {
+        if (E!=0) {
             System.out.println("you can see one door on the East side of the room");
         }
-        if (N>=1) {
+        if (S!=0) {
             System.out.println("It seems that there is a room on the South side of the room");
         }
-        if (N>=1) {
+        if (W>=1) {
             System.out.println("and one door stands on the West side of the room as well");
         }
     }
@@ -422,8 +424,8 @@ public class Room {
     }
 
     public boolean dCheckNorth(int x, int y, int level){
-        y = y + 1;
-        if ((y > 0) && (y < level)){
+        int a = y + 1;
+        if ((a >= 0) && (a < level)){
             return true;
         } else {
             return false;
@@ -431,8 +433,8 @@ public class Room {
     }
 
     public boolean dCheckSouth(int x, int y, int level){
-        y = y - 1;
-        if ((y > 0) && (y < level)){
+        int a = y - 1;
+        if ((a >= 0) && (a < level)){
             return true;
         } else {
             return false;
@@ -440,8 +442,8 @@ public class Room {
     }
 
     public boolean dCheckEast(int x, int y, int level){
-        x = x + 1;
-        if ((x > 0) && (x < level)){
+        int a = x + 1;
+        if ((a >= 0) && (a < level)){
             return true;
         } else {
             return false;
@@ -449,8 +451,8 @@ public class Room {
     }
 
     public boolean dCheckWest(int x, int y, int level){
-        x = x - 1;
-        if ((x > 0) && (x < level)){
+        int a = x - 1;
+        if ((a >= 0) && (a < level)){
             return true;
         } else {
             return false;

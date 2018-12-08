@@ -13,7 +13,7 @@ import java.security.SecureRandom;
 public class Method  {
 
     public Scanner in = new Scanner(System.in);
-    Room myRoom = new Room(0,0,0);
+    Room myRoom = new Room(0,5, 0,0);
 
     
     //Robert: I added this line below me

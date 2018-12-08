@@ -26,6 +26,7 @@ public class Room {
     private int spawnMonsterRate = 25;
     private int spawnItemRate = 75;
     private int index; //this is the way to reffer to the room, (the position does not works. this is not DataBase :) )
+    private int dLevel; //Difficulty level. This takes the difficulty level of the Map object for practical reasons.
 
     /**
      * Robert: This is the constructor for Room objects
@@ -33,14 +34,15 @@ public class Room {
      * @param {int}     position[]      - int[]: The actual position of the room.
      * @param {boolean} doorPosition[] - boolean[]: The postion of the doors inside the room,( N, E, S, W).
      */
-    public Room(int index, int x, int y) {
+    public Room(int index, int level, int x, int y) {
         this.index = index;
+        this.dLevel = level;
         this.position[0] = x;
         this.position[1] = y;
-        this.N = random.nextInt(2);
-        this.E = random.nextInt(2);
-        this.S = random.nextInt(2);
-        this.W = random.nextInt(2);
+        if(dCheckNorth(x, y, level)){ this.N = random.nextInt(4); }
+        if(dCheckEast(x, y, level)){ this.E = random.nextInt(4); }
+        if(dCheckSouth(x, y, level)){ this.S = random.nextInt(4); }
+        if(dCheckWest(x, y, level)){ this.W = random.nextInt(4); }
         int n = random.nextInt(100);
         if (n < spawnMonsterRate){
             this.monster = new Monster();
@@ -220,16 +222,16 @@ public class Room {
      */
     public void describeDoors(int N, int E, int S, int W) {
         System.out.println("you are looking out to find out how many doors they are...");
-        if (N==1) {
+        if (N>=1) {
             System.out.println("One door stands on the North side of the room");
         }
-        if (E==1) {
+        if (E>=1) {
             System.out.println("you can see one door on the East side of the room");
         }
-        if (N==1) {
+        if (N>=1) {
             System.out.println("It seems that there is a room on the South side of the room");
         }
-        if (N==1) {
+        if (N>=1) {
             System.out.println("and one door stands on the West side of the room as well");
         }
     }
@@ -417,5 +419,41 @@ public class Room {
         Consumable randomDrink = consumables[i];
 
         return randomDrink;
+    }
+
+    public boolean dCheckNorth(int x, int y, int level){
+        y = y + 1;
+        if ((y > 0) && (y < level)){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean dCheckSouth(int x, int y, int level){
+        y = y - 1;
+        if ((y > 0) && (y < level)){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean dCheckEast(int x, int y, int level){
+        x = x + 1;
+        if ((x > 0) && (x < level)){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean dCheckWest(int x, int y, int level){
+        x = x - 1;
+        if ((x > 0) && (x < level)){
+            return true;
+        } else {
+            return false;
+        }
     }
 }

@@ -112,4 +112,32 @@ public class Map {
             return false;
         }
     }
+
+    public int moveNorth(int x, int y){
+        if (checkNorth(x,y)){
+            y = y + 1;
+        }
+        return positionToIndex(x,y);
+    }
+
+    public int moveSouth(int x, int y){
+        if (checkSouth(x,y)){
+            y = y - 1;
+        }
+        return positionToIndex(x,y);
+    }
+
+    public int moveEast(int x, int y){
+        if (checkEast(x,y)){
+            x = x + 1;
+        }
+        return positionToIndex(x,y);
+    }
+
+    public int moveWest(int x, int y){
+        if (checkWest(x,y)){
+            x = x - 1;
+        }
+        return positionToIndex(x,y);
+    }
 }

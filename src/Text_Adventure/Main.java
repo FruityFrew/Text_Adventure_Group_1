@@ -38,8 +38,8 @@ public class Main  {
 
         playerHealth=Method.playerType.PLAYER.getHealth();
         Map myMap = new Map(5);
-        //myMap.generateMap(5);
-        //myMap.printMap();
+        myMap.generateMap(5);
+        myMap.printMap();
 
         do{
             myMethod.playerName();

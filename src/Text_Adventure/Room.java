@@ -3,6 +3,7 @@ package Text_Adventure;
 import Text_Adventure.Characters.Monster;
 import Text_Adventure.Items.Consumable;
 import Text_Adventure.Items.Item;
+import Text_Adventure.Items.Key;
 
 import java.security.SecureRandom;
 import java.util.ArrayList;
@@ -47,8 +48,14 @@ public class Room {
         else {
             this.monster = null;
         }
+        n = random.nextInt(100);
         if (n < spawnItemRate){
-            this.item = new Item("Generic Item");
+            n = random.nextInt(100);
+            if (n >= 75){
+                this.item = new Key("Rusty key");
+            } else {
+                this.item = getRandomDrink();
+            }
         }
         else {
             this.item = null;
@@ -183,7 +190,27 @@ public class Room {
      * Robert: This is the method that prints the description of the room
      */
     public void describeWalls() {
-        System.out.println("The walls are looking like walls right now.");
+        int n = random.nextInt(100);
+        if (n <= 25){
+            System.out.println("The walls are made by gray stone, and they look old.");
+        }else if (n <= 50){
+            System.out.println("The walls are seem to be decorated by human skulls.");
+        }else if (n <= 75){
+            System.out.println("The walls have shelves with old books and idols of Cthulu.");
+        } else {
+            System.out.println("The walls are looking dirty and smelly.");
+        }
+
+        n = random.nextInt(100);
+        if (n <= 25){
+            System.out.println("What even possible can go wrong?");
+        }else if (n <= 50){
+            System.out.println("This is definitely the best place to be.");
+        }else if (n <= 75){
+            System.out.println("This place seems safe enough.");
+        } else {
+            System.out.println("At least it is quiet here.");
+        }
     }
 
     /**

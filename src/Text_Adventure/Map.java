@@ -49,6 +49,7 @@ public class Map {
             System.out.println("Room's index: " + x.getIndex());
             System.out.println("postion x: " + x.getPosition()[0]);
             System.out.println("postion y: " + x.getPosition()[1]);
+            x.printDoors();
             System.out.println("Can I go North? " + checkNorth(x.getPosition()[0], x.getPosition()[1]));
             System.out.println("Can I go East? " + checkEast(x.getPosition()[0], x.getPosition()[1]));
             System.out.println("Can I go South? " + checkSouth(x.getPosition()[0], x.getPosition()[1]));

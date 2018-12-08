@@ -15,7 +15,7 @@ import java.util.Random;
 public class Room {
     SecureRandom random = new SecureRandom();
     private int[] position =  new int[2];
-    //private ArrayList<Door> doors = new ArrayList<>();
+    private ArrayList<Door> doors = new ArrayList<>();
     private int[] doorPosition = new int[4];
     private int N;
     private int E;
@@ -64,6 +64,7 @@ public class Room {
         else {
             this.item = null;
         }
+        generateDoors(x, y, level, N, E, S, W);
     }
 
     /**
@@ -423,6 +424,47 @@ public class Room {
         return randomDrink;
     }
 
+    public void generateDoors(int x, int y, int level, int N, int E, int S, int W){
+        if (N!=0) {
+            Door a = new Door(true, moveNorth(x,y,level));
+            doors.add(0, a);
+        } else {
+            Door a = new Door(false, positionToIndex(x,y));
+            doors.add(0, a);
+        }
+
+        if (E!=0) {
+            Door a = new Door(true, moveEast(x,y,level));
+            doors.add(1, a);
+        }else {
+            Door a = new Door(false, positionToIndex(x,y));
+            doors.add(1, a);
+        }
+
+        if (S!=0) {
+            Door a = new Door(true,moveSouth(x,y,level));
+            doors.add(2, a);
+        }else {
+            Door a = new Door(false, positionToIndex(x,y));
+            doors.add(2, a);
+        }
+
+        if (W>=1) {
+            Door a = new Door(true,moveWest(x,y,level));
+            doors.add(3, a);
+        }else {
+            Door a = new Door(false, positionToIndex(x,y));
+            doors.add(3, a);
+        }
+    }
+
+    //for testing purposes. it works
+    public void printDoors(){
+        for (Door x:doors){
+            System.out.println(x.getRoom());
+        }
+    }
+
     public boolean dCheckNorth(int x, int y, int level){
         int a = y + 1;
         if ((a >= 0) && (a < level)){
@@ -457,5 +499,52 @@ public class Room {
         } else {
             return false;
         }
+    }
+
+    /**
+     * Robert: this method helps to generate an index number from position
+     *
+     * @param x - An integer that gives the orizontal position. it does get multiplied by 10
+     * @param y - An integer that gives the orizontal position. it doesn't get multiplied
+     * @return - it returns the index of a room. index is useful in order to reffer to a room.
+     */
+    public int positionToIndex(int x, int y){
+        return y + (x * 10);
+    } //it works
+
+    public int xFromIndex(int index){
+        return index / 10;
+    } // it works
+
+    public int yFromIndex(int index){
+        return index - ((index / 10) * 10);
+    } //it works
+
+    public int moveNorth(int x, int y, int level){
+        if (dCheckNorth(x,y,level)){
+            y = y + 1;
+        }
+        return positionToIndex(x,y);
+    }
+
+    public int moveSouth(int x, int y, int level){
+        if (dCheckSouth(x,y,level)){
+            y = y - 1;
+        }
+        return positionToIndex(x,y);
+    }
+
+    public int moveEast(int x, int y, int level){
+        if (dCheckEast(x,y,level)){
+            x = x + 1;
+        }
+        return positionToIndex(x,y);
+    }
+
+    public int moveWest(int x, int y, int level){
+        if (dCheckWest(x,y,level)){
+            x = x - 1;
+        }
+        return positionToIndex(x,y);
     }
 }

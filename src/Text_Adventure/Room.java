@@ -1,10 +1,12 @@
 package Text_Adventure;
 
 import Text_Adventure.Characters.Monster;
+import Text_Adventure.Items.Consumable;
 import Text_Adventure.Items.Item;
 
 import java.security.SecureRandom;
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  * @author Robert Alm RobertKristianAlm@gmail.com
@@ -375,5 +377,18 @@ public class Room {
 
     public int getW() {
         return W;
+    }
+
+    public Consumable getRandomDrink() {
+        Consumable coffee = new Consumable("Coffee", 50);
+        Consumable whiskey = new Consumable("Whiskey", 30);
+        Consumable magic = new Consumable("Magic potion", 80);
+        Consumable[] consumables = {coffee, whiskey, magic};
+        Random rand = new Random();
+
+        int i = rand.nextInt(3);
+        Consumable randomDrink = consumables[i];
+
+        return randomDrink;
     }
 }

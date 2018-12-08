@@ -20,8 +20,8 @@ public class Room {
     private int W;
     private Item item;
     private Monster monster;
-    private int spawnMonsterRate = 100;
-    private int spawnItemRate = 100;
+    private int spawnMonsterRate = 25;
+    private int spawnItemRate = 75;
     private int index; //this is the way to reffer to the room, (the position does not works. this is not DataBase :) )
 
     /**
@@ -38,6 +38,19 @@ public class Room {
         this.E = random.nextInt(2);
         this.S = random.nextInt(2);
         this.W = random.nextInt(2);
+        int n = random.nextInt(100);
+        if (n < spawnMonsterRate){
+            this.monster = new Monster();
+        }
+        else {
+            this.monster = null;
+        }
+        if (n < spawnItemRate){
+            this.item = new Item("Generic Item");
+        }
+        else {
+            this.item = null;
+        }
     }
 
     /**
@@ -345,6 +358,7 @@ public class Room {
     public int getIndex() {
         return index;
     }
+
 
     public int getN() {
         return N;

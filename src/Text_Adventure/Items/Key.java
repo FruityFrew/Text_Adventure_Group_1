@@ -1,31 +1,59 @@
 package Text_Adventure.Items;
+
+import java.util.Random;
+
 /**
  * @author Nemanja Negovanovic
  */
 public class Key extends Item {
-    private int level ;
-    //private int doorId;// More advanced ( if it belongs only to one door)
+    private int type ;
+    private boolean active;
+    //private int doorId;// More advanced ( if it belongs only to one specific door)
 
     /**
      * Nemanja: This is the constructor of the Key object.
-     *
-     * @param level - int: The level of a key object that opens the door object of the same level.
      */
-    public Key(String name, int level) {
+    public Key(String name) {
         super(name);
-        this.level = level;
+        this.type = randomType();
     }
 
     /**
-     * Nemanja: This returns the level of the key object.
+     * Nemanja: This returns the type of the Key object.
      *
-     * @return - int: Level of a key object
+     * @return - int
      */
     public int getLevel() {
-        return level;
+        return type;
     }
 
-   /* public int getDoorId() {              // Getter and setter for doorId
+    /**
+     * Nemanja: This makes Key object usable by player.
+     *
+     * @return boolean
+     */
+    public boolean isActive() {
+        return active;
+    }
+
+    /**
+     * Nemanja: This "Destroys" Key object. (Makes it invisible to player)
+     *
+     * @param active
+     */
+    public void setActive(boolean active) {
+        this.active = active;
+    }
+
+    public int randomType(){
+        Random rand = new Random();
+        int randLevel = rand.nextInt(6);
+        int keyType=randLevel;
+
+        return keyType;
+    }
+
+    /* public int getDoorId() {              // Getter and setter for doorId
         return doorId;
     }
 

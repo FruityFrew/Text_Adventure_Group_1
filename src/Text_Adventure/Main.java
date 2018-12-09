@@ -1,23 +1,18 @@
 package Text_Adventure;
 
-import Text_Adventure.Characters.Hero;
-import Text_Adventure.Items.Consumable;
-import Text_Adventure.menuDevelopment.Menu;
 import Text_Adventure.menuDevelopment.Method;
 import Text_Adventure.menuDevelopment.SavedGame;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Main {
+public class Main  {
     /**
      * Alex: A scanner object used throughout the game
      */
-    public static Scanner in = new Scanner(System.in);
+    public static Scanner in = new Scanner( System.in);
     /**
      * Alex: instances
      */
-    private static Menu myMenu = new Menu();
     private static Method myMethod = new Method();
 
     /**
@@ -40,10 +35,15 @@ public class Main {
      */
 
     public static void main(String[] args) {
+
+        playerHealth=Method.playerType.PLAYER.getHealth();
+        //Map myMap = new Map(5);
+        //myMap.generateMap(5);
+        //myMap.printMap();
+
         do{
-            playerHealth=200;
-            myMenu.playerName();
-            myMenu.choosePlayerType();
+            myMethod.playerName();
+            myMethod.choosePlayerType();
             myMethod.chooseGameLevel();
             myMethod.playGame(myMethod.gameOptions());
 

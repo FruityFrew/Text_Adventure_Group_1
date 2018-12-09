@@ -1,4 +1,4 @@
-package Text_Adventure.Items;
+package  Text_Adventure.Items;
 
 /**
  * @author Nemanja Negovanovic
@@ -11,7 +11,7 @@ public class Item {
      *
      * @param name - String: The name of the item.
      */
-    public Item(String name) {
+    public  Item(String name) {
         Name = name;
     }
 
@@ -20,7 +20,7 @@ public class Item {
      *
      * @return String
      */
-    public String getName() {
+    public  String getName() {
         return Name;
     }
 }

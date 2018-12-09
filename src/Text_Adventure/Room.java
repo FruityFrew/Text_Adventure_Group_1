@@ -8,14 +8,16 @@ import Text_Adventure.Items.Key;
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Scanner;
 
 /**
  * @author Robert Alm RobertKristianAlm@gmail.com
  */
 public class Room {
+    Scanner in = new Scanner(System.in);
     SecureRandom random = new SecureRandom();
     private int[] position =  new int[2];
-    private ArrayList<Door> doors = new ArrayList<>();
+    public ArrayList<Door> doors = new ArrayList<>();
     private int[] doorPosition = new int[4];
     private int N;
     private int E;
@@ -422,6 +424,103 @@ public class Room {
         Consumable randomDrink = consumables[i];
 
         return randomDrink;
+    }
+
+    public int changeRoom(){
+        boolean running = true;
+        int x = this.position[0];
+        int y = this.position[1];
+        int N = this.N;
+        int E = this.E;
+        int S = this.S;
+        int W = this.W;
+        int index = 0;
+        while(running){
+            System.out.println(" ");
+            System.out.println("Changing room");
+            System.out.println("-------------");
+            if (N!=0) {
+                System.out.println("Type 1 to use the North door");
+            }
+            if (E!=0) {
+                System.out.println("Type 2 to use the East door");
+            }
+            if (S!=0) {
+                System.out.println("Type 3 to use the South door");
+            }
+            if (W>=1) {
+                System.out.println("Type 4 to use the North door");
+            }
+            System.out.println("Type 5 to stay at the same room");
+
+            String choice1 = in.next();// the selected door will move the hero in the correct room
+
+
+            switch(choice1){
+                case "1":
+                    if (doors.get(0).isActive()){
+                        if (doors.get(0).isLocked()){
+                            System.out.println("The door is locked and it is written on the lock the " +
+                                    "number " + doors.get(0).getType());
+                            System.out.println("I will unlock the door for you");
+                            doors.get(0).setLocked(false);
+                        } else {
+                            index = doors.get(0).getRoom();
+                            running = false;
+                        }
+                    }
+
+                    break;
+                case "2":
+                    if (doors.get(1).isActive()){
+                        if (doors.get(1).isLocked()){
+                            System.out.println("The door is locked and it is written on the lock the " +
+                                    "number " + doors.get(1).getType());
+                            System.out.println("I will unlock the door for you");
+                            doors.get(1).setLocked(false);
+                        } else {
+                            index = doors.get(1).getRoom();
+                            running = false;
+                        }
+                    }
+
+                    break;
+                case "3":
+                    if (doors.get(2).isActive()){
+                        if (doors.get(2).isLocked()){
+                            System.out.println("The door is locked and it is written on the lock the " +
+                                    "number " + doors.get(2).getType());
+                            System.out.println("I will unlock the door for you");
+                            doors.get(2).setLocked(false);
+                        } else {
+                            index = doors.get(2).getRoom();
+                            running = false;
+                        }
+                    }
+
+                    break;
+                case "4":
+                    if (doors.get(3).isActive()){
+                        if (doors.get(3).isLocked()){
+                            System.out.println("The door is locked and it is written on the lock the " +
+                                    "number " + doors.get(3).getType());
+                            System.out.println("I will unlock the door for you");
+                            doors.get(3).setLocked(false);
+                        } else {
+                            index = doors.get(3).getRoom();
+                            running = false;
+                        }
+                    }
+
+                    break;
+                default:
+                    index = positionToIndex(x,y);
+                    running = false;
+            }
+
+
+        }
+        return index;
     }
 
     public void generateDoors(int x, int y, int level, int N, int E, int S, int W){

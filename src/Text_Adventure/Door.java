@@ -46,9 +46,6 @@ public class Door {
     } //In case of testing
 
 
-
-
-
     /**
      * Nemanja: This returns Door type. (0-5)
      *
@@ -91,6 +88,14 @@ public class Door {
      */
     public void setLocked(boolean locked) {
         this.locked = locked;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public boolean isActive() {
+        return active;
     }
 
     /**

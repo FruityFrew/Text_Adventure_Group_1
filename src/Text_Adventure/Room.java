@@ -42,10 +42,10 @@ public class Room {
         this.position[0] = x;
         this.position[1] = y;
         while ((N < 1)&&(E < 1)&&(S < 1)&&(W < 1)){
-            if(dCheckNorth(x, y, level)){ this.N = random.nextInt(2); }
-            if(dCheckEast(x, y, level)){ this.E = random.nextInt(2); }
-            if(dCheckSouth(x, y, level)){ this.S = random.nextInt(2); }
-            if(dCheckWest(x, y, level)){ this.W = random.nextInt(2); }
+            if(dCheckNorth(x, y, level)){ this.N = random.nextInt(5); }
+            if(dCheckEast(x, y, level)){ this.E = random.nextInt(5); }
+            if(dCheckSouth(x, y, level)){ this.S = random.nextInt(5); }
+            if(dCheckWest(x, y, level)){ this.W = random.nextInt(5); }
         }
         int n = random.nextInt(100);
         if (n < spawnMonsterRate){

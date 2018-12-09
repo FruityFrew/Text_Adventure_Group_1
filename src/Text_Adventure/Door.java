@@ -1,5 +1,7 @@
 package Text_Adventure;
 
+import java.util.Random;
+
 /**
  * @author Nemanja Negovanovic
  */
@@ -8,31 +10,40 @@ public class Door {
     private int position;
     private int room;
     private boolean locked;
+    private boolean active;
 
     /**
      * Nemanja: This creates Door object.
-     * @param type       - int: This is type of the door that will look for same kay type if locked.
+     *
+     *
      * @param position   - int: This is position of the door in the room (0-North,1-East,2-South,3-West).
      * @param room       - int: This is position of the room object that contains this door object.
-     * @param locked - boolean: This is locked/unlocked status.
      */
-    public Door(int type, int position, int room, boolean locked) {
-        this.type = type;
+    public Door(int position, int room) {
+        this.type = randomType();
         this.position = position;
         this.room = room;
-        this.locked = locked;
+        this.locked = randomLocked();
     }
 
-    public Door(int room, boolean locked) {
+    /**
+     * Robert: This is my version of a constructor.
+     *
+     *
+     * @param active   - int: This is position of the door in the room (0-North,1-East,2-South,3-West).
+     * @param room       - int: This is position of the room object that contains this door object.
+     */
+    public Door(boolean active, int room) {
+        this.type = randomType();
+        this.active = active;
         this.room = room;
-        this.locked = locked;
-    } //In case of testing
+        this.locked = randomLocked();
+    }
 
-    public Door(int position, int room) {
-        this.position = position;
+    public Door(int room) {
         this.room = room;
+        this.locked = randomLocked();
     } //In case of testing
-
 
 
     /**
@@ -77,5 +88,56 @@ public class Door {
      */
     public void setLocked(boolean locked) {
         this.locked = locked;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public boolean isActive() {
+        return active;
+    }
+
+    /**
+     * Nemanja: This creates random bollean at 5% chance for a Door object to be locked.
+     *
+     * @return boolean
+     */
+    public boolean randomLocked() {
+        boolean lockedBool = false;
+        Random rand = new Random();
+        int randLock = rand.nextInt(20) + 1;
+        if (randLock > 19){
+            lockedBool = true;
+        }
+        return lockedBool;
+    }
+
+    /**
+     * Nemanja: This is going to be changed to fit the game's needs.
+     *
+     * @return String
+     */
+    @Override
+    public String toString() {
+        return "Door{" +
+                "type=" + type +
+                ", position=" + position +
+                ", room=" + room +
+                ", locked=" + locked +
+                '}';
+    }
+
+    /**
+     * Nemanja: This returns random int between 0 and 5. This int decides the type of the door.
+     *
+     * @return int
+     */
+    public int randomType(){
+        Random rand = new Random();
+        int randLevel = rand.nextInt(6);
+        int doorType=randLevel;
+
+        return doorType;
     }
 }

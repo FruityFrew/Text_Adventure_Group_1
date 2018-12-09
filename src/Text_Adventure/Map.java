@@ -36,7 +36,7 @@ public class Map {
     public void generateMap(int level){
         int n = positionToIndex(level, level);
         for (int i=0; i<=n; i++){
-            Room room = new Room(i,xFromIndex(i),yFromIndex(i));
+            Room room = new Room(i, level, xFromIndex(i),yFromIndex(i));
             rooms.add(i,room);
         }
     }
@@ -49,7 +49,7 @@ public class Map {
             System.out.println("Room's index: " + x.getIndex());
             System.out.println("postion x: " + x.getPosition()[0]);
             System.out.println("postion y: " + x.getPosition()[1]);
-            System.out.println("Doors: " + x.getDoorPosition());
+            x.printDoors();
             System.out.println("Can I go North? " + checkNorth(x.getPosition()[0], x.getPosition()[1]));
             System.out.println("Can I go East? " + checkEast(x.getPosition()[0], x.getPosition()[1]));
             System.out.println("Can I go South? " + checkSouth(x.getPosition()[0], x.getPosition()[1]));
@@ -62,7 +62,7 @@ public class Map {
 
     //it works only for map objects. not exactly helpful
     public boolean checkPostion(int x, int y){
-        if ((x >= 0 && x <= level)&&(y >= 0 && y <= level)){
+        if ((x >= 0 && x < level)&&(y >= 0 && y < level)){
             return true;
         } else {
             return false;
@@ -71,9 +71,9 @@ public class Map {
 
     public boolean checkNorth(int x, int y){
         y = y + 1;
-        System.out.println("checkN(X) " + x);
-        System.out.println("checkN(Y): " + y);
-        if ((y >= 0) && (y <= level)){
+        //System.out.println("checkN(X) " + x);
+        //System.out.println("checkN(Y): " + y);
+        if ((y >= 0) && (y < level)){
             return true;
         } else {
             return false;
@@ -82,9 +82,9 @@ public class Map {
 
     public boolean checkSouth(int x, int y){
         y = y - 1;
-        System.out.println("checkS(X) " + x);
-        System.out.println("checkS(Y): " + y);
-        if ((y >= 0) && (y <= level)){
+        //System.out.println("checkS(X) " + x);
+        //System.out.println("checkS(Y): " + y);
+        if ((y >= 0) && (y < level)){
             return true;
         } else {
             return false;
@@ -93,9 +93,9 @@ public class Map {
 
     public boolean checkEast(int x, int y){
         x = x + 1;
-        System.out.println("checkE(X) " + x);
-        System.out.println("checkE(Y): " + y);
-        if ((x >= 0) && (x <= level)){
+        //System.out.println("checkE(X) " + x);
+        //System.out.println("checkE(Y): " + y);
+        if ((x >= 0) && (x < level)){
             return true;
         } else {
             return false;
@@ -104,9 +104,9 @@ public class Map {
 
     public boolean checkWest(int x, int y){
         x = x - 1;
-        System.out.println("checkW(X) " + x);
-        System.out.println("checkW(Y): " + y);
-        if ((x >= 0) && (x <= level)){
+        //System.out.println("checkW(X) " + x);
+        //System.out.println("checkW(Y): " + y);
+        if ((x >= 0) && (x < level)){
             return true;
         } else {
             return false;

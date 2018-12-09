@@ -1,4 +1,7 @@
 package Text_Adventure.Items;
+
+import java.util.Random;
+
 /**
  * @author Nemanja Negovanovic
  */
@@ -9,14 +12,10 @@ public class Key extends Item {
 
     /**
      * Nemanja: This is the constructor of the Key object.
-     *
-     *
-     *
-     * @param Type - int: The type of a key object that opens the door object of the same type.
      */
-    public Key(String name, int Type) {
+    public Key(String name) {
         super(name);
-        this.type = Type;
+        this.type = randomType();
     }
 
     /**
@@ -44,6 +43,14 @@ public class Key extends Item {
      */
     public void setActive(boolean active) {
         this.active = active;
+    }
+
+    public int randomType(){
+        Random rand = new Random();
+        int randLevel = rand.nextInt(6);
+        int keyType=randLevel;
+
+        return keyType;
     }
 
     /* public int getDoorId() {              // Getter and setter for doorId

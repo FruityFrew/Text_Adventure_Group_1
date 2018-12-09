@@ -37,7 +37,7 @@ public class Main  {
     public static void main(String[] args) {
 
         playerHealth=Method.playerType.PLAYER.getHealth();
-        Map myMap = new Map(5);
+        //Map myMap = new Map(5);
         //myMap.generateMap(5);
         //myMap.printMap();
 

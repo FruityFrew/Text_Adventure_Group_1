@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="65b92c4b-3c5f-497c-9832-7d05e5231afa" name="Default Changelist" comment="Edited Key and created Door Class.">
       <change beforePath="$PROJECT_DIR$/src/Text_Adventure/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Text_Adventure/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Text_Adventure/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Text_Adventure/Map.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Text_Adventure/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Text_Adventure/Room.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Text_Adventure/menuDevelopment/Method.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Text_Adventure/menuDevelopment/Method.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,11 +13,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+            <state relative-caret-position="274">
+              <caret line="41" column="27" lean-forward="true" selection-start-line="41" selection-start-column="27" selection-end-line="41" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -27,8 +25,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Text_Adventure/menuDevelopment/Method.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="469" column="92" lean-forward="true" selection-start-line="469" selection-start-column="92" selection-end-line="469" selection-end-column="92" />
+            <state relative-caret-position="328">
+              <caret line="460" lean-forward="true" selection-start-line="460" selection-end-line="460" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -36,26 +34,58 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Room.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="175" column="23" lean-forward="true" selection-start-line="175" selection-start-column="23" selection-end-line="175" selection-end-column="23" />
+            <state relative-caret-position="629">
+              <caret line="45" column="70" lean-forward="true" selection-start-line="45" selection-start-column="70" selection-end-line="45" selection-end-column="70" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#11828#11829#0" expanded="true" />
-                <element signature="e#11877#11878#0" expanded="true" />
-                <element signature="e#11926#11927#0" expanded="true" />
-                <element signature="e#11975#11976#0" expanded="true" />
+                <element signature="e#9846#9847#0" expanded="true" />
+                <element signature="e#10042#10043#0" expanded="true" />
+                <element signature="e#10431#10432#0" expanded="true" />
+                <element signature="e#10653#10654#0" expanded="true" />
+                <element signature="e#10889#10890#0" expanded="true" />
+                <element signature="e#11124#11125#0" expanded="true" />
+                <element signature="e#11387#11388#0" expanded="true" />
+                <element signature="e#11640#11641#0" expanded="true" />
+                <element signature="e#11948#11949#0" expanded="true" />
+                <element signature="e#12237#12238#0" expanded="true" />
+                <element signature="e#12566#12567#0" expanded="true" />
+                <element signature="e#12858#12859#0" expanded="true" />
+                <element signature="e#13108#13109#0" expanded="true" />
+                <element signature="e#13347#13348#0" expanded="true" />
+                <element signature="e#13397#13398#0" expanded="true" />
+                <element signature="e#13446#13447#0" expanded="true" />
+                <element signature="e#13495#13496#0" expanded="true" />
+                <element signature="e#13544#13545#0" expanded="true" />
+                <element signature="e#17806#17807#0" expanded="true" />
+                <element signature="e#17841#17842#0" expanded="true" />
+                <element signature="e#17891#17892#0" expanded="true" />
+                <element signature="e#17924#17925#0" expanded="true" />
+                <element signature="e#17975#17976#0" expanded="true" />
+                <element signature="e#18025#18026#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Items/Weapon.java">
+        <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Door.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-202">
+            <state relative-caret-position="325">
+              <caret line="94" column="14" lean-forward="true" selection-start-line="94" selection-start-column="14" selection-end-line="94" selection-end-column="14" />
+              <folding>
+                <element signature="e#2235#2236#0" expanded="true" />
+                <element signature="e#2264#2265#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Items/Consumable.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
               <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
             </state>
           </provider>
@@ -73,8 +103,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Items/Key.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="134">
-              <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
+            <state relative-caret-position="391">
+              <caret line="23" column="20" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -82,11 +112,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Map.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="27" lean-forward="true" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+            <state relative-caret-position="144">
+              <caret line="51" column="12" lean-forward="true" selection-start-line="51" selection-start-column="12" selection-end-line="51" selection-end-column="12" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#156#162#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -107,12 +136,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Text_Adventure/Door.java" />
         <option value="$PROJECT_DIR$/src/Text_Adventure/Items/Key.java" />
         <option value="$PROJECT_DIR$/src/Map.java" />
-        <option value="$PROJECT_DIR$/src/Text_Adventure/Main.java" />
         <option value="$PROJECT_DIR$/src/Text_Adventure/Map.java" />
+        <option value="$PROJECT_DIR$/src/Text_Adventure/Door.java" />
         <option value="$PROJECT_DIR$/src/Text_Adventure/menuDevelopment/Method.java" />
+        <option value="$PROJECT_DIR$/src/Text_Adventure/Main.java" />
         <option value="$PROJECT_DIR$/src/Text_Adventure/Room.java" />
       </list>
     </option>
@@ -131,8 +160,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -163,18 +190,27 @@
               <item name="Text_Adventure_Group_1" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Text_Adventure" type="462c0819:PsiDirectoryNode" />
+              <item name="Items" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Text_Adventure_Group_1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Text_Adventure_Group_1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Text_Adventure" type="462c0819:PsiDirectoryNode" />
               <item name="menuDevelopment" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544239234041" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544318357315" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
@@ -241,6 +277,7 @@
       <workItem from="1544202936944" duration="1937000" />
       <workItem from="1544216681337" duration="2899000" />
       <workItem from="1544219606687" duration="17121000" />
+      <workItem from="1544293461353" duration="19788000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1544112911801</created>
@@ -253,18 +290,50 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22503000" />
+    <option name="totallyTimeSpent" value="42291000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Learn" order="0" />
       <window_info id="Image Layers" order="1" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
       <window_info id="Capture Tool" order="4" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.2602118" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.26399395" />
+      <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="0" />
+      <window_info anchor="bottom" id="Terminal" order="1" />
+      <window_info anchor="bottom" id="Database Changes" order="2" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Docker" order="4" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Message" order="5" />
+      <window_info anchor="bottom" id="Find" order="6" />
+      <window_info anchor="bottom" id="Run" order="7" weight="0.8527005" />
+      <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="11" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.3289689" />
+      <window_info anchor="right" id="Maven Projects" order="0" />
+      <window_info anchor="right" id="Theme Preview" order="1" />
+      <window_info anchor="right" id="Capture Analysis" order="2" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info anchor="right" id="Maven" order="4" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="Palette" order="6" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="7" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="8" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="9" weight="0.25" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Learn" order="0" />
+      <window_info id="Image Layers" order="1" />
+      <window_info id="Designer" order="2" />
+      <window_info id="UI Designer" order="3" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.26399395" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="0" />
@@ -279,7 +348,7 @@
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="11" />
-      <window_info anchor="bottom" id="Messages" order="12" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.3289689" />
       <window_info anchor="right" id="Maven Projects" order="0" />
       <window_info anchor="right" id="Theme Preview" order="1" />
       <window_info anchor="right" id="Capture Analysis" order="2" />
@@ -290,7 +359,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="7" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="8" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="9" weight="0.25" />
-    </layout>
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -322,18 +391,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Door.java" />
     <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Items/Weapon.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-202">
+        <state relative-caret-position="68">
           <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Items/Key.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -344,45 +405,88 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Text_Adventure/menuDevelopment/Method.java">
+    <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Items/Key.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="469" column="92" lean-forward="true" selection-start-line="469" selection-start-column="92" selection-end-line="469" selection-end-column="92" />
+        <state relative-caret-position="391">
+          <caret line="23" column="20" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Items/Consumable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Door.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="94" column="14" lean-forward="true" selection-start-line="94" selection-start-column="14" selection-end-line="94" selection-end-column="14" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#2235#2236#0" expanded="true" />
+            <element signature="e#2264#2265#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Map.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="27" lean-forward="true" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+        <state relative-caret-position="144">
+          <caret line="51" column="12" lean-forward="true" selection-start-line="51" selection-start-column="12" selection-end-line="51" selection-end-column="12" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#156#162#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Room.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="175" column="23" lean-forward="true" selection-start-line="175" selection-start-column="23" selection-end-line="175" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#11828#11829#0" expanded="true" />
-            <element signature="e#11877#11878#0" expanded="true" />
-            <element signature="e#11926#11927#0" expanded="true" />
-            <element signature="e#11975#11976#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        <state relative-caret-position="274">
+          <caret line="41" column="27" lean-forward="true" selection-start-line="41" selection-start-column="27" selection-end-line="41" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Text_Adventure/menuDevelopment/Method.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="460" lean-forward="true" selection-start-line="460" selection-end-line="460" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Text_Adventure/Room.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="45" column="70" lean-forward="true" selection-start-line="45" selection-start-column="70" selection-end-line="45" selection-end-column="70" />
+          <folding>
+            <element signature="e#9846#9847#0" expanded="true" />
+            <element signature="e#10042#10043#0" expanded="true" />
+            <element signature="e#10431#10432#0" expanded="true" />
+            <element signature="e#10653#10654#0" expanded="true" />
+            <element signature="e#10889#10890#0" expanded="true" />
+            <element signature="e#11124#11125#0" expanded="true" />
+            <element signature="e#11387#11388#0" expanded="true" />
+            <element signature="e#11640#11641#0" expanded="true" />
+            <element signature="e#11948#11949#0" expanded="true" />
+            <element signature="e#12237#12238#0" expanded="true" />
+            <element signature="e#12566#12567#0" expanded="true" />
+            <element signature="e#12858#12859#0" expanded="true" />
+            <element signature="e#13108#13109#0" expanded="true" />
+            <element signature="e#13347#13348#0" expanded="true" />
+            <element signature="e#13397#13398#0" expanded="true" />
+            <element signature="e#13446#13447#0" expanded="true" />
+            <element signature="e#13495#13496#0" expanded="true" />
+            <element signature="e#13544#13545#0" expanded="true" />
+            <element signature="e#17806#17807#0" expanded="true" />
+            <element signature="e#17841#17842#0" expanded="true" />
+            <element signature="e#17891#17892#0" expanded="true" />
+            <element signature="e#17924#17925#0" expanded="true" />
+            <element signature="e#17975#17976#0" expanded="true" />
+            <element signature="e#18025#18026#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -10,6 +10,7 @@ public class Door {
     private int position;
     private int room;
     private boolean locked;
+    private boolean active;
 
     /**
      * Nemanja: This creates Door object.
@@ -25,13 +26,24 @@ public class Door {
         this.locked = randomLocked();
     }
 
+    /**
+     * Robert: This is my version of a constructor.
+     *
+     *
+     * @param active   - int: This is position of the door in the room (0-North,1-East,2-South,3-West).
+     * @param room       - int: This is position of the room object that contains this door object.
+     */
+    public Door(boolean active, int room) {
+        this.type = randomType();
+        this.active = active;
+        this.room = room;
+        this.locked = randomLocked();
+    }
+
     public Door(int room) {
         this.room = room;
         this.locked = randomLocked();
     } //In case of testing
-
-
-
 
 
     /**
@@ -76,6 +88,14 @@ public class Door {
      */
     public void setLocked(boolean locked) {
         this.locked = locked;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public boolean isActive() {
+        return active;
     }
 
     /**

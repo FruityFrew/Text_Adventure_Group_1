@@ -13,7 +13,7 @@ import java.security.SecureRandom;
 public class Method  {
 
     public Scanner in = new Scanner(System.in);
-    Room myRoom = new Room(0,0,0);
+    Room myRoom = new Room(0,5, 0,0);
 
     
     //Robert: I added this line below me
@@ -339,6 +339,7 @@ public class Method  {
         //Robert: I will add bit code here
         //================================
         Room room1 = myMap.rooms.get(0);
+        int newRoom = 0;
         //================================
         //Robert: You will see bit code as well on the "go to a new room options"
         //I added some imports as well
@@ -455,57 +456,8 @@ public class Method  {
                                     //System.out.println("the method changeRoom will be called");
                                     //Robert: I will add bit code here and I commented out a line of code
                                     //================================
-
-
-                                    //Robert: here starts lot of code
-                                    System.out.println(" \t***    Choose door    ***" +
-                                            "\n[1]\tNorth door" +//if the north door exists
-                                            "\n[2]\tSouth door" +//if the south door exists
-                                            "\n[3]\tWest door" +// if the west door exists
-                                            "\n[4]\tEast door");// if the est door exists
-                                    String choice1 = in.next();// the selected door will move the hero in the correct room
-                                    in.nextLine();
-                                    System.out.println("\n----------------------------------------------\n" +
-                                            "\tHealth = "+ Main.playerHealth+".\n" +
-                                            "--------------------------------------------");
-
-                                    switch(choice1){
-                                        case "1":
-                                            //Robert: I will add bit code here
-                                            //================================
-                                            room1 = myMap.rooms.get(myMap.moveNorth(room1.getPosition()[0],room1.getPosition()[1]));
-                                            //================================
-                                            //Robert: You will see bit code as well on the "go to a new room options"
-                                            //I added some imports as well
-                                            break;
-                                        case "2":
-                                            //Robert: I will add bit code here
-                                            //================================
-                                            room1 = myMap.rooms.get(myMap.moveSouth(room1.getPosition()[0],room1.getPosition()[1]));
-                                            //================================
-                                            //Robert: You will see bit code as well on the "go to a new room options"
-                                            //I added some imports as well
-                                            break;
-                                        case "3":
-                                            //Robert: I will add bit code here
-                                            //================================
-                                            room1 = myMap.rooms.get(myMap.moveWest(room1.getPosition()[0],room1.getPosition()[1]));
-                                            //================================
-                                            //Robert: You will see bit code as well on the "go to a new room options"
-                                            //I added some imports as well
-                                            break;
-                                        case "4":
-                                            //Robert: I will add bit code here
-                                            //================================
-                                            room1 = myMap.rooms.get(myMap.moveEast(room1.getPosition()[0],room1.getPosition()[1]));
-                                            //================================
-                                            //Robert: You will see bit code as well on the "go to a new room options"
-                                            //I added some imports as well
-                                            break;
-                                        default:
-                                            myMethod.playOptions();
-                                    }
-                                    //Robert: here ends the the lots of code
+                                    newRoom = room1.changeRoom();
+                                    room1 = myMap.rooms.get(newRoom);
 
                                     //================================
                                     //Robert: You will see bit code as well on the beginning of this function"

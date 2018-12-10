@@ -566,7 +566,15 @@ public class Method  {
     }
 
     public static void main(String[] args) {
-        Hero myHunter = new Hero(1);
-        System.out.println();
+        Hero newHunter = new Hero(1);
+        System.out.println(newHunter.toString());
+
+        Character newMonster = new Character();
+
+        Method actions = new Method();
+        for(int i = 0; i<10; i++) actions.exchangeAttackWithMonster(newHunter, newMonster);
+
+        System.out.println(newHunter.toString());
+        System.out.println(newHunter);
     }
 }

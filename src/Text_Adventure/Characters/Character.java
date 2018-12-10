@@ -11,7 +11,7 @@ public class Character {
 
 
     public Character() {
-        this(null, 0, 0, 0, 0);
+        this(null, 0, 0.5, 50, 200);
     }
 
     public Character(String name, int index, double hitChance, int attack, int health) {

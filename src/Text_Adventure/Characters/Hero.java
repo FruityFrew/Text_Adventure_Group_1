@@ -13,15 +13,37 @@ public class Hero extends Character {
                 setRoomIndex(1);
                 setHitChance(0.6);
                 setMaxAttack(100);
+                setHealth(300);
+                break;
+            case 2:
+                setName("Thief");
+                setRoomIndex(1);
+                setHitChance(0.8);
+                setMaxAttack(80);
+                setHealth(300);
+                break;
+            case 3:
+                setName("Priest");
+                setRoomIndex(1);
+                setHitChance(0.6);
+                setMaxAttack(80);
+                setHealth(400);
+                break;
+            case 4:
+                setName("Tourist");
+                setRoomIndex(1);
+                setHitChance(0.7);
+                setMaxAttack(80);
+                setHealth(350);
                 break;
             default:
                 setName("Hero");
                 setRoomIndex(1);
                 setHitChance(0.6);
                 setMaxAttack(80);
+                setHealth(300);
                 break;
         }
-
     }
 
     public void viewContentsOfBackpack() {

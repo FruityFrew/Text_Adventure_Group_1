@@ -11,25 +11,15 @@ public class Character {
 
 
     public Character() {
-        this(null, -1, 0.5, 50, 200);
+        this(null, 0, 0, 0, 0);
     }
-
-    public Character(String name) {
-        this(name, -1, 0.5, 50, 200);
-    }
-
-    public Character(String name, int index) { this(name, index, 0.5, 50, 200); }
-
-    public Character(String name, int index, double hitChance) { this(name, index, hitChance, 50, 200); }
-
-    public Character(String name, int index, double hitChance, int attack) { this(name, index, hitChance, attack, 200); }
 
     public Character(String name, int index, double hitChance, int attack, int health) {
-        setName(name);
-        setRoomIndex(index);
-        setHitChance(hitChance);
-        setMaxAttack(attack);
-        setHealth(health);
+        this.name = name;
+        roomIndex = index;
+        this.hitChance = hitChance;
+        maxAttack = attack;
+        this.health = health;
     }
 
 
@@ -104,7 +94,7 @@ public class Character {
      *
      * @return
      */
-    public int generateDamage() {
+    public static int generateDamage(double hitChance, int maxAttack) {
         Random number = new Random();
         return (hitChance > number.nextDouble()) ? maxAttack - number.nextInt(maxAttack): 0;
     }

@@ -1,6 +1,7 @@
 package Text_Adventure.menuDevelopment;
 
 import java.util.Scanner;
+import Text_Adventure.Characters.Character;
 import Text_Adventure.Characters.Hero;
 import Text_Adventure.Characters.Monster;
 import Text_Adventure.Items.Consumable;
@@ -537,6 +538,21 @@ public class Method  {
         }
     }
 
+    // Ahmed: Fight system that uses already exisisting damage generator in Character-class
+    public void exchangeAttackWithMonster(Hero hero, Character monster) {
+        //First hero attacks
+        int damageHolder = Character.generateDamage(hero.getHitChance(), hero.getMaxAttack());
+        monster.setHealth(monster.getHealth() - damageHolder);
+        System.out.printf("You hit monster and monster looses %d health points.%n" +
+                "Monster's health (updated): %d%n", damageHolder, monster.getHealth());
+
+        //Then monster attacks...
+        damageHolder = Character.generateDamage(monster.getHitChance(), monster.getMaxAttack());
+        hero.setHealth(hero.getHealth() - damageHolder);
+        System.out.printf("Monster hits you back and you loose %d health points.%n" +
+                "Your current health: %d%n", damageHolder, hero.getHealth());
+    }
+
     //Robert: I made this sorry excuse of fighting system;
     public void coinFight(){
         int coin = random.nextInt(2);
@@ -547,5 +563,10 @@ public class Method  {
             System.out.println("you beated the monster in coins. it gives you 5 of his health");
             Main.playerHealth = Main.playerHealth + 5;
         }
+    }
+
+    public static void main(String[] args) {
+        Hero myHunter = new Hero(1);
+        System.out.println();
     }
 }

@@ -28,12 +28,14 @@ public class Map {
         return index / 10;
     } // it works
 
-    public int yFromIndex(int index){
-      //  return index - ((index / 10) * 10);//Robert:it works_ ___
+    public int yFromIndex(int index){   //Robert:it works
+        return index - ((index / 10) * 10);
+    }
+
         //                  Alex: It might not work. n/10*10 is always n. THEN n-n is ALWAYS 0.
     //                      Alex:I wrote the correct formula to get the y from index, which is index%10
-        return index%10;// Alex: I hope you dont mind Robert for giving you a bit of help
-    }
+    //    return index%10;// Alex: I hope you dont mind Robert for giving you a bit of help
+    //}
 
     //it works as it seems.
     public void generateMap(int level){

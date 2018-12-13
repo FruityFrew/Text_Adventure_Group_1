@@ -569,16 +569,16 @@ public class Method  {
         }
     }
 
-    public static void main(String[] args) {
-        Hero newHunter = new Hero(1);
-        System.out.println(newHunter.toString());
+    //public static void main(String[] args) {
+     //   Hero newHunter = new Hero(1);
+    //    System.out.println(newHunter.toString());
 
-        Character newMonster = new Character();
+    //    Character newMonster = new Character();
 
-        Method actions = new Method();
-        for(int i = 0; i<10; i++) actions.exchangeAttackWithMonster(newHunter, newMonster);
+    //    Method actions = new Method();
+    //    for(int i = 0; i<10; i++) actions.exchangeAttackWithMonster(newHunter, newMonster);
 
-        System.out.println(newHunter.toString());
-        System.out.println(newHunter);
-    }
+    //    System.out.println(newHunter.toString());
+    //    System.out.println(newHunter);
+    //}
 }

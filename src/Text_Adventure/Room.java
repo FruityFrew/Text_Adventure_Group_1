@@ -449,7 +449,7 @@ public class Room {
                 System.out.println("Type 3 to use the South door");
             }
             if (W>=1) {
-                System.out.println("Type 4 to use the North door");
+                System.out.println("Type 4 to use the West door");
             }
             System.out.println("Type 5 to stay at the same room");
 
@@ -615,9 +615,13 @@ public class Room {
         return index / 10;
     } // it works
 
-    public int yFromIndex(int index){ return index%10; //Alex: I apologize Robert for making this change. your formula is always 0.
-  //              index - ((index / 10) * 10);//Robert: it works
+    public int yFromIndex(int index){
+        return index - ((index / 10) * 10);//Robert: it works
     }
+
+ //   public int yFromIndex(int index){ return index%10; //Alex: I apologize Robert for making this change. your formula is always 0.
+  //              index - ((index / 10) * 10);//Robert: it works
+  //  }
 
 
     public int moveNorth(int x, int y, int level){

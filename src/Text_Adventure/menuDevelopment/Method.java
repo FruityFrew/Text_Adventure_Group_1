@@ -1,22 +1,24 @@
 package Text_Adventure.menuDevelopment;
 
+import java.sql.SQLOutput;
 import java.util.Scanner;
 import Text_Adventure.Characters.Character;
 import Text_Adventure.Characters.Hero;
 import Text_Adventure.Characters.Monster;
 import Text_Adventure.Items.Consumable;
 import Text_Adventure.Items.Item;
+import Text_Adventure.Items.Weapon;
 import Text_Adventure.Main;
 import Text_Adventure.Map;
 import Text_Adventure.Room;
 import java.security.SecureRandom;
 
-public class Method  {
+public class Method {
 
     public Scanner in = new Scanner(System.in);
-    Room myRoom = new Room(0,5, 0,0);
+    Room myRoom = new Room(0, 5, 0, 0);
 
-    
+
     //Robert: I added this line below me
     SecureRandom random = new SecureRandom();
     public static Method myMethod = new Method();
@@ -96,19 +98,18 @@ public class Method  {
                 " \nbetween dimensions, on the border of the living and the dead. \n" +
                 "\nThe space that once served life is now home of the monsters.");
         System.out.println("What is your name traveler?");
-        Main.playerName= in.nextLine();
+        Main.playerName = in.nextLine();
     }
 
     /**
      * Alex: This enum does not need to be used
-     *       It was created in the beginning as an item to be used in development
+     * It was created in the beginning as an item to be used in development
      * enum playerType
-     *
      */
     public enum playerType {
-        THIEF("thief", 4, 0.5, 5,200), PRIEST("priest", 4, 0.5, 5,200
-        ), GHOST_HUNTER("ghost hunter", 4, 0.5, 5,200), TOURIST("tourist", 4, 0.5, 5,200),
-        PLAYER("player", 4, 0.5, 5,200);
+        THIEF("thief", 4, 0.5, 5, 200), PRIEST("priest", 4, 0.5, 5, 200
+        ), GHOST_HUNTER("ghost hunter", 4, 0.5, 5, 200), TOURIST("tourist", 4, 0.5, 5, 200),
+        PLAYER("player", 4, 0.5, 5, 200);
         private String name;
         private int roomIndex;
         private double hitChance;
@@ -116,16 +117,16 @@ public class Method  {
         private int health;
 
 
-
         /**
          * Alex
          * constructor playerType
+         *
          * @param name
          * @param roomIndex
          * @param hitChance
          * @param maxAttack
          */
-        playerType(String name, int roomIndex, double hitChance, int maxAttack,int health) {
+        playerType(String name, int roomIndex, double hitChance, int maxAttack, int health) {
             this.name = name;
             this.roomIndex = roomIndex;
             this.hitChance = hitChance;
@@ -135,21 +136,25 @@ public class Method  {
 
         /**
          * Alex: getter for player health
+         *
          * @return
          */
         public int getHealth() {
             return health;
         }
 
-         /**
+        /**
          * Alex: sette for player health
+         *
          * @param health
          */
         public void setHealth(int health) {
             this.health = health;
         }
+
         /**
          * getter playerTypeName
+         *
          * @return name
          */
         public String getName() {
@@ -159,6 +164,7 @@ public class Method  {
 
         /**
          * setter PlayerTypeName
+         *
          * @param name
          */
         public void setName(String name) {
@@ -168,6 +174,7 @@ public class Method  {
 
         /**
          * playerRoomIndex getter
+         *
          * @return int
          */
         public int getRoomIndex() {
@@ -177,6 +184,7 @@ public class Method  {
 
         /**
          * playerRoomIndex setter
+         *
          * @param roomIndex
          */
         public void setRoomIndex(int roomIndex) {
@@ -185,6 +193,7 @@ public class Method  {
 
         /**
          * getter playerHitChance
+         *
          * @return double
          */
         public double getHitChance() {
@@ -193,6 +202,7 @@ public class Method  {
 
         /**
          * getter PlayerMaxAttack
+         *
          * @return int
          */
         public int getMaxAttack() {
@@ -201,6 +211,7 @@ public class Method  {
 
         /**
          * PlayerMaxAttack setter
+         *
          * @param maxAttack
          */
         public void setMaxAttack(int maxAttack) {
@@ -208,7 +219,6 @@ public class Method  {
         }
 
         /**
-         *
          * @param hitChance
          */
         public void setHitChance(double hitChance) {
@@ -216,7 +226,6 @@ public class Method  {
         }
 
         /**
-         *
          * @return string
          */
         @Override
@@ -231,7 +240,7 @@ public class Method  {
      */
     public void choosePlayerType() {
 
-        System.out.println("Hmmm .."+Main.playerName+", a household name, maybe fate brought you back .. or maybe just bad luck");
+        System.out.println("Hmmm .." + Main.playerName + ", a household name, maybe fate brought you back .. or maybe just bad luck");
         System.out.println("What are you in this life .. " +
                 "\n[1]\tA THIEF? " +
                 "\n[2]\tA lost PRIEST in search of your lost faith?! HA HA HA!" +
@@ -257,7 +266,7 @@ public class Method  {
                 Method.playerType.PLAYER.maxAttack = Method.playerType.PRIEST.maxAttack;
                 Method.playerType.PLAYER.roomIndex = Method.playerType.PRIEST.roomIndex;
                 Method.playerType.PLAYER.health = Method.playerType.PRIEST.health;
-            break;
+                break;
             case 3:
                 Method.playerType.PLAYER.name = Method.playerType.GHOST_HUNTER.name;
                 Method.playerType.PLAYER.hitChance = Method.playerType.GHOST_HUNTER.hitChance;
@@ -282,6 +291,7 @@ public class Method  {
     /**
      * Alex: This method allows the player to save the game, upload a saved game, start a new game, or exit the game.
      * method gameOption
+     *
      * @return int
      */
     public int gameOptions() {
@@ -293,16 +303,16 @@ public class Method  {
 
     /**
      * Alex: This is a method that allows the player to stop the game during the session and exit the session.
-     *       This method is followed by method gameOption
+     * This method is followed by method gameOption
      */
-    public int exitOptions(){
+    public int exitOptions() {
         System.out.println("EXIT the game?" +
                 "\n[1]\tYES" +
                 "\n[2]\tNO, go back to menu");
         Main.choice = Main.in.nextInt();
         switch (Main.choice) {
             case 1:
-                Main.choice =10;
+                Main.choice = 10;
                 break;
             case 2:
                 myMethod.gameOptions();
@@ -316,18 +326,18 @@ public class Method  {
 
     /**
      * Alex: This is a method that allows the player to stop the game during the session and exit the session.
-     *       This method is followed by method gameOption
+     * This method is followed by method gameOption
      * method playOption
      * used during the player session
      */
-    public void playOptions(){
+    public void playOptions() {
         System.out.println("\n\n*        *****         *\n\n[1]\tContinue\n[2]\tExit\n\n*         *****       *\n\n");
-        Main.choice= Main.in.nextInt();
-        switch(Main.choice){
+        Main.choice = Main.in.nextInt();
+        switch (Main.choice) {
             case 1:
                 break;
             case 2:
-                Main.choice=10;
+                Main.choice = 10;
                 break;
             default:
                 System.out.println("Your fingers are shaking again?" +
@@ -338,6 +348,7 @@ public class Method  {
     /**
      * Alex: Inside this method the game is happening
      * method playGame
+     *
      * @param gameOption
      */
     public void playGame(int gameOption) {
@@ -351,7 +362,7 @@ public class Method  {
 
         System.out.println("\nEven if nothing welcoming in the cellar,.. \n\n\t****    WELCOME!    ****" +
                 "\n\nAnytime you want to see your options\n\t\t<< ENTER [10] >>\n\n");
-        System.out.println("\n\tHealth = "+ Main.playerHealth+".\n" +
+        System.out.println("\n\tHealth = " + Main.playerHealth + ".\n" +
                 "--------------------------------------------\n");
         switch (gameOption) {
             case 1: // START GAME
@@ -363,7 +374,7 @@ public class Method  {
                     //Robert: You will see bit code as well on the "go to a new room options"
                     //I added some imports as well
                     //System.out.println("\n\n\tWalk carefully in your first room\n\nHm... In this room you have a coffee");
-                    Main.nbrDoors=3;//example  Main.nbrDoors=myRoom.numberOfDoors(myRoom.describeRoom)
+                    Main.nbrDoors = 3;//example  Main.nbrDoors=myRoom.numberOfDoors(myRoom.describeRoom)
                     switch (Main.nbrDoors) { //room = door(s)
                         case 1:  // room = door(s)
                             System.out.println(" \t***    Choose door    ***" +
@@ -373,10 +384,10 @@ public class Method  {
                                     "\n[4]\tEast door");// if the est door exists
                             Main.choice = Main.in.nextInt();// the selected door will move the hero in the correct room
                             System.out.println("\n----------------------------------------------\n" +
-                                    "\tHealth = "+ Main.playerHealth+".\n" +
+                                    "\tHealth = " + Main.playerHealth + ".\n" +
                                     "--------------------------------------------");
 
-                            switch(Main.choice){
+                            switch (Main.choice) {
                                 case 1:
                                     break;
                                 case 2:
@@ -400,7 +411,7 @@ public class Method  {
                             Main.choice = Main.in.nextInt();
                             in.nextLine();
                             System.out.println("\n----------------------------------------------\n" +
-                                    "\tHealth = "+ Main.playerHealth+".\n" +
+                                    "\tHealth = " + Main.playerHealth + ".\n" +
                                     "--------------------------------------------");
                             switch (Main.choice) {
                                 case 1:
@@ -435,7 +446,7 @@ public class Method  {
                                     "\n[4]\tGo to a new room" +
                                     "\n[5]\tPick +ITEM\n");
                             System.out.println("\n----------------------------------------------\n" +
-                                    "\tHealth = "+ Main.playerHealth+".\n" +
+                                    "\tHealth = " + Main.playerHealth + ".\n" +
                                     "--------------------------------------------");
                             Main.choice = Main.in.nextInt();
                             in.nextLine();
@@ -478,7 +489,7 @@ public class Method  {
                                     hero1.addItemToBackpack(room1.getItem());
                                     //Main.playerHealth += 50;// the Consumable Class is irrelevant in this form, it needs to be completed with different types of items, as we decided.
                                     // Coffee = 50 health points.
-                                    System.out.println("\n----------------------------------------\n\tYour health is now "+ Main.playerHealth+"." +
+                                    System.out.println("\n----------------------------------------\n\tYour health is now " + Main.playerHealth + "." +
                                             "\n----------------------------------------");
                                     break;
                                 default:
@@ -508,7 +519,7 @@ public class Method  {
                             Main.choice = Main.in.nextInt();
                             switch (Main.choice) {
                                 case 1:
-                                    Main.choice= 10;
+                                    Main.choice = 10;
                                     break;
                                 case 2:
                                     myMethod.playOptions();
@@ -523,20 +534,21 @@ public class Method  {
                 break;
             case 2:  // SAVE GAME
                 System.out.println("Enter the name of the game: \n");
-                SavedGame saveGame=new SavedGame(Main.in.nextLine());
+                SavedGame saveGame = new SavedGame(Main.in.nextLine());
                 Main.savedGames.add(saveGame);
-                Main.choice=10;
+                Main.choice = 10;
                 break;
             case 3: // LOAD GAME
-                for(SavedGame x: Main.savedGames){
-                    System.out.println(Main.savedGames.indexOf(x)+"]\t"+ x);
+                for (SavedGame x : Main.savedGames) {
+                    System.out.println(Main.savedGames.indexOf(x) + "]\t" + x);
                 }
                 System.out.println("***    Choose a saved game    ***");
-                myMethod.playGame(Main.savedGames.indexOf(Main.in.nextInt()));;
+                myMethod.playGame(Main.savedGames.indexOf(Main.in.nextInt()));
+                ;
                 break;
 
             case 4: // EXIT
-                Main.choice=10;
+                Main.choice = 10;
             default:
                 myMethod.exitOptions();
         }
@@ -558,9 +570,9 @@ public class Method  {
     }
 
     //Robert: I made this sorry excuse of fighting system;
-    public void coinFight(){
+    public void coinFight() {
         int coin = random.nextInt(2);
-        if (coin == 0){
+        if (coin == 0) {
             System.out.println("the monster beat you in coins you loose 5 health");
             Main.playerHealth = Main.playerHealth - 5;
         } else {
@@ -569,16 +581,45 @@ public class Method  {
         }
     }
 
-    //public static void main(String[] args) {
-     //   Hero newHunter = new Hero(1);
-    //    System.out.println(newHunter.toString());
+    public void useItem(Item item) {
+        System.out.println("\n[1]\tUse " + item.getName() + "\n[2]\tThrow " + item.getName());
+        Main.choice = Main.in.nextInt();
+        switch (Main.choice) {
+            case 1:
+                if (item instanceof Consumable) {
+//                    hero1.consumeItem(item);
+                } else if (item instanceof Weapon) {
+//                    hero1.weapon(item);
+                } else {
+//                    hero1.key(item);
+                }
+                break;
+            case 2:
+                //               Hero.backpack.remove(item);
+        }
+    }
 
-    //    Character newMonster = new Character();
+    public int backpackMenu(Item[] backpack) {
+        int i = 0;
+        for (Item x : Hero.backpack) {
+            i++;
+            System.out.print(i);
+            System.out.println(x);
+        }
+            System.out.println("\nChoose the item you want to use:");
+            return Main.choice=Main.in.nextInt();
 
-    //    Method actions = new Method();
-    //    for(int i = 0; i<10; i++) actions.exchangeAttackWithMonster(newHunter, newMonster);
+            //public static void main(String[] args) {
+            //   Hero newHunter = new Hero(1);
+            //    System.out.println(newHunter.toString());
 
-    //    System.out.println(newHunter.toString());
-    //    System.out.println(newHunter);
-    //}
+            //    Character newMonster = new Character();
+
+            //    Method actions = new Method();
+            //    for(int i = 0; i<10; i++) actions.exchangeAttackWithMonster(newHunter, newMonster);
+
+            //    System.out.println(newHunter.toString());
+            //    System.out.println(newHunter);
+            //}
+    }
 }

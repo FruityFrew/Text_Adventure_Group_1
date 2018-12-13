@@ -4,7 +4,7 @@ import Text_Adventure.Items.Consumable;
 import Text_Adventure.Items.Item;
 
 public class Hero extends Character {
-    Item[] backpack = new Item[5];
+    public static Item[] backpack = new Item[5];
 
     public Hero(int heroNumber) {
         switch(heroNumber) {

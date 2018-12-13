@@ -5,6 +5,9 @@ import Text_Adventure.menuDevelopment.SavedGame;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * Author: Alex Oachesu
+ */
 public class Main  {
     /**
      * Alex: A scanner object used throughout the game

@@ -30,6 +30,7 @@ public class Method  {
     //I added some imports as well
 
     /**
+     * Alex: this method is used in the beginning of the game
      * method chooseGameLevel
      */
     public void chooseGameLevel() {
@@ -85,6 +86,9 @@ public class Method  {
         //I added some imports as well
     }
 
+    /**
+     * Alex: this method is used to get and store the player name in the beginning of the game
+     */
     public void playerName() {
 
         System.out.println("The cellar of the Vicarage of Borgvattnet .." +
@@ -94,7 +98,6 @@ public class Method  {
         System.out.println("What is your name traveler?");
         Main.playerName= in.nextLine();
     }
-
 
     /**
      * Alex: This enum does not need to be used
@@ -114,9 +117,8 @@ public class Method  {
 
 
 
-
-
         /**
+         * Alex
          * constructor playerType
          * @param name
          * @param roomIndex
@@ -224,6 +226,7 @@ public class Method  {
     }
 
     /**
+     * Alex
      * method choosePlayerType
      */
     public void choosePlayerType() {
@@ -237,7 +240,7 @@ public class Method  {
         Main.choice = in.nextInt();
 
         /**
-         * Alex:Sunday the Hero and Character was not functional
+         * Alex:Sunday the Hero and Character was not functional, so I created this enum for use
          */
         switch (Main.choice) {
 
@@ -293,15 +296,16 @@ public class Method  {
      *       This method is followed by method gameOption
      */
     public int exitOptions(){
-        System.out.println("Go to the game options?" +
+        System.out.println("EXIT the game?" +
                 "\n[1]\tYES" +
-                "\n[2]\tContinue to play");
+                "\n[2]\tNO, go back to menu");
         Main.choice = Main.in.nextInt();
         switch (Main.choice) {
             case 1:
-                myMethod.gameOptions();
+                Main.choice =10;
                 break;
             case 2:
+                myMethod.gameOptions();
                 break;
             default:
                 System.out.println("Your fingers are shaking again?" +
@@ -317,7 +321,7 @@ public class Method  {
      * used during the player session
      */
     public void playOptions(){
-        System.out.println("\n[1]\tContinue\n[2]\tExit");
+        System.out.println("\n\n*        *****         *\n\n[1]\tContinue\n[2]\tExit\n\n*         *****       *\n\n");
         Main.choice= Main.in.nextInt();
         switch(Main.choice){
             case 1:
@@ -327,7 +331,7 @@ public class Method  {
                 break;
             default:
                 System.out.println("Your fingers are shaking again?" +
-                        "\nChose right!");
+                        "\nChose right!\n");
         }
     }
 
@@ -339,16 +343,16 @@ public class Method  {
     public void playGame(int gameOption) {
         //Robert: I will add bit code here
         //================================
-        Room room1 = myMap.rooms.get(0);
-        int newRoom = 0;
+        Room room1 = myMap.rooms.get(0);//Alex: This should be in main when starting the game ?
+        int newRoom = 0;//Alex: This should be in main when starting the game ?
         //================================
         //Robert: You will see bit code as well on the "go to a new room options"
         //I added some imports as well
 
-        System.out.println("Even is nothing welcoming in the cellar,.. \n\t****    WELCOME!    ****" +
-                "\n\nAnytime you want to see your options\n\t\t<< ENTER [10] >>\n");
+        System.out.println("\nEven if nothing welcoming in the cellar,.. \n\n\t****    WELCOME!    ****" +
+                "\n\nAnytime you want to see your options\n\t\t<< ENTER [10] >>\n\n");
         System.out.println("\n\tHealth = "+ Main.playerHealth+".\n" +
-                "--------------------------------------------");
+                "--------------------------------------------\n");
         switch (gameOption) {
             case 1: // START GAME
                 do {

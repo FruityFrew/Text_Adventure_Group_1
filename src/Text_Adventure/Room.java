@@ -231,7 +231,7 @@ public class Room {
             System.out.println("One door stands on the North side of the room");
         }
         if (E!=0) {
-            System.out.println("you can see one door on the East side of the room");
+            System.out.println("You can see one door on the East side of the room");
         }
         if (S!=0) {
             System.out.println("It seems that there is a room on the South side of the room");
@@ -615,9 +615,10 @@ public class Room {
         return index / 10;
     } // it works
 
-    public int yFromIndex(int index){
-        return index - ((index / 10) * 10);
-    } //it works
+    public int yFromIndex(int index){ return index%10; //Alex: I apologize Robert for making this change. your formula is always 0.
+  //              index - ((index / 10) * 10);//Robert: it works
+    }
+
 
     public int moveNorth(int x, int y, int level){
         if (dCheckNorth(x,y,level)){

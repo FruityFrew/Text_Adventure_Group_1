@@ -39,6 +39,11 @@ public class Main  {
 
     public static void main(String[] args) {
 
+        //        Method.displayScore(); // Testing- this displays score
+        //        Method.highScore();    // This enters score into the .txt file
+        //        Method.SortScore();    // This puts highest score on top
+        //        Method.displayScore(); // This displays score - again for testing to see if new entry works
+
         playerHealth=Method.playerType.PLAYER.getHealth();
         //Map myMap = new Map(5);
         //myMap.generateMap(5);

@@ -38,20 +38,24 @@ public class Main  {
      */
 
     public static void main(String[] args) {
-        Method.highScore();
-        Method.SortScore();
 
-//        playerHealth=Method.playerType.PLAYER.getHealth();
-//        //Map myMap = new Map(5);
-//        //myMap.generateMap(5);
-//        //myMap.printMap();
-//
-//        do{
-//            myMethod.playerName();
-//            myMethod.choosePlayerType();
-//            myMethod.chooseGameLevel();
-//            myMethod.playGame(myMethod.gameOptions());
-//
-//        }while(Main.choice!= 10);
+//        Method.displayScore(); // Testing- this displays score
+//        Method.highScore();    // This enters score into the .txt file
+//        Method.SortScore();    // This puts highest score on top
+//        Method.displayScore(); // This displays score - again for testing to see if new entry works
+
+
+        playerHealth=Method.playerType.PLAYER.getHealth();
+        //Map myMap = new Map(5);
+        //myMap.generateMap(5);
+        //myMap.printMap();
+
+        do{
+            myMethod.playerName();
+            myMethod.choosePlayerType();
+            myMethod.chooseGameLevel();
+            myMethod.playGame(myMethod.gameOptions());
+
+        }while(Main.choice!= 10);
     }
 }

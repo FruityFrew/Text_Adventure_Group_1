@@ -628,6 +628,7 @@ public class Method {
             //    System.out.println(newHunter);
             //}
     }
+
     public static void highScore() {
         Scanner input = new Scanner(System.in);
         PrintWriter scoreExport = null;
@@ -652,7 +653,8 @@ public class Method {
         scoreExport.close();
 
     }
-    public static void SortScore(){
+
+    public static void SortScore() {
         BufferedReader BR = null;
         BufferedWriter BW = null;
         String fileName = ("HighScoresList.txt");
@@ -663,7 +665,7 @@ public class Method {
             BR = new BufferedReader(new FileReader("HighScoresList.txt"));
 
             String entry = BR.readLine(); //Reads each line and enters into an arrayList
-            while (entry != null){
+            while (entry != null) {
                 scores.add(entry);
                 entry = BR.readLine();  //Reads next line
             }
@@ -671,26 +673,42 @@ public class Method {
             Collections.sort(scores, Collections.reverseOrder());
             //BW writes changes to the "HighScoresList.txt". Changes being sorted entries in descending order.
             BW = new BufferedWriter(new FileWriter("HighScoresList.txt"));
-            for (String line : scores){
+            for (String line : scores) {
                 BW.write(line);
                 BW.newLine();
             }
-        } catch (IOException e){
+        } catch (IOException e) {
             System.out.println(e.toString());
             System.out.println("Could not find file " + fileName);
         } finally {
             // Buffer Reader/Writer close and exception handling
             try {
-                if (BR != null){
+                if (BR != null) {
                     BR.close();
                 }
-                if (BW != null){
+                if (BW != null) {
                     BW.close();
                 }
-            } catch (IOException e){
+            } catch (IOException e) {
                 System.out.println("Opps! Something went wrong!");
                 System.out.println(e.toString());
             }
+        }
+    }
+
+    public static void displayScore() {
+        try {
+            BufferedReader in = new BufferedReader(new FileReader("HighScoresList.txt"));
+            String scoreDisplay;
+            int i = 1;
+            while ((scoreDisplay = in.readLine()) != null) {
+                System.out.println(i + ". " + scoreDisplay);
+                i++;
+            }
+            in.close();
+        } catch (IOException e) {
+            System.out.println(e.toString());
+            System.out.println("Could not find file HighScoresList.txt");
         }
     }
 }

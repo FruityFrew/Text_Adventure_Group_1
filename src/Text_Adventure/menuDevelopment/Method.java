@@ -473,7 +473,7 @@ public class Method {
                                     //System.out.println("the method changeRoom will be called");
                                     //Robert: I will add bit code here and I commented out a line of code
                                     //================================
-                                    newRoom = room1.changeRoom();
+                                    newRoom = room1.changeRoom(hero1);
                                     room1 = myMap.rooms.get(newRoom);
 
                                     //================================

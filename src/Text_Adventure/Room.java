@@ -1,5 +1,6 @@
 package Text_Adventure;
 
+import Text_Adventure.Characters.Hero;
 import Text_Adventure.Characters.Monster;
 import Text_Adventure.Items.Consumable;
 import Text_Adventure.Items.Item;
@@ -418,7 +419,7 @@ public class Room {
         return randomDrink;
     }
 
-    public int changeRoom(){
+    public int changeRoom(Hero hero){
         boolean running = true;
         int x = this.position[0];
         int y = this.position[1];
@@ -454,8 +455,15 @@ public class Room {
                         if (doors.get(0).isLocked()){
                             System.out.println("The door is locked and it is written on the lock the " +
                                     "number " + doors.get(0).getType());
-                            System.out.println("I will unlock the door for you");
-                            doors.get(0).setLocked(false);
+                            System.out.println("You are looking on your keys to finding a suitable key");
+                            for (Key key:hero.keyRing){
+                                if (doors.get(0).getType() == key.getType()){
+                                    doors.get(0).setLocked(false);
+                                    System.out.println("You found a suitable key!");
+                                    System.out.println("You are unlocking the door...");
+                                    break;
+                                }
+                            }
                         } else {
                             index = doors.get(0).getRoom();
                             running = false;
@@ -468,8 +476,15 @@ public class Room {
                         if (doors.get(1).isLocked()){
                             System.out.println("The door is locked and it is written on the lock the " +
                                     "number " + doors.get(1).getType());
-                            System.out.println("I will unlock the door for you");
-                            doors.get(1).setLocked(false);
+                            System.out.println("You are looking on your keys to finding a suitable key");
+                            for (Key key:hero.keyRing){
+                                if (doors.get(1).getType() == key.getType()){
+                                    doors.get(1).setLocked(false);
+                                    System.out.println("You found a suitable key!");
+                                    System.out.println("You are unlocking the door...");
+                                    break;
+                                }
+                            }
                         } else {
                             index = doors.get(1).getRoom();
                             running = false;
@@ -482,8 +497,15 @@ public class Room {
                         if (doors.get(2).isLocked()){
                             System.out.println("The door is locked and it is written on the lock the " +
                                     "number " + doors.get(2).getType());
-                            System.out.println("I will unlock the door for you");
-                            doors.get(2).setLocked(false);
+                            System.out.println("You are looking on your keys to finding a suitable key");
+                            for (Key key:hero.keyRing){
+                                if (doors.get(2).getType() == key.getType()){
+                                    doors.get(2).setLocked(false);
+                                    System.out.println("You found a suitable key!");
+                                    System.out.println("You are unlocking the door...");
+                                    break;
+                                }
+                            }
                         } else {
                             index = doors.get(2).getRoom();
                             running = false;
@@ -496,8 +518,15 @@ public class Room {
                         if (doors.get(3).isLocked()){
                             System.out.println("The door is locked and it is written on the lock the " +
                                     "number " + doors.get(3).getType());
-                            System.out.println("I will unlock the door for you");
-                            doors.get(3).setLocked(false);
+                            System.out.println("You are looking on your keys to finding a suitable key");
+                            for (Key key:hero.keyRing){
+                                if (doors.get(3).getType() == key.getType()){
+                                    doors.get(3).setLocked(false);
+                                    System.out.println("You found a suitable key!");
+                                    System.out.println("You are unlocking the door...");
+                                    break;
+                                }
+                            }
                         } else {
                             index = doors.get(3).getRoom();
                             running = false;

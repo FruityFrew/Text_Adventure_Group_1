@@ -53,6 +53,11 @@ public class Key extends Item {
         return keyType;
     }
 
+    //Robert: I added this getter because I needed it
+    public int getType() {
+        return type;
+    }
+
     /* public int getDoorId() {              // Getter and setter for doorId
         return doorId;
     }

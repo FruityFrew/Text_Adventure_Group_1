@@ -1,17 +1,19 @@
 package Text_Adventure.menuDevelopment;
 
-import java.sql.SQLOutput;
-import java.util.Scanner;
 import Text_Adventure.Characters.Character;
 import Text_Adventure.Characters.Hero;
-import Text_Adventure.Characters.Monster;
 import Text_Adventure.Items.Consumable;
 import Text_Adventure.Items.Item;
 import Text_Adventure.Items.Weapon;
 import Text_Adventure.Main;
 import Text_Adventure.Map;
 import Text_Adventure.Room;
+
+import java.io.*;
 import java.security.SecureRandom;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Scanner;
 
 public class Method {
 
@@ -625,5 +627,70 @@ public class Method {
             //    System.out.println(newHunter.toString());
             //    System.out.println(newHunter);
             //}
+    }
+    public static void highScore() {
+        Scanner input = new Scanner(System.in);
+        PrintWriter scoreExport = null;
+
+        int highScore;
+        String playerName;
+        String fileName = ("HighScoresList.txt");
+        try {
+            scoreExport = new PrintWriter(new FileWriter(fileName, true));
+        } catch (IOException ex) {
+            System.out.println(ex.toString());
+            System.out.println("Could not find file " + fileName);
+        }
+        System.out.println("Congratulations, your score was the highest!\n");
+
+        System.out.print("DEBUG: Enter score ");
+        highScore = input.nextInt();
+        System.out.print("DEBUG: Enter name: ");
+        playerName = input.next();
+
+        scoreExport.println(highScore + " - " + playerName);
+        scoreExport.close();
+
+    }
+    public static void SortScore(){
+        BufferedReader BR = null;
+        BufferedWriter BW = null;
+        String fileName = ("HighScoresList.txt");
+        //Arraylist that holds scores
+        ArrayList<String> scores = new ArrayList<String>();
+        try {
+            //BR reads entries from the file "HighScoresList.txt"
+            BR = new BufferedReader(new FileReader("HighScoresList.txt"));
+
+            String entry = BR.readLine(); //Reads each line and enters into an arrayList
+            while (entry != null){
+                scores.add(entry);
+                entry = BR.readLine();  //Reads next line
+            }
+            //Score sorting in an arraylist
+            Collections.sort(scores, Collections.reverseOrder());
+            //BW writes changes to the "HighScoresList.txt". Changes being sorted entries in descending order.
+            BW = new BufferedWriter(new FileWriter("HighScoresList.txt"));
+            for (String line : scores){
+                BW.write(line);
+                BW.newLine();
+            }
+        } catch (IOException e){
+            System.out.println(e.toString());
+            System.out.println("Could not find file " + fileName);
+        } finally {
+            // Buffer Reader/Writer close and exception handling
+            try {
+                if (BR != null){
+                    BR.close();
+                }
+                if (BW != null){
+                    BW.close();
+                }
+            } catch (IOException e){
+                System.out.println("Opps! Something went wrong!");
+                System.out.println(e.toString());
+            }
+        }
     }
 }

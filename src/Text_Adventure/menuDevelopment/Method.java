@@ -486,10 +486,11 @@ public class Method {
                                     //        "\nYou just drunk this black coffee... hm, if you can call this dark liquid ..'coffee'!\n" +
                                     //        "---------------------------------------------------------------------------------------\n");
 
-                                    //robert: I temporarely disabled this line bellow me.
+                                    //robert: I disabled this line bellow me.
                                     //hero1.addItemToBackpack(room1.getItem());
                                     //robert: I added this line bellow me.
                                     hero1.pickItem(room1.getItem());
+                                    room1.setItem(null);
                                     //Main.playerHealth += 50;// the Consumable Class is irrelevant in this form, it needs to be completed with different types of items, as we decided.
                                     // Coffee = 50 health points.
                                     System.out.println("\n----------------------------------------\n\tYour health is now " + Main.playerHealth + "." +

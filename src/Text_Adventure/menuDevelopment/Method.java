@@ -703,4 +703,23 @@ public class Method {
             }
         }
     }
+    /**
+     * Nemanja: This prints HighScoresList.txt file content in the console.
+     *          It is used if user wants to see current score table.
+     */
+    public static void displayScore() {
+        try {
+            BufferedReader in = new BufferedReader(new FileReader("HighScoresList.txt"));
+            String scoreDisplay;
+            int i = 1;
+            while ((scoreDisplay = in.readLine()) != null) {
+                System.out.println(i + ". " + scoreDisplay);
+                i++;
+            }
+            in.close();
+        } catch (IOException e) {
+            System.out.println(e.toString());
+            System.out.println("Could not find file HighScoresList.txt");
+        }
+    }
 }

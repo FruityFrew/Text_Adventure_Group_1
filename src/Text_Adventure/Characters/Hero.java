@@ -73,8 +73,8 @@ public class Hero extends Character {
     //Robert: This method picks the item and checks if the item is going to the keyring or to inventory
     public void pickItem(Item entity){
         if (entity instanceof Key ){
-            Key testKey = new Key("TestKey");
-            addKeyToKeyRing(testKey);
+            //Key testKey = new Key("TestKey");
+            addKeyToKeyRing((Key) entity);
         } else {
             addItemToBackpack(entity);
         }

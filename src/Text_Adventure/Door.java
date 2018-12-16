@@ -135,7 +135,7 @@ public class Door {
      */
     public int randomType(){
         Random rand = new Random();
-        int randLevel = rand.nextInt(6);
+        int randLevel = rand.nextInt(3);
         int doorType=randLevel;
 
         return doorType;

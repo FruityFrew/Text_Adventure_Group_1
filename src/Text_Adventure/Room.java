@@ -241,7 +241,11 @@ public class Room {
         System.out.println("You are looking for items...");
         if (this.item != null) {
             System.out.println("In the corner seems to be an item,");
-            System.out.println("It is a " + this.item.getName() + "!");
+            if (this.item instanceof Key ){
+                System.out.println("It is a " + ((Key) this.item).getName2() + "!");
+            } else {
+                System.out.println("It is a " + this.item.getName() + "!");
+            }
         } else {
             System.out.println("you didn't found something useful.");
         }

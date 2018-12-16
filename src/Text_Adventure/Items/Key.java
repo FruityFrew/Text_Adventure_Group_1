@@ -8,15 +8,20 @@ import java.util.Random;
 public class Key extends Item {
     private int type ;
     private boolean active;
+    private String name2; //Robert: I added this attribute
     //private int doorId;// More advanced ( if it belongs only to one specific door)
 
     /**
      * Nemanja: This is the constructor of the Key object.
      */
+    //Robert: I added a line of code in the constructor. I had to do so.
     public Key(String name) {
         super(name);
         this.type = randomType();
+        //Robert: I added this line below
+        this.name2 = "small rusty key with the number " + this.type + " written on it";
     }
+
 
     /**
      * Nemanja: This returns the type of the Key object.
@@ -47,7 +52,7 @@ public class Key extends Item {
 
     public int randomType(){
         Random rand = new Random();
-        int randLevel = rand.nextInt(6);
+        int randLevel = rand.nextInt(3);
         int keyType=randLevel;
 
         return keyType;
@@ -66,4 +71,9 @@ public class Key extends Item {
         this.doorId = doorId;
     }
     */
+
+    //Robert: I added this getter because I need it.
+    public String getName2() {
+        return name2;
+    }
 }

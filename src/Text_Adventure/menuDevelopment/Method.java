@@ -1,5 +1,8 @@
 package Text_Adventure.menuDevelopment;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.SQLOutput;
 import java.util.Scanner;
 import Text_Adventure.Characters.Character;
@@ -625,5 +628,34 @@ public class Method {
             //    System.out.println(newHunter.toString());
             //    System.out.println(newHunter);
             //}
+    }
+
+    /**
+     * Nemanja: This creates the HighScoresList.txt file if the file does not exist.
+     *          It also enters new scores into the HighScoresList.txt file and stores it.
+     */
+    public static void highScore() {
+        Scanner input = new Scanner(System.in);
+        PrintWriter scoreExport = null;
+
+        int highScore;
+        String playerName;
+        String fileName = ("HighScoresList.txt");
+        try {
+            scoreExport = new PrintWriter(new FileWriter(fileName, true));
+        } catch (IOException ex) {
+            System.out.println(ex.toString());
+            System.out.println("Could not find file " + fileName);
+        }
+        System.out.println("Congratulations, your score was the highest!\n");
+
+        System.out.print("DEBUG: Enter score ");
+        highScore = input.nextInt();
+        System.out.print("DEBUG: Enter name: ");
+        playerName = input.next();
+
+        scoreExport.println(highScore + " - " + playerName);
+        scoreExport.close();
+
     }
 }

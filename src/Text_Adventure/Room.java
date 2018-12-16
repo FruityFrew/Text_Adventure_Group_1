@@ -25,6 +25,7 @@ public class Room {
     private int W;
     private Item item;
     private Monster monster;
+    private String wall;
     private int spawnMonsterRate = 25;
     private int spawnItemRate = 75;
     private int index; //this is the way to reffer to the room, (the position does not works. this is not DataBase :) )
@@ -67,6 +68,7 @@ public class Room {
             this.item = null;
         }
         generateDoors(x, y, level, N, E, S, W);
+        generateWalls();
     }
 
     /**
@@ -197,18 +199,8 @@ public class Room {
      * Robert: This is the method that prints the description of the room
      */
     public void describeWalls() {
+        System.out.println(this.wall);
         int n = random.nextInt(100);
-        if (n <= 25){
-            System.out.println("The walls are made by gray stone, and they look old.");
-        }else if (n <= 50){
-            System.out.println("The walls are seem to be decorated by human skulls.");
-        }else if (n <= 75){
-            System.out.println("The walls have shelves with old books and idols of Cthulu.");
-        } else {
-            System.out.println("The walls are looking dirty and smelly.");
-        }
-
-        n = random.nextInt(100);
         if (n <= 25){
             System.out.println("What even possible can go wrong?");
         }else if (n <= 50){
@@ -554,6 +546,19 @@ public class Room {
         }else {
             Door a = new Door(false, positionToIndex(x,y));
             doors.add(3, a);
+        }
+    }
+
+    public void generateWalls(){
+        int n = random.nextInt(100);
+        if (n <= 25){
+            this.wall = "The walls are made by gray stone, and they look old.";
+        }else if (n <= 50){
+            this.wall = "The walls are seem to be decorated by human skulls.";
+        }else if (n <= 75){
+            this.wall = "The walls have shelves with old books and idols of Cthulu.";
+        } else {
+            this.wall = "The walls are looking dirty and smelly.";
         }
     }
 

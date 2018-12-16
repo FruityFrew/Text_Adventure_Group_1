@@ -65,7 +65,7 @@ public class Hero extends Character {
         System.out.println("Keyring:");
         int count = 1;
         for(Key a: keyRing) {
-            System.out.println("[" +count + "]: " + a.getName());
+            System.out.println("[" +count + "]: " + a.getName2());
             count++;
         }
     }

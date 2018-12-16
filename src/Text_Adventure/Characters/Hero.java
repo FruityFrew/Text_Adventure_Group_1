@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class Hero extends Character {
     public static Item[] backpack = new Item[5];
-    public static ArrayList<Key> keyRing = new ArrayList<>(); //Robert: I had to implement a keyring. i hope it is ok :)
+    public ArrayList<Key> keyRing = new ArrayList<>(); //Robert: I had to implement a keyring. i hope it is ok :)
 
     public Hero(int heroNumber) {
         switch(heroNumber) {
@@ -65,8 +65,18 @@ public class Hero extends Character {
         System.out.println("Keyring:");
         int count = 1;
         for(Key a: keyRing) {
-            System.out.printf("[" +count + "]: " + a.getName());
+            System.out.println("[" +count + "]: " + a.getName());
             count++;
+        }
+    }
+
+    //Robert: This method picks the item and checks if the item is going to the keyring or to inventory
+    public void pickItem(Item entity){
+        if (entity instanceof Key ){
+            Key testKey = new Key("TestKey");
+            addKeyToKeyRing(testKey);
+        } else {
+            addItemToBackpack(entity);
         }
     }
 
@@ -89,7 +99,7 @@ public class Hero extends Character {
 
     //Robert: I had to add this here. i know that I could use a setter for this one
     //but I wish to make the inventory and keyring methods to follow the same naming conventions.
-    public void addItemToKeyRing(Key key) {
+    public void addKeyToKeyRing(Key key) {
         keyRing.add(key);
     }
 

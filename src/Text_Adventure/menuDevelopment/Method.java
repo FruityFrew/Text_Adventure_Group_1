@@ -1,9 +1,9 @@
 package Text_Adventure.menuDevelopment;
 
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.sql.SQLOutput;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 import Text_Adventure.Characters.Character;
 import Text_Adventure.Characters.Hero;
@@ -657,5 +657,50 @@ public class Method {
         scoreExport.println(highScore + " - " + playerName);
         scoreExport.close();
 
+    }
+    /**
+     * Nemanja: This sorts entries in the HighScoresList.txt file.
+     *          It puts highest score on top.
+     */
+    public static void SortScore() {
+        BufferedReader BR = null;
+        BufferedWriter BW = null;
+        String fileName = ("HighScoresList.txt");
+        //Arraylist that holds scores
+        ArrayList<String> scores = new ArrayList<String>();
+        try {
+            //BR reads entries from the file "HighScoresList.txt"
+            BR = new BufferedReader(new FileReader("HighScoresList.txt"));
+
+            String entry = BR.readLine(); //Reads each line and enters into an arrayList
+            while (entry != null) {
+                scores.add(entry);
+                entry = BR.readLine();  //Reads next line
+            }
+            //Score sorting in an arraylist
+            Collections.sort(scores, Collections.reverseOrder());
+            //BW writes changes to the "HighScoresList.txt". Changes being sorted entries in descending order.
+            BW = new BufferedWriter(new FileWriter("HighScoresList.txt"));
+            for (String line : scores) {
+                BW.write(line);
+                BW.newLine();
+            }
+        } catch (IOException e) {
+            System.out.println(e.toString());
+            System.out.println("Could not find file " + fileName);
+        } finally {
+            // Buffer Reader/Writer close and exception handling
+            try {
+                if (BR != null) {
+                    BR.close();
+                }
+                if (BW != null) {
+                    BW.close();
+                }
+            } catch (IOException e) {
+                System.out.println("Opps! Something went wrong!");
+                System.out.println(e.toString());
+            }
+        }
     }
 }

@@ -2,9 +2,13 @@ package Text_Adventure.Characters;
 
 import Text_Adventure.Items.Consumable;
 import Text_Adventure.Items.Item;
+import Text_Adventure.Items.Key;
+
+import java.util.ArrayList;
 
 public class Hero extends Character {
     public static Item[] backpack = new Item[5];
+    public ArrayList<Key> keyRing = new ArrayList<>(); //Robert: I had to implement a keyring. i hope it is ok :)
 
     public Hero(int heroNumber) {
         switch(heroNumber) {
@@ -54,6 +58,28 @@ public class Hero extends Character {
         }
     }
 
+    //Robert: I had to add this here. i know that I could use a setter for this one,
+    // (ok it is bit more complex than a simple getter),
+    //but I wish to make the inventory and keyring methods to follow the same naming conventions.
+    public void viewContentsOfKeyRing() {
+        System.out.println("Keyring:");
+        int count = 1;
+        for(Key a: keyRing) {
+            System.out.println("[" +count + "]: " + a.getName2());
+            count++;
+        }
+    }
+
+    //Robert: This method picks the item and checks if the item is going to the keyring or to inventory
+    public void pickItem(Item entity){
+        if (entity instanceof Key ){
+            //Key testKey = new Key("TestKey");
+            addKeyToKeyRing((Key) entity);
+        } else {
+            addItemToBackpack(entity);
+        }
+    }
+
     public void addItemToBackpack(Item thing) {
 
         int countIndex = 0;
@@ -69,6 +95,12 @@ public class Hero extends Character {
         if(countIndex > 4) {
             System.out.println("Your backpack is full!!!");
         }
+    }
+
+    //Robert: I had to add this here. i know that I could use a setter for this one
+    //but I wish to make the inventory and keyring methods to follow the same naming conventions.
+    public void addKeyToKeyRing(Key key) {
+        keyRing.add(key);
     }
 
     public void consumeItem(Consumable food) {

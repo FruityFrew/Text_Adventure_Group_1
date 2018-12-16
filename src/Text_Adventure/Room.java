@@ -1,5 +1,6 @@
 package Text_Adventure;
 
+import Text_Adventure.Characters.Hero;
 import Text_Adventure.Characters.Monster;
 import Text_Adventure.Items.Consumable;
 import Text_Adventure.Items.Item;
@@ -25,6 +26,7 @@ public class Room {
     private int W;
     private Item item;
     private Monster monster;
+    private String wall;
     private int spawnMonsterRate = 25;
     private int spawnItemRate = 75;
     private int index; //this is the way to reffer to the room, (the position does not works. this is not DataBase :) )
@@ -67,6 +69,7 @@ public class Room {
             this.item = null;
         }
         generateDoors(x, y, level, N, E, S, W);
+        generateWalls();
     }
 
     /**
@@ -197,18 +200,8 @@ public class Room {
      * Robert: This is the method that prints the description of the room
      */
     public void describeWalls() {
+        System.out.println(this.wall);
         int n = random.nextInt(100);
-        if (n <= 25){
-            System.out.println("The walls are made by gray stone, and they look old.");
-        }else if (n <= 50){
-            System.out.println("The walls are seem to be decorated by human skulls.");
-        }else if (n <= 75){
-            System.out.println("The walls have shelves with old books and idols of Cthulu.");
-        } else {
-            System.out.println("The walls are looking dirty and smelly.");
-        }
-
-        n = random.nextInt(100);
         if (n <= 25){
             System.out.println("What even possible can go wrong?");
         }else if (n <= 50){
@@ -248,7 +241,11 @@ public class Room {
         System.out.println("You are looking for items...");
         if (this.item != null) {
             System.out.println("In the corner seems to be an item,");
-            System.out.println("It is a " + this.item.getName() + "!");
+            if (this.item instanceof Key ){
+                System.out.println("It is a " + ((Key) this.item).getName2() + "!");
+            } else {
+                System.out.println("It is a " + this.item.getName() + "!");
+            }
         } else {
             System.out.println("you didn't found something useful.");
         }
@@ -426,7 +423,7 @@ public class Room {
         return randomDrink;
     }
 
-    public int changeRoom(){
+    public int changeRoom(Hero hero){
         boolean running = true;
         int x = this.position[0];
         int y = this.position[1];
@@ -462,8 +459,15 @@ public class Room {
                         if (doors.get(0).isLocked()){
                             System.out.println("The door is locked and it is written on the lock the " +
                                     "number " + doors.get(0).getType());
-                            System.out.println("I will unlock the door for you");
-                            doors.get(0).setLocked(false);
+                            System.out.println("You are looking on your keys to finding a suitable key");
+                            for (Key key:hero.keyRing){
+                                if (doors.get(0).getType() == key.getType()){
+                                    doors.get(0).setLocked(false);
+                                    System.out.println("You found a suitable key!");
+                                    System.out.println("You are unlocking the door...");
+                                    break;
+                                }
+                            }
                         } else {
                             index = doors.get(0).getRoom();
                             running = false;
@@ -476,8 +480,15 @@ public class Room {
                         if (doors.get(1).isLocked()){
                             System.out.println("The door is locked and it is written on the lock the " +
                                     "number " + doors.get(1).getType());
-                            System.out.println("I will unlock the door for you");
-                            doors.get(1).setLocked(false);
+                            System.out.println("You are looking on your keys to finding a suitable key");
+                            for (Key key:hero.keyRing){
+                                if (doors.get(1).getType() == key.getType()){
+                                    doors.get(1).setLocked(false);
+                                    System.out.println("You found a suitable key!");
+                                    System.out.println("You are unlocking the door...");
+                                    break;
+                                }
+                            }
                         } else {
                             index = doors.get(1).getRoom();
                             running = false;
@@ -490,8 +501,15 @@ public class Room {
                         if (doors.get(2).isLocked()){
                             System.out.println("The door is locked and it is written on the lock the " +
                                     "number " + doors.get(2).getType());
-                            System.out.println("I will unlock the door for you");
-                            doors.get(2).setLocked(false);
+                            System.out.println("You are looking on your keys to finding a suitable key");
+                            for (Key key:hero.keyRing){
+                                if (doors.get(2).getType() == key.getType()){
+                                    doors.get(2).setLocked(false);
+                                    System.out.println("You found a suitable key!");
+                                    System.out.println("You are unlocking the door...");
+                                    break;
+                                }
+                            }
                         } else {
                             index = doors.get(2).getRoom();
                             running = false;
@@ -504,8 +522,15 @@ public class Room {
                         if (doors.get(3).isLocked()){
                             System.out.println("The door is locked and it is written on the lock the " +
                                     "number " + doors.get(3).getType());
-                            System.out.println("I will unlock the door for you");
-                            doors.get(3).setLocked(false);
+                            System.out.println("You are looking on your keys to finding a suitable key");
+                            for (Key key:hero.keyRing){
+                                if (doors.get(3).getType() == key.getType()){
+                                    doors.get(3).setLocked(false);
+                                    System.out.println("You found a suitable key!");
+                                    System.out.println("You are unlocking the door...");
+                                    break;
+                                }
+                            }
                         } else {
                             index = doors.get(3).getRoom();
                             running = false;
@@ -554,6 +579,19 @@ public class Room {
         }else {
             Door a = new Door(false, positionToIndex(x,y));
             doors.add(3, a);
+        }
+    }
+
+    public void generateWalls(){
+        int n = random.nextInt(100);
+        if (n <= 25){
+            this.wall = "The walls are made by gray stone, and they look old.";
+        }else if (n <= 50){
+            this.wall = "The walls are seem to be decorated by human skulls.";
+        }else if (n <= 75){
+            this.wall = "The walls have shelves with old books and idols of Cthulu.";
+        } else {
+            this.wall = "The walls are looking dirty and smelly.";
         }
     }
 

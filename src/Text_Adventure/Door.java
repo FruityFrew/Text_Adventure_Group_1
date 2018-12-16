@@ -103,11 +103,12 @@ public class Door {
      *
      * @return boolean
      */
+    //I modified the lockrate "randLock" from 19 to 18 to make the game bit more playable
     public boolean randomLocked() {
         boolean lockedBool = false;
         Random rand = new Random();
         int randLock = rand.nextInt(20) + 1;
-        if (randLock > 19){
+        if (randLock > 18){
             lockedBool = true;
         }
         return lockedBool;
@@ -135,7 +136,7 @@ public class Door {
      */
     public int randomType(){
         Random rand = new Random();
-        int randLevel = rand.nextInt(6);
+        int randLevel = rand.nextInt(3);
         int doorType=randLevel;
 
         return doorType;

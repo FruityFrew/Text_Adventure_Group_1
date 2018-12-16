@@ -466,13 +466,14 @@ public class Method {
                                             "\nThe h=method change item will be called");
                                     //robert: I added this line bellow me.
                                     hero1.viewContentsOfBackpack();
+                                    hero1.viewContentsOfKeyRing();
                                     break;
                                 case 4:
 
                                     //System.out.println("the method changeRoom will be called");
                                     //Robert: I will add bit code here and I commented out a line of code
                                     //================================
-                                    newRoom = room1.changeRoom();
+                                    newRoom = room1.changeRoom(hero1);
                                     room1 = myMap.rooms.get(newRoom);
 
                                     //================================
@@ -485,8 +486,11 @@ public class Method {
                                     //        "\nYou just drunk this black coffee... hm, if you can call this dark liquid ..'coffee'!\n" +
                                     //        "---------------------------------------------------------------------------------------\n");
 
+                                    //robert: I disabled this line bellow me.
+                                    //hero1.addItemToBackpack(room1.getItem());
                                     //robert: I added this line bellow me.
-                                    hero1.addItemToBackpack(room1.getItem());
+                                    hero1.pickItem(room1.getItem());
+                                    room1.setItem(null);
                                     //Main.playerHealth += 50;// the Consumable Class is irrelevant in this form, it needs to be completed with different types of items, as we decided.
                                     // Coffee = 50 health points.
                                     System.out.println("\n----------------------------------------\n\tYour health is now " + Main.playerHealth + "." +

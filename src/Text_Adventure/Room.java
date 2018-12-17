@@ -28,9 +28,10 @@ public class Room {
     private Monster monster;
     private String wall;
     private int spawnMonsterRate = 25;
-    private int spawnItemRate = 75;
+    private int spawnItemRate = 90;
     private int index; //this is the way to reffer to the room, (the position does not works. this is not DataBase :) )
     private int dLevel; //Difficulty level. This takes the difficulty level of the Map object for practical reasons.
+    private boolean exit = false; //this indicates if the room has a trap door exit or not.
 
     /**
      * Robert: This is the constructor for Room objects
@@ -44,10 +45,10 @@ public class Room {
         this.position[0] = x;
         this.position[1] = y;
         while ((N < 1)&&(E < 1)&&(S < 1)&&(W < 1)){
-            if(dCheckNorth(x, y, level)){ this.N = random.nextInt(5); }
-            if(dCheckEast(x, y, level)){ this.E = random.nextInt(5); }
-            if(dCheckSouth(x, y, level)){ this.S = random.nextInt(5); }
-            if(dCheckWest(x, y, level)){ this.W = random.nextInt(5); }
+            if(dCheckNorth(x, y, level)){ this.N = random.nextInt(7); }
+            if(dCheckEast(x, y, level)){ this.E = random.nextInt(7); }
+            if(dCheckSouth(x, y, level)){ this.S = random.nextInt(7); }
+            if(dCheckWest(x, y, level)){ this.W = random.nextInt(7); }
         }
         int n = random.nextInt(100);
         if (n < spawnMonsterRate){
@@ -59,7 +60,7 @@ public class Room {
         n = random.nextInt(100);
         if (n < spawnItemRate){
             n = random.nextInt(100);
-            if (n >= 75){
+            if (n > 50){
                 this.item = new Key("Rusty key");
             } else {
                 this.item = getRandomDrink();
@@ -70,6 +71,10 @@ public class Room {
         }
         generateDoors(x, y, level, N, E, S, W);
         generateWalls();
+        int exitFactor = random.nextInt(level * level);
+        if (exitFactor >= ((level * level) - 3)){ //it gives more than one exit, for reasons of safety
+            exit = true;
+        }
     }
 
     /**
@@ -194,6 +199,14 @@ public class Room {
         describeDoors(N, E, S, W);
         describeItem();
         describeMonster();
+        if (exit == true){
+            System.out.println("You are looking up... There is a trap door");
+            System.out.println("it seems to lead outside. However is locked with 3 different locks");
+            System.out.println("The first lockpad writes the number 0 on it");
+            System.out.println("The second lockpad writes the number 1 on it");
+            System.out.println("The first lockpad writes the number 2 on it");
+            System.out.println("It seems that it needs 3 different keys to open...");
+        }
     }
 
     /**
@@ -423,6 +436,33 @@ public class Room {
         return randomDrink;
     }
 
+    public boolean doorToFreedom(Hero hero){
+        boolean result = false;
+        boolean lock0 = false;
+        boolean lock1 = false;
+        boolean lock2 = false;
+        for (Key key:hero.keyRing){
+            if ((key.getType()== 0)){
+                System.out.println("You succeded to unlock the lockpad with the number 0");
+             lock0 = true;
+            }
+            if ((key.getType()== 1)){
+                System.out.println("You succeded to unlock the lockpad with the number 1");
+                lock1 = true;
+            }
+            if ((key.getType()== 2)){
+                System.out.println("You succeded to unlock the lockpad with the number 2");
+                lock2 = true;
+            }
+        }
+        if (lock0 && lock1 && lock2){
+            System.out.println("You unlocked all the lockpads");
+            result = true;
+            System.out.println("You won the game");
+        }
+        return result;
+    }
+
     public int changeRoom(Hero hero){
         boolean running = true;
         int x = this.position[0];
@@ -448,7 +488,10 @@ public class Room {
             if (W>=1) {
                 System.out.println("Type 4 to use the West door");
             }
-            System.out.println("Type 5 to stay at the same room");
+            if (exit == true) {
+                System.out.println("Type 5 to try to use the trap door and escape");
+            }
+            System.out.println("Type 6 to stay at the same room");
 
             String choice1 = in.next();// the selected door will move the hero in the correct room
 
@@ -537,6 +580,19 @@ public class Room {
                         }
                     }
 
+                    break;
+
+                case "5":
+                    if (doorToFreedom(hero) == true){
+                        System.out.println(" ");
+                        System.out.println(" =============== ");
+                        System.out.println("You won the game!");
+                        System.out.println("You can stay around if you wish but you beat up the game" +
+                                "and you can leave whenever you wish");
+                        System.out.println("Thank you for playing");
+                        System.out.println(" =============== ");
+                        System.out.println(" ");
+                    }
                     break;
                 default:
                     index = positionToIndex(x,y);

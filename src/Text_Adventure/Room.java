@@ -31,6 +31,7 @@ public class Room {
     private int spawnItemRate = 75;
     private int index; //this is the way to reffer to the room, (the position does not works. this is not DataBase :) )
     private int dLevel; //Difficulty level. This takes the difficulty level of the Map object for practical reasons.
+    private boolean exit = false; //this indicates if the room has a trap door exit or not.
 
     /**
      * Robert: This is the constructor for Room objects
@@ -70,6 +71,10 @@ public class Room {
         }
         generateDoors(x, y, level, N, E, S, W);
         generateWalls();
+        int exitFactor = random.nextInt(level * level);
+        if (exitFactor >= ((level * level) - 3)){ //it gives more than one exit, for reasons of safety
+            exit = true;
+        }
     }
 
     /**
@@ -194,6 +199,14 @@ public class Room {
         describeDoors(N, E, S, W);
         describeItem();
         describeMonster();
+        if (exit == true){
+            System.out.println("You are looking up... There is a trap door");
+            System.out.println("it seems to lead outside. However is locked with 3 different locks");
+            System.out.println("The first lockpad writes the number 0 on it");
+            System.out.println("The second lockpad writes the number 1 on it");
+            System.out.println("The first lockpad writes the number 2 on it");
+            System.out.println("It seems that it needs 3 different keys to open...");
+        }
     }
 
     /**

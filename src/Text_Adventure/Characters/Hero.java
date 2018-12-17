@@ -9,6 +9,7 @@ import java.util.ArrayList;
 public class Hero extends Character {
     public static Item[] backpack = new Item[5];
     public ArrayList<Key> keyRing = new ArrayList<>(); //Robert: I had to implement a keyring. i hope it is ok :)
+    private int highscore = 0; //Robert: the highscore that the player collects.
 
     public Hero(int heroNumber) {
         switch(heroNumber) {
@@ -114,4 +115,15 @@ public class Hero extends Character {
         }
     }
 
+    //Robert: instead of normal setter for the highscore attribute
+    //it adds points to the current highscore. it does not set/reset the highscore
+    public void addHighScore(int points){
+        int currentHighscore = this.highscore;
+        this.highscore = currentHighscore + points;
+    }
+
+    //Robert: A normal Getter that I need for the highscore feature
+    public int getHighscore() {
+        return highscore;
+    }
 }

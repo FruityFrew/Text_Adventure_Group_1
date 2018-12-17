@@ -8,20 +8,29 @@ public class Character {
     private double hitChance;
     private int maxAttack;
     private int health;
+    private String playerType;
 
 
     public Character() {
-        this(null, 0, 0.5, 50, 200);
+        this(null, 0, 0.5, 50, 200," ");
     }
 
-    public Character(String name, int index, double hitChance, int attack, int health) {
+    public Character(String name, int index, double hitChance, int attack, int health, String playerType) {
         this.name = name;
         roomIndex = index;
         this.hitChance = hitChance;
         maxAttack = attack;
         this.health = health;
+        this.playerType=playerType;
     }
 
+    public String getPlayerType() {
+        return playerType;
+    }
+
+    public void setPlayerType(String playerType) {
+        this.playerType = playerType;
+    }
 
     /**
      * Setter for name

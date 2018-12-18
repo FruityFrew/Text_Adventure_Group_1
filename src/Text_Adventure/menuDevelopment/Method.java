@@ -70,7 +70,7 @@ public class Method {
                 "\nThe space that once served life is now home of the monsters.");
         System.out.println("What is your name traveler?");
 
-        hero1.setName(in.nextLine());
+        myMethod.hero1.setName(in.nextLine());
     }
 
     /**

@@ -39,7 +39,7 @@ public class Method {
         int diffLevel = 5;
         System.out.println("\nNow give me your hand to tell your options! " +
                 "\n\tYou have three lines ... " +
-                "\n[1]\ta short one " +
+                "\n[1]\ta short line " +
                 "\n[2]\tintersected with another, longer" +
                 "\n[3]\tAnd a last one, HA HA HA! This will hurt!  ");
         int choice = Main.in.nextInt();
@@ -313,7 +313,6 @@ public class Method {
             highScore(myMethod.hero1);
             SortScore();
         }
-
     }
 
     // Ahmed: Fight system that uses already exisisting damage generator in Character-class

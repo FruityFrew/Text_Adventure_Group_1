@@ -197,8 +197,8 @@ public class Method {
 
         myMethod.room1 = myMap.rooms.get(0);
 
-        System.out.println("\nEven if nothing welcoming in the cellar,.. \n\n\t****    WELCOME!    ****" +
-                "\n\nAnytime you want to see your options\n\t\t<< ENTER [10] >>\n\n");
+//        System.out.println("\nEven if nothing welcoming in the cellar,.. \n\n\t****    WELCOME!    ****" +
+//                "\n\nAnytime you want to see your options\n\t\t<< ENTER [10] >>\n\n");
 
         boolean runningmenu = true;
         while(runningmenu){
@@ -257,7 +257,7 @@ public class Method {
 //                myMethod.playGame(myMethod.gameOptions());
                     boolean running = true;
                     while (running){
-                        System.out.println("\n\tHealth = " + hero1.getHealth()+ ".\n" +
+                        System.out.println("\n\tHealth = " + hero1.getHealth()+ ".\nHighscore = " + myMethod.hero1.getHighscore() +
                                 "--------------------------------------------\n");
                         running = myMethod.gameInterface(myMap);
                     }
@@ -307,10 +307,11 @@ public class Method {
 
         if (hero1 != null){
             System.out.println("You are leaving the game");
-            System.out.println("Your name was: " + hero1.getName());
-            System.out.println("Your score was: " + hero1.getHighscore());
+            System.out.println("Your name was: " + myMethod.hero1.getName());
+            System.out.println("Your score was: " + myMethod.hero1.getHighscore());
             System.out.println("Your score will be saved to the list of highscores");
-            highScore(hero1);
+            highScore(myMethod.hero1);
+            SortScore();
         }
 
     }
@@ -402,7 +403,7 @@ public class Method {
             System.out.println(ex.toString());
             System.out.println("Could not find file " + fileName);
         }
-        System.out.println("Congratulations, your score was the highest!\n");
+        //System.out.println("Congratulations, your score was the highest!\n");
 
         //Robert: I did few changes here in order to make this thing work.
         //System.out.print("DEBUG: Enter score ");
@@ -498,13 +499,16 @@ public class Method {
         int choice = Main.in.nextInt();
         switch (choice) {
             case 1:
+                hero1.addHighScore(100);
                 myMethod.coinFight();
                 break;
             case 2:
-                hero1.setHealth(hero1.getHealth() - 25);
+                hero1.setHealth(hero1.getHealth() - (hero1.getHealth()/2));
+                System.out.println("You lost your half health but you avoided the monster");
+                myMethod.room1.setMonster(null);
+                hero1.addHighScore(50);
                 break;
             case 3:
-
                 hero1.viewContentsOfBackpack();
                 hero1.viewContentsOfKeyRing();
                 break;
@@ -513,13 +517,14 @@ public class Method {
                 newRoom = myMethod.room1.changeRoom(hero1);
                 System.out.println("You new room is: " + newRoom);
                 myMethod.room1 = myMap.rooms.get(newRoom);
-
+                myMethod.hero1.addHighScore(100);
                 break;
             case 5:
                 hero1.pickItem(myMethod.room1.getItem());
                 myMethod.room1.setItem(null);
-                System.out.println("\n----------------------------------------\n\tYour health is now " + hero1.getHealth() + "." +
-                        "\n----------------------------------------");
+                hero1.addHighScore(100);
+                //System.out.println("\n----------------------------------------\n\tYour health is now " + hero1.getHealth() + "." +
+                //        "\n----------------------------------------");
                 break;
 
             case 6:

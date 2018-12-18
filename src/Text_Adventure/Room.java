@@ -72,7 +72,7 @@ public class Room {
         generateDoors(x, y, level, N, E, S, W);
         generateWalls();
         int exitFactor = random.nextInt(level * level);
-        if (exitFactor >= ((level * level) - 3)){ //it gives more than one exit, for reasons of safety
+        if (exitFactor >= ((level * level) - 5)){ //it gives more than one exit, for reasons of safety
             exit = true;
         }
     }
@@ -508,6 +508,7 @@ public class Room {
                                     doors.get(0).setLocked(false);
                                     System.out.println("You found a suitable key!");
                                     System.out.println("You are unlocking the door...");
+                                    hero.addHighScore(100);
                                     break;
                                 }
                             }
@@ -529,6 +530,7 @@ public class Room {
                                     doors.get(1).setLocked(false);
                                     System.out.println("You found a suitable key!");
                                     System.out.println("You are unlocking the door...");
+                                    hero.addHighScore(100);
                                     break;
                                 }
                             }
@@ -550,6 +552,7 @@ public class Room {
                                     doors.get(2).setLocked(false);
                                     System.out.println("You found a suitable key!");
                                     System.out.println("You are unlocking the door...");
+                                    hero.addHighScore(100);
                                     break;
                                 }
                             }
@@ -571,6 +574,7 @@ public class Room {
                                     doors.get(3).setLocked(false);
                                     System.out.println("You found a suitable key!");
                                     System.out.println("You are unlocking the door...");
+                                    hero.addHighScore(100);
                                     break;
                                 }
                             }
@@ -584,6 +588,7 @@ public class Room {
 
                 case "5":
                     if (doorToFreedom(hero) == true){
+                        hero.addHighScore(1500);
                         System.out.println(" ");
                         System.out.println(" =============== ");
                         System.out.println("You won the game!");

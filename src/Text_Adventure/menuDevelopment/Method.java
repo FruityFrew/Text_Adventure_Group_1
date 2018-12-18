@@ -28,7 +28,7 @@ public class Method {
     public Map myMap;
     public Hero hero1 = new Hero(1);
     public Room room1;
-    //public int newRoom;
+    public int newRoom;
 
     /**
      * Alex: this method is used in the beginning of the game
@@ -137,32 +137,31 @@ public class Method {
      * Robert: The menu needs bit debugging and I lack of time so I had to improvise.
      * My solution to the problem is an autosave of the highscore when the player leaves the game.
      */
-    public int exitOptions() {
-        System.out.println("EXIT the game?" +
-                "\n[1]\tYES" +
-                "\n[2]\tNO, go back to menu");
-        Main.choice = Main.in.nextInt();
-        switch (Main.choice) {
-            case 1:
-                if (hero1 != null){
-                    System.out.println("You are leaving the game");
-                    System.out.println("Your name was: " + hero1.getName());
-                    System.out.println("Your score was: " + hero1.getHighscore());
-                    System.out.println("Your score will be saved to the list of highscores");
-                    highScore(hero1);
-                    System.out.println("Thank you for playing");
-                }
-                Main.choice = 10;
-                break;
-            case 2:
-                myMethod.gameOptions();
-                break;
-            default:
-                System.out.println("Your fingers are shaking again?" +
-                        "\nChose right!");
-        }
-        return Main.choice;
-    }
+//    public int exitOptions() {
+//        System.out.println("EXIT the game?" +
+//                "\n[1]\tYES" +
+//                "\n[2]\tNO, go back to menu");
+//        Main.choice = Main.in.nextInt();
+//        switch (Main.choice) {
+//            case 1:
+//                if (hero1 != null){
+//                    System.out.println("You are leaving the game");
+//                    System.out.println("Your name was: " + hero1.getName());
+//                    System.out.println("Your score was: " + hero1.getHighscore());
+//                    System.out.println("Your score will be saved to the list of highscores");
+//                    highScore(hero1);
+//                }
+//                Main.choice = 10;
+//                break;
+//            case 2:
+//                myMethod.gameOptions();
+//                break;
+//            default:
+//                System.out.println("Your fingers are shaking again?" +
+//                        "\nChose right!");
+//        }
+//        return Main.choice;
+//    }
 
     /**
      * Alex: This is a method that allows the player to stop the game during the session and exit the session.
@@ -189,17 +188,32 @@ public class Method {
      * Alex: Inside this method the game is happening
      * method playGame
      *
-     * @param gameOption
+     *
      */
-    public void playGame(int gameOption) {
+    public void playGame() {
+        //System.out.println("\t*** GAME OPTIONS ***" +
+        //        "\n[1]\tStart Game\n[2]\tSave\n[3]\tLoad Game\n[4]\tExit");
+        //int gameOption = Main.in.nextInt();
+
         myMethod.room1 = myMap.rooms.get(0);
 
         System.out.println("\nEven if nothing welcoming in the cellar,.. \n\n\t****    WELCOME!    ****" +
                 "\n\nAnytime you want to see your options\n\t\t<< ENTER [10] >>\n\n");
-        System.out.println("\n\tHealth = " + hero1.getHealth()+ ".\n" +
-                "--------------------------------------------\n");
-        switch (gameOption) {
-            case 1: // START GAME
+
+        boolean runningmenu = true;
+        while(runningmenu){
+            System.out.println(" ");
+            System.out.println("*** GAME OPTIONS ***");
+            System.out.println("[1]Play Game");
+            System.out.println("[2]Save Game");
+            System.out.println("[3]Load Game");
+            System.out.println("[4]Exit");
+            int gameOption = in.nextInt();
+
+//        System.out.println("\n\tHealth = " + hero1.getHealth()+ ".\n" +
+//                "--------------------------------------------\n");
+            switch (gameOption) {
+                case 1: // START GAME
 //                do {
 //                    room1.describeRoom();
 //                    System.out.println("\n\t***    Choose action   ***" +
@@ -241,34 +255,64 @@ public class Method {
 //                    }
 //                } while (Main.choice != 10);
 //                myMethod.playGame(myMethod.gameOptions());
-                boolean running = true;
-                while (running){
-                    running = myMethod.gameInterface(myMap);
-                }
+                    boolean running = true;
+                    while (running){
+                        System.out.println("\n\tHealth = " + hero1.getHealth()+ ".\n" +
+                                "--------------------------------------------\n");
+                        running = myMethod.gameInterface(myMap);
+                    }
 
-                break;
-            case 2:  // SAVE GAME
-                System.out.println("Enter the name of the game: \n");
-                SavedGame saveGame = new SavedGame(Main.in.nextLine());
-                Main.savedGames.add(saveGame);
-                Main.choice = 10;
-                break;
-            case 3: // LOAD GAME
-                for (SavedGame x : Main.savedGames) {
-                    System.out.println(Main.savedGames.indexOf(x) + "]\t" + x);
-                }
-                System.out.println("***    Choose a saved game    ***");
-                myMethod.playGame(Main.savedGames.indexOf(Main.in.nextInt()));
-                ;
-                break;
+                    break;
+                case 2:  // SAVE GAME
+                    System.out.println("Enter the name of the game: \n");
+//                SavedGame saveGame = new SavedGame(Main.in.nextLine());
+//                Main.savedGames.add(saveGame);
+//                Main.choice = 10;
+                    break;
+                case 3: // LOAD GAME
+//                for (SavedGame x : Main.savedGames) {
+//                    System.out.println(Main.savedGames.indexOf(x) + "]\t" + x);
+//                }
+//                System.out.println("***    Choose a saved game    ***");
+//                myMethod.playGame(Main.savedGames.indexOf(Main.in.nextInt()));
+//                ;
+                    break;
 
-            case 4: // EXIT
-                //Robert: I commended the line bellow me, because I replaced with exitOptions()
-                //Main.choice = 10;
-                myMethod.exitOptions();
-            default:
-                myMethod.exitOptions();
+                case 4: // EXIT
+                    //Robert: I commended the line bellow me, because I replaced with exitOptions()
+                    //Main.choice = 10;
+                    System.out.println("EXIT the game?" +
+                            "\n[1]\tYES" +
+                            "\n[2]\tNO, go back to menu");
+                    int choice = in.nextInt();
+                    if (choice == 1){
+                        runningmenu = false;
+                    } else {
+                        runningmenu = true;
+                    }
+                    break;
+
+                default:
+                    System.out.println("EXIT the game?" +
+                            "\n[1]\tYES" +
+                            "\n[2]\tNO, go back to menu");
+                    int choice2 = in.nextInt();
+                    if (choice2 == 1){
+                        runningmenu = false;
+                    } else {
+                        runningmenu = true;
+                    }
+            }
         }
+
+        if (hero1 != null){
+            System.out.println("You are leaving the game");
+            System.out.println("Your name was: " + hero1.getName());
+            System.out.println("Your score was: " + hero1.getHighscore());
+            System.out.println("Your score will be saved to the list of highscores");
+            highScore(hero1);
+        }
+
     }
 
     // Ahmed: Fight system that uses already exisisting damage generator in Character-class
@@ -465,7 +509,7 @@ public class Method {
                 hero1.viewContentsOfKeyRing();
                 break;
             case 4:
-                int newRoom;
+                //int newRoom;
                 newRoom = myMethod.room1.changeRoom(hero1);
                 System.out.println("You new room is: " + newRoom);
                 myMethod.room1 = myMap.rooms.get(newRoom);

@@ -77,7 +77,11 @@ public class Hero extends Character {
             //Key testKey = new Key("TestKey");
             addKeyToKeyRing((Key) entity);
         } else {
-            addItemToBackpack(entity);
+            try {
+                addItemToBackpack(entity);
+            }catch (NullPointerException e){
+                System.out.println("There is no item to pick up!!!");
+            }
         }
     }
 

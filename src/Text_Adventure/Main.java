@@ -32,12 +32,17 @@ public class Main  {
         //myMap.generateMap(5);
         //myMap.printMap();
 
-        do{
-            myMethod.playerName();
-            myMethod.choosePlayerType();
-            myMethod.chooseGameLevel();
-            myMethod.playGame(myMethod.gameOptions());
+        //Robert: Here I did a big change as I took 3 methods outside the loop.
+        //it is because of debugging.
+        myMethod.playerName();
+        myMethod.choosePlayerType();
+        myMethod.chooseGameLevel();
+        myMethod.playGame();
+//        do{
+//            myMethod.playGame();
+//
+//        }while(Main.choice!= 10);
+        System.out.println("Thank you for playing");
 
-        }while(Main.choice!= 10);
     }
 }

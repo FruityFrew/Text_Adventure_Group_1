@@ -9,6 +9,7 @@ public class Character {
     private int maxAttack;
     private int health;
     private String playerType;
+    private boolean dead = false; //Robert: we need that to know when the hero or the monster dies
 
 
     public Character() {

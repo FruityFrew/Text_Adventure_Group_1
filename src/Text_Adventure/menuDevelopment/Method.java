@@ -25,8 +25,10 @@ public class Method {
     SecureRandom random = new SecureRandom();
     public static Method myMethod = new Method();
 
-    Map myMap;
-    Hero hero1 = new Hero(1);
+    public Map myMap;
+    public Hero hero1 = new Hero(1);
+    public Room room1;
+    public int newRoom;
 
     /**
      * Alex: this method is used in the beginning of the game
@@ -49,7 +51,7 @@ public class Method {
                 diffLevel = 7;
                 break;
             case 3:
-                diffLevel = 10;
+                diffLevel = 9;
             default:
                 System.out.println("MAKE A CHOICE BETWEEN 1,2 AND 3!");
         }
@@ -68,7 +70,7 @@ public class Method {
                 "\nThe space that once served life is now home of the monsters.");
         System.out.println("What is your name traveler?");
 
-        hero1.setName(in.nextLine());
+        myMethod.hero1.setName(in.nextLine());
     }
 
     /**
@@ -132,25 +134,34 @@ public class Method {
     /**
      * Alex: This is a method that allows the player to stop the game during the session and exit the session.
      * This method is followed by method gameOption
+     * Robert: The menu needs bit debugging and I lack of time so I had to improvise.
+     * My solution to the problem is an autosave of the highscore when the player leaves the game.
      */
-    public int exitOptions() {
-        System.out.println("EXIT the game?" +
-                "\n[1]\tYES" +
-                "\n[2]\tNO, go back to menu");
-        Main.choice = Main.in.nextInt();
-        switch (Main.choice) {
-            case 1:
-                Main.choice = 10;
-                break;
-            case 2:
-                myMethod.gameOptions();
-                break;
-            default:
-                System.out.println("Your fingers are shaking again?" +
-                        "\nChose right!");
-        }
-        return Main.choice;
-    }
+//    public int exitOptions() {
+//        System.out.println("EXIT the game?" +
+//                "\n[1]\tYES" +
+//                "\n[2]\tNO, go back to menu");
+//        Main.choice = Main.in.nextInt();
+//        switch (Main.choice) {
+//            case 1:
+//                if (hero1 != null){
+//                    System.out.println("You are leaving the game");
+//                    System.out.println("Your name was: " + hero1.getName());
+//                    System.out.println("Your score was: " + hero1.getHighscore());
+//                    System.out.println("Your score will be saved to the list of highscores");
+//                    highScore(hero1);
+//                }
+//                Main.choice = 10;
+//                break;
+//            case 2:
+//                myMethod.gameOptions();
+//                break;
+//            default:
+//                System.out.println("Your fingers are shaking again?" +
+//                        "\nChose right!");
+//        }
+//        return Main.choice;
+//    }
 
     /**
      * Alex: This is a method that allows the player to stop the game during the session and exit the session.
@@ -177,81 +188,132 @@ public class Method {
      * Alex: Inside this method the game is happening
      * method playGame
      *
-     * @param gameOption
+     *
      */
-    public void playGame(int gameOption) {
-        Room room1 = myMap.rooms.get(0);
-        int newRoom = 0;
+    public void playGame() {
+        //System.out.println("\t*** GAME OPTIONS ***" +
+        //        "\n[1]\tStart Game\n[2]\tSave\n[3]\tLoad Game\n[4]\tExit");
+        //int gameOption = Main.in.nextInt();
 
-        System.out.println("\nEven if nothing welcoming in the cellar,.. \n\n\t****    WELCOME!    ****" +
-                "\n\nAnytime you want to see your options\n\t\t<< ENTER [10] >>\n\n");
-        System.out.println("\n\tHealth = " + hero1.getHealth()+ ".\n" +
-                "--------------------------------------------\n");
-        switch (gameOption) {
-            case 1: // START GAME
-                do {
-                    room1.describeRoom();
-                    System.out.println("\n\t***    Choose action   ***" +
-                            "\n[1]\tFight Monster"+
-                            "\n[2]\tAvoid fight" +
-                            "\n[3]\tOpen backpack" +
-                            "\n[4]\tGo to a new room" +
-                            "\n[5]\tPick +ITEM\n");
-                    System.out.println("\n----------------------------------------------\n" +
-                            "\tHealth = " + hero1.getHealth() + ".\n" +
-                            "--------------------------------------------");
-                    Main.choice = Main.in.nextInt();
-                    in.nextLine();
-                    switch (Main.choice) {
-                        case 1:
-                            myMethod.coinFight();
-                            break;
-                        case 2:
-                            hero1.setHealth(hero1.getHealth()-25);
-                            break;
-                        case 3:
+        myMethod.room1 = myMap.rooms.get(0);
 
-                            hero1.viewContentsOfBackpack();
-                            hero1.viewContentsOfKeyRing();
-                            break;
-                        case 4:
-                            newRoom = room1.changeRoom(hero1);
-                            room1 = myMap.rooms.get(newRoom);
+//        System.out.println("\nEven if nothing welcoming in the cellar,.. \n\n\t****    WELCOME!    ****" +
+//                "\n\nAnytime you want to see your options\n\t\t<< ENTER [10] >>\n\n");
 
-                            break;
-                        case 5:
-                            hero1.pickItem(room1.getItem());
-                            room1.setItem(null);
-                            System.out.println("\n----------------------------------------\n\tYour health is now " + hero1.getHealth() + "." +
-                                    "\n----------------------------------------");
-                            break;
-                        default:
-                            myMethod.playOptions();
+        boolean runningmenu = true;
+        while(runningmenu){
+            System.out.println(" ");
+            System.out.println("*** GAME OPTIONS ***");
+            System.out.println("[1]Play Game");
+            System.out.println("[2]Save Game");
+            System.out.println("[3]Load Game");
+            System.out.println("[4]Exit");
+            int gameOption = in.nextInt();
+
+//        System.out.println("\n\tHealth = " + hero1.getHealth()+ ".\n" +
+//                "--------------------------------------------\n");
+            switch (gameOption) {
+                case 1: // START GAME
+//                do {
+//                    room1.describeRoom();
+//                    System.out.println("\n\t***    Choose action   ***" +
+//                            "\n[1]\tFight Monster"+
+//                            "\n[2]\tAvoid fight" +
+//                            "\n[3]\tOpen backpack" +
+//                            "\n[4]\tGo to a new room" +
+//                            "\n[5]\tPick +ITEM\n");
+//                    System.out.println("\n----------------------------------------------\n" +
+//                            "\tHealth = " + hero1.getHealth() + ".\n" +
+//                            "--------------------------------------------");
+//                    Main.choice = Main.in.nextInt();
+//                    in.nextLine();
+//                    switch (Main.choice) {
+//                        case 1:
+//                            myMethod.coinFight();
+//                            break;
+//                        case 2:
+//                            hero1.setHealth(hero1.getHealth()-25);
+//                            break;
+//                        case 3:
+//
+//                            hero1.viewContentsOfBackpack();
+//                            hero1.viewContentsOfKeyRing();
+//                            break;
+//                        case 4:
+//                            newRoom = room1.changeRoom(hero1);
+//                            room1 = myMap.rooms.get(newRoom);
+//
+//                            break;
+//                        case 5:
+//                            hero1.pickItem(room1.getItem());
+//                            room1.setItem(null);
+//                            System.out.println("\n----------------------------------------\n\tYour health is now " + hero1.getHealth() + "." +
+//                                    "\n----------------------------------------");
+//                            break;
+//                        default:
+//                            myMethod.playOptions();
+//                    }
+//                } while (Main.choice != 10);
+//                myMethod.playGame(myMethod.gameOptions());
+                    boolean running = true;
+                    while (running){
+                        System.out.println("\n\tHealth = " + hero1.getHealth()+ ".\nHighscore = " + myMethod.hero1.getHighscore() +
+                                "--------------------------------------------\n");
+                        running = myMethod.gameInterface(myMap);
                     }
-                } while (Main.choice != 10);
-                myMethod.playGame(myMethod.gameOptions());
 
-                break;
-            case 2:  // SAVE GAME
-                System.out.println("Enter the name of the game: \n");
-                SavedGame saveGame = new SavedGame(Main.in.nextLine());
-                Main.savedGames.add(saveGame);
-                Main.choice = 10;
-                break;
-            case 3: // LOAD GAME
-                for (SavedGame x : Main.savedGames) {
-                    System.out.println(Main.savedGames.indexOf(x) + "]\t" + x);
-                }
-                System.out.println("***    Choose a saved game    ***");
-                myMethod.playGame(Main.savedGames.indexOf(Main.in.nextInt()));
-                ;
-                break;
+                    break;
+                case 2:  // SAVE GAME
+                    System.out.println("Enter the name of the game: \n");
+//                SavedGame saveGame = new SavedGame(Main.in.nextLine());
+//                Main.savedGames.add(saveGame);
+//                Main.choice = 10;
+                    break;
+                case 3: // LOAD GAME
+//                for (SavedGame x : Main.savedGames) {
+//                    System.out.println(Main.savedGames.indexOf(x) + "]\t" + x);
+//                }
+//                System.out.println("***    Choose a saved game    ***");
+//                myMethod.playGame(Main.savedGames.indexOf(Main.in.nextInt()));
+//                ;
+                    break;
 
-            case 4: // EXIT
-                Main.choice = 10;
-            default:
-                myMethod.exitOptions();
+                case 4: // EXIT
+                    //Robert: I commended the line bellow me, because I replaced with exitOptions()
+                    //Main.choice = 10;
+                    System.out.println("EXIT the game?" +
+                            "\n[1]\tYES" +
+                            "\n[2]\tNO, go back to menu");
+                    int choice = in.nextInt();
+                    if (choice == 1){
+                        runningmenu = false;
+                    } else {
+                        runningmenu = true;
+                    }
+                    break;
+
+                default:
+                    System.out.println("EXIT the game?" +
+                            "\n[1]\tYES" +
+                            "\n[2]\tNO, go back to menu");
+                    int choice2 = in.nextInt();
+                    if (choice2 == 1){
+                        runningmenu = false;
+                    } else {
+                        runningmenu = true;
+                    }
+            }
         }
+
+        if (hero1 != null){
+            System.out.println("You are leaving the game");
+            System.out.println("Your name was: " + myMethod.hero1.getName());
+            System.out.println("Your score was: " + myMethod.hero1.getHighscore());
+            System.out.println("Your score will be saved to the list of highscores");
+            highScore(myMethod.hero1);
+            SortScore();
+        }
+
     }
 
     // Ahmed: Fight system that uses already exisisting damage generator in Character-class
@@ -326,8 +388,9 @@ public class Method {
     /**
      * Nemanja: This creates the HighScoresList.txt file if the file does not exist.
      *          It also enters new scores into the HighScoresList.txt file and stores it.
+     * Robert: Now the name and the highscore are taken directly from the Hero class.
      */
-    public static void highScore() {
+    public static void highScore(Hero hero) {
         Scanner input = new Scanner(System.in);
         PrintWriter scoreExport = null;
 
@@ -340,12 +403,14 @@ public class Method {
             System.out.println(ex.toString());
             System.out.println("Could not find file " + fileName);
         }
-        System.out.println("Congratulations, your score was the highest!\n");
+        //System.out.println("Congratulations, your score was the highest!\n");
 
-        System.out.print("DEBUG: Enter score ");
-        highScore = input.nextInt();
-        System.out.print("DEBUG: Enter name: ");
-        playerName = input.next();
+        //Robert: I did few changes here in order to make this thing work.
+        //System.out.print("DEBUG: Enter score ");
+        //highScore = input.nextInt();
+        highScore = hero.getHighscore();
+        //System.out.print("DEBUG: Enter name: ");
+        playerName = hero.getName();
 
         scoreExport.println(highScore + " - " + playerName);
         scoreExport.close();
@@ -415,4 +480,62 @@ public class Method {
             System.out.println("Could not find file HighScoresList.txt");
         }
     }
+
+    public boolean gameInterface(Map myMap){
+        boolean result = true;
+        //int newRoom = 0;
+        myMethod.room1.describeRoom();
+        System.out.println("***    Choose action   ***");
+        System.out.println(" ");
+        System.out.println("[1] Fight Monster");
+        System.out.println("[2] Avoid fight");
+        System.out.println("[3] Open backpack");
+        System.out.println("[4] Go to a new room");
+        System.out.println("[5] Pick +ITEM");
+        System.out.println("[6] Go to the menu");
+        System.out.println("\n----------------------------------------------\n" +
+                "\tHealth = " + hero1.getHealth() + ".\n" +
+                "--------------------------------------------");
+        int choice = Main.in.nextInt();
+        switch (choice) {
+            case 1:
+                hero1.addHighScore(100);
+                myMethod.coinFight();
+                break;
+            case 2:
+                hero1.setHealth(hero1.getHealth() - (hero1.getHealth()/2));
+                System.out.println("You lost your half health but you avoided the monster");
+                myMethod.room1.setMonster(null);
+                hero1.addHighScore(50);
+                break;
+            case 3:
+                hero1.viewContentsOfBackpack();
+                hero1.viewContentsOfKeyRing();
+                break;
+            case 4:
+                //int newRoom;
+                newRoom = myMethod.room1.changeRoom(hero1);
+                System.out.println("You new room is: " + newRoom);
+                myMethod.room1 = myMap.rooms.get(newRoom);
+                myMethod.hero1.addHighScore(100);
+                break;
+            case 5:
+                hero1.pickItem(myMethod.room1.getItem());
+                myMethod.room1.setItem(null);
+                hero1.addHighScore(100);
+                //System.out.println("\n----------------------------------------\n\tYour health is now " + hero1.getHealth() + "." +
+                //        "\n----------------------------------------");
+                break;
+
+            case 6:
+                result = false;
+                //myMethod.playOptions();
+                break;
+
+            default:
+                result = true;
+                //myMethod.playOptions();
+        }
+        return result;
+    } //method gameInterface ends here
 }

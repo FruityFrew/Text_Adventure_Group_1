@@ -9,39 +9,40 @@ import java.util.ArrayList;
 public class Hero extends Character {
     public static Item[] backpack = new Item[5];
     public ArrayList<Key> keyRing = new ArrayList<>(); //Robert: I had to implement a keyring. i hope it is ok :)
+    public int highscore = 0; //Robert: the highscore that the player collects.
 
     public Hero(int heroNumber) {
         switch(heroNumber) {
             case 1://hero hunter
-                setName("Ghost-Hunter");
+                setPlayerType("Ghost-Hunter");
                 setRoomIndex(1);
                 setHitChance(0.6);
                 setMaxAttack(100);
                 setHealth(300);
                 break;
             case 2:
-                setName("Thief");
+                setPlayerType("Thief");
                 setRoomIndex(1);
                 setHitChance(0.8);
                 setMaxAttack(80);
                 setHealth(300);
                 break;
             case 3:
-                setName("Priest");
+                setPlayerType("Priest");
                 setRoomIndex(1);
                 setHitChance(0.6);
                 setMaxAttack(80);
                 setHealth(400);
                 break;
             case 4:
-                setName("Tourist");
+                setPlayerType("Tourist");
                 setRoomIndex(1);
                 setHitChance(0.7);
                 setMaxAttack(80);
                 setHealth(350);
                 break;
             default:
-                setName("Hero");
+                setPlayerType("Hero");
                 setRoomIndex(1);
                 setHitChance(0.6);
                 setMaxAttack(80);
@@ -114,4 +115,15 @@ public class Hero extends Character {
         }
     }
 
+    //Robert: instead of normal setter for the highscore attribute
+    //it adds points to the current highscore. it does not set/reset the highscore
+    public void addHighScore(int points){
+        int currentHighscore = this.highscore;
+        this.highscore = currentHighscore + points;
+    }
+
+    //Robert: A normal Getter that I need for the highscore feature
+    public int getHighscore() {
+        return this.highscore;
+    }
 }

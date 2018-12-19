@@ -7,13 +7,15 @@ import Text_Adventure.Items.Weapon;
 import Text_Adventure.Room;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Hero extends Character {
     public static Item[] backpack = new Item[5];
     public ArrayList<Key> keyRing = new ArrayList<>(); //Robert: I had to implement a keyring. i hope it is ok :)
     public int highscore = 0; //Robert: the highscore that the player collects.
     public Weapon weapon; //this the weapon's slot of the hero. something like inventory but with only one slot.
-    public int weaponDamageModifier;
+    public int weaponDamageModifier; //this will modify the damage that a player deal, if the player has a weapon.
+    Scanner input = new Scanner(System.in);
 
     public Hero(int heroNumber) {
         switch(heroNumber) {
@@ -59,10 +61,44 @@ public class Hero extends Character {
 
     public void viewContentsOfBackpack() {
         System.out.println("Backpack:");
-        for(Item a: backpack) {
-            if(a != null) System.out.printf("[%s]%n", a.getName());
-            else System.out.println("[-Empty slot-]");
+        boolean running = true;
+        while (running == true){
+            int count = 0;
+            for(Item a: backpack) {
+                if(a != null) System.out.printf("["+ count + "][%s]%n", a.getName());
+                else System.out.println("["+ count + "][-Empty slot-]");
+                count++;
+            }
+            System.out.println("[6]close");
+            System.out.print("Type the number of the item that you wish to interact: ");
+            int choice = input.nextInt();
+            if (choice > 5){
+                running = false;
+            } else {
+                if(backpack[choice] != null) {
+                    System.out.printf("[" + choice + "][%s]%n", backpack[choice].getName());
+                    System.out.println("Choose an option");
+                    System.out.println("================");
+                    System.out.println("[1]Use the item");
+                    System.out.println("[2]Drop the item");
+                    System.out.println("[3]Do nothing (returns to the backpack)");
+                    String choice2 = input.next();
+                    switch (choice2){
+                        case "1":
+                            System.out.println("You are drinking the item");
+                            backpack[choice] = null;
+                            break;
+                        case "2":
+                            System.out.println("You are dropping the item");
+                            backpack[choice] = null;
+                            break;
+                        default:
+                            System.out.println("Returning to the backpack");
+                    }
+                }
+            }
         }
+
     }
 
     //Robert: I had to add this here. i know that I could use a setter for this one,

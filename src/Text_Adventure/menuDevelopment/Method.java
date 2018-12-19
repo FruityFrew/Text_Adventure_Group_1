@@ -508,8 +508,8 @@ public class Method {
                 hero1.addHighScore(50);
                 break;
             case 3:
-                hero1.viewContentsOfBackpack();
                 hero1.viewContentsOfKeyRing();
+                hero1.viewContentsOfBackpack();
                 break;
             case 4:
                 //int newRoom;

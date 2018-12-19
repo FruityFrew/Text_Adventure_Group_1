@@ -258,7 +258,7 @@ public class Method {
                     boolean running = true;
                     while (running){
                         System.out.println("\n----------------------------------------------\n" +
-                                "\tHealth = " + hero1.getHealth() + " Highscore = "
+                                "\tHealth = " + myMethod.hero1.getHealth() + " Highscore = "
                                 + myMethod.hero1.getHighscore() + " Room: " + myMethod.room1.getIndex() +
                                 ".\n" +
                                 "--------------------------------------------");
@@ -321,7 +321,7 @@ public class Method {
     }
 
     // Ahmed: Fight system that uses already exisisting damage generator in Character-class
-    public void exchangeAttackWithMonster(Hero hero, Monster monster) {
+    public int exchangeAttackWithMonster(Hero hero, Monster monster) {
         //First hero attacks
         int damageHolder = Character.generateDamage(hero.getHitChance(), hero.getMaxAttack(), hero1.weaponDamageModifier);
         monster.setHealth(monster.getHealth() - damageHolder);
@@ -333,6 +333,7 @@ public class Method {
         hero.setHealth(hero.getHealth() - damageHolder);
         System.out.printf("Monster hits you back and you loose %d health points.%n" +
                 "Your current health: %d%n", damageHolder, hero.getHealth());
+        return hero.getHealth();
     }
 
     //Robert: I made this sorry excuse of fighting system;
@@ -490,8 +491,8 @@ public class Method {
         //int newRoom = 0;
         if (myMethod.room1.monster != null){myMethod.room1.describeMonster();}
         if (myMethod.room1.monster == null){myMethod.room1.describeRoom();}
-        System.out.println("***    Choose action   ***");
         System.out.println(" ");
+        System.out.println("***    Choose action   ***");
         if (myMethod.room1.monster != null){System.out.print("[1] Fight Monster ");}
         if (myMethod.room1.monster != null){System.out.print("| [2] Avoid fight ");}
         System.out.print("|[3] Open backpack| ");
@@ -501,19 +502,23 @@ public class Method {
         int choice = Main.in.nextInt();
         switch (choice) {
             case 1:
-                hero1.addHighScore(100);
-                myMethod.exchangeAttackWithMonster(hero1, room1.monster);
-                if (room1.monster.getHealth() < 1){
-                    myMethod.room1.setMonster(null);
-                    hero1.addHighScore(50);
-                    System.out.println("You killed the monster.");
+                if(myMethod.room1.monster != null){
+                    hero1.addHighScore(100);
+                    myMethod.hero1.setHealth(myMethod.exchangeAttackWithMonster(myMethod.hero1, room1.monster));
+                    if (room1.monster.getHealth() < 1){
+                        myMethod.room1.setMonster(null);
+                        hero1.addHighScore(50);
+                        System.out.println("You killed the monster.");
+                    }
                 }
                 break;
             case 2:
-                hero1.setHealth(hero1.getHealth() - (hero1.getHealth()/2));
-                System.out.println("You lost your half health but you avoided the monster");
-                myMethod.room1.setMonster(null);
-                hero1.addHighScore(50);
+                if(myMethod.room1.monster != null){
+                    myMethod.hero1.setHealth(hero1.getHealth() - (hero1.getHealth()/2));
+                    System.out.println("You lost your half health but you avoided the monster");
+                    myMethod.room1.setMonster(null);
+                    hero1.addHighScore(50);
+                }
                 break;
             case 3:
                 hero1.viewContentsOfKeyRing();
@@ -521,18 +526,21 @@ public class Method {
                 hero1.viewContentsOfBackpack();
                 break;
             case 4:
-                //int newRoom;
-                newRoom = myMethod.room1.changeRoom(hero1);
-                System.out.println("You new room is: " + newRoom);
-                myMethod.room1 = myMap.rooms.get(newRoom);
-                myMethod.hero1.addHighScore(100);
+                if(myMethod.room1.monster == null){
+                    newRoom = myMethod.room1.changeRoom(hero1);
+                    System.out.println("You new room is: " + newRoom);
+                    myMethod.room1 = myMap.rooms.get(newRoom);
+                    myMethod.hero1.addHighScore(100);
+                }
                 break;
             case 5:
-                hero1.pickItem(myMethod.room1.getItem(), myMethod.room1);
-                myMethod.room1.setItem(null);
-                hero1.addHighScore(100);
-                //System.out.println("\n----------------------------------------\n\tYour health is now " + hero1.getHealth() + "." +
-                //        "\n----------------------------------------");
+                if(myMethod.room1.getItem() != null){
+                    if(myMethod.room1.monster == null){
+                        hero1.pickItem(myMethod.room1.getItem(), myMethod.room1);
+                        myMethod.room1.setItem(null);
+                        hero1.addHighScore(100);
+                    }
+                }
                 break;
 
             case 6:
@@ -543,6 +551,15 @@ public class Method {
             default:
                 result = true;
                 //myMethod.playOptions();
+        }
+        if(myMethod.hero1.getHealth() < 1){
+            System.out.println(" ");
+            System.out.println("=========");
+            System.out.println("Game Over");
+            myMethod.hero1.setHealth(300);
+            System.out.println("========");
+            System.out.println(" ");
+            result = false;
         }
         return result;
     } //method gameInterface ends here

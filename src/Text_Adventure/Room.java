@@ -201,7 +201,7 @@ public class Room {
     public void describeRoom() {
         //System.out.println("You are in the room: " + getIndex());
         System.out.println("you are looking around carefully...");
-        if (item == null){describeWalls();}
+        if(exit == false){if (item == null){describeWalls();}}
         if (item != null){describeItem();}
         System.out.println(" ");
         describeDoors(N, E, S, W);
@@ -239,7 +239,7 @@ public class Room {
      * @param {boolean} - The postion of the doors inside the room,( N, E, S, W).
      */
     public void describeDoors(int N, int E, int S, int W) {
-        System.out.println("you are looking out to find out how many doors they are...");
+        System.out.println("Doors in this room:");
         if (N!=0) {
             System.out.println("One door stands on the North side of the room");
         }
@@ -258,7 +258,7 @@ public class Room {
      * Robert: This is the method that describes the item in the room
      */
     public void describeItem() {
-        System.out.println("You are looking for items...");
+        System.out.println("Item on the ground: ");
         if (this.item != null) {
             //System.out.println("In the corner seems to be an item,");
             if (this.item instanceof Key ){
@@ -275,10 +275,10 @@ public class Room {
      * Robert: This is the method that describes the monster in the room.
      */
     public void describeMonster() {
-        System.out.println("You are checking if someone is in the room...");
+        System.out.println("Monster in the room:");
         if (this.monster != null) {
             //System.out.println("In the shadows you see a figure.");
-            System.out.println("There is a monster! It is: " + monster.getMonsterType());
+            System.out.println("It is: " + monster.getMonsterType());
         } else {
             System.out.println("No one. Probably just the wind");
         }

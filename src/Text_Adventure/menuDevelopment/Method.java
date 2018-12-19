@@ -318,13 +318,13 @@ public class Method {
     // Ahmed: Fight system that uses already exisisting damage generator in Character-class
     public void exchangeAttackWithMonster(Hero hero, Monster monster) {
         //First hero attacks
-        int damageHolder = Character.generateDamage(hero.getHitChance(), hero.getMaxAttack());
+        int damageHolder = Character.generateDamage(hero.getHitChance(), hero.getMaxAttack(), hero1.weaponDamageModifier);
         monster.setHealth(monster.getHealth() - damageHolder);
         System.out.printf("You hit monster and monster looses %d health points.%n" +
                 "Monster's health (updated): %d%n", damageHolder, monster.getHealth());
 
         //Then monster attacks...
-        damageHolder = Character.generateDamage(monster.getHitChance(), monster.getMaxAttack());
+        damageHolder = Character.generateDamage(monster.getHitChance(), monster.getMaxAttack(), 0);
         hero.setHealth(hero.getHealth() - damageHolder);
         System.out.printf("Monster hits you back and you loose %d health points.%n" +
                 "Your current health: %d%n", damageHolder, hero.getHealth());

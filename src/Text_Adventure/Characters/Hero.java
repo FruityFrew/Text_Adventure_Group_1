@@ -13,6 +13,7 @@ public class Hero extends Character {
     public ArrayList<Key> keyRing = new ArrayList<>(); //Robert: I had to implement a keyring. i hope it is ok :)
     public int highscore = 0; //Robert: the highscore that the player collects.
     public Weapon weapon; //this the weapon's slot of the hero. something like inventory but with only one slot.
+    public int weaponDamageModifier;
 
     public Hero(int heroNumber) {
         switch(heroNumber) {
@@ -132,14 +133,18 @@ public class Hero extends Character {
         if (this.weapon == null){
             this.weapon = weapon1;
             room.setItem(null);
+            this.weaponDamageModifier = weapon1.getDamage();
             System.out.println("The hero now is equipped with: " + weapon1.getName());
+            System.out.println("The hero can deal now: " + this.weaponDamageModifier + " extra damage");
 
         } else {
             Weapon weapon2 = this.weapon;
             this.weapon = weapon1;
             room.setItem(weapon2);
+            this.weaponDamageModifier = weapon1.getDamage();
             System.out.println("The hero now is equipped with: " + weapon1.getName());
             System.out.println("The hero just dropped to the ground a: " + weapon2.getName());
+            System.out.println("The hero can deal now: " + this.weaponDamageModifier + " extra damage");
         }
     }
 

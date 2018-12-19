@@ -28,9 +28,9 @@ public class Main  {
         //        Method.SortScore();    // This puts highest score on top
         //        Method.displayScore(); // This displays score - again for testing to see if new entry works
 
-        //Map myMap = new Map(5);
-        //myMap.generateMap(5);
-        //myMap.printMap();
+//        Map myMap = new Map(5);
+//        myMap.generateMap(5);
+//        myMap.printMap();
 
         //Robert: Here I did a big change as I took all the methods outside the loop.
         //it is because of debugging.

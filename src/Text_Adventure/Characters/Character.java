@@ -101,10 +101,13 @@ public class Character {
     /**
      * Method that every character has; during a fight hero will be exchanging strikes with a monster and their
      * dealt damage will be calculated with the following method.
+     * Robert: I added one more parameter to enable the weaponModifier to take place.
+     *
      *
      * @return
      */
-    public static int generateDamage(double hitChance, int maxAttack) {
+    public static int generateDamage(double hitChance, int maxAttack, int weaponModifier) {
+        maxAttack = maxAttack + weaponModifier;
         Random number = new Random();
         return (hitChance > number.nextDouble()) ? maxAttack - number.nextInt(maxAttack): 0;
     }

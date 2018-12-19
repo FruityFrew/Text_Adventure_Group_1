@@ -32,7 +32,7 @@ public class Main  {
         //myMap.generateMap(5);
         //myMap.printMap();
 
-        //Robert: Here I did a big change as I took 3 methods outside the loop.
+        //Robert: Here I did a big change as I took all the methods outside the loop.
         //it is because of debugging.
         myMethod.playerName();
         myMethod.choosePlayerType();

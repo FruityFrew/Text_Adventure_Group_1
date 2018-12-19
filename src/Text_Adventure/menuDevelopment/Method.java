@@ -508,8 +508,9 @@ public class Method {
                 hero1.addHighScore(50);
                 break;
             case 3:
-                hero1.viewContentsOfBackpack();
                 hero1.viewContentsOfKeyRing();
+                hero1.viewConstentofWeaponSlot();
+                hero1.viewContentsOfBackpack();
                 break;
             case 4:
                 //int newRoom;
@@ -519,7 +520,7 @@ public class Method {
                 myMethod.hero1.addHighScore(100);
                 break;
             case 5:
-                hero1.pickItem(myMethod.room1.getItem());
+                hero1.pickItem(myMethod.room1.getItem(), myMethod.room1);
                 myMethod.room1.setItem(null);
                 hero1.addHighScore(100);
                 //System.out.println("\n----------------------------------------\n\tYour health is now " + hero1.getHealth() + "." +

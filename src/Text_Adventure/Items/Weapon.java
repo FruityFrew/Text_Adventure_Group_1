@@ -5,10 +5,10 @@ package Text_Adventure.Items;
 public class Weapon extends Item {
     private int damage;
     private String HeroType;
-    Weapon cross = new Weapon("Cross", 100);
-    Weapon knife = new Weapon("Knife", 100);
-    Weapon rose = new Weapon("Rose", 100);
-    Weapon shotgun = new Weapon("Shotgun", 100);
+//    Weapon cross = new Weapon("Cross", 100);
+//    Weapon knife = new Weapon("Knife", 100);
+//    Weapon rose = new Weapon("Rose", 100);
+//    Weapon shotgun = new Weapon("Shotgun", 100);
     
     /**
      * Nemanja: This is the constructor of the Weapon object.

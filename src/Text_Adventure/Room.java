@@ -253,7 +253,7 @@ public class Room {
     public void describeItem() {
         System.out.println("You are looking for items...");
         if (this.item != null) {
-            System.out.println("In the corner seems to be an item,");
+            //System.out.println("In the corner seems to be an item,");
             if (this.item instanceof Key ){
                 System.out.println("It is a " + ((Key) this.item).getName2() + "!");
             } else {
@@ -270,9 +270,8 @@ public class Room {
     public void describeMonster() {
         System.out.println("You are checking if someone is in the room...");
         if (this.monster != null) {
-            System.out.println("In the shadows you see a figure.");
-            System.out.println("Oh no! It is a Monster!");
-            //System.out.println("Oh no! It is a " + this.monster.getType() + "!");
+            //System.out.println("In the shadows you see a figure.");
+            System.out.println("There is a monster! It is: " + monster.getMonsterType());
         } else {
             System.out.println("No one. Probably just the wind");
         }

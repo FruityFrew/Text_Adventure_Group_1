@@ -3,6 +3,8 @@ package Text_Adventure.Characters;
 import Text_Adventure.Items.Consumable;
 import Text_Adventure.Items.Item;
 import Text_Adventure.Items.Key;
+import Text_Adventure.Items.Weapon;
+import Text_Adventure.Room;
 
 import java.util.ArrayList;
 
@@ -10,6 +12,7 @@ public class Hero extends Character {
     public static Item[] backpack = new Item[5];
     public ArrayList<Key> keyRing = new ArrayList<>(); //Robert: I had to implement a keyring. i hope it is ok :)
     public int highscore = 0; //Robert: the highscore that the player collects.
+    public Weapon weapon; //this the weapon's slot of the hero. something like inventory but with only one slot.
 
     public Hero(int heroNumber) {
         switch(heroNumber) {
@@ -51,6 +54,8 @@ public class Hero extends Character {
         }
     }
 
+
+
     public void viewContentsOfBackpack() {
         System.out.println("Backpack:");
         for(Item a: backpack) {
@@ -72,16 +77,18 @@ public class Hero extends Character {
     }
 
     //Robert: This method picks the item and checks if the item is going to the keyring or to inventory
-    public void pickItem(Item entity){
+    //The method takes the parameter room1 in order to be able to leave his old weapon to the ground
+    public void pickItem(Item entity, Room room1){
         if (entity instanceof Key ){
-            //Key testKey = new Key("TestKey");
             addKeyToKeyRing((Key) entity);
-        } else {
+        } else if (entity instanceof Consumable ){
             try {
                 addItemToBackpack(entity);
             }catch (NullPointerException e){
                 System.out.println("There is no item to pick up!!!");
             }
+        } else {
+            pickUpWeapon((Weapon) entity, room1);
         }
     }
 
@@ -119,6 +126,23 @@ public class Hero extends Character {
         }
     }
 
+    //Robert: This a pick up method for a weapon.
+    //if the hero has already a weapon he swaps it with the one on the ground.
+    public void pickUpWeapon(Weapon weapon1, Room room){
+        if (this.weapon == null){
+            this.weapon = weapon1;
+            room.setItem(null);
+            System.out.println("The hero now is equipped with: " + weapon1.getName());
+
+        } else {
+            Weapon weapon2 = this.weapon;
+            this.weapon = weapon1;
+            room.setItem(weapon2);
+            System.out.println("The hero now is equipped with: " + weapon1.getName());
+            System.out.println("The hero just dropped to the ground a: " + weapon2.getName());
+        }
+    }
+
     //Robert: instead of normal setter for the highscore attribute
     //it adds points to the current highscore. it does not set/reset the highscore
     public void addHighScore(int points){
@@ -129,5 +153,15 @@ public class Hero extends Character {
     //Robert: A normal Getter that I need for the highscore feature
     public int getHighscore() {
         return this.highscore;
+    }
+
+    //Robert: A setter for the weapon. Probably I will use a more advance method for that
+    public void setWeapon(Weapon weapon) {
+        this.weapon = weapon;
+    }
+
+    //Robert: A getter for the weapon. I will totally use it.
+    public Weapon getWeapon() {
+        return weapon;
     }
 }

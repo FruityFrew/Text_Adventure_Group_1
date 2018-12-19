@@ -519,7 +519,7 @@ public class Method {
                 myMethod.hero1.addHighScore(100);
                 break;
             case 5:
-                hero1.pickItem(myMethod.room1.getItem());
+                hero1.pickItem(myMethod.room1.getItem(), myMethod.room1);
                 myMethod.room1.setItem(null);
                 hero1.addHighScore(100);
                 //System.out.println("\n----------------------------------------\n\tYour health is now " + hero1.getHealth() + "." +

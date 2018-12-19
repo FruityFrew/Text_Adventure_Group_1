@@ -509,6 +509,7 @@ public class Method {
                 break;
             case 3:
                 hero1.viewContentsOfKeyRing();
+                hero1.viewConstentofWeaponSlot();
                 hero1.viewContentsOfBackpack();
                 break;
             case 4:

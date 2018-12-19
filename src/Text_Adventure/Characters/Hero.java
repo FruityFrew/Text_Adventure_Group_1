@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Hero extends Character {
-    public static Item[] backpack = new Item[5];
+    public static Consumable[] backpack = new Consumable[5];
     public ArrayList<Key> keyRing = new ArrayList<>(); //Robert: I had to implement a keyring. i hope it is ok :)
     public int highscore = 0; //Robert: the highscore that the player collects.
     public Weapon weapon; //this the weapon's slot of the hero. something like inventory but with only one slot.
@@ -64,13 +64,13 @@ public class Hero extends Character {
         boolean running = true;
         while (running == true){
             int count = 0;
-            for(Item a: backpack) {
+            for(Consumable a: backpack) {
                 if(a != null) System.out.printf("["+ count + "][%s]%n", a.getName());
                 else System.out.println("["+ count + "][-Empty slot-]");
                 count++;
             }
             System.out.println("[6]close");
-            System.out.print("Type the number of the item that you wish to interact: ");
+            System.out.println("Type the number of the item that you wish to interact: ");
             int choice = input.nextInt();
             if (choice > 5){
                 running = false;
@@ -86,6 +86,8 @@ public class Hero extends Character {
                     switch (choice2){
                         case "1":
                             System.out.println("You are drinking the item");
+                            //int healingPoints = backpack[choice].getHealthModifier();
+                            addHealth(backpack[choice].getHealthModifier());
                             backpack[choice] = null;
                             break;
                         case "2":
@@ -108,9 +110,14 @@ public class Hero extends Character {
         System.out.println("Keyring:");
         int count = 1;
         for(Key a: keyRing) {
-            System.out.println("[" +count + "]: " + a.getName2());
+            System.out.println(a.getName2());
             count++;
         }
+    }
+
+    //Robert: This method returns the weapon that is inside the weapon slot.
+    public void viewConstentofWeaponSlot(){
+        System.out.println("Your weapon: " +weapon.getName());
     }
 
     //Robert: This method picks the item and checks if the item is going to the keyring or to inventory
@@ -120,7 +127,7 @@ public class Hero extends Character {
             addKeyToKeyRing((Key) entity);
         } else if (entity instanceof Consumable ){
             try {
-                addItemToBackpack(entity);
+                addItemToBackpack((Consumable) entity);
             }catch (NullPointerException e){
                 System.out.println("There is no item to pick up!!!");
             }
@@ -129,11 +136,11 @@ public class Hero extends Character {
         }
     }
 
-    public void addItemToBackpack(Item thing) {
+    public void addItemToBackpack(Consumable thing) {
 
         int countIndex = 0;
 
-        for(Item slot: backpack) {
+        for(Consumable slot: backpack) {
             if(slot == null) {
                 backpack[countIndex] = thing;
                 System.out.printf("Item %s has been added to your backpack (Slot %d)%n", thing.getName(), countIndex);

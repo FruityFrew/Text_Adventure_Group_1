@@ -120,4 +120,15 @@ public class Character {
                 "Hit-Chance: %.2f%n" +
                 "Max attack: %d%n", name, health, hitChance, maxAttack);
     }
+
+    //Robert: when it is comming to heal a simple setter is not the best choice.
+    public void addHealth(int points){
+        System.out.println(points + " added to your health");
+        health = health + points;
+    }
+
+    public  void subtractHealth(int points){
+        System.out.println(points + " subtrackted from your health");
+        health = health - points;
+    }
 }

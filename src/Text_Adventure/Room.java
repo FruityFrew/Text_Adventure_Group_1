@@ -5,6 +5,7 @@ import Text_Adventure.Characters.Monster;
 import Text_Adventure.Items.Consumable;
 import Text_Adventure.Items.Item;
 import Text_Adventure.Items.Key;
+import Text_Adventure.Items.Weapon;
 
 import java.security.SecureRandom;
 import java.util.ArrayList;
@@ -63,7 +64,12 @@ public class Room {
             if (n > 50){
                 this.item = new Key("Rusty key");
             } else {
-                this.item = getRandomDrink();
+                n = random.nextInt(100);
+                if (n > 50){
+                    this.item = getRandomDrink();
+                } else {
+                    this.item = getRandomWeapon();
+                }
             }
         }
         else {
@@ -422,6 +428,7 @@ public class Room {
         return W;
     }
 
+    //Robert: This method wes made by Nemo
     public Consumable getRandomDrink() {
         Consumable coffee = new Consumable("Coffee", 50);
         Consumable whiskey = new Consumable("Whiskey", 30);
@@ -433,6 +440,21 @@ public class Room {
         Consumable randomDrink = consumables[i];
 
         return randomDrink;
+    }
+
+    //Robert: This method is a copycat of Nemo's method getRandomDrink()
+    public Weapon getRandomWeapon() {
+        Weapon cross = new Weapon("Cross", 50);
+        Weapon knife = new Weapon("Knife", 100);
+        Weapon rose = new Weapon("Rose", 25);
+        Weapon shotgun = new Weapon("Shotgun", 200);
+        Weapon[] weapons = {cross, knife, rose, shotgun};
+        Random rand = new Random();
+
+        int i = rand.nextInt(4);
+        Weapon randomWeapon = weapons[i];
+
+        return randomWeapon;
     }
 
     public boolean doorToFreedom(Hero hero){

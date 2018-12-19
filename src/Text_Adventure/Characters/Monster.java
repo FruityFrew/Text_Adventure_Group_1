@@ -2,7 +2,7 @@ package Text_Adventure.Characters;
 
 import java.security.SecureRandom;
 
-public class Monster {
+public class Monster extends Character {
 
     private int monsterHealth;
     private int monsterAttack;

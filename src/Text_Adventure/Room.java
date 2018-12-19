@@ -26,7 +26,7 @@ public class Room {
     private int S;
     private int W;
     private Item item;
-    private Monster monster;
+    public Monster monster;
     private String wall;
     private int spawnMonsterRate = 25;
     private int spawnItemRate = 90;

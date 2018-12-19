@@ -316,7 +316,7 @@ public class Method {
     }
 
     // Ahmed: Fight system that uses already exisisting damage generator in Character-class
-    public void exchangeAttackWithMonster(Hero hero, Character monster) {
+    public void exchangeAttackWithMonster(Hero hero, Monster monster) {
         //First hero attacks
         int damageHolder = Character.generateDamage(hero.getHitChance(), hero.getMaxAttack());
         monster.setHealth(monster.getHealth() - damageHolder);
@@ -499,7 +499,7 @@ public class Method {
         switch (choice) {
             case 1:
                 hero1.addHighScore(100);
-                myMethod.coinFight();
+                myMethod.exchangeAttackWithMonster(hero1, room1.monster);
                 break;
             case 2:
                 hero1.setHealth(hero1.getHealth() - (hero1.getHealth()/2));

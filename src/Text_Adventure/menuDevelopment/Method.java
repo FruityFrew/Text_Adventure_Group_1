@@ -500,6 +500,11 @@ public class Method {
             case 1:
                 hero1.addHighScore(100);
                 myMethod.exchangeAttackWithMonster(hero1, room1.monster);
+                if (room1.monster.getHealth() < 1){
+                    myMethod.room1.setMonster(null);
+                    hero1.addHighScore(50);
+                    System.out.println("You killed the monster.");
+                }
                 break;
             case 2:
                 hero1.setHealth(hero1.getHealth() - (hero1.getHealth()/2));

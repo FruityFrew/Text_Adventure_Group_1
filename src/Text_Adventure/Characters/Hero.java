@@ -126,11 +126,7 @@ public class Hero extends Character {
         if (entity instanceof Key ){
             addKeyToKeyRing((Key) entity);
         } else if (entity instanceof Consumable ){
-            try {
                 addItemToBackpack((Consumable) entity);
-            }catch (NullPointerException e){
-                System.out.println("There is no item to pick up!!!");
-            }
         } else {
             pickUpWeapon((Weapon) entity, room1);
         }

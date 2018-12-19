@@ -199,14 +199,15 @@ public class Room {
      * Robert: This is the method that describes that prints the description of the room
      */
     public void describeRoom() {
-        System.out.println("You are in the room: " + getIndex());
-        System.out.println("You entering the room as you are looking around carefully...");
-        describeWalls();
+        //System.out.println("You are in the room: " + getIndex());
+        System.out.println("you are looking around carefully...");
+        if (item == null){describeWalls();}
+        if (item != null){describeItem();}
+        System.out.println(" ");
         describeDoors(N, E, S, W);
-        describeItem();
-        describeMonster();
-        if (exit == true){
-            System.out.println("You are looking up... There is a trap door");
+        if (exit){
+            System.out.println(" ");
+            System.out.println("You are looking up. There is a trap door.");
             System.out.println("it seems to lead outside. However is locked with 3 different locks");
             System.out.println("The first lockpad writes the number 0 on it");
             System.out.println("The second lockpad writes the number 1 on it");

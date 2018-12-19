@@ -257,8 +257,13 @@ public class Method {
 //                myMethod.playGame(myMethod.gameOptions());
                     boolean running = true;
                     while (running){
-                        System.out.println("\n\tHealth = " + hero1.getHealth()+ ".\nHighscore = " + myMethod.hero1.getHighscore() +
-                                "--------------------------------------------\n");
+                        System.out.println("\n----------------------------------------------\n" +
+                                "\tHealth = " + hero1.getHealth() + " Highscore = "
+                                + myMethod.hero1.getHighscore() + " Room: " + myMethod.room1.getIndex() +
+                                ".\n" +
+                                "--------------------------------------------");
+                        //System.out.println("\n\tHealth = " + hero1.getHealth()+ ".\nHighscore = " + myMethod.hero1.getHighscore() +
+                          //      "--------------------------------------------\n");
                         running = myMethod.gameInterface(myMap);
                     }
 
@@ -483,18 +488,16 @@ public class Method {
     public boolean gameInterface(Map myMap){
         boolean result = true;
         //int newRoom = 0;
-        myMethod.room1.describeRoom();
+        if (myMethod.room1.monster != null){myMethod.room1.describeMonster();}
+        if (myMethod.room1.monster == null){myMethod.room1.describeRoom();}
         System.out.println("***    Choose action   ***");
         System.out.println(" ");
-        System.out.println("[1] Fight Monster");
-        System.out.println("[2] Avoid fight");
-        System.out.println("[3] Open backpack");
-        System.out.println("[4] Go to a new room");
-        System.out.println("[5] Pick +ITEM");
-        System.out.println("[6] Go to the menu");
-        System.out.println("\n----------------------------------------------\n" +
-                "\tHealth = " + hero1.getHealth() + ".\n" +
-                "--------------------------------------------");
+        if (myMethod.room1.monster != null){System.out.print("[1] Fight Monster ");}
+        if (myMethod.room1.monster != null){System.out.print("| [2] Avoid fight ");}
+        System.out.print("|[3] Open backpack| ");
+        if (myMethod.room1.monster == null){System.out.print("| [4] Go to a new room ");}
+        if (myMethod.room1.monster == null){if (myMethod.room1.monster == null){System.out.print("| [5] Pick +ITEM ");}}
+        System.out.println("|[6] Go to the menu");
         int choice = Main.in.nextInt();
         switch (choice) {
             case 1:
@@ -514,7 +517,7 @@ public class Method {
                 break;
             case 3:
                 hero1.viewContentsOfKeyRing();
-                hero1.viewConstentofWeaponSlot();
+                if(hero1.weapon != null)hero1.viewConstentofWeaponSlot();
                 hero1.viewContentsOfBackpack();
                 break;
             case 4:

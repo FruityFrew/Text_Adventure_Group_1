@@ -139,10 +139,13 @@ public class Hero extends Character {
         for(Consumable slot: backpack) {
             if(slot == null) {
                 backpack[countIndex] = thing;
-                System.out.printf("Item %s has been added to your backpack (Slot %d)%n", thing.getName(), countIndex);
+
             }else {
                 countIndex++;
             }
+        }
+        if (backpack[countIndex] != null) {
+            System.out.printf("Item %s has been added to your backpack (Slot %d)%n", thing.getName(), countIndex);
         }
         if(countIndex > 4) {
             System.out.println("Your backpack is full!!!");

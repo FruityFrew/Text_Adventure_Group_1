@@ -10,8 +10,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Hero extends Character {
-    public static Consumable[] backpack = new Consumable[5];
-    public ArrayList<Key> keyRing = new ArrayList<>(); //Robert: I had to implement a keyring. i hope it is ok :)
+    public static Consumable[] backpack = new Consumable[6];
+    public ArrayList<Key> keyRing = new ArrayList<>(3); //Robert: I had to implement a keyring. i hope it is ok :)
     public int highscore = 0; //Robert: the highscore that the player collects.
     public Weapon weapon; //this the weapon's slot of the hero. something like inventory but with only one slot.
     public int weaponDamageModifier; //this will modify the damage that a player deal, if the player has a weapon.
@@ -65,8 +65,9 @@ public class Hero extends Character {
         while (running == true){
             int count = 0;
             for(Consumable a: backpack) {
-                if(a != null) System.out.printf("["+ count + "][%s]%n", a.getName());
-                else System.out.println("["+ count + "][-Empty slot-]");
+                if(a != null) {
+                    System.out.printf("[" + count + "][%s]%n", a.getName());
+                }else { if(count < 5)System.out.println("["+ count + "][-Empty slot-]");}
                 count++;
             }
             System.out.println("[6]close");
@@ -132,20 +133,31 @@ public class Hero extends Character {
         }
     }
 
+    //Robert: I did bit debugging here.
+    //I added a new if statement, and I rearrnged bit the structure in the second part of the method.
+    //it was causing a stack overflow because of the new output, but it had to be fixed anyway.
     public void addItemToBackpack(Consumable thing) {
 
         int countIndex = 0;
 
         for(Consumable slot: backpack) {
             if(slot == null) {
-                backpack[countIndex] = thing;
+                if(countIndex <= 4) {
+                    backpack[countIndex] = thing;
+                }
+                //backpack[countIndex] = thing;
+                //System.out.println("Your backpack is full!!!");
 
             }else {
                 countIndex++;
             }
         }
         if (backpack[countIndex] != null) {
-            System.out.printf("Item %s has been added to your backpack (Slot %d)%n", thing.getName(), countIndex);
+            if(countIndex > 4) {
+                System.out.println("Your backpack is full!!!");
+            } else {
+                System.out.printf("Item %s has been added to your backpack (Slot %d)%n", thing.getName(), countIndex);
+            }
         }
         if(countIndex > 4) {
             System.out.println("Your backpack is full!!!");

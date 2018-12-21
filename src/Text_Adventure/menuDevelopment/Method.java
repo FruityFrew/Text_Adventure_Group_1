@@ -10,6 +10,7 @@ import Text_Adventure.Characters.Hero;
 import Text_Adventure.Characters.Monster;
 import Text_Adventure.Items.Consumable;
 import Text_Adventure.Items.Item;
+import Text_Adventure.Items.Key;
 import Text_Adventure.Items.Weapon;
 import Text_Adventure.Main;
 import Text_Adventure.Map;

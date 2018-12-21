@@ -46,10 +46,10 @@ public class Room {
         this.position[0] = x;
         this.position[1] = y;
         while ((N < 1)&&(E < 1)&&(S < 1)&&(W < 1)){
-            if(dCheckNorth(x, y, level)){ this.N = random.nextInt(7); }
-            if(dCheckEast(x, y, level)){ this.E = random.nextInt(7); }
-            if(dCheckSouth(x, y, level)){ this.S = random.nextInt(7); }
-            if(dCheckWest(x, y, level)){ this.W = random.nextInt(7); }
+            if(dCheckNorth(x, y, level)){ this.N = random.nextInt(10); }
+            if(dCheckEast(x, y, level)){ this.E = random.nextInt(10); }
+            if(dCheckSouth(x, y, level)){ this.S = random.nextInt(10); }
+            if(dCheckWest(x, y, level)){ this.W = random.nextInt(10); }
         }
         int n = random.nextInt(100);
         if (n < spawnMonsterRate){
@@ -65,7 +65,7 @@ public class Room {
                 this.item = new Key("Rusty key");
             } else {
                 n = random.nextInt(100);
-                if (n > 50){
+                if (n > 25){
                     this.item = getRandomDrink();
                 } else {
                     this.item = getRandomWeapon();

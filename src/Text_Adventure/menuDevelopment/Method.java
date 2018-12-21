@@ -498,8 +498,13 @@ public class Method {
         if (myMethod.room1.monster != null){System.out.print("| [2] Avoid fight ");}
         System.out.print("|[3] Open backpack| ");
         if (myMethod.room1.monster == null){System.out.print("| [4] Go to a new room ");}
-        if (myMethod.room1.monster == null){if (myMethod.room1.monster == null){System.out.print("| [5] Pick +ITEM ");}}
-        System.out.println("|[6] Go to the menu");
+        if (myMethod.room1.monster == null){if (myMethod.room1.monster == null){
+            if(myMethod.room1.getItem() != null){
+                System.out.print("| [5] Pick " + myMethod.room1.getItem().getName());}
+                //Robert: Everyone asked for this modification.
+            }
+        }
+        System.out.println(" | [6] Go to the menu");
         int choice = Main.in.nextInt();
         switch (choice) {
             case 1:

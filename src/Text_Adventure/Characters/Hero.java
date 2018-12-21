@@ -10,8 +10,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Hero extends Character {
-    public static Consumable[] backpack = new Consumable[5];
-    public ArrayList<Key> keyRing = new ArrayList<>(); //Robert: I had to implement a keyring. i hope it is ok :)
+    public static Consumable[] backpack = new Consumable[6];
+    public ArrayList<Key> keyRing = new ArrayList<>(3); //Robert: I had to implement a keyring. i hope it is ok :)
     public int highscore = 0; //Robert: the highscore that the player collects.
     public Weapon weapon; //this the weapon's slot of the hero. something like inventory but with only one slot.
     public int weaponDamageModifier; //this will modify the damage that a player deal, if the player has a weapon.
@@ -65,8 +65,9 @@ public class Hero extends Character {
         while (running == true){
             int count = 0;
             for(Consumable a: backpack) {
-                if(a != null) System.out.printf("["+ count + "][%s]%n", a.getName());
-                else System.out.println("["+ count + "][-Empty slot-]");
+                if(a != null) {
+                    System.out.printf("[" + count + "][%s]%n", a.getName());
+                }else { if(count < 5)System.out.println("["+ count + "][-Empty slot-]");}
                 count++;
             }
             System.out.println("[6]close");
@@ -108,11 +109,18 @@ public class Hero extends Character {
     //but I wish to make the inventory and keyring methods to follow the same naming conventions.
     public void viewContentsOfKeyRing() {
         System.out.println("Keyring:");
-        int count = 1;
+        //int count = 1;
+        boolean key0 = false;
+        boolean key1 = false;
+        boolean key2 = false;
         for(Key a: keyRing) {
-            System.out.println(a.getName2());
-            count++;
+            if(a.getType() == 0){key0 = true;}
+            if(a.getType() == 1){key1 = true;}
+            if(a.getType() == 2){key2 = true;}
         }
+        if(key0){System.out.println("A key with the number 0 on it");}
+        if(key1){System.out.println("A key with the number 1 on it");}
+        if(key0){System.out.println("A key with the number 2 on it");}
     }
 
     //Robert: This method returns the weapon that is inside the weapon slot.
@@ -132,20 +140,31 @@ public class Hero extends Character {
         }
     }
 
+    //Robert: I did bit debugging here.
+    //I added a new if statement, and I rearrnged bit the structure in the second part of the method.
+    //it was causing a stack overflow because of the new output, but it had to be fixed anyway.
     public void addItemToBackpack(Consumable thing) {
 
         int countIndex = 0;
 
         for(Consumable slot: backpack) {
             if(slot == null) {
-                backpack[countIndex] = thing;
+                if(countIndex <= 4) {
+                    backpack[countIndex] = thing;
+                }
+                //backpack[countIndex] = thing;
+                //System.out.println("Your backpack is full!!!");
 
             }else {
                 countIndex++;
             }
         }
         if (backpack[countIndex] != null) {
-            System.out.printf("Item %s has been added to your backpack (Slot %d)%n", thing.getName(), countIndex);
+            if(countIndex > 4) {
+                System.out.println("Your backpack is full!!!");
+            } else {
+                System.out.printf("Item %s has been added to your backpack (Slot %d)%n", thing.getName(), countIndex);
+            }
         }
         if(countIndex > 4) {
             System.out.println("Your backpack is full!!!");

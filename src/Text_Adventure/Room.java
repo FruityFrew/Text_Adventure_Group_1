@@ -46,10 +46,10 @@ public class Room {
         this.position[0] = x;
         this.position[1] = y;
         while ((N < 1)&&(E < 1)&&(S < 1)&&(W < 1)){
-            if(dCheckNorth(x, y, level)){ this.N = random.nextInt(7); }
-            if(dCheckEast(x, y, level)){ this.E = random.nextInt(7); }
-            if(dCheckSouth(x, y, level)){ this.S = random.nextInt(7); }
-            if(dCheckWest(x, y, level)){ this.W = random.nextInt(7); }
+            if(dCheckNorth(x, y, level)){ this.N = random.nextInt(10); }
+            if(dCheckEast(x, y, level)){ this.E = random.nextInt(10); }
+            if(dCheckSouth(x, y, level)){ this.S = random.nextInt(10); }
+            if(dCheckWest(x, y, level)){ this.W = random.nextInt(10); }
         }
         int n = random.nextInt(100);
         if (n < spawnMonsterRate){
@@ -65,7 +65,7 @@ public class Room {
                 this.item = new Key("Rusty key");
             } else {
                 n = random.nextInt(100);
-                if (n > 50){
+                if (n > 25){
                     this.item = getRandomDrink();
                 } else {
                     this.item = getRandomWeapon();
@@ -241,17 +241,18 @@ public class Room {
     public void describeDoors(int N, int E, int S, int W) {
         System.out.println("Doors in this room:");
         if (N!=0) {
-            System.out.println("One door stands on the North side of the room");
+            System.out.print("| North |");
         }
         if (E!=0) {
-            System.out.println("You can see one door on the East side of the room");
+            System.out.print("| East |");
         }
         if (S!=0) {
-            System.out.println("It seems that there is a room on the South side of the room");
+            System.out.print("| South |");
         }
         if (W>=1) {
-            System.out.println("and one door stands on the West side of the room as well");
+            System.out.print("| West |");
         }
+        System.out.println(" ");
     }
 
     /**

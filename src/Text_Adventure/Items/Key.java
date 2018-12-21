@@ -76,4 +76,10 @@ public class Key extends Item {
     public String getName2() {
         return name2;
     }
+
+    //setter for type. mostly debugging reasons
+
+    public void setType(int type) {
+        this.type = type;
+    }
 }

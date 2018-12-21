@@ -241,17 +241,18 @@ public class Room {
     public void describeDoors(int N, int E, int S, int W) {
         System.out.println("Doors in this room:");
         if (N!=0) {
-            System.out.println("One door stands on the North side of the room");
+            System.out.print("| North |");
         }
         if (E!=0) {
-            System.out.println("You can see one door on the East side of the room");
+            System.out.print("| East |");
         }
         if (S!=0) {
-            System.out.println("It seems that there is a room on the South side of the room");
+            System.out.print("| South |");
         }
         if (W>=1) {
-            System.out.println("and one door stands on the West side of the room as well");
+            System.out.print("| West |");
         }
+        System.out.println(" ");
     }
 
     /**

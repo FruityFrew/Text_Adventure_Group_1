@@ -109,11 +109,18 @@ public class Hero extends Character {
     //but I wish to make the inventory and keyring methods to follow the same naming conventions.
     public void viewContentsOfKeyRing() {
         System.out.println("Keyring:");
-        int count = 1;
+        //int count = 1;
+        boolean key0 = false;
+        boolean key1 = false;
+        boolean key2 = false;
         for(Key a: keyRing) {
-            System.out.println(a.getName2());
-            count++;
+            if(a.getType() == 0){key0 = true;}
+            if(a.getType() == 1){key1 = true;}
+            if(a.getType() == 2){key2 = true;}
         }
+        if(key0){System.out.println("A key with the number 0 on it");}
+        if(key1){System.out.println("A key with the number 1 on it");}
+        if(key0){System.out.println("A key with the number 2 on it");}
     }
 
     //Robert: This method returns the weapon that is inside the weapon slot.

@@ -1,9 +1,10 @@
 package Text_Adventure;
 
+import java.io.Serializable;
 import java.security.SecureRandom;
 import java.util.ArrayList;
 
-public class Map {
+public class Map  implements Serializable {
     public ArrayList<Room> rooms = new ArrayList<Room>(100);
     private int level; //this is the number n when the map is n*n
     SecureRandom random = new SecureRandom();

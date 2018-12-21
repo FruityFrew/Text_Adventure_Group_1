@@ -7,6 +7,7 @@ import Text_Adventure.Items.Item;
 import Text_Adventure.Items.Key;
 import Text_Adventure.Items.Weapon;
 
+import java.io.Serializable;
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Random;
@@ -15,8 +16,8 @@ import java.util.Scanner;
 /**
  * @author Robert Alm RobertKristianAlm@gmail.com
  */
-public class Room {
-    Scanner in = new Scanner(System.in);
+public class Room implements Serializable {
+    transient Scanner in = new Scanner(System.in);
     SecureRandom random = new SecureRandom();
     private int[] position =  new int[2];
     public ArrayList<Door> doors = new ArrayList<>();

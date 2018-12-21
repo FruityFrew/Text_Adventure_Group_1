@@ -1,9 +1,11 @@
 package  Text_Adventure.Items;
 
+import java.io.Serializable;
+
 /**
  * @author Nemanja Negovanovic
  */
-public class Item {
+public class Item implements Serializable {
     private String Name;
 
     /**

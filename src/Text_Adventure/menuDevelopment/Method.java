@@ -17,14 +17,16 @@ import Text_Adventure.Map;
 import Text_Adventure.Room;
 import java.security.SecureRandom;
 
-public class Method {
+import static Text_Adventure.Main.myMethod;
 
-    public Scanner in = new Scanner(System.in);
+public class Method  implements Serializable {
+
+    public transient Scanner in = new Scanner(System.in);
     Room myRoom = new Room(0, 5, 0, 0);
 
 
     SecureRandom random = new SecureRandom();
-    public static Method myMethod = new Method();
+    //public static Method myMethod = Main.myMethod;
 
     public Map myMap;
     public Hero hero1 = new Hero(1);
@@ -270,12 +272,25 @@ public class Method {
 
                     break;
                 case 2:  // SAVE GAME
-                    System.out.println("Enter the name of the game: \n");
+                    save a = new save();
+                    a.PlayerBackpack= Hero.backpack;
+                    a.PlayerHealth=hero1.getHealth();
+                    a.PlayerName=hero1.getName();
+                    a.PlayerScore=hero1.getHighscore();
+                    a.kayList=hero1.keyRing;
+
+                    ReadWriteObject.writeObject(a);
 //                SavedGame saveGame = new SavedGame(Main.in.nextLine());
 //                Main.savedGames.add(saveGame);
 //                Main.choice = 10;
                     break;
-                case 3: // LOAD GAME
+                case 3:
+                    save b = (save)ReadWriteObject.readObject();
+                    Hero.backpack=b.PlayerBackpack;
+                    hero1.setHealth(b.PlayerHealth);
+                    hero1.setName(b.PlayerName);
+                    hero1.addHighScore(b.PlayerScore);
+                    hero1.keyRing=b.kayList;
 //                for (SavedGame x : Main.savedGames) {
 //                    System.out.println(Main.savedGames.indexOf(x) + "]\t" + x);
 //                }
@@ -397,7 +412,7 @@ public class Method {
      * Robert: Now the name and the highscore are taken directly from the Hero class.
      */
     public static void highScore(Hero hero) {
-        Scanner input = new Scanner(System.in);
+
         PrintWriter scoreExport = null;
 
         int highScore;

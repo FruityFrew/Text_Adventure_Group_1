@@ -1,8 +1,9 @@
 package Text_Adventure.Characters;
 
+import java.io.Serializable;
 import java.security.SecureRandom;
 
-public class Monster extends Character {
+public class Monster extends Character implements Serializable {
 
     private int monsterHealth;
     private int monsterAttack;

@@ -1,17 +1,22 @@
 package Text_Adventure;
 
+import Text_Adventure.Characters.Hero;
+import Text_Adventure.Items.Consumable;
 import Text_Adventure.menuDevelopment.Method;
 import Text_Adventure.menuDevelopment.SavedGame;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
  * Author: Alex Oachesu
  */
-public class Main  {
+public class Main  implements Serializable {
 
-    public static Scanner in = new Scanner( System.in);
-    private static Method myMethod = new Method();
+    public static transient Scanner in = new Scanner( System.in);
+
+    public static Method myMethod = new Method();
 
     /**
      * Alex: static variable tht are unique values during the game session.
@@ -20,7 +25,7 @@ public class Main  {
     public static int choice; // choice is used as a unique variable that change values throughout the game.
 
     public static ArrayList<SavedGame> savedGames = new ArrayList<>();
-
+    private static final long serialVersionUID = 1347891374;
     public static void main(String[] args) {
 
         //        Method.displayScore(); // Testing- this displays score

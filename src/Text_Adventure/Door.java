@@ -1,11 +1,12 @@
 package Text_Adventure;
 
+import java.io.Serializable;
 import java.util.Random;
 
 /**
  * @author Nemanja Negovanovic
  */
-public class Door {
+public class Door  implements Serializable {
     private int type;
     private int position;
     private int room;

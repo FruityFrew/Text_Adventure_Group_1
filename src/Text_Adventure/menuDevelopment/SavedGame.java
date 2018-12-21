@@ -2,7 +2,9 @@ package Text_Adventure.menuDevelopment;
 
 import Text_Adventure.Room;
 
-public class SavedGame {
+import java.io.Serializable;
+
+public class SavedGame implements Serializable {
     private String saveGameName;
 
     Room[] savedGames = new Room[10];

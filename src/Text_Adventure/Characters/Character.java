@@ -1,8 +1,9 @@
 package Text_Adventure.Characters;
 
+import java.io.Serializable;
 import java.util.Random;
 
-public class Character {
+public class Character implements Serializable {
     private String name;
     private int roomIndex;
     private double hitChance;

@@ -6,16 +6,17 @@ import Text_Adventure.Items.Key;
 import Text_Adventure.Items.Weapon;
 import Text_Adventure.Room;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Hero extends Character {
+public class Hero extends Character implements Serializable {
     public static Consumable[] backpack = new Consumable[6];
     public ArrayList<Key> keyRing = new ArrayList<>(3); //Robert: I had to implement a keyring. i hope it is ok :)
     public int highscore = 0; //Robert: the highscore that the player collects.
     public Weapon weapon; //this the weapon's slot of the hero. something like inventory but with only one slot.
     public int weaponDamageModifier; //this will modify the damage that a player deal, if the player has a weapon.
-    Scanner input = new Scanner(System.in);
+    transient Scanner input = new Scanner(System.in);
 
     public Hero(int heroNumber) {
         switch(heroNumber) {

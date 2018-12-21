@@ -1,8 +1,11 @@
 package Text_Adventure.Items;
+
+import java.io.Serializable;
+
 /**
  * @author Nemanja Negovanovic
  */
-public class Consumable extends Item {
+public class Consumable extends Item implements Serializable {
     private int healthModifier;
 
     /**

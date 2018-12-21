@@ -1,11 +1,12 @@
 package Text_Adventure.Items;
 
+import java.io.Serializable;
 import java.util.Random;
 
 /**
  * @author Nemanja Negovanovic
  */
-public class Key extends Item {
+public class Key extends Item  implements Serializable {
     private int type ;
     private boolean active;
     private String name2; //Robert: I added this attribute

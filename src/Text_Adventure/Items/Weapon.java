@@ -1,8 +1,11 @@
 package Text_Adventure.Items;
+
+import java.io.Serializable;
+
 /**
  * @author Nemanja Negovanovic
  */
-public class Weapon extends Item {
+public class Weapon extends Item implements Serializable {
     private int damage;
     private String HeroType;
 //    Weapon cross = new Weapon("Cross", 100);

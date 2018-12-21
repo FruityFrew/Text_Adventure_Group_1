@@ -494,7 +494,8 @@ public class Method {
         if (myMethod.room1.monster == null){myMethod.room1.describeRoom();}
         System.out.println(" ");
         System.out.println("***    Choose action   ***");
-        if (myMethod.room1.monster != null){System.out.print("[1] Fight Monster ");}
+        if (myMethod.room1.monster != null){System.out.print("[1] Fight " + myMethod.room1.monster.getMonsterType());}
+        //Same as pick item. The concept is cool.
         if (myMethod.room1.monster != null){System.out.print("| [2] Avoid fight ");}
         System.out.print("|[3] Open backpack| ");
         if (myMethod.room1.monster == null){System.out.print("| [4] Go to a new room ");}

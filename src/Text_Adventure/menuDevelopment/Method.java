@@ -1,8 +1,11 @@
 package Text_Adventure.menuDevelopment;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 import java.util.Scanner;
 import Text_Adventure.Characters.Character;
 import Text_Adventure.Characters.Hero;
@@ -21,6 +24,8 @@ public class Method  implements Serializable {
 
     public transient Scanner in = new Scanner(System.in);
     Room myRoom = new Room(0, 5, 0, 0);
+    public static List fileNamesList = new ArrayList();
+    public static String[] fileNamesString=new String[10];
 
 
     SecureRandom random = new SecureRandom();
@@ -286,8 +291,12 @@ public class Method  implements Serializable {
 //                Main.choice = 10;
                     break;
                 case 3:
-                    save b = (save)ReadWriteObject.readObject();
-                    Hero.backpack=b.PlayerBackpack;
+                    Method.ShowSaves();
+                    System.out.print("Choose line number to load: ");
+                    int chooseSave = in.nextInt();
+                    System.out.println(fileNamesString[chooseSave-1]);
+                    save b = (save)ReadWriteObject.readObject(fileNamesString[chooseSave-1]);
+                   Hero.backpack=b.PlayerBackpack;
                     hero1.setHealth(b.PlayerHealth);
                     hero1.setName(b.PlayerName);
                     hero1.addHighScore(b.PlayerScore);
@@ -295,6 +304,7 @@ public class Method  implements Serializable {
                     hero1.setPlayerType(b.PlayerType);
                     myMap.rooms=b.SaveRooms;
                     room1.setIndex(b.roomIndex);
+
 //                for (SavedGame x : Main.savedGames) {
 //                    System.out.println(Main.savedGames.indexOf(x) + "]\t" + x);
 //                }
@@ -589,4 +599,28 @@ public class Method  implements Serializable {
         }
         return result;
     } //method gameInterface ends here
+    public static void ShowSaves() {
+        try {
+
+            Files.newDirectoryStream(Paths.get("saves"),
+                    path -> path.toString().endsWith(".save")).forEach(filePath -> fileNamesList.add(filePath.toString()));
+        } catch (Exception e) {
+            System.out.println("Ooops!");
+        }
+        for (int i = 0; i < fileNamesList.size(); i++) {
+            fileNamesString[i]=fileNamesList.get(i).toString();
+        }
+        int number = 0;
+        for (String saveName : fileNamesString) {
+            if (saveName!=null) {
+                number++;
+                System.out.println(number + ") " + saveName);
+
+            }else{
+                number++;
+                System.out.println(number + ") Empty slot");
+
+            }
+        }
+    }
 }

@@ -3,10 +3,8 @@ package Text_Adventure.menuDevelopment;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
+
 import Text_Adventure.Characters.Character;
 import Text_Adventure.Characters.Hero;
 import Text_Adventure.Characters.Monster;
@@ -19,6 +17,7 @@ import Text_Adventure.Room;
 import java.security.SecureRandom;
 
 import static Text_Adventure.Main.myMethod;
+import static Text_Adventure.menuDevelopment.ReadWriteObject.writeObject;
 
 public class Method  implements Serializable {
 
@@ -26,6 +25,7 @@ public class Method  implements Serializable {
     Room myRoom = new Room(0, 5, 0, 0);
     public static List fileNamesList = new ArrayList();
     public static String[] fileNamesString=new String[10];
+    public int diffLevel;
 
 
     SecureRandom random = new SecureRandom();
@@ -42,7 +42,7 @@ public class Method  implements Serializable {
      */
     public void chooseGameLevel() {
         //Robert:I added the line of code below me
-        int diffLevel = 5;
+        diffLevel = 5;
         System.out.println("\nNow give me your hand to tell your options! " +
                 "\n\tYou have three lines ... " +
                 "\n[1]\ta short line " +
@@ -284,26 +284,17 @@ public class Method  implements Serializable {
                     a.PlayerType=hero1.getPlayerType();
                     a.SaveRooms=myMap.rooms;
                     a.roomIndex=room1.getIndex();
-
+                    a.Level=diffLevel;
                     ReadWriteObject.writeObject(a);
+
+
 //                SavedGame saveGame = new SavedGame(Main.in.nextLine());
 //                Main.savedGames.add(saveGame);
 //                Main.choice = 10;
                     break;
                 case 3:
-                    Method.ShowSaves();
-                    System.out.print("Choose line number to load: ");
-                    int chooseSave = in.nextInt();
-                    System.out.println(fileNamesString[chooseSave-1]);
-                    save b = (save)ReadWriteObject.readObject(fileNamesString[chooseSave-1]);
-                   Hero.backpack=b.PlayerBackpack;
-                    hero1.setHealth(b.PlayerHealth);
-                    hero1.setName(b.PlayerName);
-                    hero1.addHighScore(b.PlayerScore);
-                    hero1.keyRing=b.keyList;
-                    hero1.setPlayerType(b.PlayerType);
-                    myMap.rooms=b.SaveRooms;
-                    room1.setIndex(b.roomIndex);
+                   loadGame();
+
 
 //                for (SavedGame x : Main.savedGames) {
 //                    System.out.println(Main.savedGames.indexOf(x) + "]\t" + x);
@@ -373,7 +364,7 @@ public class Method  implements Serializable {
             System.out.println("the monster beat you in coins you loose 5 health");
             hero1.setHealth(hero1.getHealth()-15);
         } else {
-            System.out.println("you beated the monster in coins. it gives you 5 of his health");
+            System.out.println("you beat the monster in coins. it gives you 5 of his health");
             hero1.setHealth(hero1.getHealth()+15);
         }
     }
@@ -600,15 +591,17 @@ public class Method  implements Serializable {
         return result;
     } //method gameInterface ends here
     public static void ShowSaves() {
-        try {
 
+        fileNamesList.clear();
+        try {
             Files.newDirectoryStream(Paths.get("saves"),
                     path -> path.toString().endsWith(".save")).forEach(filePath -> fileNamesList.add(filePath.toString()));
         } catch (Exception e) {
             System.out.println("Ooops!");
+
         }
         for (int i = 0; i < fileNamesList.size(); i++) {
-            fileNamesString[i]=fileNamesList.get(i).toString();
+            fileNamesString[i] = fileNamesList.get(i).toString();
         }
         int number = 0;
         for (String saveName : fileNamesString) {
@@ -621,6 +614,27 @@ public class Method  implements Serializable {
                 System.out.println(number + ") Empty slot");
 
             }
+        }
+    }
+    public void loadGame(){
+        Method.ShowSaves();
+        System.out.println("ENTER [0] TO GO BACK TO MENU");
+        System.out.print("Choose line number to load: ");
+        int chooseSave = in.nextInt();
+        if (chooseSave!=0) {
+            System.out.println(fileNamesString[chooseSave - 1]);
+            save b = (save) ReadWriteObject.readObject(fileNamesString[chooseSave - 1]);
+            Hero.backpack = b.PlayerBackpack;
+            hero1.setHealth(b.PlayerHealth);
+            hero1.setName(b.PlayerName);
+            hero1.addHighScore(b.PlayerScore);
+            hero1.keyRing = b.keyList;
+            hero1.setPlayerType(b.PlayerType);
+            myMap.rooms = b.SaveRooms;
+            room1.setIndex(b.roomIndex);
+            diffLevel=b.Level;
+        }else{
+            playGame();
         }
     }
 }

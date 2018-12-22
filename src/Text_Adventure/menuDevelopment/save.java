@@ -16,4 +16,5 @@ public class save implements Serializable {
     public ArrayList<Key> keyList;
     public ArrayList<Room> SaveRooms;
     public int roomIndex;
+    public int Level;
 }

@@ -633,8 +633,7 @@ public class Method  implements Serializable {
             myMap.rooms = b.SaveRooms;
             room1.setIndex(b.roomIndex);
             diffLevel=b.Level;
-        }else{
-            playGame();
+
         }
     }
 }

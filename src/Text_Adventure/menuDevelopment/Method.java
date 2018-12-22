@@ -1,7 +1,6 @@
 package Text_Adventure.menuDevelopment;
 
 import java.io.*;
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
@@ -10,7 +9,6 @@ import Text_Adventure.Characters.Hero;
 import Text_Adventure.Characters.Monster;
 import Text_Adventure.Items.Consumable;
 import Text_Adventure.Items.Item;
-import Text_Adventure.Items.Key;
 import Text_Adventure.Items.Weapon;
 import Text_Adventure.Main;
 import Text_Adventure.Map;
@@ -277,7 +275,10 @@ public class Method  implements Serializable {
                     a.PlayerHealth=hero1.getHealth();
                     a.PlayerName=hero1.getName();
                     a.PlayerScore=hero1.getHighscore();
-                    a.kayList=hero1.keyRing;
+                    a.keyList =hero1.keyRing;
+                    a.PlayerType=hero1.getPlayerType();
+                    a.SaveRooms=myMap.rooms;
+                    a.roomIndex=room1.getIndex();
 
                     ReadWriteObject.writeObject(a);
 //                SavedGame saveGame = new SavedGame(Main.in.nextLine());
@@ -290,7 +291,10 @@ public class Method  implements Serializable {
                     hero1.setHealth(b.PlayerHealth);
                     hero1.setName(b.PlayerName);
                     hero1.addHighScore(b.PlayerScore);
-                    hero1.keyRing=b.kayList;
+                    hero1.keyRing=b.keyList;
+                    hero1.setPlayerType(b.PlayerType);
+                    myMap.rooms=b.SaveRooms;
+                    room1.setIndex(b.roomIndex);
 //                for (SavedGame x : Main.savedGames) {
 //                    System.out.println(Main.savedGames.indexOf(x) + "]\t" + x);
 //                }

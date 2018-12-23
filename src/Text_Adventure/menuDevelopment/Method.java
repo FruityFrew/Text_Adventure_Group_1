@@ -213,7 +213,8 @@ public class Method  implements Serializable {
             System.out.println("[1]Play Game");
             System.out.println("[2]Save Game");
             System.out.println("[3]Load Game");
-            System.out.println("[4]Exit");
+            System.out.println("[4]View high-scores");
+            System.out.println("[5]Exit");
             int gameOption = in.nextInt();
 
 //        System.out.println("\n\tHealth = " + hero1.getHealth()+ ".\n" +
@@ -294,6 +295,10 @@ public class Method  implements Serializable {
                     break;
                 case 3:
                    loadGame();
+                   break;
+
+                case 4:
+                    displayScore();
 
 
 //                for (SavedGame x : Main.savedGames) {
@@ -304,7 +309,7 @@ public class Method  implements Serializable {
 //                ;
                     break;
 
-                case 4: // EXIT
+                case 5: // EXIT
                     //Robert: I commended the line bellow me, because I replaced with exitOptions()
                     //Main.choice = 10;
                     System.out.println("EXIT the game?" +
@@ -346,15 +351,20 @@ public class Method  implements Serializable {
         //First hero attacks
         int damageHolder = Character.generateDamage(hero.getHitChance(), hero.getMaxAttack(), hero1.weaponDamageModifier);
         monster.setHealth(monster.getHealth() - damageHolder);
-        System.out.printf("You hit monster and monster looses %d health points.%n" +
-                "Monster's health (updated): %d%n", damageHolder, monster.getHealth());
+        if (monster.getHealth() > 0) {
+            System.out.printf("You hit monster and monster looses %d health points.%n" +
+                    "Monster's health (updated): %d%n", damageHolder, monster.getHealth());
 
-        //Then monster attacks...
-        damageHolder = Character.generateDamage(monster.getHitChance(), monster.getMaxAttack(), 0);
-        hero.setHealth(hero.getHealth() - damageHolder);
-        System.out.printf("Monster hits you back and you loose %d health points.%n" +
-                "Your current health: %d%n", damageHolder, hero.getHealth());
-        return hero.getHealth();
+            //Then monster attacks...
+            damageHolder = Character.generateDamage(monster.getHitChance(), monster.getMaxAttack(), 0);
+            hero.setHealth(hero.getHealth() - damageHolder);
+            System.out.printf("Monster hits you back and you loose %d health points.%n" +
+                    "Your current health: %d%n", damageHolder, hero.getHealth());
+
+        } else {
+            System.out.printf("You hit monster and monster looses %d health points.%n" +
+                    "Monster is dead!\n", damageHolder, monster.getHealth());
+        }return hero.getHealth();
     }
 
     //Robert: I made this sorry excuse of fighting system;

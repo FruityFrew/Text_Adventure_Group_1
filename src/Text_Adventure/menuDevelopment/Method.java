@@ -286,6 +286,7 @@ public class Method  implements Serializable {
                     a.SaveRooms=myMap.rooms;
                     a.roomIndex=room1.getIndex();
                     a.Level=diffLevel;
+                    a.playerWeapon=hero1.getWeapon();
                     ReadWriteObject.writeObject(a);
 
 
@@ -642,6 +643,7 @@ public class Method  implements Serializable {
             hero1.setPlayerType(b.PlayerType);
             myMap.rooms = b.SaveRooms;
             room1.setIndex(b.roomIndex);
+            hero1.setWeapon(b.playerWeapon);
             diffLevel=b.Level;
 
         }

@@ -1,19 +1,16 @@
 package Text_Adventure;
 
-import Text_Adventure.Characters.Hero;
-import Text_Adventure.Items.Consumable;
 import Text_Adventure.menuDevelopment.ASCII;
+
 import Text_Adventure.menuDevelopment.Method;
-import Text_Adventure.menuDevelopment.ReadWriteObject;
+import Text_Adventure.menuDevelopment.Play_Sound;
 import Text_Adventure.menuDevelopment.SavedGame;
 
 import java.io.Serializable;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
-
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 
 /**
@@ -30,7 +27,7 @@ public class Main  implements Serializable {
      *       in this way i think is easier to control the values throughout the game
      */
     public static int choice; // choice is used as a unique variable that change values throughout the game.
-
+    public static boolean running = true;
     public static ArrayList<SavedGame> savedGames = new ArrayList<>();
     private static final long serialVersionUID = 1347891374;
     public static void main(String[] args) {
@@ -46,6 +43,11 @@ public class Main  implements Serializable {
 
         //Robert: Here I did a big change as I took all the methods outside the loop.
         //it is because of debugging.
+        Play_Sound music = new Play_Sound();
+
+        ExecutorService Thread = Executors.newFixedThreadPool(4);
+        Thread.submit(new Runnable() {public void run() { music.playSound("music.wav"); }});
+
         ASCII.printGroup1();
         ASCII.printGameName();
         myMethod.playerName();

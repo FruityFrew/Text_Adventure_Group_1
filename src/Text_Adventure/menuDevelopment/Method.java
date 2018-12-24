@@ -197,6 +197,7 @@ public class Method implements Serializable {
      * method playGame
      */
     public void playGame() {
+
         //System.out.println("\t*** GAME OPTIONS ***" +
         //        "\n[1]\tStart Game\n[2]\tSave\n[3]\tLoad Game\n[4]\tExit");
         //int gameOption = Main.in.nextInt();
@@ -338,12 +339,14 @@ public class Method implements Serializable {
         }
 
         if (hero1 != null) {
+            Main.running=false;
             System.out.println("You are leaving the game");
             System.out.println("Your name was: " + myMethod.hero1.getName());
             System.out.println("Your score was: " + myMethod.hero1.getHighscore());
             System.out.println("Your score will be saved to the list of highscores");
             highScore(myMethod.hero1);
             SortScore();
+            System.exit(1);
         }
     }
 
@@ -353,6 +356,8 @@ public class Method implements Serializable {
         int damageHolder = Character.generateDamage(hero.getHitChance(), hero.getMaxAttack(), hero1.weaponDamageModifier);
         monster.setHealth(monster.getHealth() - damageHolder);
         if (monster.getHealth() > 0) {
+            Play_Sound kick = new Play_Sound();
+            kick.playSound("kick.wav");
             System.out.printf("You hit monster and monster looses %d health points.%n" +
                     "Monster's health (updated): %d%n", damageHolder, monster.getHealth());
 
@@ -677,5 +682,7 @@ public class Method implements Serializable {
             e.printStackTrace();
         }
     }
+
+
 
 }

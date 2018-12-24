@@ -659,4 +659,14 @@ public class Method  implements Serializable {
             e.printStackTrace();
         }
     }
+    public void printGameName(){
+        System.out.println();
+        System.out.println(" ▄▀▀▀▀▄  ▄▀▀▀█▀▀▄  ▄▀▀█▄   ▄▀▀▄ ▀▀▄          ▄▀▀█▄▄   ▄▀▀█▄▄▄▄  ▄▀▀█▄   ▄▀▀█▄▄      ");
+        System.out.println("█ █   ▐ █    █  ▐ ▐ ▄▀ ▀▄ █   ▀▄ ▄▀         █ ▄▀   █ ▐  ▄▀   ▐ ▐ ▄▀ ▀▄ █ ▄▀   █     ");
+        System.out.println("   ▀▄   ▐   █       █▄▄▄█ ▐     █           ▐ █    █   █▄▄▄▄▄    █▄▄▄█ ▐ █    █     ");
+        System.out.println("▀▄   █     █       ▄▀   █       █             █    █   █    ▌   ▄▀   █   █    █     ");
+        System.out.println(" █▀▀▀    ▄▀       █   ▄▀      ▄▀             ▄▀▄▄▄▄▀  ▄▀▄▄▄▄   █   ▄▀   ▄▀▄▄▄▄▀     ");
+        System.out.println(" ▐      █         ▐   ▐       █             █     ▐   █    ▐   ▐   ▐   █     ▐      ");
+        System.out.println("        ▐                     ▐             ▐         ▐                ▐            ");
+    }
 }

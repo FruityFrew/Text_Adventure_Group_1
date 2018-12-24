@@ -2,6 +2,7 @@ package Text_Adventure;
 
 import Text_Adventure.Characters.Hero;
 import Text_Adventure.Items.Consumable;
+import Text_Adventure.menuDevelopment.ASCII;
 import Text_Adventure.menuDevelopment.Method;
 import Text_Adventure.menuDevelopment.ReadWriteObject;
 import Text_Adventure.menuDevelopment.SavedGame;
@@ -45,8 +46,8 @@ public class Main  implements Serializable {
 
         //Robert: Here I did a big change as I took all the methods outside the loop.
         //it is because of debugging.
-
-       myMethod.printGameName();
+        ASCII.printGroup1();
+        ASCII.printGameName();
         myMethod.playerName();
         myMethod.choosePlayerType();
         myMethod.chooseGameLevel();

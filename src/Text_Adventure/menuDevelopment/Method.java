@@ -1,10 +1,5 @@
 package Text_Adventure.menuDevelopment;
 
-import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.*;
-
 import Text_Adventure.Characters.Character;
 import Text_Adventure.Characters.Hero;
 import Text_Adventure.Characters.Monster;
@@ -14,17 +9,24 @@ import Text_Adventure.Items.Weapon;
 import Text_Adventure.Main;
 import Text_Adventure.Map;
 import Text_Adventure.Room;
+
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.security.SecureRandom;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Scanner;
 
 import static Text_Adventure.Main.myMethod;
-import static Text_Adventure.menuDevelopment.ReadWriteObject.writeObject;
 
-public class Method  implements Serializable {
+public class Method implements Serializable {
 
     public transient Scanner in = new Scanner(System.in);
     Room myRoom = new Room(0, 5, 0, 0);
     public static List fileNamesList = new ArrayList();
-    public static String[] fileNamesString=new String[10];
+    public static String[] fileNamesString = new String[10];
     public int diffLevel;
 
 
@@ -193,8 +195,6 @@ public class Method  implements Serializable {
     /**
      * Alex: Inside this method the game is happening
      * method playGame
-     *
-     *
      */
     public void playGame() {
         //System.out.println("\t*** GAME OPTIONS ***" +
@@ -207,7 +207,7 @@ public class Method  implements Serializable {
 //                "\n\nAnytime you want to see your options\n\t\t<< ENTER [10] >>\n\n");
 
         boolean runningmenu = true;
-        while(runningmenu){
+        while (runningmenu) {
             System.out.println(" ");
             System.out.println("*** GAME OPTIONS ***");
             System.out.println("[1]Play Game");
@@ -263,30 +263,30 @@ public class Method  implements Serializable {
 //                } while (Main.choice != 10);
 //                myMethod.playGame(myMethod.gameOptions());
                     boolean running = true;
-                    while (running){
+                    while (running) {
                         System.out.println("\n----------------------------------------------\n" +
                                 "\tHealth = " + myMethod.hero1.getHealth() + " Highscore = "
                                 + myMethod.hero1.getHighscore() + " Room: " + myMethod.room1.getIndex() +
                                 ".\n" +
                                 "--------------------------------------------");
                         //System.out.println("\n\tHealth = " + hero1.getHealth()+ ".\nHighscore = " + myMethod.hero1.getHighscore() +
-                          //      "--------------------------------------------\n");
+                        //      "--------------------------------------------\n");
                         running = myMethod.gameInterface(myMap);
                     }
 
                     break;
                 case 2:  // SAVE GAME
                     save a = new save();
-                    a.PlayerBackpack= Hero.backpack;
-                    a.PlayerHealth=hero1.getHealth();
-                    a.PlayerName=hero1.getName();
-                    a.PlayerScore=hero1.getHighscore();
-                    a.keyList =hero1.keyRing;
-                    a.PlayerType=hero1.getPlayerType();
-                    a.SaveRooms=myMap.rooms;
-                    a.roomIndex=room1.getIndex();
-                    a.Level=diffLevel;
-                    a.playerWeapon=hero1.getWeapon();
+                    a.PlayerBackpack = Hero.backpack;
+                    a.PlayerHealth = hero1.getHealth();
+                    a.PlayerName = hero1.getName();
+                    a.PlayerScore = hero1.getHighscore();
+                    a.keyList = hero1.keyRing;
+                    a.PlayerType = hero1.getPlayerType();
+                    a.SaveRooms = myMap.rooms;
+                    a.roomIndex = room1.getIndex();
+                    a.Level = diffLevel;
+                    a.playerWeapon = hero1.getWeapon();
                     ReadWriteObject.writeObject(a);
 
 
@@ -295,8 +295,8 @@ public class Method  implements Serializable {
 //                Main.choice = 10;
                     break;
                 case 3:
-                   loadGame();
-                   break;
+                    loadGame();
+                    break;
 
                 case 4:
                     displayScore();
@@ -317,7 +317,7 @@ public class Method  implements Serializable {
                             "\n[1]\tYES" +
                             "\n[2]\tNO, go back to menu");
                     int choice = in.nextInt();
-                    if (choice == 1){
+                    if (choice == 1) {
                         runningmenu = false;
                     } else {
                         runningmenu = true;
@@ -329,7 +329,7 @@ public class Method  implements Serializable {
                             "\n[1]\tYES" +
                             "\n[2]\tNO, go back to menu");
                     int choice2 = in.nextInt();
-                    if (choice2 == 1){
+                    if (choice2 == 1) {
                         runningmenu = false;
                     } else {
                         runningmenu = true;
@@ -337,7 +337,7 @@ public class Method  implements Serializable {
             }
         }
 
-        if (hero1 != null){
+        if (hero1 != null) {
             System.out.println("You are leaving the game");
             System.out.println("Your name was: " + myMethod.hero1.getName());
             System.out.println("Your score was: " + myMethod.hero1.getHighscore());
@@ -365,7 +365,8 @@ public class Method  implements Serializable {
         } else {
             System.out.printf("You hit monster and monster looses %d health points.%n" +
                     "Monster is dead!\n", damageHolder, monster.getHealth());
-        }return hero.getHealth();
+        }
+        return hero.getHealth();
     }
 
     //Robert: I made this sorry excuse of fighting system;
@@ -373,10 +374,10 @@ public class Method  implements Serializable {
         int coin = random.nextInt(2);
         if (coin == 0) {
             System.out.println("the monster beat you in coins you loose 5 health");
-            hero1.setHealth(hero1.getHealth()-15);
+            hero1.setHealth(hero1.getHealth() - 15);
         } else {
             System.out.println("you beat the monster in coins. it gives you 5 of his health");
-            hero1.setHealth(hero1.getHealth()+15);
+            hero1.setHealth(hero1.getHealth() + 15);
         }
     }
 
@@ -405,26 +406,26 @@ public class Method  implements Serializable {
             System.out.print(i);
             System.out.println(x);
         }
-            System.out.println("\nChoose the item you want to use:");
-            return Main.choice=Main.in.nextInt();
+        System.out.println("\nChoose the item you want to use:");
+        return Main.choice = Main.in.nextInt();
 
-            //public static void main(String[] args) {
-            //   Hero newHunter = new Hero(1);
-            //    System.out.println(newHunter.toString());
+        //public static void main(String[] args) {
+        //   Hero newHunter = new Hero(1);
+        //    System.out.println(newHunter.toString());
 
-            //    Character newMonster = new Character();
+        //    Character newMonster = new Character();
 
-            //    Method actions = new Method();
-            //    for(int i = 0; i<10; i++) actions.exchangeAttackWithMonster(newHunter, newMonster);
+        //    Method actions = new Method();
+        //    for(int i = 0; i<10; i++) actions.exchangeAttackWithMonster(newHunter, newMonster);
 
-            //    System.out.println(newHunter.toString());
-            //    System.out.println(newHunter);
-            //}
+        //    System.out.println(newHunter.toString());
+        //    System.out.println(newHunter);
+        //}
     }
 
     /**
      * Nemanja: This creates the HighScoresList.txt file if the file does not exist.
-     *          It also enters new scores into the HighScoresList.txt file and stores it.
+     * It also enters new scores into the HighScoresList.txt file and stores it.
      * Robert: Now the name and the highscore are taken directly from the Hero class.
      */
     public static void highScore(Hero hero) {
@@ -453,9 +454,10 @@ public class Method  implements Serializable {
         scoreExport.close();
 
     }
+
     /**
      * Nemanja: This sorts entries in the HighScoresList.txt file.
-     *          It puts highest score on top.
+     * It puts highest score on top.
      */
     public static void SortScore() {
         BufferedReader BR = null;
@@ -498,9 +500,10 @@ public class Method  implements Serializable {
             }
         }
     }
+
     /**
      * Nemanja: This prints HighScoresList.txt file content in the console.
-     *          It is used if user wants to see current score table.
+     * It is used if user wants to see current score table.
      */
     public static void displayScore() {
         try {
@@ -518,21 +521,33 @@ public class Method  implements Serializable {
         }
     }
 
-    public boolean gameInterface(Map myMap){
+    public boolean gameInterface(Map myMap) {
         boolean result = true;
         //int newRoom = 0;
-        if (myMethod.room1.monster != null){myMethod.room1.describeMonster();}
-        if (myMethod.room1.monster == null){myMethod.room1.describeRoom();}
+        if (myMethod.room1.monster != null) {
+            myMethod.room1.describeMonster();
+        }
+        if (myMethod.room1.monster == null) {
+            myMethod.room1.describeRoom();
+        }
         System.out.println(" ");
         System.out.println("***    Choose action   ***");
-        if (myMethod.room1.monster != null){System.out.print("[1] Fight " + myMethod.room1.monster.getMonsterType());}
+        if (myMethod.room1.monster != null) {
+            System.out.print("[1] Fight " + myMethod.room1.monster.getMonsterType());
+        }
         //Same as pick item. The concept is cool.
-        if (myMethod.room1.monster != null){System.out.print("| [2] Avoid fight ");}
+        if (myMethod.room1.monster != null) {
+            System.out.print("| [2] Avoid fight ");
+        }
         System.out.print("|[3] Open backpack| ");
-        if (myMethod.room1.monster == null){System.out.print("| [4] Go to a new room ");}
-        if (myMethod.room1.monster == null){if (myMethod.room1.monster == null){
-            if(myMethod.room1.getItem() != null){
-                System.out.print("| [5] Pick " + myMethod.room1.getItem().getName());}
+        if (myMethod.room1.monster == null) {
+            System.out.print("| [4] Go to a new room ");
+        }
+        if (myMethod.room1.monster == null) {
+            if (myMethod.room1.monster == null) {
+                if (myMethod.room1.getItem() != null) {
+                    System.out.print("| [5] Pick " + myMethod.room1.getItem().getName());
+                }
                 //Robert: Everyone asked for this modification.
             }
         }
@@ -540,10 +555,10 @@ public class Method  implements Serializable {
         int choice = Main.in.nextInt();
         switch (choice) {
             case 1:
-                if(myMethod.room1.monster != null){
+                if (myMethod.room1.monster != null) {
                     hero1.addHighScore(100);
                     myMethod.hero1.setHealth(myMethod.exchangeAttackWithMonster(myMethod.hero1, room1.monster));
-                    if (room1.monster.getHealth() < 1){
+                    if (room1.monster.getHealth() < 1) {
                         myMethod.room1.setMonster(null);
                         hero1.addHighScore(50);
                         System.out.println("You killed the monster.");
@@ -551,8 +566,8 @@ public class Method  implements Serializable {
                 }
                 break;
             case 2:
-                if(myMethod.room1.monster != null){
-                    myMethod.hero1.setHealth(hero1.getHealth() - (hero1.getHealth()/2));
+                if (myMethod.room1.monster != null) {
+                    myMethod.hero1.setHealth(hero1.getHealth() - (hero1.getHealth() / 2));
                     System.out.println("You lost your half health but you avoided the monster");
                     myMethod.room1.setMonster(null);
                     hero1.addHighScore(50);
@@ -560,11 +575,11 @@ public class Method  implements Serializable {
                 break;
             case 3:
                 hero1.viewContentsOfKeyRing();
-                if(hero1.weapon != null)hero1.viewConstentofWeaponSlot();
+                if (hero1.weapon != null) hero1.viewConstentofWeaponSlot();
                 hero1.viewContentsOfBackpack();
                 break;
             case 4:
-                if(myMethod.room1.monster == null){
+                if (myMethod.room1.monster == null) {
                     newRoom = myMethod.room1.changeRoom(hero1);
                     System.out.println("You new room is: " + newRoom);
                     myMethod.room1 = myMap.rooms.get(newRoom);
@@ -572,8 +587,8 @@ public class Method  implements Serializable {
                 }
                 break;
             case 5:
-                if(myMethod.room1.getItem() != null){
-                    if(myMethod.room1.monster == null){
+                if (myMethod.room1.getItem() != null) {
+                    if (myMethod.room1.monster == null) {
                         hero1.pickItem(myMethod.room1.getItem(), myMethod.room1);
                         myMethod.room1.setItem(null);
                         hero1.addHighScore(100);
@@ -590,7 +605,7 @@ public class Method  implements Serializable {
                 result = true;
                 //myMethod.playOptions();
         }
-        if(myMethod.hero1.getHealth() < 1){
+        if (myMethod.hero1.getHealth() < 1) {
             System.out.println(" ");
             System.out.println("=========");
             System.out.println("Game Over");
@@ -601,6 +616,7 @@ public class Method  implements Serializable {
         }
         return result;
     } //method gameInterface ends here
+
     public static void ShowSaves() {
 
         fileNamesList.clear();
@@ -616,23 +632,24 @@ public class Method  implements Serializable {
         }
         int number = 0;
         for (String saveName : fileNamesString) {
-            if (saveName!=null) {
+            if (saveName != null) {
                 number++;
                 System.out.println(number + ") " + saveName);
 
-            }else{
+            } else {
                 number++;
                 System.out.println(number + ") Empty slot");
 
             }
         }
     }
-    public void loadGame(){
+
+    public void loadGame() {
         Method.ShowSaves();
         System.out.println("ENTER [0] TO GO BACK TO MENU");
         System.out.print("Choose line number to load: ");
         int chooseSave = in.nextInt();
-        if (chooseSave!=0) {
+        if (chooseSave != 0) {
             System.out.println(fileNamesString[chooseSave - 1]);
             save b = (save) ReadWriteObject.readObject(fileNamesString[chooseSave - 1]);
             Hero.backpack = b.PlayerBackpack;
@@ -644,11 +661,12 @@ public class Method  implements Serializable {
             myMap.rooms = b.SaveRooms;
             room1.setIndex(b.roomIndex);
             hero1.setWeapon(b.playerWeapon);
-            diffLevel=b.Level;
+            diffLevel = b.Level;
 
         }
     }
-    public static void clearScreen(){
+
+    public static void clearScreen() {
         try {
             if (System.getProperty("os.name").contains("Windows"))
                 new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
@@ -659,14 +677,5 @@ public class Method  implements Serializable {
             e.printStackTrace();
         }
     }
-    public void printGameName(){
-        System.out.println();
-        System.out.println(" ▄▀▀▀▀▄  ▄▀▀▀█▀▀▄  ▄▀▀█▄   ▄▀▀▄ ▀▀▄          ▄▀▀█▄▄   ▄▀▀█▄▄▄▄  ▄▀▀█▄   ▄▀▀█▄▄      ");
-        System.out.println("█ █   ▐ █    █  ▐ ▐ ▄▀ ▀▄ █   ▀▄ ▄▀         █ ▄▀   █ ▐  ▄▀   ▐ ▐ ▄▀ ▀▄ █ ▄▀   █     ");
-        System.out.println("   ▀▄   ▐   █       █▄▄▄█ ▐     █           ▐ █    █   █▄▄▄▄▄    █▄▄▄█ ▐ █    █     ");
-        System.out.println("▀▄   █     █       ▄▀   █       █             █    █   █    ▌   ▄▀   █   █    █     ");
-        System.out.println(" █▀▀▀    ▄▀       █   ▄▀      ▄▀             ▄▀▄▄▄▄▀  ▄▀▄▄▄▄   █   ▄▀   ▄▀▄▄▄▄▀     ");
-        System.out.println(" ▐      █         ▐   ▐       █             █     ▐   █    ▐   ▐   ▐   █     ▐      ");
-        System.out.println("        ▐                     ▐             ▐         ▐                ▐            ");
-    }
+
 }

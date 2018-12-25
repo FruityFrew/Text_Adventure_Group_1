@@ -43,10 +43,10 @@ public class Method implements Serializable {
     public void chooseGameLevel() {
         //Robert:I added the line of code below me
         diffLevel = 5;
-        System.out.println("\nNow give me your hand to tell your options! " +
-                "\n\tYou have three lines ... " +
-                "\n[1]\ta short line " +
-                "\n[2]\tintersected with another, longer" +
+        System.out.println("\nNow give me your hand to tell you your options! " +
+                "\n\tYou have three paths ... " +
+                "\n[1]\ta short path " +
+                "\n[2]\tcrossroad with another, longer path" +
                 "\n[3]\tAnd a last one, HA HA HA! This will hurt!  ");
         int choice = menuChoice();
 
@@ -72,9 +72,9 @@ public class Method implements Serializable {
     public void playerName() {
 
         System.out.println("The cellar of the Vicarage of Borgvattnet .." +
-                " \nAll over darkness has mastered this lost space, " +
-                " \nbetween dimensions, on the border of the living and the dead. \n" +
-                "\nThe space that once served life is now home of the monsters.");
+                " \nDarkness has possessed this lost space, " +
+                " \nin between dimensions, on the border of the living and the dead. \n" +
+                "\nThe space that once served the living is now home of the monsters.");
         System.out.println("What is your name traveler?");
 
         myMethod.hero1.setName(in.nextLine());
@@ -93,7 +93,7 @@ public class Method implements Serializable {
      */
     public void choosePlayerType() {
 
-        System.out.println("Hmmm .." + hero1.getName() + ", a household name, maybe fate brought you back .. or maybe just bad luck");
+        System.out.println("Hmmm .." + hero1.getName() + ", an ordinary name, maybe fate brought you here ... or maybe just bad luck");
         System.out.println("What are you in this life .. " +
                 "\n[1]\tA THIEF? " +
                 "\n[2]\tA lost PRIEST in search of your lost faith?! HA HA HA!" +
@@ -121,7 +121,7 @@ public class Method implements Serializable {
                 System.out.println("You just started playing and already shaking your hand!" +
                         "\n\t MAKE A CHOICE BETWEEN 1,2,3 AND 4!");
         }
-        System.out.println("OK... lets see how much a " + hero1.getPlayerType() + " worth!");
+        System.out.println("OK... lets see how much a " + hero1.getPlayerType() + " is worth!");
     }
 
     /**
@@ -345,7 +345,6 @@ public class Method implements Serializable {
         }
 
         if (hero1 != null) {
-            Main.running=false;
             System.out.println("You are leaving the game");
             System.out.println("Your name was: " + myMethod.hero1.getName());
             System.out.println("Your score was: " + myMethod.hero1.getHighscore());
@@ -362,8 +361,6 @@ public class Method implements Serializable {
         int damageHolder = Character.generateDamage(hero.getHitChance(), hero.getMaxAttack(), hero1.weaponDamageModifier);
         monster.setHealth(monster.getHealth() - damageHolder);
         if (monster.getHealth() > 0) {
-            Play_Sound kick = new Play_Sound();
-            kick.playSound("kick.wav");
             System.out.printf("You hit monster and monster looses %d health points.%n" +
                     "Monster's health (updated): %d%n", damageHolder, monster.getHealth());
 
@@ -697,18 +694,18 @@ public class Method implements Serializable {
         }
     }
 
-public int menuChoice(){
-    boolean successfulinput = false;
-    while(!successfulinput){
-        try{
-            gogo = in.nextInt();
-            successfulinput = true;
-    } catch(InputMismatchException a){
-            in.nextLine();
-            System.out.println("Please use integer digits");
+    public int menuChoice(){
+        boolean successfulinput = false;
+        while(!successfulinput){
+            try{
+                gogo = in.nextInt();
+                successfulinput = true;
+            } catch(InputMismatchException a){
+                in.nextLine();
+                System.out.println("Please use integer digits");
             }
-    } return gogo;
+        } return gogo;
 
-}
+    }
 
 }

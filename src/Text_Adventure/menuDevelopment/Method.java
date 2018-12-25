@@ -288,6 +288,10 @@ public class Method implements Serializable {
                     a.roomIndex = room1.getIndex();
                     a.Level = diffLevel;
                     a.playerWeapon = hero1.getWeapon();
+                    //Robert: i added 3 lines of code below this comment
+                    a.playerMap = myMap;
+                    a.playerRoom = room1;
+                    a.playerHero = hero1;
                     ReadWriteObject.writeObject(a);
 
 
@@ -662,6 +666,7 @@ public class Method implements Serializable {
         if (chooseSave != 0) {
             System.out.println(fileNamesString[chooseSave - 1]);
             save b = (save) ReadWriteObject.readObject(fileNamesString[chooseSave - 1]);
+            myMethod.hero1 = b.playerHero;
             Hero.backpack = b.PlayerBackpack;
             hero1.setHealth(b.PlayerHealth);
             hero1.setName(b.PlayerName);
@@ -669,7 +674,11 @@ public class Method implements Serializable {
             hero1.keyRing = b.keyList;
             hero1.setPlayerType(b.PlayerType);
             myMap.rooms = b.SaveRooms;
+            //Robert:I added  one line of code below this comment
+            myMethod.myMap = b.playerMap;
             room1.setIndex(b.roomIndex);
+            //Robert:I added  one line of code below this comment
+            myMethod.room1 = b.playerRoom;
             hero1.setWeapon(b.playerWeapon);
             diffLevel = b.Level;
 

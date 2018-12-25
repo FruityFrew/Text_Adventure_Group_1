@@ -488,6 +488,8 @@ public class Room implements Serializable {
     }
 
     public int changeRoom(Hero hero){
+        Scanner in = new Scanner(System.in); //I added this line to overcome the conflict between
+        // scanner and Serializable
         boolean running = true;
         int x = this.position[0];
         int y = this.position[1];

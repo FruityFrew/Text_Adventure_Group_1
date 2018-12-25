@@ -61,6 +61,8 @@ public class Hero extends Character implements Serializable {
 
 
     public void viewContentsOfBackpack() {
+        Scanner input = new Scanner(System.in); //I added this line to overcome the conflict between
+        // scanner and Serializable
         System.out.println("Backpack:");
         boolean running = true;
         while (running == true){

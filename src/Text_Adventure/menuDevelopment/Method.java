@@ -26,6 +26,7 @@ public class Method implements Serializable {
     public static String[] fileNamesString = new String[10];
     public int diffLevel;
     public int gogo=99;
+    public Play_Sound kick = new Play_Sound();
 
 
     SecureRandom random = new SecureRandom();
@@ -361,14 +362,27 @@ public class Method implements Serializable {
         int damageHolder = Character.generateDamage(hero.getHitChance(), hero.getMaxAttack(), hero1.weaponDamageModifier);
         monster.setHealth(monster.getHealth() - damageHolder);
         if (monster.getHealth() > 0) {
-            System.out.printf("You hit monster and monster looses %d health points.%n" +
-                    "Monster's health (updated): %d%n", damageHolder, monster.getHealth());
+            if (damageHolder>1) {
 
+                kick.playSound("kick.wav");
+                System.out.printf("You hit monster and monster looses %d health points.%n" +
+                        "Monster's health (updated): %d%n", damageHolder, monster.getHealth());
+
+            }else {
+                System.out.printf("You attacked monster, but you missed!!! Try again!!!%n"+
+                        "Monster's health (updated): %d%n", monster.getHealth());
+            }
             //Then monster attacks...
             damageHolder = Character.generateDamage(monster.getHitChance(), monster.getMaxAttack(), 0);
             hero.setHealth(hero.getHealth() - damageHolder);
-            System.out.printf("Monster hits you back and you loose %d health points.%n" +
-                    "Your current health: %d%n", damageHolder, hero.getHealth());
+            if (damageHolder>1) {
+                kick.playSound("kick.wav");
+                System.out.printf("Monster hits you back and you loose %d health points.%n" +
+                        "Your current health: %d%n", damageHolder, hero.getHealth());
+            }else{
+                System.out.printf("Monster attacks you but misses you by millimeters! You were lucky this time!%n" +
+                        "Your current health: %d%n",hero.getHealth());
+            }
 
         } else {
             System.out.printf("You hit monster and monster looses %d health points.%n" +

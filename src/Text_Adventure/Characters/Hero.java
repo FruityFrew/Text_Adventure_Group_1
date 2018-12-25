@@ -8,6 +8,7 @@ import Text_Adventure.Room;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Hero extends Character implements Serializable {
@@ -15,6 +16,7 @@ public class Hero extends Character implements Serializable {
     public ArrayList<Key> keyRing = new ArrayList<>(3); //Robert: I had to implement a keyring. i hope it is ok :)
     public int highscore = 0; //Robert: the highscore that the player collects.
     public Weapon weapon; //this the weapon's slot of the hero. something like inventory but with only one slot.
+    public int asd=99;
     public int weaponDamageModifier; //this will modify the damage that a player deal, if the player has a weapon.
     transient Scanner input = new Scanner(System.in);
 
@@ -75,7 +77,7 @@ public class Hero extends Character implements Serializable {
             }
             System.out.println("[6]close");
             System.out.println("Type the number of the item that you wish to interact: ");
-            int choice = input.nextInt();
+            int choice = menuChoice();
             if (choice > 5){
                 running = false;
             } else {
@@ -86,15 +88,15 @@ public class Hero extends Character implements Serializable {
                     System.out.println("[1]Use the item");
                     System.out.println("[2]Drop the item");
                     System.out.println("[3]Do nothing (returns to the backpack)");
-                    String choice2 = input.next();
+                    int choice2 = menuChoice();
                     switch (choice2){
-                        case "1":
+                        case 1:
                             System.out.println("You are drinking the item");
                             //int healingPoints = backpack[choice].getHealthModifier();
                             addHealth(backpack[choice].getHealthModifier());
                             backpack[choice] = null;
                             break;
-                        case "2":
+                        case 2:
                             System.out.println("You are dropping the item");
                             backpack[choice] = null;
                             break;
@@ -232,5 +234,20 @@ public class Hero extends Character implements Serializable {
     //Robert: A getter for the weapon. I will totally use it.
     public Weapon getWeapon() {
         return weapon;
+    }
+    //Nemanja: Coppied this from method to fix input mismatch
+
+    public int menuChoice(){
+        boolean successfulinput = false;
+        while(!successfulinput){
+            try{
+                asd = input.nextInt();
+                successfulinput = true;
+            } catch(InputMismatchException a){
+                input.nextLine();
+                System.out.println("Please use integer digits");
+            }
+        } return asd;
+
     }
 }

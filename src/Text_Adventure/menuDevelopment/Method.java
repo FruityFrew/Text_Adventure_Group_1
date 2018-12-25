@@ -14,10 +14,7 @@ import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.security.SecureRandom;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 import static Text_Adventure.Main.myMethod;
 
@@ -28,6 +25,7 @@ public class Method implements Serializable {
     public static List fileNamesList = new ArrayList();
     public static String[] fileNamesString = new String[10];
     public int diffLevel;
+    public int gogo=99;
 
 
     SecureRandom random = new SecureRandom();
@@ -50,7 +48,8 @@ public class Method implements Serializable {
                 "\n[1]\ta short line " +
                 "\n[2]\tintersected with another, longer" +
                 "\n[3]\tAnd a last one, HA HA HA! This will hurt!  ");
-        int choice = Main.in.nextInt();
+        int choice = menuChoice();
+
         switch (choice) {
             case 1:
                 diffLevel = 5;
@@ -100,8 +99,7 @@ public class Method implements Serializable {
                 "\n[2]\tA lost PRIEST in search of your lost faith?! HA HA HA!" +
                 "\n[3]\tA haunted GHOST HUNTER ?" +
                 "\n[4]\tOr maybe, just an annoying TOURIST?");
-        Main.choice = in.nextInt();
-
+        Main.choice = menuChoice();
         /**
          * Alex:Sunday the Hero and Character was not functional, so I created this enum for use
          */
@@ -135,7 +133,8 @@ public class Method implements Serializable {
     public int gameOptions() {
         System.out.println("\t*** GAME OPTIONS ***" +
                 "\n[1]\tStart Game\n[2]\tSave\n[3]\tLoad Game\n[4]\tExit");
-        int gameOption = Main.in.nextInt();
+        int gameOption = menuChoice();
+
         return gameOption;
     }
 
@@ -179,7 +178,7 @@ public class Method implements Serializable {
      */
     public void playOptions() {
         System.out.println("\n\n*        *****         *\n\n[1]\tContinue\n[2]\tExit\n\n*         *****       *\n\n");
-        Main.choice = Main.in.nextInt();
+        Main.choice = menuChoice();
         switch (Main.choice) {
             case 1:
                 break;
@@ -216,7 +215,8 @@ public class Method implements Serializable {
             System.out.println("[3]Load Game");
             System.out.println("[4]View high-scores");
             System.out.println("[5]Exit");
-            int gameOption = in.nextInt();
+            int gameOption = menuChoice();
+
 
 //        System.out.println("\n\tHealth = " + hero1.getHealth()+ ".\n" +
 //                "--------------------------------------------\n");
@@ -317,7 +317,8 @@ public class Method implements Serializable {
                     System.out.println("EXIT the game?" +
                             "\n[1]\tYES" +
                             "\n[2]\tNO, go back to menu");
-                    int choice = in.nextInt();
+                    int choice = menuChoice();
+
                     if (choice == 1) {
                         runningmenu = false;
                     } else {
@@ -329,7 +330,8 @@ public class Method implements Serializable {
                     System.out.println("EXIT the game?" +
                             "\n[1]\tYES" +
                             "\n[2]\tNO, go back to menu");
-                    int choice2 = in.nextInt();
+                    int choice2 = menuChoice();
+
                     if (choice2 == 1) {
                         runningmenu = false;
                     } else {
@@ -388,7 +390,8 @@ public class Method implements Serializable {
 
     public void useItem(Item item) {
         System.out.println("\n[1]\tUse " + item.getName() + "\n[2]\tThrow " + item.getName());
-        Main.choice = Main.in.nextInt();
+        Main.choice = menuChoice();
+
         switch (Main.choice) {
             case 1:
                 if (item instanceof Consumable) {
@@ -412,7 +415,7 @@ public class Method implements Serializable {
             System.out.println(x);
         }
         System.out.println("\nChoose the item you want to use:");
-        return Main.choice = Main.in.nextInt();
+        return Main.choice = menuChoice();
 
         //public static void main(String[] args) {
         //   Hero newHunter = new Hero(1);
@@ -557,7 +560,8 @@ public class Method implements Serializable {
             }
         }
         System.out.println(" | [6] Go to the menu");
-        int choice = Main.in.nextInt();
+        int choice = menuChoice();
+
         switch (choice) {
             case 1:
                 if (myMethod.room1.monster != null) {
@@ -653,7 +657,8 @@ public class Method implements Serializable {
         Method.ShowSaves();
         System.out.println("ENTER [0] TO GO BACK TO MENU");
         System.out.print("Choose line number to load: ");
-        int chooseSave = in.nextInt();
+        int chooseSave = menuChoice();
+
         if (chooseSave != 0) {
             System.out.println(fileNamesString[chooseSave - 1]);
             save b = (save) ReadWriteObject.readObject(fileNamesString[chooseSave - 1]);
@@ -683,6 +688,18 @@ public class Method implements Serializable {
         }
     }
 
+public int menuChoice(){
+    boolean successfulinput = false;
+    while(!successfulinput){
+        try{
+            gogo = in.nextInt();
+            successfulinput = true;
+    } catch(InputMismatchException a){
+            in.nextLine();
+            System.out.println("Please use integer digits");
+            }
+    } return gogo;
 
+}
 
 }

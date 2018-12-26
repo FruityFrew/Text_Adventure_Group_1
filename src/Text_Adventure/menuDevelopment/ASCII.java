@@ -321,7 +321,7 @@ public class ASCII {
             System.out.println("wow");
         }
         System.out.println();
-        System.out.println();
+        System.out.println(ColorPrint.ANSI_RED);
         System.out.println("       ▄▀▀▀▀▄  ▄▀▀▀█▀▀▄  ▄▀▀█▄   ▄▀▀▄ ▀▀▄          ▄▀▀█▄▄   ▄▀▀█▄▄▄▄  ▄▀▀█▄   ▄▀▀█▄▄      ");
         System.out.println("      █ █   ▐ █    █  ▐ ▐ ▄▀ ▀▄ █   ▀▄ ▄▀         █ ▄▀   █ ▐  ▄▀   ▐ ▐ ▄▀ ▀▄ █ ▄▀   █     ");
         System.out.println("         ▀▄   ▐   █       █▄▄▄█ ▐     █           ▐ █    █   █▄▄▄▄▄    █▄▄▄█ ▐ █    █     ");
@@ -329,7 +329,7 @@ public class ASCII {
         System.out.println("       █▀▀▀    ▄▀       █   ▄▀      ▄▀             ▄▀▄▄▄▄▀  ▄▀▄▄▄▄   █   ▄▀   ▄▀▄▄▄▄▀     ");
         System.out.println("       ▐      █         ▐   ▐       █             █     ▐   █    ▐   ▐   ▐   █     ▐      ");
         System.out.println("              ▐                     ▐             ▐         ▐                ▐            ");
-        System.out.println();
+        System.out.println(ColorPrint.ANSI_RESET);
         System.out.println();
         try {
             Thread.sleep(1000);

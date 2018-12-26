@@ -1,5 +1,7 @@
 package  Text_Adventure.Items;
 
+import Text_Adventure.menuDevelopment.ColorPrint;
+
 import java.io.Serializable;
 
 /**
@@ -23,6 +25,7 @@ public class Item implements Serializable {
      * @return String
      */
     public  String getName() {
-        return Name;
+        String nameColored = ColorPrint.ANSI_BLUE+Name+ColorPrint.ANSI_RESET;
+        return nameColored;
     }
 }

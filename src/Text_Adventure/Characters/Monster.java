@@ -1,5 +1,7 @@
 package Text_Adventure.Characters;
 
+import Text_Adventure.menuDevelopment.ColorPrint;
+
 import java.io.Serializable;
 import java.security.SecureRandom;
 
@@ -44,7 +46,9 @@ public class Monster extends Character implements Serializable {
     }
 
     public String getMonsterType() {
-        return monsterType;
+        String monsterTypeColor = ColorPrint.ANSI_RED+monsterType+ColorPrint.ANSI_RESET;
+        return monsterTypeColor;
+
     }
 
     public void setMonsterType(String monsterType) {

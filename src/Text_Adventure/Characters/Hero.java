@@ -5,11 +5,16 @@ import Text_Adventure.Items.Item;
 import Text_Adventure.Items.Key;
 import Text_Adventure.Items.Weapon;
 import Text_Adventure.Room;
+import Text_Adventure.menuDevelopment.Play_Sound;
+
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 
 public class Hero extends Character implements Serializable {
     public static Consumable[] backpack = new Consumable[6];
@@ -19,6 +24,9 @@ public class Hero extends Character implements Serializable {
     public int asd=99;
     public int weaponDamageModifier; //this will modify the damage that a player deal, if the player has a weapon.
     transient Scanner input = new Scanner(System.in);
+    public Play_Sound soundFX = new Play_Sound();
+
+
 
     public Hero(int heroNumber) {
         switch(heroNumber) {
@@ -63,6 +71,7 @@ public class Hero extends Character implements Serializable {
 
 
     public void viewContentsOfBackpack() {
+        backpackSound();
         Scanner input = new Scanner(System.in); //I added this line to overcome the conflict between
         // scanner and Serializable
         System.out.println("Backpack:");
@@ -79,6 +88,7 @@ public class Hero extends Character implements Serializable {
             System.out.println("Type the number of the item that you wish to interact: ");
             int choice = menuChoice();
             if (choice > 5){
+                backpackSound();
                 running = false;
             } else {
                 if(backpack[choice] != null) {
@@ -91,16 +101,20 @@ public class Hero extends Character implements Serializable {
                     int choice2 = menuChoice();
                     switch (choice2){
                         case 1:
-                            System.out.println("You are drinking the item");
+                            drinkPotionSound();
+                            System.out.println("You are drinking "+
+                            backpack[choice].getName());
                             //int healingPoints = backpack[choice].getHealthModifier();
                             addHealth(backpack[choice].getHealthModifier());
                             backpack[choice] = null;
                             break;
                         case 2:
-                            System.out.println("You are dropping the item");
+                            dropPotionSound();
+                            System.out.println("You are dropping "+backpack[choice].getName());
                             backpack[choice] = null;
                             break;
                         default:
+                            backpackSound();
                             System.out.println("Returning to the backpack");
                     }
                 }
@@ -250,4 +264,17 @@ public class Hero extends Character implements Serializable {
         } return asd;
 
     }
+    public void backpackSound(){
+        ExecutorService Thread = Executors.newFixedThreadPool(4);
+        Thread.submit(new Runnable() {public void run() { soundFX.playSound("sounds/openBackPack.wav"); }});
+    }
+    public void drinkPotionSound(){
+        ExecutorService Thread = Executors.newFixedThreadPool(4);
+        Thread.submit(new Runnable() {public void run() { soundFX.playSound("sounds/drinkPotion.wav"); }});
+    }
+    public void dropPotionSound(){
+        ExecutorService Thread = Executors.newFixedThreadPool(4);
+        Thread.submit(new Runnable() {public void run() { soundFX.playSound("sounds/dropItem.wav"); }});
+    }
+
 }

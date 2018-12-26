@@ -365,27 +365,30 @@ public class Method implements Serializable {
         monster.setHealth(monster.getHealth() - damageHolder);
         if (monster.getHealth() > 0) {
             if (damageHolder>1) {
-
-                System.out.printf("You hit monster and monster looses %d health points.%n" +
+                myMethod.kickSound();
+                System.out.printf("You hit "+room1.monster.getName()+" and "+room1.monster.getName()+" looses %d health points.%n" +
                         "Monster's health (updated): %d%n", damageHolder, monster.getHealth());
 
             }else {
-                System.out.printf("You attacked monster, but you missed!!! Try again!!!%n"+
+                myMethod.missSound();
+                System.out.printf("You attacked " +room1.monster.getName()+ ", but you missed!!! Try again!!!%n"+
                         "Monster's health (updated): %d%n", monster.getHealth());
             }
             //Then monster attacks...
             damageHolder = Character.generateDamage(monster.getHitChance(), monster.getMaxAttack(), 0);
             hero.setHealth(hero.getHealth() - damageHolder);
             if (damageHolder>1) {
-
+                myMethod.kickSound();
                 System.out.printf("Monster hits you back and you loose %d health points.%n" +
                         "Your current health: %d%n", damageHolder, hero.getHealth());
             }else{
+                myMethod.missSound();
                 System.out.printf("Monster attacks you but misses you by millimeters! You were lucky this time!%n" +
                         "Your current health: %d%n",hero.getHealth());
             }
 
         } else {
+            myMethod.monsterDeathSound();
             System.out.printf("You hit monster and monster looses %d health points.%n" +
                     "Monster is dead!\n", damageHolder, monster.getHealth());
         }
@@ -736,7 +739,7 @@ public class Method implements Serializable {
     }
     public void missSound(){
         ExecutorService Thread = Executors.newFixedThreadPool(4);
-        Thread.submit(new Runnable() {public void run() { soundFX.playSound("sounds/?.wav"); }});
+        Thread.submit(new Runnable() {public void run() { soundFX.playSound("sounds/miss.wav"); }});
     }
     public void winSound(){
         ExecutorService Thread = Executors.newFixedThreadPool(4);
@@ -750,18 +753,7 @@ public class Method implements Serializable {
         ExecutorService Thread = Executors.newFixedThreadPool(4);
         Thread.submit(new Runnable() {public void run() { soundFX.playSound("sounds/treasure.wav"); }});
     }
-    public void backpackSound(){
-        ExecutorService Thread = Executors.newFixedThreadPool(4);
-        Thread.submit(new Runnable() {public void run() { soundFX.playSound("sounds/openBackPack.wav"); }});
-    }
-    public void drinkPotionSound(){
-        ExecutorService Thread = Executors.newFixedThreadPool(4);
-        Thread.submit(new Runnable() {public void run() { soundFX.playSound("sounds/drinkPotion.wav"); }});
-    }
-    public void dropPotionSound(){
-        ExecutorService Thread = Executors.newFixedThreadPool(4);
-        Thread.submit(new Runnable() {public void run() { soundFX.playSound("sounds/dropItem.wav"); }});
-    }
+
     public void playerDeathSound(){
         ExecutorService Thread = Executors.newFixedThreadPool(4);
         Thread.submit(new Runnable() {public void run() { soundFX.playSound("sounds/playerDeath.wav"); }});
@@ -774,4 +766,5 @@ public class Method implements Serializable {
         ExecutorService Thread = Executors.newFixedThreadPool(4);
         Thread.submit(new Runnable() {public void run() { soundFX.playSound("sounds/laugh.wav"); }});
     }
+
 }

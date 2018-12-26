@@ -252,7 +252,7 @@ public class ASCII {
         }clearScreen();
 
         try {
-            Thread.sleep(300);
+            Thread.sleep(100);
         }catch (Exception e){
             System.out.println("wow");
         }
@@ -286,7 +286,7 @@ public class ASCII {
         }clearScreen();
 
         try {
-            Thread.sleep(100);
+            Thread.sleep(300);
         }catch (Exception e){
             System.out.println("wow");
         }
@@ -336,6 +336,389 @@ public class ASCII {
         }catch (Exception e){
             System.out.println("wow");
         }
+    }
+    public static void gameOverLogo(){
+
+        System.out.println("\n" +
+                "       -+ooo+/:::.   .-///+/+/:.  +hh/       `syh. `-/osyso:         .-///+/+/:.  /hh:     ohh- `-:+syyo/  `-/-:++//:.`  \n" +
+                "     .MMm`    `..` /MMs     hMMo yMMMdo-``:smMMM- NMM+:`           :MMy     yMMo sMMo     dMM: hMMs:.     hMM-    `mMN- \n" +
+                "     .MMd          /MMs `.-/mMMo yMMhosddddssNMM- NMMmdhs/-        /MMy     yMMs sMMo     dMM: hMMNmhy+:  hMM:``.-/NNd. \n" +
+                "     .MMd    /sddo /MMNddhhymMMo yMM+  `..   mMM- NMMyo/-..        /MMy     yMMs sMMo     dMM: hMMhs+:-.  hMMo::/shMm+  \n" +
+                "     .MMm     +MMy /MMy..`  hMMo yMM+        mMM- NMM:.`           /MMy     yMMs sMMo   `/mMd. hMMo-`     hMM-     NMM. \n" +
+                "      -osso+/://-` :hh/     ohh/ +hh:        shh. .:+oyys+:         .:/++++++:.` +ddy+//++/.   `-/osyso/  ohh.     yhh` ");
+        try {
+            Thread.sleep(100);
+        }catch (Exception e){
+            System.out.println("wow");
+        }
+        clearScreen();
+        System.out.println("\n" +
+                "        :ossso+/+/-` `-/ooo+so+:.`/hhh+      `yhhh`.:+syyys+.       `-/ooo+so+:.`+hhh:   `hhhh`.-/oyyys+: .:+o/+oo+:-`   \n" +
+                "      +MMMs    `... NMMM`   oMMMyoMMMMdo-`/yNMMMM+MMMm/-`         .MMMm    sMMMyyMMMo   `MMMM-MMMM+-`   /MMMy   `hMMM+  \n" +
+                "      +MMMs         MMMM`.-:yMMMhoMMMdymNmNdsMMMMoMMMMmdyo/.      .MMMm    sMMMhyMMMo   `MMMM-MMMMmdhs/-/MMMh`.-/dMMm:  \n" +
+                "      +MMMs  -/hddd.MMMMmmmdmMMMhoMMMo `.-.  MMMMoMMMNs+/-.`      .MMMm    sMMMhyMMMo   `MMMM-MMMMyo/-.`/MMMd:/ohNMNo`  \n" +
+                "      +MMMs    NMMM-MMMM-.` +MMMhoMMMo       MMMMoMMMd:.          .MMMm    sMMMyyMMMo  .+MMMh.MMMM:.`   /MMMy    dMMM/  \n" +
+                "       :syyyo+/s+:. hhhh    :hhho/hhh/       hhhh.-/+syyyo+.       .:+osoosso/-`odddy++o++/.  .:+syyys+--hhh+    shhh-  ");
+        try {
+            Thread.sleep(100);
+        }catch (Exception e){
+            System.out.println("wow");
+        }
+        clearScreen();
+        System.out.println("\n" +
+                "           :osyyyoos+:.`.:oyyosyo/::hhhho`    +yhhh/:+shhyyo/      .-/sysoyyo/-+hhhh-  +hhhh/:+shhyys+-:+sy+sys+:.`      \n" +
+                "         -MMMMh   ....mMMMM.  mMMMMMMMMMmo-+dMMMMMMMMMm/-`       -MMMMd  -MMMMMMMMM:  yMMMMMMMMN/-` `MMMMm  .MMMMN      \n" +
+                "         :MMMMh       mMMMM--/NMMMMMMMMNmNNNNNMMMMMMMMMmdy+:     -MMMMh  -MMMMMMMMM:  yMMMMMMMMMmdyo/MMMMm.-+MMMNh      \n" +
+                "         :MMMMh :sddddMMMMMNNmMMMMMMMMMy`.--.yMMMMMMMMNs+:-.     -MMMMh  -MMMMMMMMM:  yMMMMMMMMNs+:--MMMMN/sdMMMd:      \n" +
+                "         -MMMMh  /MMMMMMMMM:.`mMMMMMMMMy     yMMMMMMMMm-.        -MMMMd  -MMMMMMMMM:`:dMMMmMMMMN:.  `MMMMm  -MMMMm      \n" +
+                "          -osyhyooys+-yhhhh`  shhhhhhhh+     +hhhh+/oyhhyyo/      .:+shyshyo/-oddddssso+/-`.:+shhyyo+hhhhs  .hhhhs      ");
+        try {
+            Thread.sleep(100);
+        }catch (Exception e){
+            System.out.println("wow");
+        }
+        clearScreen();
+        System.out.println("\n" +
+                "                `+osyhyyys/:-/shhyhhs/shhhhs`  /yhhhh+shhhyyo:   `./oyhyyhs+ohhhhh /hhhhh+ohhhyyso+shyyhyo/.`            \n" +
+                "               dMMMMm``...mMMMMd dMMMMMMMMMmoyMMMMMMMMMM+-      oMMMMM`sMMMMMMMMM oMMMMMMMMM+-`dMMMMd dMMMMN            \n" +
+                "               dMMMMm     mMMMMm/mMMMMMMMMMNNNMMMMMMMMMMmdy+-   oMMMMM`sMMMMMMMMM oMMMMMMMMMmdyNMMMMm:mMMMNd            \n" +
+                "               dMMMMm/hdddMMMMMMMMMMMMMMMMm---oMMMMMMMMMy+:.`   oMMMMM`sMMMMMMMMM oMMMMMMMMMy+:mMMMMNyNMMMm/            \n" +
+                "               dMMMMm mMMMMMMMMm.dMMMMMMMMm   +MMMMMMMMM:.      oMMMMM`sMMMMMMMMM-hMMMMMMMMM/. mMMMMd dMMMMm            \n" +
+                "               `+syhhyhhyoyhhhhs shhhhhhhhs   :hhhhhoshhhyy+-   `-/shdyhdyosdddddyys+/--+shhhyyyhhhhs ohhhhs            ");
+        try {
+            Thread.sleep(100);
+        }catch (Exception e){
+            System.out.println("wow");
+        }
+        clearScreen();
+        System.out.println("\n" +
+                "                        :osyhhyyy+/shhhhhyhhhhhs`+hhhhhyhhhyy+` .:ohhhhhyhhhhhhhhhhhyhhhhhhyhhhhhs/.`                    \n" +
+                "                      .MMMMMm../MMMMMMMMMMMMMMMmMMMMMMMMMh-   .MMMMMMMMMMMMMMMMMMMMMMMm/MMMMMMMMMMMy                    \n" +
+                "                      .MMMMMm  -MMMMMMMMMMMMMMMNMMMMMMMMMNdy/`.MMMMMMMMMMMMMMMMMMMMMMMMmMMMMMMMMMMNs                    \n" +
+                "                      .MMMMMMddmMMMMMMMMMMMMMMd-hMMMMMMMMmo:. .MMMMMMMMMMMMMMMMMMMMMMMNsMMMMMMMMMMm:                    \n" +
+                "                      .MMMMMMMMMMMMMMMMMMMMMMMh yMMMMMMMMy.   .MMMMMMMMMMMMMMMMMMMMMMMm-MMMMMMMMMMMh                    \n" +
+                "                       :syhhhhhhhhhhhhhhhhhhhho ohhhhhhhhhys+` ./shddddhdddddhyso/+yhhhyhhhhhhhhhhho                   ");
+        try {
+            Thread.sleep(100);
+        }catch (Exception e){
+            System.out.println("wow");
+        }
+        clearScreen();
+        System.out.println("\n" +
+                "                                .oyhhhhhyhhhhhhhhhhhhhhhhhhhy+/yhhhhhhhhhhhhhhhhhhhhhhho-`                              \n" +
+                "                                hMMMMMyMMMMMMMMMMMMMMMMMMMM/`hMMMMMMMMMMMMMMMMMMMMMMMMMMMs                              \n" +
+                "                                hMMMMMsMMMMMMMMMMMMMMMMMMMMmymMMMMMMMMMMMMMMMMMMMMMMMMMMM+                              \n" +
+                "                                hMMMMMNMMMMMMMMMMMMMMMMMMMMs:dMMMMMMMMMMMMMMMMMMMMMMMMMMN-                              \n" +
+                "                                hMMMMMMMMMMMMMMMMMMMMMMMMMM: hMMMMMMMMMMMMMMMMMMMMMMMMMMMs                              \n" +
+                "                                .shhhhhhhhhhhhhhhhhhhhhhhhhhs++hdddddddddhyohhhhhhhhhhhhh+                             ");
+        try {
+            Thread.sleep(100);
+        }catch (Exception e){
+            System.out.println("wow");
+        }
+        clearScreen();
+        System.out.println("\n" +
+                "                                           +yhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhy-                                          \n" +
+                "                                           MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM`                                         \n" +
+                "                                           MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMN`                                         \n" +
+                "                                           MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMm                                          \n" +
+                "                                           MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM`                                         \n" +
+                "                                           ohhhhhhhhhhhhhhhhhddddddddhhhhhhhhh`                                         ");
+        try {
+            Thread.sleep(100);
+        }catch (Exception e){
+            System.out.println("wow");
+        }
+        clearScreen();
+        System.out.println("\n" +
+                "                                                      /hhhhhhhhhh+                                                      \n" +
+                "                                                      sMMMMMMMMMMd                                                      \n" +
+                "                                                      sMMMMMMMMMMd                                                      \n" +
+                "                                                      sMMMMMMMMMMd                                                      \n" +
+                "                                                      sMMMMMMMMMMd                                                      \n" +
+                "                                                      /hhhddddddhs                                                      ");
+        try {
+            Thread.sleep(100);
+        }catch (Exception e){
+            System.out.println("wow");
+        }
+        clearScreen();
+        System.out.println("\n" +
+                "                                                 /hhhhhhhhhhhhhhhhhhhhhy.                                                \n" +
+                "                                               `MMMMMMMMMMMMMMMMMMMMMMM+                                                \n" +
+                "                                               `NMMMMMMMMMMMMMMMMMMMMMM+                                                \n" +
+                "                                                NMMMMMMMMMMMMMMMMMMMMMM+                                                \n" +
+                "                                               `MMMMMMMMMMMMMMMMMMMMMMM+                                                \n" +
+                "                                               `hhhhhhddddddhhhhhhhhhhy.                                                ");
+        try {
+            Thread.sleep(100);
+        }catch (Exception e){
+            System.out.println("wow");
+        }
+        clearScreen();
+        System.out.println("\n" +
+                "                                    .ohhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhyo.                                     \n" +
+                "                                   `MMMMMMMMMMMMMMMMMMMMMMMdMMMMMMMMMMMMMMMMMMMMMMo                                     \n" +
+                "                                   `mMMMMMMMMMMMMMMMMMMMMMMNMMMMMMMMMMMMMMMMMMMMMMo                                     \n" +
+                "                                    yMMMMMMMMMMMMMMMMMMMMMMmMMMMMMMMMMMMMMMMMMMMMMo                                     \n" +
+                "                                    NMMMMMMMMMMMMMMMMMMMMMMhNMMMMMMMMMMMMMMMMMMMMMo                                     \n" +
+                "                                    yhhhhhhhhhhhhddddddddhhhhhhhhhhhhhhhhhhhhhhhhs.                                     ");
+        try {
+            Thread.sleep(100);
+        }catch (Exception e){
+            System.out.println("wow");
+        }
+        clearScreen();
+        System.out.println("\n" +
+                "                         `:oyhhhhhhhhhhhhhhhhhhhhhhhhhhs/.-syhhhhhhhhh/yhhhhhhhhhhsoyyhhhyso`                           \n" +
+                "                         mMMMMMMMMMMNMMMMMMMMMMMMMMMMMMMMN  .oMMMMMMMMMMMMMMMMMMMMMMN.sMMMMMy                           \n" +
+                "                         hMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMN.ohNMMMMMMMMMMMMMMMMMMMMMMN oMMMMMy                           \n" +
+                "                         +MMMMMMMMMMNMMMMMMMMMMMMMMMMMMMMN`-+hMMMMMMMMsMMMMMMMMMMMMMMdNMMMMMy                           \n" +
+                "                         NMMMMMMMMMMNMMMMMMMMMMMMMMMMMMMMN  `+MMMMMMMMoMMMMMMMMMMMMMMMMMMMMMy                           \n" +
+                "                         yhhhhhhhhhhhhhho+sydddddddddddy/.-oyhhhhhhhhh/hhhhhhhhhhhhhhhhhhhyo`                           ");
+        try {
+            Thread.sleep(100);
+        }catch (Exception e){
+            System.out.println("wow");
+        }
+        clearScreen();
+        System.out.println("\n" +
+                "                 `-/shhhhhoyhyyhhhshhhhhy/hhhhhoyhhyhyo/.   /syhhhyshhhhh+  ohhhhhoyhhhhyo:/+yyyhhyso:                   \n" +
+                "               `NMMMMdyMMMMM/:dMMMMMMMMNsMMMMMMMMNsMMMMM:    ./mMMMMMMMMMhdMMMMMMMMMdhMMMMM:..`hMMMMM.                  \n" +
+                "               `dMMMMmhMMMMMdmMMMMMMMMMNsMMMMMMMMNsMMMMM/  :ohmMMMMMMMMMMNNMMMMMMMMMmdMMMMM-   hMMMMM-                  \n" +
+                "                oNMMMMmMMMMMsomMMMMMMMMNsMMMMMMMMNsMMMMM/  .-/sNMMMMMMMMh--dMMMMMMMMMMMMMMMdddhdMMMMM-                  \n" +
+                "               .MMMMMNsMMMMM/-hMMMMMMMMNhMMMMMMMMNsMMMMM/    `-dMMMMMMMMy  hMMMMMMMMddMMMMMMMMdhMMMMM.                  \n" +
+                "               `hhhhhy+hhhhhyyhhhs/:/osyhdddddsyddhdhs/-   /oyyhhhshhhhh+  ohhhhhhhhsohhhhhshhhhhhys:                   ");
+        try {
+            Thread.sleep(100);
+        }catch (Exception e){
+            System.out.println("wow");
+        }
+        clearScreen();
+        System.out.println("\n" +
+                "         `-/oyysyyo/:osyyhhs+:yhhhh/ -hhhhy-+shysyyo/-`    .+syyhhs+/hhhhy.   .hhhhh:/oyysyho/-.-/sysyyyso+.            \n" +
+                "        :MMMMM- sMMMMh `-oMMMMMMMMMo /MMMMMMMMM+ oMMMMm       `:yMMMMMMMMMNs/yNMMMMMMMMMo :MMMMM....  sMMMMm            \n" +
+                "        -dMMMM+-yMMMMmoydNMMMMMMMMMo /MMMMMMMMM/ oMMMMm    `/shdNMMMMMMMMMNNNNNMMMMMMMMMh:/MMMMM      oMMMMm            \n" +
+                "        `oNMMMdsdMMMMd-/ohMMMMMMMMMo /MMMMMMMMM/ oMMMMm    `.-/odMMMMMMMMM-----MMMMMMMMMNNMMMMMMddddo-oMMMMm            \n" +
+                "        -MMMMM: sMMMMd `./MMMMMMMMMh-/MMMMMMMMM/ oMMMMm       `-sMMMMMMMMM`   .MMMMMMMMMs.+MMMMMMMMM- oMMMMm            \n" +
+                "        .hhhhh- +hhhhyoyyhhyo/../+ossyddddh:+shhshhs+-`    .+syyhhs++hhhhh`   `hhhhhhhhh/ .hhhhh:oyhssyhys+.            ");
+        try {
+            Thread.sleep(100);
+        }catch (Exception e){
+            System.out.println("wow");
+        }
+        clearScreen();
+        System.out.println("\n" +
+                "    `.:+oso+oo/-`-+syyys+:./hhhh.   yhhh:.-/oysoss+:.`      -osyyhs+:.ohhhs`     /hhhh..:+ssosso/-` .:+s+oyyso+-        \n" +
+                "    NMMMs   +MMMN   `:oMMMMmMMMM.   NMMMhMMMM+   mMMMy         `:sMMMMMMMMMms-.odMMMMMmMMMN   /MMMM:...`   /MMMM-       \n" +
+                "    dNMMh:-.oMMMN-/shdNMMMMmMMMM.   NMMMhMMMM/   mMMMy      -/shdNMMMMMMMMNhNNNNddMMMMmMMMN/-.+MMMM-       :MMMM:       \n" +
+                "    /dMMNyo/yMMMN`.-/ohMMMMmMMMM.   NMMMhMMMM/   mMMMy      `.-/ohMMMMMMMMm .--.`+MMMMmMMMMdmNNMMMMhdddh/. :MMMM:       \n" +
+                "    MMMMh   +MMMN   `-+MMMMydMMMo.  NMMMhMMMM/   mMMMy         `-+MMMMMMMMm      +MMMMmMMMN``.oMMMMmMMMm   /MMMM-       \n" +
+                "    hhhho   :hhhy-+syyhyo/- `-/+oooodddd/.:+sysoyyo/-`      -+syyhso/-ohhhy      :hhhhshhhy   -hhhh--/oy+osyyso-        ");
+        try {
+            Thread.sleep(100);
+        }catch (Exception e){
+            System.out.println("wow");
+        }
+        clearScreen();
+        System.out.println("\n" +
+                "  `.:/+o+/:+:. `/oyyyo/-. :hhh-    +hhy `.:+oo++++:.`       `/oyyyo+:. /hhy`      `shho `-:+o++o+/:.  `-///+osso+-      \n" +
+                " .NMMo    -MMM:    .:yMMM-+MMM:    yMMM yMMM`    mMMh           .:sMMM-sMMMNy/``:smMMMd mMMh    .MMMo ...`    +MMM.     \n" +
+                " `dNMh:-.`:MMM: :+yhmNMMM-+MMM:    yMMM hMMM`    mMMh        :+yhmNMMM-sMMMsymmmmyoNMMd NMMm/-.`.MMMo         /MMM.     \n" +
+                "  +dMNyo::oMMM: .-:+sdMMM-+MMM:    yMMM hMMM`    mMMh        .-:+shMMM-sMMM  `..`  mMMd NMMmhddddMMMo.ddds/`  /MMM.     \n" +
+                " .MMMy    -MMM:    `-sMMM-:dMMs-   yMMM yMMM`    mMMh           `-oMMM-sMMM        mMMd NMMh ``.:MMMo.MMM+    +MMM.     \n" +
+                " `hhh+    .hhh- /oyyys+:.   -/+++++yddh `-/ooo+oo+/-`       `/osyys+:. +hhh        shho yhho    `hhh/ .:++//ossso-      ");
+        try {
+            Thread.sleep(100);
+        }catch (Exception e){
+            System.out.println("wow");
+        }
+        clearScreen();
+        System.out.println("\n" +
+                "  `.:/+o+/:+:. `/oyyyo/-. :hhh-    +hhy `.:+oo++++:.`       `/oyyyo+:. /hhy`      `shho `-:+o++o+/:.  `-///+osso+-      \n" +
+                " .NMMo    -MMM:    .:yMMM-+MMM:    yMMM yMMM`    mMMh           .:sMMM-sMMMNy/``:smMMMd mMMh    .MMMo ...`    +MMM.     \n" +
+                " `dNMh:-.`:MMM: :+yhmNMMM-+MMM:    yMMM hMMM`    mMMh        :+yhmNMMM-sMMMsymmmmyoNMMd NMMm/-.`.MMMo         /MMM.     \n" +
+                "  +dMNyo::oMMM: .-:+sdMMM-+MMM:    yMMM hMMM`    mMMh        .-:+shMMM-sMMM  `..`  mMMd NMMmhddddMMMo.ddds/`  /MMM.     \n" +
+                " .MMMy    -MMM:    `-sMMM-:dMMs-   yMMM yMMM`    mMMh           `-oMMM-sMMM        mMMd NMMh ``.:MMMo.MMM+    +MMM.     \n" +
+                " `hhh+    .hhh- /oyyys+:.   -/+++++yddh `-/ooo+oo+/-`       `/osyys+:. +hhh        shho yhho    `hhh/ .:++//ossso-      ");
+        try {
+            Thread.sleep(100);
+        }catch (Exception e){
+            System.out.println("wow");
+        }
+        clearScreen();
+        System.out.println("\n" +
+                "    `.:+oso+oo/-`-+syyys+:./hhhh.   yhhh:.-/oysoss+:.`      -osyyhs+:.ohhhs`     /hhhh..:+ssosso/-` .:+s+oyyso+-        \n" +
+                "    NMMMs   +MMMN   `:oMMMMmMMMM.   NMMMhMMMM+   mMMMy         `:sMMMMMMMMMms-.odMMMMMmMMMN   /MMMM:...`   /MMMM-       \n" +
+                "    dNMMh:-.oMMMN-/shdNMMMMmMMMM.   NMMMhMMMM/   mMMMy      -/shdNMMMMMMMMNhNNNNddMMMMmMMMN/-.+MMMM-       :MMMM:       \n" +
+                "    /dMMNyo/yMMMN`.-/ohMMMMmMMMM.   NMMMhMMMM/   mMMMy      `.-/ohMMMMMMMMm .--.`+MMMMmMMMMdmNNMMMMhdddh/. :MMMM:       \n" +
+                "    MMMMh   +MMMN   `-+MMMMydMMMo.  NMMMhMMMM/   mMMMy         `-+MMMMMMMMm      +MMMMmMMMN``.oMMMMmMMMm   /MMMM-       \n" +
+                "    hhhho   :hhhy-+syyhyo/- `-/+oooodddd/.:+sysoyyo/-`      -+syyhso/-ohhhy      :hhhhshhhy   -hhhh--/oy++syyso-        ");
+        try {
+            Thread.sleep(100);
+        }catch (Exception e){
+            System.out.println("wow");
+        }
+        clearScreen();
+        System.out.println("\n" +
+                "          `-/oyysyyo/:osyyhhs+:yhhhh/ -hhhhy-+shysyyo/-`    .+syyhhs+/hhhhy.   .hhhhh:/oyysyho/-.-/sysyyyso+.            \n" +
+                "        .MMMMM- sMMMMh `-oMMMMMMMMMo /MMMMMMMMM+ oMMMMm       `:yMMMMMMMMMNs/yNMMMMMMMMMo :MMMMM....  sMMMMm            \n" +
+                "        .dMMMM+-yMMMMmoydNMMMMMMMMMo /MMMMMMMMM/ oMMMMm    `/shdNMMMMMMMMMNNNNNMMMMMMMMMh:/MMMMM      oMMMMm            \n" +
+                "        `oNMMMdsdMMMMd-/ohMMMMMMMMMo /MMMMMMMMM/ oMMMMm    `.-/odMMMMMMMMM-----MMMMMMMMMNNMMMMMMddddo-oMMMMm            \n" +
+                "        -MMMMM: sMMMMd `./MMMMMMMMMh-/MMMMMMMMM/ oMMMMm       `-sMMMMMMMMM`   .MMMMMMMMMs.+MMMMMMMMM- oMMMMm            \n" +
+                "        .hhhhh- +hhhhyoyyhhyo/../+ossyddddh:+shhshhs+-`    .+syyhhs++hhhhh`   `hhhhhhhhh/ .hhhhh:oyhssyhys+.            ");
+        try {
+            Thread.sleep(100);
+        }catch (Exception e){
+            System.out.println("wow");
+        }
+        clearScreen();
+        System.out.println("\n" +
+                "                `-/shhhhhoyhyyhhhshhhhhy/hhhhhoyhhyhyo/.   /syhhhyshhhhh+  ohhhhhoyhhhhyo::+yyyhhyso:                   \n" +
+                "               `NMMMMdyMMMMM/:dMMMMMMMMNsMMMMMMMMNsMMMMM:    ./mMMMMMMMMMhdMMMMMMMMMdhMMMMM:..`hMMMMM.                  \n" +
+                "               `dMMMMmhMMMMMdmMMMMMMMMMNsMMMMMMMMNsMMMMM/  :ohmMMMMMMMMMMNNMMMMMMMMMmdMMMMM-   hMMMMM-                  \n" +
+                "                oNMMMMmMMMMMsomMMMMMMMMNsMMMMMMMMNsMMMMM/  .-/sNMMMMMMMMh--dMMMMMMMMMMMMMMMdddhdMMMMM-                  \n" +
+                "               .MMMMMNsMMMMM/-hMMMMMMMMNhMMMMMMMMNsMMMMM/    `-dMMMMMMMMy  hMMMMMMMMddMMMMMMMMdhMMMMM.                  \n" +
+                "               `hhhhhy+hhhhhyyhhhs/:/osyhdddddsyddhdhs/-   /oyyhhhshhhhh+  ohhhhhhhhsohhhhhshhhhhhys:                   ");
+        try {
+            Thread.sleep(100);
+        }catch (Exception e){
+            System.out.println("wow");
+        }
+        clearScreen();
+        System.out.println("\n" +
+                "                         `-oyhhhhhhhhhhhhhhhhhhhhhhhhhhs/.-syhhhhhhhhh/yhhhhhhhhhhsoyyhhhyso`                           \n" +
+                "                         mMMMMMMMMMMNMMMMMMMMMMMMMMMMMMMMN  .oMMMMMMMMMMMMMMMMMMMMMMN.sMMMMMy                           \n" +
+                "                         hMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMN.ohNMMMMMMMMMMMMMMMMMMMMMMN oMMMMMy                           \n" +
+                "                         +MMMMMMMMMMNMMMMMMMMMMMMMMMMMMMMN`-+hMMMMMMMMsMMMMMMMMMMMMMMdNMMMMMy                           \n" +
+                "                         NMMMMMMMMMMNMMMMMMMMMMMMMMMMMMMMN  `+MMMMMMMMoMMMMMMMMMMMMMMMMMMMMMy                           \n" +
+                "                         yhhhhhhhhhhhhhho+sydddddddddddy/.-oyhhhhhhhhh/hhhhhhhhhhhhhhhhhhhyo`                           ");
+        try {
+            Thread.sleep(100);
+        }catch (Exception e){
+            System.out.println("wow");
+        }
+        clearScreen();
+        System.out.println("\n" +
+                "                                    .ohhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhyo.                                     \n" +
+                "                                    NMMMMMMMMMMMMMMMMMMMMMMdMMMMMMMMMMMMMMMMMMMMMMo                                     \n" +
+                "                                    mMMMMMMMMMMMMMMMMMMMMMMNMMMMMMMMMMMMMMMMMMMMMMo                                     \n" +
+                "                                    yMMMMMMMMMMMMMMMMMMMMMMmMMMMMMMMMMMMMMMMMMMMMMo                                     \n" +
+                "                                    NMMMMMMMMMMMMMMMMMMMMMMhNMMMMMMMMMMMMMMMMMMMMMo                                     \n" +
+                "                                    yhhhhhhhhhhhhddddddddhhhhhhhhhhhhhhhhhhhhhhhhs.                                     ");
+        try {
+            Thread.sleep(100);
+        }catch (Exception e){
+            System.out.println("wow");
+        }
+        clearScreen();
+        System.out.println("\n" +
+                "                                                /hhhhhhhhhhhhhhhhhhhhhy.                                                \n" +
+                "                                               `MMMMMMMMMMMMMMMMMMMMMMM+                                                \n" +
+                "                                               `NMMMMMMMMMMMMMMMMMMMMMM+                                                \n" +
+                "                                                mMMMMMMMMMMMMMMMMMMMMMM+                                                \n" +
+                "                                               `MMMMMMMMMMMMMMMMMMMMMMM+                                                \n" +
+                "                                               `hhhhhhddddddhhhhhhhhhhy.                                                ");
+        try {
+            Thread.sleep(100);
+        }catch (Exception e){
+            System.out.println("wow");
+        }
+        clearScreen();
+        System.out.println("\n" +
+                "                                                      /hhhhhhhhhh+                                                      \n" +
+                "                                                      sMMMMMMMMMMd                                                      \n" +
+                "                                                      sMMMMMMMMMMd                                                      \n" +
+                "                                                      sMMMMMMMMMMd                                                      \n" +
+                "                                                      sMMMMMMMMMMd                                                      \n" +
+                "                                                      /hhhddddddhs                                                      ");
+        try {
+            Thread.sleep(100);
+        }catch (Exception e){
+            System.out.println("wow");
+        }
+        clearScreen();
+        System.out.println("\n" +
+                "                                           +yhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhy-                                          \n" +
+                "                                           MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM`                                         \n" +
+                "                                           MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMN`                                         \n" +
+                "                                           MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMm                                          \n" +
+                "                                           MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM`                                         \n" +
+                "                                           ohhhhhhhhhhhhhhhhhddddddddhhhhhhhhh`                                         ");
+        try {
+            Thread.sleep(100);
+        }catch (Exception e){
+            System.out.println("wow");
+        }
+        clearScreen();
+        System.out.println("\n" +
+                "                                .oyhhhhhyhhhhhhhhhhhhhhhhhhhy+/yhhhhhhhhhhhhhhhhhhhhhhho-`                              \n" +
+                "                                hMMMMMyMMMMMMMMMMMMMMMMMMMM/`hMMMMMMMMMMMMMMMMMMMMMMMMMMMs                              \n" +
+                "                                hMMMMMsMMMMMMMMMMMMMMMMMMMMmymMMMMMMMMMMMMMMMMMMMMMMMMMMM+                              \n" +
+                "                                hMMMMMNMMMMMMMMMMMMMMMMMMMMs:dMMMMMMMMMMMMMMMMMMMMMMMMMMN-                              \n" +
+                "                                hMMMMMMMMMMMMMMMMMMMMMMMMMM: hMMMMMMMMMMMMMMMMMMMMMMMMMMMs                              \n" +
+                "                                .shhhhhhhhhhhhhhhhhhhhhhhhhhs++hdddddddddhyohhhhhhhhhhhhh+                              ");
+        try {
+            Thread.sleep(100);
+        }catch (Exception e){
+            System.out.println("wow");
+        }
+        clearScreen();
+        System.out.println("\n" +
+                "                       :osyhhyyy+/shhhhhyhhhhhs`+hhhhhyhhhyy+` .:ohhhhhyhhhhhhhhhhhyhhhhhhyhhhhhs/.`                    \n" +
+                "                      .MMMMMm../MMMMMMMMMMMMMMMmMMMMMMMMMh-   .MMMMMMMMMMMMMMMMMMMMMMMm/MMMMMMMMMMMy                    \n" +
+                "                      .MMMMMm  -MMMMMMMMMMMMMMMNMMMMMMMMMNdy/`.MMMMMMMMMMMMMMMMMMMMMMMMmMMMMMMMMMMNs                    \n" +
+                "                      .MMMMMMddmMMMMMMMMMMMMMMd-hMMMMMMMMmo:. .MMMMMMMMMMMMMMMMMMMMMMMNsMMMMMMMMMMm:                    \n" +
+                "                      .MMMMMMMMMMMMMMMMMMMMMMMh yMMMMMMMMy.   .MMMMMMMMMMMMMMMMMMMMMMMm-MMMMMMMMMMMh                    \n" +
+                "                       :syhhhhhhhhhhhhhhhhhhhho ohhhhhhhhhys+` ./shddddhdddddhyso/+yhhhyhhhhhhhhhhho                    ");
+        try {
+            Thread.sleep(100);
+        }catch (Exception e){
+            System.out.println("wow");
+        }
+        clearScreen();
+        System.out.println("\n" +
+                "               `+osyhyyys/:-/shhyhhs/shhhhs`  /yhhhh+shhhyyo:   `./oyhyyhs+ohhhhh /hhhhh+ohhhyyso+shyyhyo/.`            \n" +
+                "               dMMMMm``...mMMMMd dMMMMMMMMMmoyMMMMMMMMMM+-      oMMMMM`sMMMMMMMMM oMMMMMMMMM+- dMMMMd dMMMMN            \n" +
+                "               dMMMMm     mMMMMm/mMMMMMMMMMNNNMMMMMMMMMMmdy+-   oMMMMM`sMMMMMMMMM oMMMMMMMMMmdyNMMMMm:mMMMNd            \n" +
+                "               dMMMMm/hdddMMMMMMMMMMMMMMMMm---oMMMMMMMMMy+:.`   oMMMMM`sMMMMMMMMM oMMMMMMMMMy+:mMMMMNyNMMMm/            \n" +
+                "               dMMMMm mMMMMMMMMm.dMMMMMMMMm   +MMMMMMMMM:.      oMMMMM`sMMMMMMMMM-hMMMMMMMMM/. mMMMMd dMMMMm            \n" +
+                "               `+syhhyhhyoyhhhhs shhhhhhhhs   :hhhhhoshhhyy+-   `-/shdyhdyosdddddyys+/--+shhhyyyhhhhs ohhhhs            ");
+        try {
+            Thread.sleep(100);
+        }catch (Exception e){
+            System.out.println("wow");
+        }
+        clearScreen();
+        System.out.println("\n" +
+                "           :osyyyoos+:.`.:oyyosyo/::hhhho`    +yhhh/:+shhyyo/      .-/sysoyyo/-+hhhh-  +hhhh/:+shhyys+-:+sy+sys+:.`      \n" +
+                "         -MMMMh   ....mMMMM.  mMMMMMMMMMmo-+dMMMMMMMMMm/-`       -MMMMd  -MMMMMMMMM:  yMMMMMMMMN/-` `MMMMm  .MMMMN      \n" +
+                "         :MMMMh       mMMMM--/NMMMMMMMMNmNNNNNMMMMMMMMMmdy+:     -MMMMh  -MMMMMMMMM:  yMMMMMMMMMmdyo/MMMMm.-+MMMNh      \n" +
+                "         :MMMMh :sddddMMMMMNNmMMMMMMMMMy`.--.yMMMMMMMMNs+:-.     -MMMMh  -MMMMMMMMM:  yMMMMMMMMNs+:--MMMMN/sdMMMd:      \n" +
+                "         -MMMMh  /MMMMMMMMM:.`mMMMMMMMMy     yMMMMMMMMm-.        -MMMMd  -MMMMMMMMM:`:dMMMmMMMMN:.  `MMMMm  -MMMMm      \n" +
+                "          -osyhyooys+-yhhhh`  shhhhhhhh+     +hhhh+/oyhhyyo/      .:+shyshyo/-oddddssso+/-`.:+shhyyo+hhhhs  .hhhhs      ");
+        try {
+            Thread.sleep(100);
+        }catch (Exception e){
+            System.out.println("wow");
+        }
+        clearScreen();
+        System.out.println("\n" +
+                "       :ossso+/+/-` `-/ooo+so+:.`/hhh+      `yhhh`.:+syyys+.       `-/ooo+so+:.`+hhh:   `hhhh`.-/oyyys+: .:+o/+oo+:-`   \n" +
+                "      +MMMs    `... NMMM`   oMMMyoMMMMdo-`/yNMMMM+MMMm/-`         .MMMm    sMMMyyMMMo   `MMMM-MMMM+-`   /MMMy   `hMMM+  \n" +
+                "      +MMMs         MMMM`.-:yMMMhoMMMdymNmNdsMMMMoMMMMmdyo/.      .MMMm    sMMMhyMMMo   `MMMM-MMMMmdhs/-/MMMh`.-/dMMm:  \n" +
+                "      +MMMs  -/hddd.MMMMmmmdmMMMhoMMMo `.-.  MMMMoMMMNs+/-.`      .MMMm    sMMMhyMMMo   `MMMM-MMMMyo/-.`/MMMd:/ohNMNo`  \n" +
+                "      +MMMs    NMMM-MMMM-.` +MMMhoMMMo       MMMMoMMMd:.          .MMMm    sMMMyyMMMo  .+MMMh.MMMM:.`   /MMMy    dMMM/  \n" +
+                "       :syyyo+/s+:. hhhh    :hhho/hhh/       hhhh.-/+syyyo+.       .:+osoosso/-`odddy++o++/.  .:+syyys+--hhh+    shhh-  ");
+        try {
+            Thread.sleep(100);
+        }catch (Exception e){
+            System.out.println("wow");
+        }
+        clearScreen();
+
+
+
     }
 }
 

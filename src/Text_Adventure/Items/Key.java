@@ -1,5 +1,7 @@
 package Text_Adventure.Items;
 
+import Text_Adventure.menuDevelopment.ColorPrint;
+
 import java.io.Serializable;
 import java.util.Random;
 
@@ -20,7 +22,9 @@ public class Key extends Item  implements Serializable {
         super(name);
         this.type = randomType();
         //Robert: I added this line below
-        this.name2 = "small rusty key with the number " + this.type + " written on it";
+        this.name2 = "small" + ColorPrint.ANSI_BLUE + " rusty key "+ColorPrint.ANSI_RESET
+                +"with the number " + ColorPrint.ANSI_BLUE
+                + this.type+ColorPrint.ANSI_RESET + " written on it";
     }
 
 

@@ -46,8 +46,7 @@ public class Monster extends Character implements Serializable {
     }
 
     public String getMonsterType() {
-        String monsterTypeColor = ColorPrint.ANSI_RED+monsterType+ColorPrint.ANSI_RESET;
-        return monsterTypeColor;
+        return monsterType;
 
     }
 

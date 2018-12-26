@@ -5,6 +5,7 @@ import Text_Adventure.Items.Item;
 import Text_Adventure.Items.Key;
 import Text_Adventure.Items.Weapon;
 import Text_Adventure.Room;
+import Text_Adventure.menuDevelopment.ColorPrint;
 import Text_Adventure.menuDevelopment.Play_Sound;
 
 
@@ -80,7 +81,8 @@ public class Hero extends Character implements Serializable {
             int count = 0;
             for(Consumable a: backpack) {
                 if(a != null) {
-                    System.out.printf("[" + count + "][%s]%n", a.getName());
+                    System.out.printf("[" + count + "]"+"["+ ColorPrint.ANSI_BLUE+ "%s"+ ColorPrint.ANSI_RESET
+                            +"]%n", a.getName());
                 }else { if(count < 5)System.out.println("["+ count + "][-Empty slot-]");}
                 count++;
             }

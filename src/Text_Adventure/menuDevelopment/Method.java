@@ -366,24 +366,30 @@ public class Method implements Serializable {
         if (monster.getHealth() > 0) {
             if (damageHolder>1) {
                 myMethod.kickSound();
-                System.out.printf("You hit "+myMethod.room1.monster.getMonsterType()+" and "+myMethod.room1.monster.getMonsterType()+" looses %d health points.%n" +
+                System.out.printf("You hit "+ColorPrint.ANSI_RED+myMethod.room1.monster.getMonsterType()+ColorPrint.ANSI_RESET+" and "
+                        +ColorPrint.ANSI_RED+myMethod.room1.monster.getMonsterType()
+                        +ColorPrint.ANSI_RESET+" looses %d health points.%n" +
                         "Monster's health (updated): %d%n", damageHolder, monster.getHealth());
 
             }else {
                 myMethod.missSound();
-                System.out.printf("You attacked " +myMethod.room1.monster.getMonsterType()+ ", but you missed!!! Try again!!!%n"+
-                        myMethod.room1.monster.getMonsterType()+"'s health (updated): %d%n", monster.getHealth());
+                System.out.printf("You attacked " +ColorPrint.ANSI_RED+myMethod.room1.monster.getMonsterType()
+                        +ColorPrint.ANSI_RESET+ ", but you missed!!! Try again!!!%n"
+                        +ColorPrint.ANSI_RED+myMethod.room1.monster.getMonsterType()
+                        +ColorPrint.ANSI_RESET+"'s health (updated): %d%n", monster.getHealth());
             }
             //Then monster attacks...
             damageHolder = Character.generateDamage(monster.getHitChance(), monster.getMaxAttack(), 0);
             hero.setHealth(hero.getHealth() - damageHolder);
             if (damageHolder>1) {
                 myMethod.kickSound();
-                System.out.printf(myMethod.room1.monster.getMonsterType()+" hits you back and you loose %d health points.%n" +
+                System.out.printf(ColorPrint.ANSI_RED+myMethod.room1.monster.getMonsterType()
+                        +ColorPrint.ANSI_RESET+" hits you back and you loose %d health points.%n" +
                         "Your current health: %d%n", damageHolder, hero.getHealth());
             }else{
                 myMethod.missSound();
-                System.out.printf(myMethod.room1.monster.getMonsterType()+" attacks you but misses you by millimeters! You were lucky this time!%n" +
+                System.out.printf(ColorPrint.ANSI_RED+myMethod.room1.monster.getMonsterType()
+                        +ColorPrint.ANSI_RESET+" attacks you but misses you by millimeters! You were lucky this time!%n" +
                         "Your current health: %d%n",hero.getHealth());
             }
 
@@ -560,7 +566,8 @@ public class Method implements Serializable {
         System.out.println(" ");
         System.out.println("***    Choose action   ***");
         if (myMethod.room1.monster != null) {
-            System.out.print("[1] Fight " + myMethod.room1.monster.getMonsterType());
+            System.out.print("[1] Fight " +
+                    ColorPrint.ANSI_RED+myMethod.room1.monster.getMonsterType()+ColorPrint.ANSI_RESET);
         }
         //Same as pick item. The concept is cool.
         if (myMethod.room1.monster != null) {
@@ -573,7 +580,9 @@ public class Method implements Serializable {
         if (myMethod.room1.monster == null) {
             if (myMethod.room1.monster == null) {
                 if (myMethod.room1.getItem() != null) {
-                    System.out.print("| [5] Pick " + myMethod.room1.getItem().getName());
+                    System.out.print("| [5] Pick up " +ColorPrint.ANSI_BLUE
+                            +myMethod.room1.getItem().getName()
+                    +ColorPrint.ANSI_RESET);
                 }
                 //Robert: Everyone asked for this modification.
             }

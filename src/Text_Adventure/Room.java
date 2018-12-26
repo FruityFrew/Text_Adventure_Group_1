@@ -6,6 +6,7 @@ import Text_Adventure.Items.Consumable;
 import Text_Adventure.Items.Item;
 import Text_Adventure.Items.Key;
 import Text_Adventure.Items.Weapon;
+import Text_Adventure.menuDevelopment.ColorPrint;
 
 import java.io.Serializable;
 import java.security.SecureRandom;
@@ -264,9 +265,10 @@ public class Room implements Serializable {
         if (this.item != null) {
             //System.out.println("In the corner seems to be an item,");
             if (this.item instanceof Key ){
-                System.out.println("It is a " + ((Key) this.item).getName2() + "!");
+                System.out.println("It is a "  + ((Key) this.item).getName2() + "!");
             } else {
-                System.out.println("It is a " + this.item.getName() + "!");
+                System.out.println("It is a " + ColorPrint.ANSI_BLUE + this.item.getName()
+                        +ColorPrint.ANSI_RESET+ "!");
             }
         } else {
             System.out.println("you didn't found something useful.");
@@ -280,7 +282,8 @@ public class Room implements Serializable {
         System.out.println("Monster in the room:");
         if (this.monster != null) {
             //System.out.println("In the shadows you see a figure.");
-            System.out.println("It is: " + monster.getMonsterType());
+            System.out.println("It is: " +ColorPrint.ANSI_RED+ monster.getMonsterType()
+                    +ColorPrint.ANSI_RESET);
         } else {
             System.out.println("No one. Probably just the wind");
         }

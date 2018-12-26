@@ -25,7 +25,6 @@ public class Item implements Serializable {
      * @return String
      */
     public  String getName() {
-        String nameColored = ColorPrint.ANSI_BLUE+Name+ColorPrint.ANSI_RESET;
-        return nameColored;
+        return Name;
     }
 }

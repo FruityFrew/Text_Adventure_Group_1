@@ -721,5 +721,13 @@ public class Method implements Serializable {
         } return gogo;
 
     }
+    public void pressEnter(){
+        String catchEnter;
+        System.out.println("---------------------------------------------------------------------------------------------------------------------");
+        System.out.println("                                            Press ENTER to start");
+        System.out.println("---------------------------------------------------------------------------------------------------------------------");
+        catchEnter=in.nextLine();
+
+    }
 
 }

@@ -50,6 +50,7 @@ public class Main  implements Serializable {
 
         ASCII.printGroup1();
         ASCII.printGameName();
+        myMethod.pressEnter();
         myMethod.playerName();
         myMethod.choosePlayerType();
         myMethod.chooseGameLevel();

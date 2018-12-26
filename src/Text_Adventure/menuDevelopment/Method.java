@@ -15,6 +15,8 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.security.SecureRandom;
 import java.util.*;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 import static Text_Adventure.Main.myMethod;
 
@@ -26,7 +28,7 @@ public class Method implements Serializable {
     public static String[] fileNamesString = new String[10];
     public int diffLevel;
     public int gogo=99;
-    public Play_Sound kick = new Play_Sound();
+    public Play_Sound soundFX = new Play_Sound();
 
 
     SecureRandom random = new SecureRandom();
@@ -364,7 +366,6 @@ public class Method implements Serializable {
         if (monster.getHealth() > 0) {
             if (damageHolder>1) {
 
-                kick.playSound("kick.wav");
                 System.out.printf("You hit monster and monster looses %d health points.%n" +
                         "Monster's health (updated): %d%n", damageHolder, monster.getHealth());
 
@@ -376,7 +377,7 @@ public class Method implements Serializable {
             damageHolder = Character.generateDamage(monster.getHitChance(), monster.getMaxAttack(), 0);
             hero.setHealth(hero.getHealth() - damageHolder);
             if (damageHolder>1) {
-                kick.playSound("kick.wav");
+
                 System.out.printf("Monster hits you back and you loose %d health points.%n" +
                         "Your current health: %d%n", damageHolder, hero.getHealth());
             }else{
@@ -729,5 +730,48 @@ public class Method implements Serializable {
         catchEnter=in.nextLine();
 
     }
-
+    public void kickSound(){
+        ExecutorService Thread = Executors.newFixedThreadPool(4);
+        Thread.submit(new Runnable() {public void run() { soundFX.playSound("sounds/kick.wav"); }});
+    }
+    public void missSound(){
+        ExecutorService Thread = Executors.newFixedThreadPool(4);
+        Thread.submit(new Runnable() {public void run() { soundFX.playSound("sounds/?.wav"); }});
+    }
+    public void winSound(){
+        ExecutorService Thread = Executors.newFixedThreadPool(4);
+        Thread.submit(new Runnable() {public void run() { soundFX.playSound("sounds/gameWon.wav"); }});
+    }
+    public void loseSound(){
+        ExecutorService Thread = Executors.newFixedThreadPool(4);
+        Thread.submit(new Runnable() {public void run() { soundFX.playSound("sounds/loseGame.wav"); }});
+    }
+    public void treasureSound(){
+        ExecutorService Thread = Executors.newFixedThreadPool(4);
+        Thread.submit(new Runnable() {public void run() { soundFX.playSound("sounds/treasure.wav"); }});
+    }
+    public void backpackSound(){
+        ExecutorService Thread = Executors.newFixedThreadPool(4);
+        Thread.submit(new Runnable() {public void run() { soundFX.playSound("sounds/openBackPack.wav"); }});
+    }
+    public void drinkPotionSound(){
+        ExecutorService Thread = Executors.newFixedThreadPool(4);
+        Thread.submit(new Runnable() {public void run() { soundFX.playSound("sounds/drinkPotion.wav"); }});
+    }
+    public void dropPotionSound(){
+        ExecutorService Thread = Executors.newFixedThreadPool(4);
+        Thread.submit(new Runnable() {public void run() { soundFX.playSound("sounds/dropItem.wav"); }});
+    }
+    public void playerDeathSound(){
+        ExecutorService Thread = Executors.newFixedThreadPool(4);
+        Thread.submit(new Runnable() {public void run() { soundFX.playSound("sounds/playerDeath.wav"); }});
+    }
+    public void monsterDeathSound(){
+        ExecutorService Thread = Executors.newFixedThreadPool(4);
+        Thread.submit(new Runnable() {public void run() { soundFX.playSound("sounds/monsterDeath.wav"); }});
+    }
+    public void laughSound(){
+        ExecutorService Thread = Executors.newFixedThreadPool(4);
+        Thread.submit(new Runnable() {public void run() { soundFX.playSound("sounds/laugh.wav"); }});
+    }
 }

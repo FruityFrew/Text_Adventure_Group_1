@@ -46,7 +46,7 @@ public class Main  implements Serializable {
         Play_Sound music = new Play_Sound();
 
         ExecutorService Thread = Executors.newFixedThreadPool(4);
-        Thread.submit(new Runnable() {public void run() { music.playSound("music.wav"); }});
+        Thread.submit(new Runnable() {public void run() { music.playSound("sounds/music.wav"); }});
 
         ASCII.printGroup1();
         ASCII.printGameName();

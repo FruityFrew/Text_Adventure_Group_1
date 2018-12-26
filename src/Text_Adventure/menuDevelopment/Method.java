@@ -372,18 +372,18 @@ public class Method implements Serializable {
             }else {
                 myMethod.missSound();
                 System.out.printf("You attacked " +myMethod.room1.monster.getMonsterType()+ ", but you missed!!! Try again!!!%n"+
-                        "Monster's health (updated): %d%n", monster.getHealth());
+                        myMethod.room1.monster.getMonsterType()+"'s health (updated): %d%n", monster.getHealth());
             }
             //Then monster attacks...
             damageHolder = Character.generateDamage(monster.getHitChance(), monster.getMaxAttack(), 0);
             hero.setHealth(hero.getHealth() - damageHolder);
             if (damageHolder>1) {
                 myMethod.kickSound();
-                System.out.printf("Monster hits you back and you loose %d health points.%n" +
+                System.out.printf(myMethod.room1.monster.getMonsterType()+" hits you back and you loose %d health points.%n" +
                         "Your current health: %d%n", damageHolder, hero.getHealth());
             }else{
                 myMethod.missSound();
-                System.out.printf("Monster attacks you but misses you by millimeters! You were lucky this time!%n" +
+                System.out.printf(myMethod.room1.monster.getMonsterType()+" attacks you but misses you by millimeters! You were lucky this time!%n" +
                         "Your current health: %d%n",hero.getHealth());
             }
 

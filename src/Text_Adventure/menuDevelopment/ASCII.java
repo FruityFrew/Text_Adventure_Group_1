@@ -339,7 +339,7 @@ public class ASCII {
     }
     public static void gameOverLogo(){
 
-        System.out.println("\n" +
+        System.out.println("\n" + ColorPrint.ANSI_YELLOW+
                 "       -+ooo+/:::.   .-///+/+/:.  +hh/       `syh. `-/osyso:         .-///+/+/:.  /hh:     ohh- `-:+syyo/  `-/-:++//:.`  \n" +
                 "     .MMm`    `..` /MMs     hMMo yMMMdo-``:smMMM- NMM+:`           :MMy     yMMo sMMo     dMM: hMMs:.     hMM-    `mMN- \n" +
                 "     .MMd          /MMs `.-/mMMo yMMhosddddssNMM- NMMmdhs/-        /MMy     yMMs sMMo     dMM: hMMNmhy+:  hMM:``.-/NNd. \n" +
@@ -709,7 +709,8 @@ public class ASCII {
                 "      +MMMs         MMMM`.-:yMMMhoMMMdymNmNdsMMMMoMMMMmdyo/.      .MMMm    sMMMhyMMMo   `MMMM-MMMMmdhs/-/MMMh`.-/dMMm:  \n" +
                 "      +MMMs  -/hddd.MMMMmmmdmMMMhoMMMo `.-.  MMMMoMMMNs+/-.`      .MMMm    sMMMhyMMMo   `MMMM-MMMMyo/-.`/MMMd:/ohNMNo`  \n" +
                 "      +MMMs    NMMM-MMMM-.` +MMMhoMMMo       MMMMoMMMd:.          .MMMm    sMMMyyMMMo  .+MMMh.MMMM:.`   /MMMy    dMMM/  \n" +
-                "       :syyyo+/s+:. hhhh    :hhho/hhh/       hhhh.-/+syyyo+.       .:+osoosso/-`odddy++o++/.  .:+syyys+--hhh+    shhh-  ");
+                "       :syyyo+/s+:. hhhh    :hhho/hhh/       hhhh.-/+syyyo+.       .:+osoosso/-`odddy++o++/.  .:+syyys+--hhh+    shhh-  "
+                +ColorPrint.ANSI_RESET);
         try {
             Thread.sleep(100);
         }catch (Exception e){

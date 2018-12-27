@@ -53,14 +53,18 @@ public class Method implements Serializable {
 
         switch (choice) {
             case 1:
+                play.menuSound();
                 diffLevel = 5;
                 break;
             case 2:
+                play.menuSound();
                 diffLevel = 7;
                 break;
             case 3:
+                play.menuSound();
                 diffLevel = 9;
             default:
+                play.menuSound();
                 System.out.println("MAKE A CHOICE BETWEEN 1,2 AND 3!");
         }
 
@@ -107,18 +111,23 @@ public class Method implements Serializable {
         switch (Main.choice) {
 
             case 1:
+                play.menuSound();
                 hero1.setPlayerType("Thief");
                 break;
             case 2:
+                play.menuSound();
                 hero1.setPlayerType("Priest");
                 break;
             case 3:
+                play.menuSound();
                 hero1.setPlayerType("Ghost Hunter");
                 break;
             case 4:
+                play.menuSound();
                 hero1.setPlayerType("Tourist");
                 break;
             default:
+                play.menuSound();
                 System.out.println("You just started playing and already shaking your hand!" +
                         "\n\t MAKE A CHOICE BETWEEN 1,2,3 AND 4!");
         }
@@ -182,11 +191,14 @@ public class Method implements Serializable {
         Main.choice = menuChoice();
         switch (Main.choice) {
             case 1:
+                play.menuSound();
                 break;
             case 2:
+                play.menuSound();
                 Main.choice = 10;
                 break;
             default:
+                play.menuSound();
                 System.out.println("Your fingers are shaking again?" +
                         "\nChose right!\n");
         }
@@ -222,7 +234,8 @@ public class Method implements Serializable {
 //        System.out.println("\n\tHealth = " + hero1.getHealth()+ ".\n" +
 //                "--------------------------------------------\n");
             switch (gameOption) {
-                case 1: // START GAME
+                case 1: play.menuSound();
+                    // START GAME
 //                do {
 //                    room1.describeRoom();
 //                    System.out.println("\n\t***    Choose action   ***" +
@@ -277,7 +290,8 @@ public class Method implements Serializable {
                     }
 
                     break;
-                case 2:  // SAVE GAME
+                case 2:  play.menuSound();
+                    // SAVE GAME
                     save a = new save();
                     a.PlayerBackpack = Hero.backpack;
                     a.PlayerHealth = hero1.getHealth();
@@ -301,10 +315,12 @@ public class Method implements Serializable {
 //                Main.choice = 10;
                     break;
                 case 3:
+                    play.menuSound();
                     loadGame();
                     break;
 
                 case 4:
+                    play.menuSound();
                     displayScore();
 
 
@@ -316,7 +332,8 @@ public class Method implements Serializable {
 //                ;
                     break;
 
-                case 5: // EXIT
+                case 5: play.menuSound();
+                    // EXIT
                     //Robert: I commended the line bellow me, because I replaced with exitOptions()
                     //Main.choice = 10;
                     System.out.println("EXIT the game?" +
@@ -332,14 +349,17 @@ public class Method implements Serializable {
                     break;
 
                 default:
+                    play.menuSound();
                     System.out.println("EXIT the game?" +
                             "\n[1]\tYES" +
                             "\n[2]\tNO, go back to menu");
                     int choice2 = menuChoice();
 
                     if (choice2 == 1) {
+                        play.menuSound();
                         runningmenu = false;
                     } else {
+                        play.menuSound();
                         runningmenu = true;
                     }
             }
@@ -417,6 +437,7 @@ public class Method implements Serializable {
 
         switch (Main.choice) {
             case 1:
+                play.menuSound();
                 if (item instanceof Consumable) {
 //                    hero1.consumeItem(item);
                 } else if (item instanceof Weapon) {
@@ -426,6 +447,7 @@ public class Method implements Serializable {
                 }
                 break;
             case 2:
+                play.menuSound();
                 //               Hero.backpack.remove(item);
         }
     }
@@ -589,7 +611,7 @@ public class Method implements Serializable {
         int choice = menuChoice();
 
         switch (choice) {
-            case 1:
+            case 1: play.menuSound();
                 if (myMethod.room1.monster != null) {
                     hero1.addHighScore(100);
                     myMethod.hero1.setHealth(myMethod.exchangeAttackWithMonster(myMethod.hero1, room1.monster));
@@ -600,7 +622,7 @@ public class Method implements Serializable {
                     }
                 }
                 break;
-            case 2:
+            case 2: play.menuSound();
                 if (myMethod.room1.monster != null) {
                     myMethod.hero1.setHealth(hero1.getHealth() - (hero1.getHealth() / 2));
                     System.out.println("You lost your half health but you avoided the monster");
@@ -608,12 +630,12 @@ public class Method implements Serializable {
                     hero1.addHighScore(50);
                 }
                 break;
-            case 3:
+            case 3: play.menuSound();
                 hero1.viewContentsOfKeyRing();
                 if (hero1.weapon != null) hero1.viewConstentofWeaponSlot();
                 hero1.viewContentsOfBackpack();
                 break;
-            case 4:
+            case 4: play.menuSound();
                 if (myMethod.room1.monster == null) {
                     newRoom = myMethod.room1.changeRoom(hero1);
                     System.out.println("You new room is: " + newRoom);
@@ -621,7 +643,7 @@ public class Method implements Serializable {
                     myMethod.hero1.addHighScore(100);
                 }
                 break;
-            case 5:
+            case 5: play.menuSound();
                 if (myMethod.room1.getItem() != null) {
                     if (myMethod.room1.monster == null) {
                         hero1.pickItem(myMethod.room1.getItem(), myMethod.room1);
@@ -631,12 +653,12 @@ public class Method implements Serializable {
                 }
                 break;
 
-            case 6:
+            case 6: play.menuSound();
                 result = false;
                 //myMethod.playOptions();
                 break;
 
-            default:
+            default: play.menuSound();
                 result = true;
                 //myMethod.playOptions();
         }
@@ -686,7 +708,8 @@ public class Method implements Serializable {
         int chooseSave = menuChoice();
 
         if (chooseSave != 0) {
-            System.out.println(fileNamesString[chooseSave - 1]);
+            play.menuSound();
+            System.out.println("Savegame: "+fileNamesString[chooseSave - 1]+" successfully loaded");
             save b = (save) ReadWriteObject.readObject(fileNamesString[chooseSave - 1]);
             myMethod.hero1 = b.playerHero;
             Hero.backpack = b.PlayerBackpack;
@@ -738,6 +761,7 @@ public class Method implements Serializable {
         System.out.println("                                            Press ENTER to start");
         System.out.println(ColorPrint.Background_WHITE+"---------------------------------------------------------------------------------------------------------------------"+ColorPrint.ANSI_RESET);
         catchEnter=in.nextLine();
+        play.menuSound();
 
     }
 

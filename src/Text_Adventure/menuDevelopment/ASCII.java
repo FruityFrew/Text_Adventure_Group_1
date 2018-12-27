@@ -339,7 +339,7 @@ public class ASCII {
     }
     public static void gameOverLogo(){
 
-        System.out.println("\n" + ColorPrint.ANSI_YELLOW+
+        System.out.println(ColorPrint.ANSI_YELLOW+"\n" +
                 "       -+ooo+/:::.   .-///+/+/:.  +hh/       `syh. `-/osyso:         .-///+/+/:.  /hh:     ohh- `-:+syyo/  `-/-:++//:.`  \n" +
                 "     .MMm`    `..` /MMs     hMMo yMMMdo-``:smMMM- NMM+:`           :MMy     yMMo sMMo     dMM: hMMs:.     hMM-    `mMN- \n" +
                 "     .MMd          /MMs `.-/mMMo yMMhosddddssNMM- NMMmdhs/-        /MMy     yMMs sMMo     dMM: hMMNmhy+:  hMM:``.-/NNd. \n" +

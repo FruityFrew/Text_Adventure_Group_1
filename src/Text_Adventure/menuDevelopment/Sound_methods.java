@@ -50,4 +50,12 @@ public class Sound_methods {
         ExecutorService Thread = Executors.newFixedThreadPool(4);
         Thread.submit(new Runnable() {public void run() { soundFX.playSound("sounds/dropItem.wav"); }});
     }
+    public void walkSound(){
+        ExecutorService Thread = Executors.newFixedThreadPool(4);
+        Thread.submit(new Runnable() {public void run() { soundFX.playSound("sounds/walking.wav"); }});
+    }
+    public void menuSound(){
+        ExecutorService Thread = Executors.newFixedThreadPool(4);
+        Thread.submit(new Runnable() {public void run() { soundFX.playSound("sounds/click.wav"); }});
+    }
 }

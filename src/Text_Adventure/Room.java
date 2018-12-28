@@ -470,18 +470,27 @@ public class Room implements Serializable {
         boolean lock2 = false;
         for (Key key:hero.keyRing){
             if ((key.getType()== 0)){
-                System.out.println("You succeded to unlock the lockpad with the number 0");
-             lock0 = true;
+                lock0 = true;
             }
             if ((key.getType()== 1)){
-                System.out.println("You succeded to unlock the lockpad with the number 1");
                 lock1 = true;
             }
             if ((key.getType()== 2)){
-                System.out.println("You succeded to unlock the lockpad with the number 2");
                 lock2 = true;
             }
         }
+        if(lock0){
+            System.out.println("You succeded to unlock the lockpad with the number 0");
+        }
+
+        if(lock1){
+            System.out.println("You succeded to unlock the lockpad with the number 1");
+        }
+
+        if(lock2){
+            System.out.println("You succeded to unlock the lockpad with the number 2");
+        }
+
         if (lock0 && lock1 && lock2){
             System.out.println("You unlocked all the lockpads");
             result = true;

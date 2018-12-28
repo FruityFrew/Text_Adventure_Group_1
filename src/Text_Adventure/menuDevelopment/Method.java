@@ -3,6 +3,7 @@ package Text_Adventure.menuDevelopment;
 import Text_Adventure.Characters.Character;
 import Text_Adventure.Characters.Hero;
 import Text_Adventure.Characters.Monster;
+import Text_Adventure.DisplayMap;
 import Text_Adventure.Items.Consumable;
 import Text_Adventure.Items.Item;
 import Text_Adventure.Items.Weapon;
@@ -607,7 +608,8 @@ public class Method implements Serializable {
                 //Robert: Everyone asked for this modification.
             }
         }
-        System.out.println(" | [6] Go to the menu");
+        System.out.print(" | [6] Go to the menu");
+        System.out.println(" | [7] Open the map");
         int choice = menuChoice();
 
         switch (choice) {
@@ -659,7 +661,13 @@ public class Method implements Serializable {
                 //myMethod.playOptions();
                 break;
 
-            default: play.menuSound();
+
+
+            case 7:
+                DisplayMap.MapDisplayPlayer(diffLevel, room1.getPosition()[0], room1.getPosition()[1]);
+
+            default:
+                play.menuSound();
                 result = true;
                 //myMethod.playOptions();
         }

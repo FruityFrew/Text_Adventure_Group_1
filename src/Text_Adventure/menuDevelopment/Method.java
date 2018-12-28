@@ -3,6 +3,7 @@ package Text_Adventure.menuDevelopment;
 import Text_Adventure.Characters.Character;
 import Text_Adventure.Characters.Hero;
 import Text_Adventure.Characters.Monster;
+import Text_Adventure.DisplayMap;
 import Text_Adventure.Items.Consumable;
 import Text_Adventure.Items.Item;
 import Text_Adventure.Items.Weapon;
@@ -64,6 +65,7 @@ public class Method implements Serializable {
         }
 
         myMap = new Map(diffLevel);
+        DisplayMap.displayMapMenuEmpty(diffLevel);
     }
 
     /**

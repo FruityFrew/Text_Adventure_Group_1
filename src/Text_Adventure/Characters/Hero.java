@@ -94,6 +94,7 @@ public class Hero extends Character implements Serializable {
                 play.backpackSound();
                 running = false;
             } else {
+                play.menuSound();
                 if(backpack[choice] != null) {
                     System.out.printf("[" + choice + "][%s]%n", backpack[choice].getName());
                     System.out.println("Choose an option");
@@ -255,6 +256,7 @@ public class Hero extends Character implements Serializable {
     //Nemanja: Coppied this from method to fix input mismatch
 
     public int menuChoice(){
+        input.reset();
         boolean successfulinput = false;
         while(!successfulinput){
             try{

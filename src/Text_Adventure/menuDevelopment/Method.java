@@ -645,6 +645,7 @@ public class Method implements Serializable {
                 break;
             case 5: play.menuSound();
                 if (myMethod.room1.getItem() != null) {
+                    play.pickUp();
                     if (myMethod.room1.monster == null) {
                         hero1.pickItem(myMethod.room1.getItem(), myMethod.room1);
                         myMethod.room1.setItem(null);

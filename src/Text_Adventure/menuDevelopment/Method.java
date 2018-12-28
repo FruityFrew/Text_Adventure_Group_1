@@ -743,6 +743,7 @@ public class Method implements Serializable {
     }
 
     public int menuChoice(){
+        in.reset();
         boolean successfulinput = false;
         while(!successfulinput){
             try{

@@ -1,9 +1,10 @@
 package Text_Adventure.menuDevelopment;
 
+import java.io.Serializable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class Sound_methods {
+public class Sound_methods implements Serializable {
     public static Play_Sound soundFX = new Play_Sound();
     public static void kickSound(){
         ExecutorService Thread = Executors.newFixedThreadPool(4);

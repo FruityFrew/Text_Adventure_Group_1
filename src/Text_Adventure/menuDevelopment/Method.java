@@ -65,7 +65,6 @@ public class Method implements Serializable {
         }
 
         myMap = new Map(diffLevel);
-        DisplayMap.MapDisplayPlayer(diffLevel, 2, 3);
     }
 
     /**
@@ -562,7 +561,8 @@ public class Method implements Serializable {
                 //Robert: Everyone asked for this modification.
             }
         }
-        System.out.println(" | [6] Go to the menu");
+        System.out.print(" | [6] Go to the menu");
+        System.out.println(" | [7] Open the map");
         int choice = menuChoice();
 
         switch (choice) {
@@ -612,6 +612,9 @@ public class Method implements Serializable {
                 result = false;
                 //myMethod.playOptions();
                 break;
+
+            case 7:
+                DisplayMap.MapDisplayPlayer(diffLevel, room1.getPosition()[0], room1.getPosition()[1]);
 
             default:
                 result = true;

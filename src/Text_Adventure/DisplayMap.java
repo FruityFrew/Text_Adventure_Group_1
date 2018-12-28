@@ -129,7 +129,7 @@ public class DisplayMap {
         edgeLine(level);
         for (int x =0; x < level; x++){
             int i = level - x - 1;
-            if (x== posY){
+            if (i == posY){
                 playerXRowDisplay(level, i, posX);
             } else {
                 emptyRowDisplay(level, i);

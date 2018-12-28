@@ -65,7 +65,7 @@ public class Method implements Serializable {
         }
 
         myMap = new Map(diffLevel);
-        DisplayMap.displayMapMenuEmpty(diffLevel);
+        DisplayMap.MapDisplayPlayer(diffLevel, 2, 3);
     }
 
     /**

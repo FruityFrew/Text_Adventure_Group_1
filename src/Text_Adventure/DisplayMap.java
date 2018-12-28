@@ -89,6 +89,29 @@ public class DisplayMap {
         rowBorderDisplay(level);
     }
 
+    //Robert: This method generates a row when the player is displayed in one in the rooms of the row.
+    //the concept is simple. if the playrer is in the room that is displayed
+    //Then the room is displayed with an X inside it.
+    public static void playerXRowDisplay(int level, int i, int posX){
+        //--- --- --- ---....
+        rowBorderDisplay(level);
+
+        //| | | | | | | | ...
+        System.out.print("|" + i + " ");
+        //System.out.print("|  ");
+        for (int x =0; x < level; x++){
+            if(x == posX){
+                cellPlayer();
+            } else {
+                cellEmpty();
+            }
+        }
+        System.out.println(" |");
+
+        //--- --- --- ---....
+        rowBorderDisplay(level);
+    }
+
     //Robert: This method generates an empty map.
     //this version does not show where the player is or anything else.
     //it just shows how many room they are and how they are allocated.
@@ -97,6 +120,20 @@ public class DisplayMap {
         for (int x =0; x < level; x++){
             int i = level - x - 1;
             emptyRowDisplay(level, i);
+        }
+        XNumbersDisplay(level);
+        edgeLine(level);
+    }
+
+    public static void MapDisplayPlayer(int level, int posX, int posY){
+        edgeLine(level);
+        for (int x =0; x < level; x++){
+            int i = level - x - 1;
+            if (x== posY){
+                playerXRowDisplay(level, i, posX);
+            } else {
+                emptyRowDisplay(level, i);
+            }
         }
         XNumbersDisplay(level);
         edgeLine(level);

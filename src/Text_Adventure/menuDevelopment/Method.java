@@ -634,6 +634,7 @@ public class Method implements Serializable {
             case 2: play.menuSound();
                 if (myMethod.room1.monster != null) {
                     myMethod.hero1.setHealth(hero1.getHealth() - (hero1.getHealth() / 2));
+                    play.avoidFight();
                     System.out.println("You lost your half health but you avoided the monster");
                     myMethod.room1.setMonster(null);
                     hero1.addHighScore(50);
@@ -771,6 +772,7 @@ public class Method implements Serializable {
                 in.nextLine();
                 System.out.println("Please use integer digits");
             }
+            clearScreen();
         } return gogo;
 
     }
@@ -780,6 +782,7 @@ public class Method implements Serializable {
         System.out.println("                                            Press ENTER to start");
         System.out.println(ColorPrint.Background_WHITE+"---------------------------------------------------------------------------------------------------------------------"+ColorPrint.ANSI_RESET);
         catchEnter=in.nextLine();
+        clearScreen();
         play.menuSound();
 
     }

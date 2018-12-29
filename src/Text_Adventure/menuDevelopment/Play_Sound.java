@@ -10,7 +10,7 @@ public class Play_Sound {
     private AudioInputStream audio_stream;
     private SourceDataLine source_line;
     private AudioFormat audio_format;
-    private int buffer = 128000;
+    private int buffer = 96000;
     private File WavFile;
 
     /**

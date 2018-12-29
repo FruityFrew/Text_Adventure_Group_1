@@ -1,6 +1,8 @@
 package Text_Adventure;
 
 
+import Text_Adventure.menuDevelopment.Method;
+
 import java.util.Scanner;
 
 /**
@@ -238,6 +240,7 @@ public class DisplayMap {
         System.out.println(" ");
         System.out.println(" | [7] Close the map");
         String choice = input.next();
+        Method.clearScreen();
         if (choice.equalsIgnoreCase("`")){
             System.out.println("Winner, winner, chicken dinner!");
         }
@@ -255,6 +258,7 @@ public class DisplayMap {
         //System.out.print(" | [6] Go to the menu");
         System.out.println(" | [7] Close the map");
         String choice = input.next();
+        Method.clearScreen();
         if (choice.equalsIgnoreCase("`")){
             System.out.println("Winner, winner, chicken dinner!");
         }
@@ -271,6 +275,7 @@ public class DisplayMap {
         System.out.println(" ");
         System.out.println(" | [7] Close the map");
         String choice = input.next();
+        Method.clearScreen();
         if (choice.equalsIgnoreCase("`")){
             System.out.println("Winner, winner, chicken dinner!");
         }

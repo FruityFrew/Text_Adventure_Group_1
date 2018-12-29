@@ -7,6 +7,7 @@ import Text_Adventure.Items.Item;
 import Text_Adventure.Items.Key;
 import Text_Adventure.Items.Weapon;
 import Text_Adventure.menuDevelopment.ColorPrint;
+import Text_Adventure.menuDevelopment.Method;
 
 import java.io.Serializable;
 import java.security.SecureRandom;
@@ -540,6 +541,7 @@ public class Room implements Serializable {
 
             switch(choice1){
                 case "1":
+                    Method.clearScreen();
                     if (doors.get(0).isActive()){
                         if (doors.get(0).isLocked()){
                             System.out.println("The door is locked and it is written on the lock the " +
@@ -562,6 +564,7 @@ public class Room implements Serializable {
 
                     break;
                 case "2":
+                    Method.clearScreen();
                     if (doors.get(1).isActive()){
                         if (doors.get(1).isLocked()){
                             System.out.println("The door is locked and it is written on the lock the " +
@@ -584,6 +587,7 @@ public class Room implements Serializable {
 
                     break;
                 case "3":
+                    Method.clearScreen();
                     if (doors.get(2).isActive()){
                         if (doors.get(2).isLocked()){
                             System.out.println("The door is locked and it is written on the lock the " +
@@ -606,6 +610,7 @@ public class Room implements Serializable {
 
                     break;
                 case "4":
+                    Method.clearScreen();
                     if (doors.get(3).isActive()){
                         if (doors.get(3).isLocked()){
                             System.out.println("The door is locked and it is written on the lock the " +
@@ -629,6 +634,7 @@ public class Room implements Serializable {
                     break;
 
                 case "5":
+                    Method.clearScreen();
                     if (doorToFreedom(hero) == true){
                         hero.addHighScore(1500);
                         System.out.println(" ");

@@ -6,6 +6,7 @@ import Text_Adventure.Items.Key;
 import Text_Adventure.Items.Weapon;
 import Text_Adventure.Room;
 import Text_Adventure.menuDevelopment.ColorPrint;
+import Text_Adventure.menuDevelopment.Method;
 import Text_Adventure.menuDevelopment.Play_Sound;
 import Text_Adventure.menuDevelopment.Sound_methods;
 
@@ -266,6 +267,7 @@ public class Hero extends Character implements Serializable {
                 input.nextLine();
                 System.out.println("Please use integer digits");
             }
+            Method.clearScreen();
         } return asd;
 
     }

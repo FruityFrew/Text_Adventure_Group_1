@@ -431,6 +431,10 @@ public class Room implements Serializable {
         return W;
     }
 
+    public boolean isExit() {
+        return exit;
+    }
+
     //Robert: This method wes made by Nemo
     public Consumable getRandomDrink() {
         Consumable coffee = new Consumable("Coffee", 50);

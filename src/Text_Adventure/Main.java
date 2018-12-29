@@ -44,11 +44,11 @@ public class Main  implements Serializable {
         //Robert: Here I did a big change as I took all the methods outside the loop.
         //it is because of debugging.
         Play_Sound music = new Play_Sound();
-
+/**
         ExecutorService Thread = Executors.newFixedThreadPool(4);
         Thread.submit(new Runnable() {public void run() { music.playSound("sounds/music.wav"); }});
-
-        ASCII.printGroup1();
+**/
+        //ASCII.printGroup1();
         ASCII.printGameName();
         myMethod.pressEnter();
         myMethod.playerName();

@@ -397,6 +397,13 @@ public class Method implements Serializable {
                         +ColorPrint.ANSI_RED+myMethod.room1.monster.getMonsterType()
                         +ColorPrint.ANSI_RESET+"'s health (updated): %d%n", monster.getHealth());
             }
+            //Nemanja. I added this line in order to separate monster and hero attack.
+            // Monster waits one second before it attacks hero.
+            try {
+                Thread.sleep(1000);
+            }catch (Exception e){
+                System.out.println("wow");
+            }
             //Then monster attacks...
             damageHolder = Character.generateDamage(monster.getHitChance(), monster.getMaxAttack(), 0);
             hero.setHealth(hero.getHealth() - damageHolder);

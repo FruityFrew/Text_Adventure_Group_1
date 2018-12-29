@@ -32,7 +32,7 @@ public class Sound_methods implements Serializable {
         Thread.submit(new Runnable() {public void run() { soundFX.playSound("sounds/playerDeath.wav"); }});
     }
     public static void monsterDeathSound(){
-        ExecutorService Thread = Executors.newFixedThreadPool(4);
+        ExecutorService Thread = Executors.newFixedThreadPool(6);
         Thread.submit(new Runnable() {public void run() { soundFX.playSound("sounds/monsterDeath.wav"); }});
     }
     public static void laughSound(){

@@ -1,6 +1,7 @@
 package Text_Adventure;
 
 
+import java.util.Scanner;
 
 /**
  * @author Robert Alm RobertKristianAlm@gmail.com
@@ -145,5 +146,21 @@ public class DisplayMap {
         System.out.println("=================");
         MapDisplayEmpty(level);
         System.out.println(" ");
+    }
+
+    public static void displayMapMenuPlayer(int level, int posX, int posY){
+        Scanner input = new Scanner(System.in);
+        System.out.println(" ");
+        System.out.println("Your current map:");
+        System.out.println("=================");
+        MapDisplayPlayer(level, posX, posY);
+        System.out.println(" ");
+        //System.out.print(" | [6] Go to the menu");
+        System.out.println(" | [7] Close the map");
+        String choice = input.next();
+        if (choice.equalsIgnoreCase("`")){
+            System.out.println("Winner, winner, chicken dinner!");
+        }
+
     }
 }

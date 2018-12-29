@@ -614,7 +614,8 @@ public class Method implements Serializable {
                 break;
 
             case 7:
-                DisplayMap.displayMapMenuPlayer(diffLevel, room1.getPosition()[0], room1.getPosition()[1]);
+                DisplayMap.displayMapMenuPrimitiveExit(diffLevel, room1.getPosition()[0],
+                        room1.getPosition()[1], myMap);
 
 
             default:

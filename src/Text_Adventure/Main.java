@@ -46,7 +46,7 @@ public class Main  implements Serializable {
 
         //Robert: Here I did a big change as I took all the methods outside the loop.
         //it is because of debugging.
-        //ASCII.printGroup1();
+        ASCII.printGroup1();
         ASCII.printGameName();
         myMethod.playerName();
         myMethod.choosePlayerType();

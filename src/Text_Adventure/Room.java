@@ -47,10 +47,10 @@ public class Room implements Serializable {
         this.position[0] = x;
         this.position[1] = y;
         while ((N < 1)&&(E < 1)&&(S < 1)&&(W < 1)){
-            if(dCheckNorth(x, y, level)){ this.N = random.nextInt(20); }
-            if(dCheckEast(x, y, level)){ this.E = random.nextInt(20); }
-            if(dCheckSouth(x, y, level)){ this.S = random.nextInt(20); }
-            if(dCheckWest(x, y, level)){ this.W = random.nextInt(20); }
+            if(dCheckNorth(x, y, level)){ if((x < 2) || (y < 2)){this.N = 10;} else { this.N = random.nextInt(10); }}
+            if(dCheckEast(x, y, level)){ if((x < 2) || (y < 2)){this.E = 10;} else { this.E = random.nextInt(10); }}
+            if(dCheckSouth(x, y, level)){ if((x < 2) || (y < 2)){this.S = 10;} else { this.S = random.nextInt(10); }}
+            if(dCheckWest(x, y, level)){ if((x < 2) || (y < 2)){this.W = 10;} else { this.W = random.nextInt(10); }}
         }
         int n = random.nextInt(100);
         if (n < spawnMonsterRate){

@@ -199,6 +199,7 @@ public class Hero extends Character implements Serializable {
     //but I wish to make the inventory and keyring methods to follow the same naming conventions.
     public void addKeyToKeyRing(Key key) {
         keyRing.add(key);
+        play.pickUp();
     }
 
     public void consumeItem(Consumable food) {
@@ -263,11 +264,11 @@ public class Hero extends Character implements Serializable {
             try{
                 asd = input.nextInt();
                 successfulinput = true;
+                Method.clearScreen();
             } catch(InputMismatchException a){
                 input.nextLine();
-                System.out.println("Please use integer digits");
+                System.out.println("Please use only given options!");
             }
-            Method.clearScreen();
         } return asd;
 
     }

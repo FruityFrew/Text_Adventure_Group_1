@@ -768,11 +768,12 @@ public class Method implements Serializable {
             try{
                 gogo = in.nextInt();
                 successfulinput = true;
+                clearScreen();
             } catch(InputMismatchException a){
                 in.nextLine();
-                System.out.println("Please use integer digits");
+                System.out.println("Please use only given options!");
             }
-            clearScreen();
+
         } return gogo;
 
     }

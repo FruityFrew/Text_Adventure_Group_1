@@ -38,7 +38,12 @@ public class Door  implements Serializable {
         this.type = randomType();
         this.active = active;
         this.room = room;
-        this.locked = randomLocked();
+        //Robert: Below this comment i added an antilockdown measure.
+        if ((room <= 11) || (room % 10 == 0)){
+            this.locked = false;
+        } else {
+            this.locked = randomLocked();
+        }
     }
 
     public Door(int room) {
@@ -109,7 +114,7 @@ public class Door  implements Serializable {
         boolean lockedBool = false;
         Random rand = new Random();
         int randLock = rand.nextInt(20) + 1;
-        if (randLock > 18){
+        if (randLock > 16){
             lockedBool = true;
         }
         return lockedBool;

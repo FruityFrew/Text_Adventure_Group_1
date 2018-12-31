@@ -337,7 +337,7 @@ public class Method implements Serializable {
             endTime = System.nanoTime();
             TIME = endTime - startTime;
             System.out.println("You are leaving the game");
-            System.out.printf("Time played (HH:MM:SS):  %s %n", time());
+            //System.out.printf("Time played (HH:MM:SS):  %s %n", time());
             System.out.println("Your name was: " + myMethod.hero1.getName());
             System.out.println("Your score was: " + myMethod.hero1.getHighscore());
             System.out.println("Your score will be saved to the list of highscores");

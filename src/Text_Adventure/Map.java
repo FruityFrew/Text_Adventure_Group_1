@@ -41,10 +41,22 @@ public class Map  implements Serializable {
     //it works as it seems.
     public void generateMap(int level){
         int n = positionToIndex(level, level);
+        boolean hasExit = false;
         for (int i=0; i<=n; i++){
             Room room = new Room(i, level, xFromIndex(i),yFromIndex(i));
             rooms.add(i,room);
+            if ((rooms.get(i).getPosition()[0] < (level - 1))
+                    && (rooms.get(i).getPosition()[0] < (level - 1)) ){
+                if(rooms.get(i).isExit()){
+                    hasExit = true;
+                }
+            }
         }
+        //Robert: The code below ensures that there will be always an exit door in the map.
+        if(hasExit != true){
+            rooms.get(positionToIndex(level - 1, level-1)).setExit(true);
+        }
+
     }
 
     //for testing purposes. it works

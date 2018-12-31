@@ -47,10 +47,10 @@ public class Room implements Serializable {
         this.position[0] = x;
         this.position[1] = y;
         while ((N < 1)&&(E < 1)&&(S < 1)&&(W < 1)){
-            if(dCheckNorth(x, y, level)){ this.N = random.nextInt(10); }
-            if(dCheckEast(x, y, level)){ this.E = random.nextInt(10); }
-            if(dCheckSouth(x, y, level)){ this.S = random.nextInt(10); }
-            if(dCheckWest(x, y, level)){ this.W = random.nextInt(10); }
+            if(dCheckNorth(x, y, level)){ this.N = random.nextInt(20); }
+            if(dCheckEast(x, y, level)){ this.E = random.nextInt(20); }
+            if(dCheckSouth(x, y, level)){ this.S = random.nextInt(20); }
+            if(dCheckWest(x, y, level)){ this.W = random.nextInt(20); }
         }
         int n = random.nextInt(100);
         if (n < spawnMonsterRate){
@@ -79,7 +79,7 @@ public class Room implements Serializable {
         generateDoors(x, y, level, N, E, S, W);
         generateWalls();
         int exitFactor = random.nextInt(level * level);
-        if (exitFactor >= ((level * level) - 5)){ //it gives more than one exit, for reasons of safety
+        if (exitFactor >= ((level * level) - 1)){ //it gives more than one exit, for reasons of safety
             exit = true;
         }
     }
@@ -433,6 +433,10 @@ public class Room implements Serializable {
 
     public boolean isExit() {
         return exit;
+    }
+
+    public void setExit(boolean exit) {
+        this.exit = exit;
     }
 
     //Robert: This method wes made by Nemo

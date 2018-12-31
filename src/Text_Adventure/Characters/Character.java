@@ -1,5 +1,7 @@
 package Text_Adventure.Characters;
 
+import Text_Adventure.menuDevelopment.ColorPrint;
+
 import java.io.Serializable;
 import java.util.Random;
 
@@ -127,7 +129,8 @@ public class Character implements Serializable {
 
     //Robert: when it is comming to heal a simple setter is not the best choice.
     public void addHealth(int points){
-        System.out.println(points + " added to your health");
+        System.out.println("Your health has been replenished by "+ColorPrint.ANSI_YELLOW+points+ColorPrint.ANSI_RESET +
+                " health points!");
         health = health + points;
     }
 

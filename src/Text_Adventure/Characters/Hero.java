@@ -7,7 +7,6 @@ import Text_Adventure.Items.Weapon;
 import Text_Adventure.Room;
 import Text_Adventure.menuDevelopment.ColorPrint;
 import Text_Adventure.menuDevelopment.Method;
-import Text_Adventure.menuDevelopment.Play_Sound;
 import Text_Adventure.menuDevelopment.Sound_methods;
 
 
@@ -15,8 +14,6 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 
 public class Hero extends Character implements Serializable {
@@ -28,6 +25,7 @@ public class Hero extends Character implements Serializable {
     public int weaponDamageModifier; //this will modify the damage that a player deal, if the player has a weapon.
     transient Scanner input = new Scanner(System.in);
     public Sound_methods play = new Sound_methods();
+    public boolean printed;
 
 
 
@@ -93,11 +91,14 @@ public class Hero extends Character implements Serializable {
             int choice = menuChoice();
             if (choice > 5){
                 play.backpackSound();
+                Method.clearScreen();
                 running = false;
             } else {
                 play.menuSound();
+                Method.clearScreen();
                 if(backpack[choice] != null) {
-                    System.out.printf("[" + choice + "][%s]%n", backpack[choice].getName());
+                    System.out.printf("[" + choice + "][%s]%n",
+                           ColorPrint.ANSI_BLUE +(backpack[choice].getName())+ColorPrint.ANSI_RESET);
                     System.out.println("Choose an option");
                     System.out.println("================");
                     System.out.println("[1]Use the item");
@@ -106,19 +107,23 @@ public class Hero extends Character implements Serializable {
                     int choice2 = menuChoice();
                     switch (choice2){
                         case 1:
+                            Method.clearScreen();
                             play.drinkPotionSound();
                             System.out.println("You are drinking "+
-                            backpack[choice].getName());
+                                    ColorPrint.ANSI_BLUE +(backpack[choice].getName())+ColorPrint.ANSI_RESET);
                             //int healingPoints = backpack[choice].getHealthModifier();
                             addHealth(backpack[choice].getHealthModifier());
                             backpack[choice] = null;
                             break;
                         case 2:
+                            Method.clearScreen();
                             play.dropPotionSound();
-                            System.out.println("You are dropping "+backpack[choice].getName());
+                            System.out.println("You are dropping "+
+                                    ColorPrint.ANSI_BLUE +(backpack[choice].getName())+ColorPrint.ANSI_RESET);
                             backpack[choice] = null;
                             break;
                         default:
+                            Method.clearScreen();
                            play.backpackSound();
                             System.out.println("Returning to the backpack");
                     }
@@ -157,9 +162,10 @@ public class Hero extends Character implements Serializable {
     public void pickItem(Item entity, Room room1){
         if (entity instanceof Key ){
             addKeyToKeyRing((Key) entity);
-            System.out.println("A "+ColorPrint.ANSI_BLUE+"key"+ColorPrint.ANSI_RESET + " has been added to keyring");
+
         } else if (entity instanceof Consumable ){
                 addItemToBackpack((Consumable) entity);
+
         } else {
             pickUpWeapon((Weapon) entity, room1);
         }
@@ -171,35 +177,42 @@ public class Hero extends Character implements Serializable {
     public void addItemToBackpack(Consumable thing) {
 
         int countIndex = 0;
+        printed = false;
+
+
 
         for(Consumable slot: backpack) {
-            if(slot == null) {
-                if(countIndex <= 4) {
+            if (slot == null) {
+                if (countIndex <= 4) {
                     backpack[countIndex] = thing;
                 }
                 //backpack[countIndex] = thing;
                 //System.out.println("Your backpack is full!!!");
 
-            }else {
+            } else {
                 countIndex++;
             }
+            if (backpack[countIndex] != null) {
+                if(countIndex > 4) {
+                    System.out.println("Your backpack is full!!!");
+                } else
+                    while (!printed){
+                    System.out.printf("Item %s has been added to your backpack (Slot %d)%n", ColorPrint.ANSI_BLUE+thing.getName()
+                            +ColorPrint.ANSI_RESET, countIndex);
+                    printed = true;
+                }
         }
-        if (backpack[countIndex] != null) {
-            if(countIndex > 4) {
-                System.out.println("Your backpack is full!!!");
-            } else {
-                System.out.printf("Item %s has been added to your backpack (Slot %d)%n", thing.getName(), countIndex);
+
             }
-        }
-        if(countIndex > 4) {
-            System.out.println("Your backpack is full!!!");
-        }
+
     }
+
 
     //Robert: I had to add this here. i know that I could use a setter for this one
     //but I wish to make the inventory and keyring methods to follow the same naming conventions.
     public void addKeyToKeyRing(Key key) {
         keyRing.add(key);
+        System.out.println("A "+ColorPrint.ANSI_BLUE+"key"+ColorPrint.ANSI_RESET + " has been added to keyring");
     }
 
     public void consumeItem(Consumable food) {
@@ -264,7 +277,6 @@ public class Hero extends Character implements Serializable {
             try{
                 asd = input.nextInt();
                 successfulinput = true;
-                Method.clearScreen();
             } catch(InputMismatchException a){
                 input.nextLine();
                 System.out.println("Please use only given options!");

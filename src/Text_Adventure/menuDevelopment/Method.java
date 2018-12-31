@@ -15,7 +15,9 @@ import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.security.SecureRandom;
+import java.text.ParseException;
 import java.util.*;
+import java.util.concurrent.TimeUnit;
 
 import static Text_Adventure.Main.myMethod;
 
@@ -28,6 +30,11 @@ public class Method implements Serializable {
     public int diffLevel;
     public int gogo=99;
     public Sound_methods play = new Sound_methods();
+    public long startTime;
+    public long endTime;
+    public long TIME;
+
+
 
 
     SecureRandom random = new SecureRandom();
@@ -236,48 +243,7 @@ public class Method implements Serializable {
 //                "--------------------------------------------\n");
             switch (gameOption) {
                 case 1: play.menuSound();
-                    // START GAME
-//                do {
-//                    room1.describeRoom();
-//                    System.out.println("\n\t***    Choose action   ***" +
-//                            "\n[1]\tFight Monster"+
-//                            "\n[2]\tAvoid fight" +
-//                            "\n[3]\tOpen backpack" +
-//                            "\n[4]\tGo to a new room" +
-//                            "\n[5]\tPick +ITEM\n");
-//                    System.out.println("\n----------------------------------------------\n" +
-//                            "\tHealth = " + hero1.getHealth() + ".\n" +
-//                            "--------------------------------------------");
-//                    Main.choice = Main.in.nextInt();
-//                    in.nextLine();
-//                    switch (Main.choice) {
-//                        case 1:
-//                            myMethod.coinFight();
-//                            break;
-//                        case 2:
-//                            hero1.setHealth(hero1.getHealth()-25);
-//                            break;
-//                        case 3:
-//
-//                            hero1.viewContentsOfBackpack();
-//                            hero1.viewContentsOfKeyRing();
-//                            break;
-//                        case 4:
-//                            newRoom = room1.changeRoom(hero1);
-//                            room1 = myMap.rooms.get(newRoom);
-//
-//                            break;
-//                        case 5:
-//                            hero1.pickItem(room1.getItem());
-//                            room1.setItem(null);
-//                            System.out.println("\n----------------------------------------\n\tYour health is now " + hero1.getHealth() + "." +
-//                                    "\n----------------------------------------");
-//                            break;
-//                        default:
-//                            myMethod.playOptions();
-//                    }
-//                } while (Main.choice != 10);
-//                myMethod.playGame(myMethod.gameOptions());
+                    startTime = System.nanoTime();
                     boolean running = true;
                     while (running) {
                         System.out.println("\n----------------------------------------------\n" +
@@ -359,6 +325,7 @@ public class Method implements Serializable {
                     if (choice2 == 1) {
                         play.menuSound();
                         runningmenu = false;
+
                     } else {
                         play.menuSound();
                         runningmenu = true;
@@ -367,7 +334,10 @@ public class Method implements Serializable {
         }
 
         if (hero1 != null) {
+            endTime = System.nanoTime();
+            TIME = endTime - startTime;
             System.out.println("You are leaving the game");
+            System.out.printf("Time played (HH:MM:SS):  %s %n", time());
             System.out.println("Your name was: " + myMethod.hero1.getName());
             System.out.println("Your score was: " + myMethod.hero1.getHighscore());
             System.out.println("Your score will be saved to the list of highscores");
@@ -786,6 +756,16 @@ public class Method implements Serializable {
         clearScreen();
         play.menuSound();
 
+    }
+    public String time(){
+        long NanoSec = TIME;
+
+            String timeSpent = String.format("%02d:%02d:%02d", TimeUnit.NANOSECONDS.toHours(NanoSec),
+                    TimeUnit.NANOSECONDS.toMinutes(NanoSec)
+                            - TimeUnit.HOURS.toMinutes(TimeUnit.NANOSECONDS.toHours(NanoSec)),
+                    TimeUnit.NANOSECONDS.toSeconds(NanoSec)
+                            - TimeUnit.MINUTES.toSeconds(TimeUnit.NANOSECONDS.toMinutes(NanoSec)));
+        return timeSpent;
     }
 
 

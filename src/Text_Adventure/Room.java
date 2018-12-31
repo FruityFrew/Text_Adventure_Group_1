@@ -270,7 +270,7 @@ public class Room implements Serializable {
             if (this.item instanceof Key ){
                 System.out.println("It is a "  + ((Key) this.item).getName2() + "!");
             } else {
-                System.out.println("It is a " + ColorPrint.ANSI_BLUE + this.item.getName()
+                System.out.println("It is a " + ColorPrint.ANSI_GREEN + this.item.getName()
                         +ColorPrint.ANSI_RESET+ "!");
             }
         } else {

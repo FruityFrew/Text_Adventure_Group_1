@@ -22,8 +22,8 @@ public class Key extends Item  implements Serializable {
         super(name);
         this.type = randomType();
         //Robert: I added this line below
-        this.name2 = "small" + ColorPrint.ANSI_BLUE + " rusty key "+ColorPrint.ANSI_RESET
-                +"with the number " + ColorPrint.ANSI_BLUE
+        this.name2 = "small" + ColorPrint.ANSI_GREEN + " rusty key "+ColorPrint.ANSI_RESET
+                +"with the number " + ColorPrint.ANSI_GREEN
                 + this.type+ColorPrint.ANSI_RESET + " written on it";
     }
 

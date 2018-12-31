@@ -608,7 +608,7 @@ public class Method implements Serializable {
         if (myMethod.room1.monster == null) {
             if (myMethod.room1.monster == null) {
                 if (myMethod.room1.getItem() != null) {
-                    System.out.print("| [5] Pick up " +ColorPrint.ANSI_BLUE
+                    System.out.print("| [5] Pick up " +ColorPrint.ANSI_GREEN
                             +myMethod.room1.getItem().getName()
                     +ColorPrint.ANSI_RESET);
                 }

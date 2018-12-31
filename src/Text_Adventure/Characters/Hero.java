@@ -81,7 +81,7 @@ public class Hero extends Character implements Serializable {
             int count = 0;
             for(Consumable a: backpack) {
                 if(a != null) {
-                    System.out.printf("[" + count + "]"+"["+ ColorPrint.ANSI_BLUE+ "%s"+ ColorPrint.ANSI_RESET
+                    System.out.printf("[" + count + "]"+"["+ ColorPrint.ANSI_GREEN+ "%s"+ ColorPrint.ANSI_RESET
                             +"]%n", a.getName());
                 }else { if(count < 5)System.out.println("["+ count + "][-Empty slot-]");}
                 count++;
@@ -98,7 +98,7 @@ public class Hero extends Character implements Serializable {
                 Method.clearScreen();
                 if(backpack[choice] != null) {
                     System.out.printf("[" + choice + "][%s]%n",
-                           ColorPrint.ANSI_BLUE +(backpack[choice].getName())+ColorPrint.ANSI_RESET);
+                           ColorPrint.ANSI_GREEN +(backpack[choice].getName())+ColorPrint.ANSI_RESET);
                     System.out.println("Choose an option");
                     System.out.println("================");
                     System.out.println("[1]Use the item");
@@ -110,7 +110,7 @@ public class Hero extends Character implements Serializable {
                             Method.clearScreen();
                             play.drinkPotionSound();
                             System.out.println("You are drinking "+
-                                    ColorPrint.ANSI_BLUE +(backpack[choice].getName())+ColorPrint.ANSI_RESET);
+                                    ColorPrint.ANSI_GREEN +(backpack[choice].getName())+ColorPrint.ANSI_RESET);
                             //int healingPoints = backpack[choice].getHealthModifier();
                             addHealth(backpack[choice].getHealthModifier());
                             backpack[choice] = null;
@@ -119,7 +119,7 @@ public class Hero extends Character implements Serializable {
                             Method.clearScreen();
                             play.dropPotionSound();
                             System.out.println("You are dropping "+
-                                    ColorPrint.ANSI_BLUE +(backpack[choice].getName())+ColorPrint.ANSI_RESET);
+                                    ColorPrint.ANSI_GREEN +(backpack[choice].getName())+ColorPrint.ANSI_RESET);
                             backpack[choice] = null;
                             break;
                         default:
@@ -197,7 +197,7 @@ public class Hero extends Character implements Serializable {
                     System.out.println("Your backpack is full!!!");
                 } else
                     while (!printed){
-                    System.out.printf("Item %s has been added to your backpack (Slot %d)%n", ColorPrint.ANSI_BLUE+thing.getName()
+                    System.out.printf("Item %s has been added to your backpack (Slot %d)%n", ColorPrint.ANSI_GREEN+thing.getName()
                             +ColorPrint.ANSI_RESET, countIndex);
                     printed = true;
                 }
@@ -212,7 +212,7 @@ public class Hero extends Character implements Serializable {
     //but I wish to make the inventory and keyring methods to follow the same naming conventions.
     public void addKeyToKeyRing(Key key) {
         keyRing.add(key);
-        System.out.println("A "+ColorPrint.ANSI_BLUE+"key"+ColorPrint.ANSI_RESET + " has been added to keyring");
+        System.out.println("A "+ColorPrint.ANSI_GREEN+"key"+ColorPrint.ANSI_RESET + " has been added to keyring");
     }
 
     public void consumeItem(Consumable food) {

@@ -144,7 +144,7 @@ public class Hero extends Character implements Serializable {
         }
         if(key0){System.out.println("A key with the number 0 on it");}
         if(key1){System.out.println("A key with the number 1 on it");}
-        if(key0){System.out.println("A key with the number 2 on it");}
+        if(key2){System.out.println("A key with the number 2 on it");}
     }
 
     //Robert: This method returns the weapon that is inside the weapon slot.
@@ -157,6 +157,7 @@ public class Hero extends Character implements Serializable {
     public void pickItem(Item entity, Room room1){
         if (entity instanceof Key ){
             addKeyToKeyRing((Key) entity);
+            System.out.println("A "+ColorPrint.ANSI_BLUE+"key"+ColorPrint.ANSI_RESET + " has been added to keyring");
         } else if (entity instanceof Consumable ){
                 addItemToBackpack((Consumable) entity);
         } else {
@@ -199,7 +200,6 @@ public class Hero extends Character implements Serializable {
     //but I wish to make the inventory and keyring methods to follow the same naming conventions.
     public void addKeyToKeyRing(Key key) {
         keyRing.add(key);
-        play.pickUp();
     }
 
     public void consumeItem(Consumable food) {

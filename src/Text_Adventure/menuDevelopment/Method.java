@@ -620,7 +620,7 @@ public class Method implements Serializable {
         int choice = menuChoice();
 
         switch (choice) {
-            case 1: play.menuSound();
+            case 1:
                 if (myMethod.room1.monster != null) {
                     hero1.addHighScore(100);
                     myMethod.hero1.setHealth(myMethod.exchangeAttackWithMonster(myMethod.hero1, room1.monster));
@@ -653,7 +653,7 @@ public class Method implements Serializable {
                     myMethod.hero1.addHighScore(100);
                 }
                 break;
-            case 5: play.menuSound();
+            case 5:
                 if (myMethod.room1.getItem() != null) {
                     play.pickUp();
                     if (myMethod.room1.monster == null) {

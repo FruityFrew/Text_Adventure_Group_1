@@ -8,6 +8,8 @@ import Text_Adventure.Items.Key;
 import Text_Adventure.Items.Weapon;
 import Text_Adventure.menuDevelopment.ColorPrint;
 import Text_Adventure.menuDevelopment.Method;
+import Text_Adventure.menuDevelopment.Play_Sound;
+import Text_Adventure.menuDevelopment.Sound_methods;
 
 import java.io.Serializable;
 import java.security.SecureRandom;
@@ -36,7 +38,7 @@ public class Room implements Serializable {
     private int index; //this is the way to reffer to the room, (the position does not works. this is not DataBase :) )
     private int dLevel; //Difficulty level. This takes the difficulty level of the Map object for practical reasons.
     private boolean exit = false; //this indicates if the room has a trap door exit or not.
-
+    public Sound_methods play = new Sound_methods();
     /**
      * Robert: This is the constructor for Room objects
      *
@@ -557,11 +559,13 @@ public class Room implements Serializable {
                                     System.out.println("You found a suitable key!");
                                     System.out.println("You are unlocking the door...");
                                     hero.addHighScore(100);
+                                    play.walkSound();
                                     break;
                                 }
                             }
                         } else {
                             index = doors.get(0).getRoom();
+                            play.walkSound();
                             running = false;
                         }
                     }

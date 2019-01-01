@@ -481,15 +481,25 @@ public class Room implements Serializable {
         boolean lock0 = false;
         boolean lock1 = false;
         boolean lock2 = false;
+
         for (Key key:hero.keyRing){
-            if ((key.getType()== 0)){
-                lock0 = true;
+            if (!lock0) {
+                if ((key.getType() == 0)) {
+                    play.unlockingDoor();
+                    lock0 = true;
+                }
             }
-            if ((key.getType()== 1)){
-                lock1 = true;
+            if(!lock1) {
+                if ((key.getType() == 1)) {
+                    play.unlockingDoor();
+                    lock1 = true;
+                }
             }
-            if ((key.getType()== 2)){
-                lock2 = true;
+            if(!lock2) {
+                if ((key.getType() == 2)) {
+                    play.unlockingDoor();
+                    lock2 = true;
+                }
             }
         }
         if(lock0){
@@ -552,6 +562,7 @@ public class Room implements Serializable {
                     Method.clearScreen();
                     if (doors.get(0).isActive()){
                         if (doors.get(0).isLocked()){
+                            play.doorLocked();
                             System.out.println("The door is locked and it is written on the lock the " +
                                     "number " + doors.get(0).getType());
                             System.out.println("You are looking on your keys to finding a suitable key");
@@ -560,8 +571,8 @@ public class Room implements Serializable {
                                     doors.get(0).setLocked(false);
                                     System.out.println("You found a suitable key!");
                                     System.out.println("You are unlocking the door...");
+                                    play.unlockingDoor();
                                     hero.addHighScore(100);
-                                    play.walkSound();
                                     break;
                                 }
                             }
@@ -577,6 +588,7 @@ public class Room implements Serializable {
                     Method.clearScreen();
                     if (doors.get(1).isActive()){
                         if (doors.get(1).isLocked()){
+                            play.doorLocked();
                             System.out.println("The door is locked and it is written on the lock the " +
                                     "number " + doors.get(1).getType());
                             System.out.println("You are looking on your keys to finding a suitable key");
@@ -585,12 +597,14 @@ public class Room implements Serializable {
                                     doors.get(1).setLocked(false);
                                     System.out.println("You found a suitable key!");
                                     System.out.println("You are unlocking the door...");
+                                    play.unlockingDoor();
                                     hero.addHighScore(100);
                                     break;
                                 }
                             }
                         } else {
                             index = doors.get(1).getRoom();
+                            play.walkSound();
                             running = false;
                         }
                     }
@@ -600,6 +614,7 @@ public class Room implements Serializable {
                     Method.clearScreen();
                     if (doors.get(2).isActive()){
                         if (doors.get(2).isLocked()){
+                            play.doorLocked();
                             System.out.println("The door is locked and it is written on the lock the " +
                                     "number " + doors.get(2).getType());
                             System.out.println("You are looking on your keys to finding a suitable key");
@@ -608,12 +623,14 @@ public class Room implements Serializable {
                                     doors.get(2).setLocked(false);
                                     System.out.println("You found a suitable key!");
                                     System.out.println("You are unlocking the door...");
+                                    play.unlockingDoor();
                                     hero.addHighScore(100);
                                     break;
                                 }
                             }
                         } else {
                             index = doors.get(2).getRoom();
+                            play.walkSound();
                             running = false;
                         }
                     }
@@ -623,6 +640,7 @@ public class Room implements Serializable {
                     Method.clearScreen();
                     if (doors.get(3).isActive()){
                         if (doors.get(3).isLocked()){
+                            play.doorLocked();
                             System.out.println("The door is locked and it is written on the lock the " +
                                     "number " + doors.get(3).getType());
                             System.out.println("You are looking on your keys to finding a suitable key");
@@ -631,12 +649,14 @@ public class Room implements Serializable {
                                     doors.get(3).setLocked(false);
                                     System.out.println("You found a suitable key!");
                                     System.out.println("You are unlocking the door...");
+                                    play.unlockingDoor();
                                     hero.addHighScore(100);
                                     break;
                                 }
                             }
                         } else {
                             index = doors.get(3).getRoom();
+                            play.walkSound();
                             running = false;
                         }
                     }
@@ -647,6 +667,7 @@ public class Room implements Serializable {
                     Method.clearScreen();
                     if (doorToFreedom(hero) == true){
                         hero.addHighScore(1500);
+                        play.winSound();
                         System.out.println(" ");
                         System.out.println(" =============== ");
                         System.out.println("You won the game!");

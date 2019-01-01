@@ -48,8 +48,8 @@ public class Main  implements Serializable {
         ExecutorService Thread = Executors.newFixedThreadPool(4);
         Thread.submit(new Runnable() {public void run() { music.playSound("sounds/music.wav"); }});
 
-        ASCII.printGroup1();
-        ASCII.printGameName();
+        //ASCII.printGroup1();
+       // ASCII.printGameName();
         myMethod.pressEnter();
         Method.clearScreen();
         myMethod.threadSleep(2000);

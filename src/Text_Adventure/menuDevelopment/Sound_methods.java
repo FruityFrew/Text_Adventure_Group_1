@@ -51,10 +51,7 @@ public class Sound_methods implements Serializable {
         ExecutorService Thread = Executors.newFixedThreadPool(4);
         Thread.submit(new Runnable() {public void run() { soundFX.playSound("sounds/dropItem.wav"); }});
     }
-    public void walkSound(){
-        ExecutorService Thread = Executors.newFixedThreadPool(4);
-        Thread.submit(new Runnable() {public void run() { soundFX.playSound("sounds/walking.wav"); }});
-    }
+    public void walkSound(){soundFX.playSound("sounds/walking.wav"); }
     public void menuSound(){
         ExecutorService Thread = Executors.newFixedThreadPool(4);
         Thread.submit(new Runnable() {public void run() { soundFX.playSound("sounds/click.wav"); }});
@@ -72,8 +69,13 @@ public class Sound_methods implements Serializable {
         Thread.submit(new Runnable() {public void run() { soundFX.playSound("sounds/locked.wav"); }});
     }
     public void unlockingDoor(){
-        ExecutorService Thread = Executors.newFixedThreadPool(4);
-        Thread.submit(new Runnable() {public void run() { soundFX.playSound("sounds/unlocking.wav"); }});
+        ExecutorService Threads = Executors.newFixedThreadPool(4);
+        Threads.submit(new Runnable() {public void run() { soundFX.playSound("sounds/unlocking.wav"); }});
+        try {
+            Thread.sleep(1500);
+        }catch (Exception e){
+            System.out.println("Could not perform Thread.sleep method!");
+        }
     }
 
 }

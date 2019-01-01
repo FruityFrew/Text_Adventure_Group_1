@@ -3,9 +3,11 @@ package Text_Adventure.menuDevelopment;
 import java.io.Serializable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
+
+import static Text_Adventure.Main.myMethod;
 
 public class Sound_methods implements Serializable {
-
     public static Play_Sound soundFX = new Play_Sound();
     public ExecutorService Thread = Executors.newFixedThreadPool(4);
     public ExecutorService Threads = Executors.newFixedThreadPool(4);
@@ -20,16 +22,14 @@ public class Sound_methods implements Serializable {
         Thread.submit(new Runnable() {public void run() { soundFX.playSound("sounds/gameWon.wav"); }});
     }
     public void loseSound(){
-
-        Thread.submit(new Runnable() {public void run() { soundFX.playSound("sounds/loseGame.wav"); }});
+    soundFX.playSound("sounds/loseGame.wav");
     }
     public void treasureSound(){
 
         Thread.submit(new Runnable() {public void run() { soundFX.playSound("sounds/treasure.wav"); }});
     }
     public void playerDeathSound(){
-
-        Thread.submit(new Runnable() {public void run() { soundFX.playSound("sounds/playerDeath.wav"); }});
+        soundFX.playSound("sounds/playerDeath.wav");
     }
     public void monsterDeathSound(){
         ExecutorService Thread = Executors.newFixedThreadPool(6);

@@ -34,6 +34,7 @@ public class Method implements Serializable {
     public long TIME;
 
 
+
     SecureRandom random = new SecureRandom();
     //public static Method myMethod = Main.myMethod;
 
@@ -656,12 +657,17 @@ public class Method implements Serializable {
                 //myMethod.playOptions();
         }
         if (myMethod.hero1.getHealth() < 1) {
-            System.out.println(" ");
-            System.out.println("=========");
-            System.out.println("Game Over");
+            play.playerDeathSound();
+            play.loseSound();
+            for (int i=0;i<5;i++) {
+                ASCII.gameOverLogo();
+            }
+            //System.out.println(" ");
+            //System.out.println("=========");
+            //System.out.println("Game Over");
             myMethod.hero1.setHealth(300);
-            System.out.println("========");
-            System.out.println(" ");
+            //System.out.println("========");
+            //System.out.println(" ");
             result = false;
         }
         return result;

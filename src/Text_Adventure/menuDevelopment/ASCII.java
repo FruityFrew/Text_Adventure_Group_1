@@ -1,9 +1,7 @@
 package Text_Adventure.menuDevelopment;
 
 import static Text_Adventure.menuDevelopment.Method.clearScreen;
-import java.io.File;
-import javax.sound.sampled.*;
-import java.io.IOException;
+
 
 public class ASCII {
     public static void printGroup1(){

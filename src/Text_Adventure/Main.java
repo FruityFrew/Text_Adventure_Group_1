@@ -52,6 +52,7 @@ public class Main  implements Serializable {
         ASCII.printGameName();
         myMethod.pressEnter();
         Method.clearScreen();
+        myMethod.threadSleep(2000);
         myMethod.playerName();
         Method.clearScreen();
         myMethod.choosePlayerType();

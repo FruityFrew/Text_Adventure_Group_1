@@ -15,7 +15,6 @@ import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.security.SecureRandom;
-import java.text.ParseException;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
@@ -28,13 +27,11 @@ public class Method implements Serializable {
     public static List fileNamesList = new ArrayList();
     public static String[] fileNamesString = new String[10];
     public int diffLevel;
-    public int gogo=99;
+    public int gogo = 99;
     public Sound_methods play = new Sound_methods();
     public long startTime;
     public long endTime;
     public long TIME;
-
-
 
 
     SecureRandom random = new SecureRandom();
@@ -106,12 +103,12 @@ public class Method implements Serializable {
      */
     public void choosePlayerType() {
 
-        System.out.println("Hmmm .." + hero1.getName() + ", an ordinary name, maybe fate brought you here ... or maybe just bad luck");
+        System.out.println("Hmmm .. " + hero1.getName() + ", what unordinary name, maybe fate brought you here ... or maybe just bad luck");
         System.out.println("What are you in this life .. " +
-                "\n[1]\tA THIEF? " +
-                "\n[2]\tA lost PRIEST in search of your lost faith?! HA HA HA!" +
-                "\n[3]\tA haunted GHOST HUNTER ?" +
-                "\n[4]\tOr maybe, just an annoying TOURIST?");
+                "\n[1]\tA "+ColorPrint.ANSI_CYAN+"THIEF"+ColorPrint.ANSI_RESET+ " ?"  +
+                "\n[2]\tA lost "+ColorPrint.ANSI_CYAN+"PRIEST"+ColorPrint.ANSI_RESET+ " in search of your lost faith?! HA HA HA!" +
+                "\n[3]\tA haunted " +ColorPrint.ANSI_CYAN+"GHOST HUNTER"+ColorPrint.ANSI_RESET+ " ?" +
+                "\n[4]\tOr maybe, just an annoying "+ColorPrint.ANSI_CYAN+"TOURIST"+ColorPrint.ANSI_RESET+" ?");
         Main.choice = menuChoice();
         /**
          * Alex:Sunday the Hero and Character was not functional, so I created this enum for use
@@ -242,7 +239,8 @@ public class Method implements Serializable {
 //        System.out.println("\n\tHealth = " + hero1.getHealth()+ ".\n" +
 //                "--------------------------------------------\n");
             switch (gameOption) {
-                case 1: play.menuSound();
+                case 1:
+                    play.menuSound();
                     startTime = System.nanoTime();
                     boolean running = true;
                     while (running) {
@@ -257,7 +255,8 @@ public class Method implements Serializable {
                     }
 
                     break;
-                case 2:  play.menuSound();
+                case 2:
+                    play.menuSound();
                     // SAVE GAME
                     save a = new save();
                     a.PlayerBackpack = Hero.backpack;
@@ -299,7 +298,8 @@ public class Method implements Serializable {
 //                ;
                     break;
 
-                case 5: play.menuSound();
+                case 5:
+                    play.menuSound();
                     // EXIT
                     //Robert: I commended the line bellow me, because I replaced with exitOptions()
                     //Main.choice = 10;
@@ -337,7 +337,7 @@ public class Method implements Serializable {
             endTime = System.nanoTime();
             TIME = endTime - startTime;
             System.out.println("You are leaving the game");
-            //System.out.printf("Time played (HH:MM:SS):  %s %n", time());
+            System.out.printf("Time played (HH:MM:SS):  %s %n", time());
             System.out.println("Your name was: " + myMethod.hero1.getName());
             System.out.println("Your score was: " + myMethod.hero1.getHighscore());
             System.out.println("Your score will be saved to the list of highscores");
@@ -353,40 +353,40 @@ public class Method implements Serializable {
         int damageHolder = Character.generateDamage(hero.getHitChance(), hero.getMaxAttack(), hero1.weaponDamageModifier);
         monster.setHealth(monster.getHealth() - damageHolder);
         if (monster.getHealth() > 0) {
-            if (damageHolder>1) {
+            if (damageHolder > 1) {
                 play.kickSound();
-                System.out.printf("You hit "+ColorPrint.ANSI_RED+myMethod.room1.monster.getMonsterType()+ColorPrint.ANSI_RESET+" and "
-                        +ColorPrint.ANSI_RED+myMethod.room1.monster.getMonsterType()
-                        +ColorPrint.ANSI_RESET+" looses %d health points.%n" +
+                System.out.printf("You hit " + ColorPrint.ANSI_RED + myMethod.room1.monster.getMonsterType() + ColorPrint.ANSI_RESET + " and "
+                        + ColorPrint.ANSI_RED + myMethod.room1.monster.getMonsterType()
+                        + ColorPrint.ANSI_RESET + " looses %d health points.%n" +
                         "Monster's health (updated): %d%n", damageHolder, monster.getHealth());
 
-            }else {
+            } else {
                 play.missSound();
-                System.out.printf("You attacked " +ColorPrint.ANSI_RED+myMethod.room1.monster.getMonsterType()
-                        +ColorPrint.ANSI_RESET+ ", but you missed!!! Try again!!!%n"
-                        +ColorPrint.ANSI_RED+myMethod.room1.monster.getMonsterType()
-                        +ColorPrint.ANSI_RESET+"'s health (updated): %d%n", monster.getHealth());
+                System.out.printf("You attacked " + ColorPrint.ANSI_RED + myMethod.room1.monster.getMonsterType()
+                        + ColorPrint.ANSI_RESET + ", but you missed!!! Try again!!!%n"
+                        + ColorPrint.ANSI_RED + myMethod.room1.monster.getMonsterType()
+                        + ColorPrint.ANSI_RESET + "'s health (updated): %d%n", monster.getHealth());
             }
             //Nemanja. I added this line in order to separate monster and hero attack.
             // Monster waits one second before it attacks hero.
             try {
                 Thread.sleep(1000);
-            }catch (Exception e){
+            } catch (Exception e) {
                 System.out.println("wow");
             }
             //Then monster attacks...
             damageHolder = Character.generateDamage(monster.getHitChance(), monster.getMaxAttack(), 0);
             hero.setHealth(hero.getHealth() - damageHolder);
-            if (damageHolder>1) {
+            if (damageHolder > 1) {
                 play.kickSound();
-                System.out.printf(ColorPrint.ANSI_RED+myMethod.room1.monster.getMonsterType()
-                        +ColorPrint.ANSI_RESET+" hits you back and you loose %d health points.%n" +
+                System.out.printf(ColorPrint.ANSI_RED + myMethod.room1.monster.getMonsterType()
+                        + ColorPrint.ANSI_RESET + " hits you back and you loose %d health points.%n" +
                         "Your current health: %d%n", damageHolder, hero.getHealth());
-            }else{
+            } else {
                 play.missSound();
-                System.out.printf(ColorPrint.ANSI_RED+myMethod.room1.monster.getMonsterType()
-                        +ColorPrint.ANSI_RESET+" attacks you but misses you by millimeters! You were lucky this time!%n" +
-                        "Your current health: %d%n",hero.getHealth());
+                System.out.printf(ColorPrint.ANSI_RED + myMethod.room1.monster.getMonsterType()
+                        + ColorPrint.ANSI_RESET + " attacks you but misses you by millimeters! You were lucky this time!%n" +
+                        "Your current health: %d%n", hero.getHealth());
             }
 
         } else {
@@ -565,7 +565,7 @@ public class Method implements Serializable {
         System.out.println("***    Choose action   ***");
         if (myMethod.room1.monster != null) {
             System.out.print("[1] Fight " +
-                    ColorPrint.ANSI_RED+myMethod.room1.monster.getMonsterType()+ColorPrint.ANSI_RESET);
+                    ColorPrint.ANSI_RED + myMethod.room1.monster.getMonsterType() + ColorPrint.ANSI_RESET);
         }
         //Same as pick item. The concept is cool.
         if (myMethod.room1.monster != null) {
@@ -578,9 +578,9 @@ public class Method implements Serializable {
         if (myMethod.room1.monster == null) {
             if (myMethod.room1.monster == null) {
                 if (myMethod.room1.getItem() != null) {
-                    System.out.print("| [5] Pick up " +ColorPrint.ANSI_GREEN
-                            +myMethod.room1.getItem().getName()
-                    +ColorPrint.ANSI_RESET);
+                    System.out.print("| [5] Pick up " + ColorPrint.ANSI_GREEN
+                            + myMethod.room1.getItem().getName()
+                            + ColorPrint.ANSI_RESET);
                 }
                 //Robert: Everyone asked for this modification.
             }
@@ -601,7 +601,8 @@ public class Method implements Serializable {
                     }
                 }
                 break;
-            case 2: play.menuSound();
+            case 2:
+                play.menuSound();
                 if (myMethod.room1.monster != null) {
                     myMethod.hero1.setHealth(hero1.getHealth() - (hero1.getHealth() / 2));
                     play.avoidFight();
@@ -610,12 +611,14 @@ public class Method implements Serializable {
                     hero1.addHighScore(50);
                 }
                 break;
-            case 3: play.menuSound();
+            case 3:
+                play.menuSound();
                 hero1.viewContentsOfKeyRing();
                 if (hero1.weapon != null) hero1.viewConstentofWeaponSlot();
                 hero1.viewContentsOfBackpack();
                 break;
-            case 4: play.menuSound();
+            case 4:
+                play.menuSound();
                 if (myMethod.room1.monster == null) {
                     newRoom = myMethod.room1.changeRoom(hero1);
                     System.out.println("You new room is: " + newRoom);
@@ -634,11 +637,11 @@ public class Method implements Serializable {
                 }
                 break;
 
-            case 6: play.menuSound();
+            case 6:
+                play.menuSound();
                 result = false;
                 //myMethod.playOptions();
                 break;
-
 
 
             case 7:
@@ -698,7 +701,7 @@ public class Method implements Serializable {
 
         if (chooseSave != 0) {
             play.menuSound();
-            System.out.println("Savegame: "+fileNamesString[chooseSave - 1]+" successfully loaded");
+            System.out.println("Savegame: " + fileNamesString[chooseSave - 1] + " successfully loaded");
             save b = (save) ReadWriteObject.readObject(fileNamesString[chooseSave - 1]);
             myMethod.hero1 = b.playerHero;
             Hero.backpack = b.PlayerBackpack;
@@ -731,43 +734,51 @@ public class Method implements Serializable {
         }
     }
 
-    public int menuChoice(){
+    public int menuChoice() {
         in.reset();
         boolean successfulinput = false;
-        while(!successfulinput){
-            try{
+        while (!successfulinput) {
+            try {
                 gogo = in.nextInt();
                 successfulinput = true;
                 clearScreen();
-            } catch(InputMismatchException a){
+            } catch (InputMismatchException a) {
                 in.nextLine();
                 System.out.println("Please use only given options!");
             }
 
-        } return gogo;
+        }
+        return gogo;
 
     }
-    public void pressEnter(){
+
+    public void pressEnter() {
         String catchEnter;
-        System.out.println(ColorPrint.Background_WHITE+"---------------------------------------------------------------------------------------------------------------------"+ColorPrint.ANSI_RESET);
+        System.out.println(ColorPrint.Background_WHITE + "---------------------------------------------------------------------------------------------------------------------" + ColorPrint.ANSI_RESET);
         System.out.println("                                            Press ENTER to start");
-        System.out.println(ColorPrint.Background_WHITE+"---------------------------------------------------------------------------------------------------------------------"+ColorPrint.ANSI_RESET);
-        catchEnter=in.nextLine();
-        clearScreen();
-        play.menuSound();
+        System.out.println(ColorPrint.Background_WHITE + "---------------------------------------------------------------------------------------------------------------------" + ColorPrint.ANSI_RESET);
+        catchEnter = in.nextLine();
+        play.laughSound();
 
     }
-    public String time(){
+
+    public String time() {
         long NanoSec = TIME;
 
-            String timeSpent = String.format("%02d:%02d:%02d", TimeUnit.NANOSECONDS.toHours(NanoSec),
-                    TimeUnit.NANOSECONDS.toMinutes(NanoSec)
-                            - TimeUnit.HOURS.toMinutes(TimeUnit.NANOSECONDS.toHours(NanoSec)),
-                    TimeUnit.NANOSECONDS.toSeconds(NanoSec)
-                            - TimeUnit.MINUTES.toSeconds(TimeUnit.NANOSECONDS.toMinutes(NanoSec)));
+        String timeSpent = String.format("%02d:%02d:%02d", TimeUnit.NANOSECONDS.toHours(NanoSec),
+                TimeUnit.NANOSECONDS.toMinutes(NanoSec)
+                        - TimeUnit.HOURS.toMinutes(TimeUnit.NANOSECONDS.toHours(NanoSec)),
+                TimeUnit.NANOSECONDS.toSeconds(NanoSec)
+                        - TimeUnit.MINUTES.toSeconds(TimeUnit.NANOSECONDS.toMinutes(NanoSec)));
         return timeSpent;
     }
 
-
+    public void threadSleep(int Milliseconds) {
+        try {
+            Thread.sleep(Milliseconds);
+        } catch (Exception e) {
+            System.out.println("wow");
+        }
+    }
 
 }

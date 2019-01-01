@@ -587,10 +587,17 @@ public class Method implements Serializable {
             }
         }
         System.out.print(" | [6] Go to the menu");
+        if (myMethod.room1.monster == null) {
+            System.out.println(" | [0] generate monster(DEBUG)");
+        }
         System.out.println(" | [7] Open the map");
+
         int choice = menuChoice();
 
         switch (choice) {
+            case 0:
+                myMethod.room1.monster = new Monster();
+                break;
             case 1:
                 if (myMethod.room1.monster != null) {
                     hero1.addHighScore(100);

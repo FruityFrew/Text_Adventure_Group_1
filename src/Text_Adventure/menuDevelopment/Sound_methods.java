@@ -21,9 +21,8 @@ public class Sound_methods implements Serializable {
 
         Thread.submit(new Runnable() {public void run() { soundFX.playSound("sounds/gameWon.wav"); }});
     }
-    public void loseSound(){
-    soundFX.playSound("sounds/loseGame.wav");
-    }
+    public void loseSound(){ExecutorService Thread = Executors.newFixedThreadPool(6);
+        Thread.submit(new Runnable() {public void run() { soundFX.playSound("sounds/loseGame.wav"); }});}
     public void treasureSound(){
 
         Thread.submit(new Runnable() {public void run() { soundFX.playSound("sounds/treasure.wav"); }});

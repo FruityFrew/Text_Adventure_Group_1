@@ -254,8 +254,8 @@ public class DisplayMap {
         System.out.println("Your current map:");
         System.out.println("=================");
         MapDisplayPlayer(level, posX, posY);
+        System.out.println("X = your current position");
         System.out.println(" ");
-        //System.out.print(" | [6] Go to the menu");
         System.out.println(" | [7] Close the map");
         String choice = input.next();
         Method.clearScreen();
@@ -272,6 +272,7 @@ public class DisplayMap {
         System.out.println("Your current map:");
         System.out.println("=================");
         MapDisplayPrimitiveExit(level, posX, posY, map);
+        System.out.println("X = Your current position, E = The exit door");
         System.out.println(" ");
         System.out.println(" | [7] Close the map");
         String choice = input.next();

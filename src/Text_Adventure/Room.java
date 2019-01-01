@@ -82,10 +82,12 @@ public class Room implements Serializable {
         }
         generateDoors(x, y, level, N, E, S, W);
         generateWalls();
-        int exitFactor = random.nextInt(level * level);
-        if (exitFactor >= ((level * level) - 1)){ //it gives more than one exit, for reasons of safety
-            exit = true;
-        }
+        //I commended the code below because I found a better exit spawning system but I will keep the code
+        //bit more for safety reasons.
+//        int exitFactor = random.nextInt(level * level);
+//        if (exitFactor >= ((level * level) - 1)){ //it gives more than one exit, for reasons of safety
+//            exit = true;
+//        }
     }
 
     /**

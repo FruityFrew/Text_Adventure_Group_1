@@ -645,6 +645,7 @@ public class Method implements Serializable {
 
 
             case 7:
+                play.mapSound();
                 DisplayMap.displayMapMenuPrimitiveExit(diffLevel, room1.getPosition()[0],
                         room1.getPosition()[1], myMap);
 

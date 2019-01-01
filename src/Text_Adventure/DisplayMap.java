@@ -2,6 +2,7 @@ package Text_Adventure;
 
 
 import Text_Adventure.menuDevelopment.Method;
+import Text_Adventure.menuDevelopment.Sound_methods;
 
 import java.util.Scanner;
 
@@ -16,6 +17,7 @@ import java.util.Scanner;
  * you changes. This the best way to changes to someone else's code.
  */
 public class DisplayMap {
+    public static Sound_methods play = new Sound_methods();
 
     // === BASIC BUILDING BLOCKS OF THE MAP ==========================================================
 
@@ -276,6 +278,7 @@ public class DisplayMap {
         System.out.println(" ");
         System.out.println(" | [7] Close the map");
         String choice = input.next();
+            play.mapSound();
         Method.clearScreen();
         if (choice.equalsIgnoreCase("`")){
             System.out.println("Winner, winner, chicken dinner!");

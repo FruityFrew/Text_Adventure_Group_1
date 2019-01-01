@@ -51,7 +51,11 @@ public class Sound_methods implements Serializable {
         ExecutorService Thread = Executors.newFixedThreadPool(4);
         Thread.submit(new Runnable() {public void run() { soundFX.playSound("sounds/dropItem.wav"); }});
     }
-    public void walkSound(){soundFX.playSound("sounds/walking.wav"); }
+    public void walkSound(){
+        ExecutorService Thread = Executors.newFixedThreadPool(4);
+        Thread.submit(new Runnable() {public void run() { soundFX.playSound("sounds/walking.wav"); }});
+        ASCII.walking();
+        Method.clearScreen();}
     public void menuSound(){
         ExecutorService Thread = Executors.newFixedThreadPool(4);
         Thread.submit(new Runnable() {public void run() { soundFX.playSound("sounds/click.wav"); }});

@@ -719,5 +719,45 @@ public class ASCII {
 
 
     }
+    public static void walking(){
+        try {
+            Thread.sleep(260);
+        }catch (Exception e){
+            System.out.println("wow");
+        }
+        System.out.println(
+                        "     _ .---. \n" +
+                        "    (_(-.__.'  ");
+        try {
+            Thread.sleep(650);
+        }catch (Exception e){
+            System.out.println("wow");
+        }
+        clearScreen();
+        System.out.println(
+                        "     _ .---.              \n" +
+                        "    (_(-.__.'             \n" +
+                        "               _   __     \n" +
+                        "              (_(-'  '.   \n" +
+                        "                 '---'      ");
+        try {
+            Thread.sleep(600);
+        }catch (Exception e){
+            System.out.println("wow");
+        }
+        clearScreen();
+        System.out.println(
+                        "     _ .---.                _ .---.  \n" +
+                        "    (_(-.__.'              (_(-.__.' \n" +
+                        "               _   __       _   __   \n" +
+                        "              (_(-'  '.    (_(-'  '. \n" +
+                        "                 '---'        '---'    ");
+        try {
+            Thread.sleep(480);
+        }catch (Exception e){
+            System.out.println("wow");
+        }
+    }
+
 }
 

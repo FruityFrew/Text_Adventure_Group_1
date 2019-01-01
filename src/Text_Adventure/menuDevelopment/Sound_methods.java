@@ -75,7 +75,7 @@ public class Sound_methods implements Serializable {
     public void unlockingDoor(){
         Threads.submit(new Runnable() {public void run() { soundFX.playSound("sounds/unlocking.wav"); }});
         try {
-            Thread.sleep(1500);
+            java.lang.Thread.sleep(1500);
         }catch (Exception e){
             System.out.println("Could not perform Thread.sleep method!");
         }

@@ -679,7 +679,7 @@ public class Method implements Serializable {
             play.playerDeathSound();
             play.loseSound();
             for (int i=0;i<5;i++) {
-                ColorPrint.ASCII.gameOverLogo();
+                ASCII.gameOverLogo();
             }
             //System.out.println(" ");
             //System.out.println("=========");
@@ -853,7 +853,7 @@ public class Method implements Serializable {
         public void walkSound(){
 
             Thread.submit(new Runnable() {public void run() { soundFX.playSound("sounds/walking.wav"); }});
-            ColorPrint.ASCII.walking();
+            ASCII.walking();
             clearScreen();}
         public void menuSound(){
 

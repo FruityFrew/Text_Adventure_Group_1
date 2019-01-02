@@ -84,12 +84,21 @@ public class Method implements Serializable {
      * Alex: this method is used to get and store the player name in the beginning of the game
      */
     public void playerName() {
-
-        System.out.println("The cellar of the Vicarage of Borgvattnet .." +
+        myMethod.slowPrint("The cellar of the Vicarage of Borgvattnet ..", 40);
+        myMethod.threadSleep(500);
+        myMethod.slowPrint(" \nDarkness has possessed this lost space, " +
+                " \nin between dimensions, on the border of the living and the dead. \n", 40);
+        myMethod.threadSleep(500);
+        myMethod.slowPrint(" \nDarkness has possessed this lost space, " +
+                " \nin between dimensions, on the border of the living and the dead. \n",40);
+        myMethod.slowPrint("\nThe space that once served the living is" +
+                " now home of the monsters.\n", 40);
+        /**System.out.println("The cellar of the Vicarage of Borgvattnet .." +
                 " \nDarkness has possessed this lost space, " +
                 " \nin between dimensions, on the border of the living and the dead. \n" +
-                "\nThe space that once served the living is now home of the monsters.");
-        System.out.println("What is your name traveler?");
+                "\nThe space that once served the living is now home of the monsters.");**/
+        myMethod.threadSleep(1000);
+        myMethod.slowPrint("What is your name traveler?",40);
 
         myMethod.hero1.setName(in.nextLine());
     }
@@ -857,12 +866,25 @@ public class Method implements Serializable {
 
     public void pressEnter() {
         String catchEnter;
-        System.out.println(ColorPrint.Background_WHITE + "----------------------------------------------------------------------------------------------------------------" + ColorPrint.ANSI_RESET);
-        System.out.println("                                       Press ENTER to start");
-        System.out.println(ColorPrint.Background_WHITE + "----------------------------------------------------------------------------------------------------------------" + ColorPrint.ANSI_RESET);
+        System.out.println(ColorPrint.Background_WHITE + "--------------------------------------------------------------------------------------------------------" + ColorPrint.ANSI_RESET);
+        System.out.println("                                    Press ENTER to start");
+        System.out.println(ColorPrint.Background_WHITE + "--------------------------------------------------------------------------------------------------------" + ColorPrint.ANSI_RESET);
         catchEnter = in.nextLine();
         play.laughSound();
 
+    }
+
+    public void slowPrint(String message, long millisPerChar) {
+        for (int i = 0; i < message.length(); i++) {
+            play.typeWriter();
+            System.out.print(message.charAt(i));
+
+            try {
+                Thread.sleep(millisPerChar);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     public String time() {
@@ -1041,6 +1063,14 @@ public class Method implements Serializable {
             Threads.submit(new Runnable() {
                 public void run() {
                     soundFX.playSound("sounds/map.wav");
+                }
+            });
+        }
+
+        public void typeWriter(){
+            Thread.submit(new Runnable() {
+                public void run() {
+                    soundFX.playSound("sounds/typewriter.wav");
                 }
             });
         }

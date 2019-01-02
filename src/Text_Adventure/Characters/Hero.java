@@ -7,7 +7,6 @@ import Text_Adventure.Items.Weapon;
 import Text_Adventure.Room;
 import Text_Adventure.menuDevelopment.ColorPrint;
 import Text_Adventure.menuDevelopment.Method;
-import Text_Adventure.menuDevelopment.Sound_methods;
 
 
 import java.io.Serializable;
@@ -24,7 +23,7 @@ public class Hero extends Character implements Serializable {
     public int asd=99;
     public int weaponDamageModifier; //this will modify the damage that a player deal, if the player has a weapon.
     transient Scanner input = new Scanner(System.in);
-    public Sound_methods play = new Sound_methods();
+    public Method.Sound_methods play = new Method.Sound_methods();
     public boolean printed;
 
 

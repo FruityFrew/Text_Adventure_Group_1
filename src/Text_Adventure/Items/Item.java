@@ -1,7 +1,5 @@
 package  Text_Adventure.Items;
 
-import Text_Adventure.menuDevelopment.ColorPrint;
-
 import java.io.Serializable;
 
 /**
@@ -26,5 +24,18 @@ public class Item implements Serializable {
      */
     public  String getName() {
         return Name;
+    }
+
+    public static class Treasure extends Item {
+        private int points;
+
+        public Treasure(String name, int points) {
+            super(name);
+            this.points = points;
+        }
+
+        public int addPoints() {
+            return points;
+        }
     }
 }

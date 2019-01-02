@@ -2,7 +2,6 @@ package Text_Adventure;
 
 
 import Text_Adventure.menuDevelopment.Method;
-import Text_Adventure.menuDevelopment.Sound_methods;
 
 import java.util.Scanner;
 
@@ -17,7 +16,7 @@ import java.util.Scanner;
  * you changes. This the best way to changes to someone else's code.
  */
 public class DisplayMap {
-    public static Sound_methods play = new Sound_methods();
+    public static Method.Sound_methods play = new Method.Sound_methods();
 
     // === BASIC BUILDING BLOCKS OF THE MAP ==========================================================
 

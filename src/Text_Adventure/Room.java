@@ -5,8 +5,6 @@ import Text_Adventure.Characters.Monster;
 import Text_Adventure.Items.*;
 import Text_Adventure.menuDevelopment.ColorPrint;
 import Text_Adventure.menuDevelopment.Method;
-import Text_Adventure.menuDevelopment.Play_Sound;
-import Text_Adventure.menuDevelopment.Sound_methods;
 
 import java.io.Serializable;
 import java.security.SecureRandom;
@@ -35,7 +33,7 @@ public class Room implements Serializable {
     private int index; //this is the way to reffer to the room, (the position does not works. this is not DataBase :) )
     private int dLevel; //Difficulty level. This takes the difficulty level of the Map object for practical reasons.
     private boolean exit = false; //this indicates if the room has a trap door exit or not.
-    public Sound_methods play = new Sound_methods();
+    public Method.Sound_methods play = new Method.Sound_methods();
     /**
      * Robert: This is the constructor for Room objects
      *
@@ -458,15 +456,15 @@ public class Room implements Serializable {
         return randomDrink;
     }
     //Nemanja: This is a method for random treasure chest
-    public Treasure getRandomTreasure() {
-        Treasure small = new Treasure("Small treasure chest", 100);
-        Treasure medium = new Treasure("Medium treasure chest", 200);
-        Treasure big = new Treasure("Large treasure chest", 350);
-        Treasure[] treasures = {small,medium,big};
+    public Item.Treasure getRandomTreasure() {
+        Item.Treasure small = new Item.Treasure("Small treasure chest", 100);
+        Item.Treasure medium = new Item.Treasure("Medium treasure chest", 200);
+        Item.Treasure big = new Item.Treasure("Large treasure chest", 350);
+        Item.Treasure[] treasures = {small,medium,big};
         Random rand = new Random();
 
         int i = rand.nextInt(3);
-        Treasure randomTreasure = treasures[i];
+        Item.Treasure randomTreasure = treasures[i];
 
         return randomTreasure;
     }

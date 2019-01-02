@@ -1,7 +1,5 @@
 package Text_Adventure;
 
-import Text_Adventure.menuDevelopment.ASCII;
-
 import Text_Adventure.menuDevelopment.Method;
 import Text_Adventure.menuDevelopment.Play_Sound;
 import Text_Adventure.menuDevelopment.SavedGame;

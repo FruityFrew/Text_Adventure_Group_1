@@ -6,6 +6,7 @@ import Text_Adventure.Characters.Monster;
 import Text_Adventure.DisplayMap;
 import Text_Adventure.Items.Consumable;
 import Text_Adventure.Items.Item;
+import Text_Adventure.Items.Key;
 import Text_Adventure.Items.Weapon;
 import Text_Adventure.Main;
 import Text_Adventure.Map;
@@ -599,16 +600,16 @@ public class Method implements Serializable {
             }
         }
         System.out.print(" | [6] Go to the menu");
-        if (myMethod.room1.monster == null) {
-            System.out.println(" | [0] generate monster(DEBUG)");
-        }
-        System.out.println(" | [7] Open the map");
+        System.out.print(" | [7] Open the map");
+        System.out.print(" | [0] DEBUG menu");
+
+
 
         int choice = menuChoice();
 
         switch (choice) {
             case 0:
-                myMethod.room1.monster = new Monster();
+                myMethod.debugMenu();
                 break;
             case 1:
                 if (myMethod.room1.monster != null) {
@@ -731,6 +732,69 @@ public class Method implements Serializable {
             }
         }
     }
+    public void debugMenu(){
+        System.out.println("ENTER OPTIONS");
+        if (myMethod.room1.monster == null) {
+            System.out.println("[1] GENERATE MONSTER");
+        }
+        System.out.println("[2] ADD ALL KEYS");
+        System.out.println("[3] SET HEALTH TO 1");
+        System.out.println("[4] SET HEALTH TO 999");
+        System.out.println("[5] go back");
+        int asdfg = menuChoice();
+        switch (asdfg){
+            case 1:
+                System.out.println("MONSTER GENERATED");
+                myMethod.room1.monster = new Monster();
+                break;
+            case 2:
+                Key rusty0=new Key("Rusty key 0");
+                Key rusty1=new Key("Rusty key 1");
+                Key rusty2=new Key("Rusty key 2");
+                rusty0.setType(0);
+                rusty1.setType(1);
+                rusty2.setType(2);
+                rusty0.setActive(true);
+                rusty1.setActive(true);
+                rusty2.setActive(true);
+                myMethod.hero1.addKeyToKeyRing(rusty0);
+                myMethod.hero1.addKeyToKeyRing(rusty1);
+                myMethod.hero1.addKeyToKeyRing(rusty2);
+                System.out.println("KEYS ADDED TO KEYRING !!!");
+                break;
+            case 3:
+                System.out.println("HEALTH SET TO 1 !!!");
+                myMethod.hero1.setHealth(1);
+                break;
+            case 4:
+                System.out.println("HEALTH SET TO 999 !!!");
+                myMethod.hero1.setHealth(999);
+                break;
+            case 5:
+                break;
+                default:
+                    System.out.println("USE ONLY AVAILABLE OPTIONS !!!");
+
+        }
+
+
+    }
+   /**switch (choice) {
+            case 1:
+                myMethod.room1.monster = new Monster();
+                break;
+            case 2:
+                Key rusty0=new Key("Rusty key 0");
+                myMethod.hero1.addKeyToKeyRing(rusty0);
+                break;
+            case 3:
+
+                break;
+            case 4:
+
+                break;
+
+        }**/
 
     public void loadGame() {
         Method.ShowSaves();
@@ -886,11 +950,7 @@ public class Method implements Serializable {
         }
         public void unlockingDoor(){
             Threads.submit(new Runnable() {public void run() { soundFX.playSound("sounds/unlocking.wav"); }});
-            try {
-                java.lang.Thread.sleep(1500);
-            }catch (Exception e){
-                System.out.println("Could not perform Thread.sleep method!");
-            }
+            ASCII.unlocking();
         }
         public void mapSound(){
             Threads.submit(new Runnable() {public void run() { soundFX.playSound("sounds/map.wav"); }});

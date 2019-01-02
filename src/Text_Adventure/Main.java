@@ -1,5 +1,6 @@
 package Text_Adventure;
 
+import Text_Adventure.menuDevelopment.ASCII;
 import Text_Adventure.menuDevelopment.Method;
 import Text_Adventure.menuDevelopment.Play_Sound;
 import Text_Adventure.menuDevelopment.SavedGame;
@@ -43,11 +44,12 @@ public class Main  implements Serializable {
         //it is because of debugging.
         Play_Sound music = new Play_Sound();
 
+        in.nextLine();
         ExecutorService Thread = Executors.newFixedThreadPool(4);
         Thread.submit(new Runnable() {public void run() { music.playSound("sounds/music.wav"); }});
 
-        //ASCII.printGroup1();
-       // ASCII.printGameName();
+        ASCII.printGroup1();
+        ASCII.printGameName();
         myMethod.pressEnter();
         Method.clearScreen();
         myMethod.threadSleep(2000);

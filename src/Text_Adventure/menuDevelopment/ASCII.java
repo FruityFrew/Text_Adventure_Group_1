@@ -345,7 +345,7 @@ public class ASCII {
                 "     .MMm     +MMy /MMy..`  hMMo yMM+        mMM- NMM:.`           /MMy     yMMs sMMo   `/mMd. hMMo-`     hMM-     NMM. \n" +
                 "      -osso+/://-` :hh/     ohh/ +hh:        shh. .:+oyys+:         .:/++++++:.` +ddy+//++/.   `-/osyso/  ohh.     yhh` ");
         try {
-            Thread.sleep(100);
+            Thread.sleep(1000);
         }catch (Exception e){
             System.out.println("wow");
         }

@@ -681,16 +681,29 @@ public class Method implements Serializable {
             for (int i=0;i<5;i++) {
                 ASCII.gameOverLogo();
             }
-            //System.out.println(" ");
-            //System.out.println("=========");
-            //System.out.println("Game Over");
-            myMethod.hero1.setHealth(300);
-            //System.out.println("========");
-            //System.out.println(" ");
+
+            playAgain();
+
             result = false;
         }
         return result;
     } //method gameInterface ends here
+    public void playAgain(){
+        System.out.println("===========");
+        System.out.println("Play again?");
+        System.out.println("===========");
+        System.out.printf("%n%n%n%n");
+        System.out.println("[1] Yes");
+        System.out.println("[2] No");
+        int playAgain = menuChoice();
+        if (playAgain==2){
+            System.exit(1);
+        }else {
+            myMethod.hero1.setHealth(300);
+            myMethod.hero1.highscore = 0;
+            myMethod.startTime = System.nanoTime();
+        }
+    }
 
     public static void ShowSaves() {
 

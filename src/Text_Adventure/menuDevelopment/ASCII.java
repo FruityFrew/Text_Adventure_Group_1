@@ -913,7 +913,7 @@ public class ASCII {
                 "             /%&&&&&%*                                                         \n" +
                 "              .              ");
         try {
-            Thread.sleep(40);
+            Thread.sleep(30);
         }catch (Exception e){
             System.out.println("wow");
         }
@@ -936,7 +936,7 @@ public class ASCII {
                 "             /%&&&&*                                                         \n" +
                 "              .        ");
         try {
-            Thread.sleep(40);
+            Thread.sleep(30);
         }catch (Exception e){
             System.out.println("wow");
         }
@@ -959,7 +959,7 @@ public class ASCII {
                 "             /%&&&&%#*                                                         \n" +
                 "              .            ");
         try {
-            Thread.sleep(40);
+            Thread.sleep(30);
         }catch (Exception e){
             System.out.println("wow");
         }
@@ -982,7 +982,7 @@ public class ASCII {
                 "             /%&&&&%#/**                                                       \n" +
                 "              .              ");
         try {
-            Thread.sleep(40);
+            Thread.sleep(30);
         }catch (Exception e){
             System.out.println("wow");
         }

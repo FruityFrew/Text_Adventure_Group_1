@@ -84,21 +84,21 @@ public class Method implements Serializable {
      * Alex: this method is used to get and store the player name in the beginning of the game
      */
     public void playerName() {
-        myMethod.slowPrint("The cellar of the Vicarage of Borgvattnet ..", 40);
+        myMethod.slowPrint("The cellar of the Vicarage of Borgvattnet ..", 50);
         myMethod.threadSleep(500);
         myMethod.slowPrint(" \nDarkness has possessed this lost space, " +
-                " \nin between dimensions, on the border of the living and the dead. \n", 40);
+                " \nin between dimensions, on the border of the living and the dead. \n", 50);
         myMethod.threadSleep(500);
         myMethod.slowPrint(" \nDarkness has possessed this lost space, " +
-                " \nin between dimensions, on the border of the living and the dead. \n",40);
+                " \nin between dimensions, on the border of the living and the dead. \n",50);
         myMethod.slowPrint("\nThe space that once served the living is" +
-                " now home of the monsters.\n", 40);
+                " now home of the monsters.\n", 50);
         /**System.out.println("The cellar of the Vicarage of Borgvattnet .." +
                 " \nDarkness has possessed this lost space, " +
-                " \nin between dimensions, on the border of the living and the dead. \n" +
-                "\nThe space that once served the living is now home of the monsters.");**/
+                " \n in between dimensions, on the border of the living and the dead. \n" +
+                "\nThe space that once served the living is now home of the monsters. \n");**/
         myMethod.threadSleep(1000);
-        myMethod.slowPrint("What is your name traveler?",40);
+        myMethod.slowPrint("\nWhat is your name traveler?\n",50);
 
         myMethod.hero1.setName(in.nextLine());
     }
@@ -115,9 +115,12 @@ public class Method implements Serializable {
      * method choosePlayerType
      */
     public void choosePlayerType() {
-
-        System.out.println("Hmmm .. " + hero1.getName() + ", what unordinary name, maybe fate brought you here ... or maybe just bad luck");
-        System.out.println("What are you in this life .. " +
+        myMethod.slowPrint("Hmmm .. " + hero1.getName() + ", what un-ordinary name, maybe fate brought you here ... " +
+                "or maybe just bad luck\n",50);
+        myMethod.threadSleep(500);
+        myMethod.slowPrint("\nWhat are you in this life .. \n",50);
+        myMethod.threadSleep(1000);
+        System.out.println(
                 "\n[1]\tA "+ColorPrint.ANSI_CYAN+"THIEF"+ColorPrint.ANSI_RESET+ " ?"  +
                 "\n[2]\tA lost "+ColorPrint.ANSI_CYAN+"PRIEST"+ColorPrint.ANSI_RESET+ " in search of your lost faith?! HA HA HA!" +
                 "\n[3]\tA haunted " +ColorPrint.ANSI_CYAN+"GHOST HUNTER"+ColorPrint.ANSI_RESET+ " ?" +

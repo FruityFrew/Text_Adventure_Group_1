@@ -82,6 +82,7 @@ public class Method implements Serializable {
 
     /**
      * Alex: this method is used to get and store the player name in the beginning of the game
+     * Nemanja: I modified Alex's method (implemented typewriter effect)
      */
     public void playerName() {
         myMethod.slowPrint("The cellar of the Vicarage of Borgvattnet ..\n", 50);
@@ -91,10 +92,6 @@ public class Method implements Serializable {
         myMethod.threadSleep(500);
         myMethod.slowPrint("\nThe space that once served the living is" +
                 " now home of the monsters.\n", 50);
-        /**System.out.println("The cellar of the Vicarage of Borgvattnet .." +
-                " \nDarkness has possessed this lost space, " +
-                " \n in between dimensions, on the border of the living and the dead. \n" +
-                "\nThe space that once served the living is now home of the monsters. \n");**/
         myMethod.threadSleep(1000);
         myMethod.slowPrint("\nWhat is your name traveler?\n",50);
 

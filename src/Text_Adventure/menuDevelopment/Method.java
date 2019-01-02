@@ -601,7 +601,7 @@ public class Method implements Serializable {
         }
         System.out.print(" | [6] Go to the menu");
         System.out.print(" | [7] Open the map");
-        System.out.print(" | [0] DEBUG menu");
+        System.out.print(" | [0] DEBUG menu\n");
 
 
 

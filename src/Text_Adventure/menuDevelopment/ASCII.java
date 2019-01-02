@@ -1,16 +1,15 @@
 package Text_Adventure.menuDevelopment;
 
-import javax.swing.*;
 
 import static Text_Adventure.menuDevelopment.Method.clearScreen;
 
 
 public class ASCII {
-    public static void printGroup1(){
+    public static void printGroup1() {
         clearScreen();
         try {
             Thread.sleep(300);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         System.out.println("\n" +
@@ -25,9 +24,10 @@ public class ASCII {
                 "            `\"Y88888P\" ");
         try {
             Thread.sleep(300);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
-        } clearScreen();
+        }
+        clearScreen();
 
         System.out.println("\n" +
                 "                                                                                                        \n" +
@@ -42,9 +42,10 @@ public class ASCII {
         );
         try {
             Thread.sleep(300);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
-        }clearScreen();
+        }
+        clearScreen();
         System.out.println("\n" +
                 "                                                                                                        \n" +
                 "            ,ad8888ba,   88888888ba     ,ad8888ba,    \n" +
@@ -59,9 +60,10 @@ public class ASCII {
                 "                                                                                                        \n");
         try {
             Thread.sleep(300);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
-        }clearScreen();
+        }
+        clearScreen();
         System.out.println("\n" +
                 "                                                                                                        \n" +
                 "            ,ad8888ba,   88888888ba     ,ad8888ba,    88        88  \n" +
@@ -76,9 +78,10 @@ public class ASCII {
                 "                                                                                                        \n");
         try {
             Thread.sleep(300);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
-        }clearScreen();
+        }
+        clearScreen();
         System.out.println("\n" +
                 "                                                                                                        \n" +
                 "            ,ad8888ba,   88888888ba     ,ad8888ba,    88        88  88888888ba       \n" +
@@ -93,9 +96,10 @@ public class ASCII {
                 "                                                                                                        \n");
         try {
             Thread.sleep(300);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
-        }clearScreen();
+        }
+        clearScreen();
         System.out.println("\n" +
                 "                                                                                                        \n" +
                 "            ,ad8888ba,   88888888ba     ,ad8888ba,    88        88  88888888ba          88              \n" +
@@ -110,9 +114,10 @@ public class ASCII {
                 "                                                                                                        \n");
         try {
             Thread.sleep(300);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
-        }clearScreen();
+        }
+        clearScreen();
         System.out.println("\n" +
                 "                                                                                                        \n" +
                 "            ,ad8888ba,   88888888ba     ,ad8888ba,    88        88  88888888ba          88              \n" +
@@ -138,9 +143,10 @@ public class ASCII {
                 "                                                                                                        \n");
         try {
             Thread.sleep(150);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
-        }clearScreen();
+        }
+        clearScreen();
         System.out.println("\n" +
                 "                                                                                                        \n" +
                 "            ,ad8888ba,   88888888ba     ,ad8888ba,    88        88  88888888ba          88              \n" +
@@ -155,9 +161,10 @@ public class ASCII {
                 "                                                                                                        \n");
         try {
             Thread.sleep(150);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
-        }clearScreen();
+        }
+        clearScreen();
         System.out.println("\n" +
                 "                                                                                                        \n" +
                 "            ,ad8888ba,   88888888ba     ,ad8888ba,    88        88  88888888ba          88              \n" +
@@ -173,9 +180,10 @@ public class ASCII {
 
         try {
             Thread.sleep(300);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
-        }clearScreen();
+        }
+        clearScreen();
         System.out.println("\n" +
                 "                                                                                                        \n" +
                 "            ,ad8888ba,   88888888ba     ,ad8888ba,    88        88  88888888ba          88              \n" +
@@ -201,9 +209,10 @@ public class ASCII {
                 "                                                                                                        \n");
         try {
             Thread.sleep(150);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
-        }clearScreen();
+        }
+        clearScreen();
         System.out.println("\n" +
                 "                                                                                                        \n" +
                 "            ,ad8888ba,   88888888ba     ,ad8888ba,    88        88  88888888ba          88              \n" +
@@ -219,9 +228,10 @@ public class ASCII {
 
         try {
             Thread.sleep(600);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
-        }clearScreen();
+        }
+        clearScreen();
         System.out.println("\n" +
                 "                                                                                                        \n" +
                 "            ,ad8888ba,   88888888ba     ,ad8888ba,    88        88  88888888ba          88              \n" +
@@ -247,13 +257,14 @@ public class ASCII {
                 "                                                                                                        \n");
         try {
             Thread.sleep(600);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
-        }clearScreen();
+        }
+        clearScreen();
 
         try {
             Thread.sleep(100);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         System.out.println("\n" +
@@ -281,13 +292,14 @@ public class ASCII {
                 "                                                                                                        \n");
         try {
             Thread.sleep(1200);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
-        }clearScreen();
+        }
+        clearScreen();
 
         try {
             Thread.sleep(300);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         System.out.println("\n" +
@@ -314,10 +326,11 @@ public class ASCII {
                 "                                                                                                        \n" +
                 "                                                                                                        \n");
     }
-    public static void printGameName(){
+
+    public static void printGameName() {
         try {
             Thread.sleep(1500);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         System.out.println();
@@ -333,13 +346,14 @@ public class ASCII {
         System.out.println();
         try {
             Thread.sleep(1000);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
     }
-    public static void gameOverLogo(){
 
-        System.out.println(ColorPrint.ANSI_YELLOW+"\n" +
+    public static void gameOverLogo() {
+
+        System.out.println(ColorPrint.ANSI_YELLOW + "\n" +
                 "       -+ooo+/:::.   .-///+/+/:.  +hh/       `syh. `-/osyso:         .-///+/+/:.  /hh:     ohh- `-:+syyo/  `-/-:++//:.`  \n" +
                 "     .MMm`    `..` /MMs     hMMo yMMMdo-``:smMMM- NMM+:`           :MMy     yMMo sMMo     dMM: hMMs:.     hMM-    `mMN- \n" +
                 "     .MMd          /MMs `.-/mMMo yMMhosddddssNMM- NMMmdhs/-        /MMy     yMMs sMMo     dMM: hMMNmhy+:  hMM:``.-/NNd. \n" +
@@ -348,7 +362,7 @@ public class ASCII {
                 "      -osso+/://-` :hh/     ohh/ +hh:        shh. .:+oyys+:         .:/++++++:.` +ddy+//++/.   `-/osyso/  ohh.     yhh` ");
         try {
             Thread.sleep(1000);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -361,7 +375,7 @@ public class ASCII {
                 "       :syyyo+/s+:. hhhh    :hhho/hhh/       hhhh.-/+syyyo+.       .:+osoosso/-`odddy++o++/.  .:+syyys+--hhh+    shhh-  ");
         try {
             Thread.sleep(100);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -374,7 +388,7 @@ public class ASCII {
                 "          -osyhyooys+-yhhhh`  shhhhhhhh+     +hhhh+/oyhhyyo/      .:+shyshyo/-oddddssso+/-`.:+shhyyo+hhhhs  .hhhhs      ");
         try {
             Thread.sleep(100);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -387,7 +401,7 @@ public class ASCII {
                 "               `+syhhyhhyoyhhhhs shhhhhhhhs   :hhhhhoshhhyy+-   `-/shdyhdyosdddddyys+/--+shhhyyyhhhhs ohhhhs            ");
         try {
             Thread.sleep(100);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -400,7 +414,7 @@ public class ASCII {
                 "                       :syhhhhhhhhhhhhhhhhhhhho ohhhhhhhhhys+` ./shddddhdddddhyso/+yhhhyhhhhhhhhhhho                   ");
         try {
             Thread.sleep(100);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -413,7 +427,7 @@ public class ASCII {
                 "                                .shhhhhhhhhhhhhhhhhhhhhhhhhhs++hdddddddddhyohhhhhhhhhhhhh+                             ");
         try {
             Thread.sleep(100);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -426,7 +440,7 @@ public class ASCII {
                 "                                           ohhhhhhhhhhhhhhhhhddddddddhhhhhhhhh`                                         ");
         try {
             Thread.sleep(100);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -439,7 +453,7 @@ public class ASCII {
                 "                                                      /hhhddddddhs                                                      ");
         try {
             Thread.sleep(100);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -452,7 +466,7 @@ public class ASCII {
                 "                                               `hhhhhhddddddhhhhhhhhhhy.                                                ");
         try {
             Thread.sleep(100);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -465,7 +479,7 @@ public class ASCII {
                 "                                    yhhhhhhhhhhhhddddddddhhhhhhhhhhhhhhhhhhhhhhhhs.                                     ");
         try {
             Thread.sleep(100);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -478,7 +492,7 @@ public class ASCII {
                 "                         yhhhhhhhhhhhhhho+sydddddddddddy/.-oyhhhhhhhhh/hhhhhhhhhhhhhhhhhhhyo`                           ");
         try {
             Thread.sleep(100);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -491,7 +505,7 @@ public class ASCII {
                 "               `hhhhhy+hhhhhyyhhhs/:/osyhdddddsyddhdhs/-   /oyyhhhshhhhh+  ohhhhhhhhsohhhhhshhhhhhys:                   ");
         try {
             Thread.sleep(100);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -504,7 +518,7 @@ public class ASCII {
                 "        .hhhhh- +hhhhyoyyhhyo/../+ossyddddh:+shhshhs+-`    .+syyhhs++hhhhh`   `hhhhhhhhh/ .hhhhh:oyhssyhys+.            ");
         try {
             Thread.sleep(100);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -517,7 +531,7 @@ public class ASCII {
                 "    hhhho   :hhhy-+syyhyo/- `-/+oooodddd/.:+sysoyyo/-`      -+syyhso/-ohhhy      :hhhhshhhy   -hhhh--/oy+osyyso-        ");
         try {
             Thread.sleep(100);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -530,7 +544,7 @@ public class ASCII {
                 " `hhh+    .hhh- /oyyys+:.   -/+++++yddh `-/ooo+oo+/-`       `/osyys+:. +hhh        shho yhho    `hhh/ .:++//ossso-      ");
         try {
             Thread.sleep(100);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -543,7 +557,7 @@ public class ASCII {
                 " `hhh+    .hhh- /oyyys+:.   -/+++++yddh `-/ooo+oo+/-`       `/osyys+:. +hhh        shho yhho    `hhh/ .:++//ossso-      ");
         try {
             Thread.sleep(100);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -556,7 +570,7 @@ public class ASCII {
                 "    hhhho   :hhhy-+syyhyo/- `-/+oooodddd/.:+sysoyyo/-`      -+syyhso/-ohhhy      :hhhhshhhy   -hhhh--/oy++syyso-        ");
         try {
             Thread.sleep(100);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -569,7 +583,7 @@ public class ASCII {
                 "        .hhhhh- +hhhhyoyyhhyo/../+ossyddddh:+shhshhs+-`    .+syyhhs++hhhhh`   `hhhhhhhhh/ .hhhhh:oyhssyhys+.            ");
         try {
             Thread.sleep(100);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -582,7 +596,7 @@ public class ASCII {
                 "               `hhhhhy+hhhhhyyhhhs/:/osyhdddddsyddhdhs/-   /oyyhhhshhhhh+  ohhhhhhhhsohhhhhshhhhhhys:                   ");
         try {
             Thread.sleep(100);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -595,7 +609,7 @@ public class ASCII {
                 "                         yhhhhhhhhhhhhhho+sydddddddddddy/.-oyhhhhhhhhh/hhhhhhhhhhhhhhhhhhhyo`                           ");
         try {
             Thread.sleep(100);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -608,7 +622,7 @@ public class ASCII {
                 "                                    yhhhhhhhhhhhhddddddddhhhhhhhhhhhhhhhhhhhhhhhhs.                                     ");
         try {
             Thread.sleep(100);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -621,7 +635,7 @@ public class ASCII {
                 "                                               `hhhhhhddddddhhhhhhhhhhy.                                                ");
         try {
             Thread.sleep(100);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -634,7 +648,7 @@ public class ASCII {
                 "                                                      /hhhddddddhs                                                      ");
         try {
             Thread.sleep(100);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -647,7 +661,7 @@ public class ASCII {
                 "                                           ohhhhhhhhhhhhhhhhhddddddddhhhhhhhhh`                                         ");
         try {
             Thread.sleep(100);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -660,7 +674,7 @@ public class ASCII {
                 "                                .shhhhhhhhhhhhhhhhhhhhhhhhhhs++hdddddddddhyohhhhhhhhhhhhh+                              ");
         try {
             Thread.sleep(100);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -673,7 +687,7 @@ public class ASCII {
                 "                       :syhhhhhhhhhhhhhhhhhhhho ohhhhhhhhhys+` ./shddddhdddddhyso/+yhhhyhhhhhhhhhhho                    ");
         try {
             Thread.sleep(100);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -686,7 +700,7 @@ public class ASCII {
                 "               `+syhhyhhyoyhhhhs shhhhhhhhs   :hhhhhoshhhyy+-   `-/shdyhdyosdddddyys+/--+shhhyyyhhhhs ohhhhs            ");
         try {
             Thread.sleep(100);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -699,7 +713,7 @@ public class ASCII {
                 "          -osyhyooys+-yhhhh`  shhhhhhhh+     +hhhh+/oyhhyyo/      .:+shyshyo/-oddddssso+/-`.:+shhyyo+hhhhs  .hhhhs      ");
         try {
             Thread.sleep(100);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -710,57 +724,58 @@ public class ASCII {
                 "      +MMMs  -/hddd.MMMMmmmdmMMMhoMMMo `.-.  MMMMoMMMNs+/-.`      .MMMm    sMMMhyMMMo   `MMMM-MMMMyo/-.`/MMMd:/ohNMNo`  \n" +
                 "      +MMMs    NMMM-MMMM-.` +MMMhoMMMo       MMMMoMMMd:.          .MMMm    sMMMyyMMMo  .+MMMh.MMMM:.`   /MMMy    dMMM/  \n" +
                 "       :syyyo+/s+:. hhhh    :hhho/hhh/       hhhh.-/+syyyo+.       .:+osoosso/-`odddy++o++/.  .:+syyys+--hhh+    shhh-  "
-                +ColorPrint.ANSI_RESET);
+                + ColorPrint.ANSI_RESET);
         try {
             Thread.sleep(100);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
-
 
 
     }
-    public static void walking(){
+
+    public static void walking() {
         try {
             Thread.sleep(260);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         System.out.println(
-                        "     _ .---. \n" +
+                "     _ .---. \n" +
                         "    (_(-.__.'  ");
         try {
             Thread.sleep(650);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
         System.out.println(
-                        "     _ .---.              \n" +
+                "     _ .---.              \n" +
                         "    (_(-.__.'             \n" +
                         "               _   __     \n" +
                         "              (_(-'  '.   \n" +
                         "                 '---'      ");
         try {
             Thread.sleep(600);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
         System.out.println(
-                        "     _ .---.                _ .---.  \n" +
+                "     _ .---.                _ .---.  \n" +
                         "    (_(-.__.'              (_(-.__.' \n" +
                         "               _   __       _   __   \n" +
                         "              (_(-'  '.    (_(-'  '. \n" +
                         "                 '---'        '---'    ");
         try {
             Thread.sleep(480);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
     }
-    public static void unlocking(){
+
+    public static void unlocking() {
         System.out.println("                                                                               \n" +
                 "                                                                               \n" +
                 "                                                                               \n" +
@@ -792,7 +807,7 @@ public class ASCII {
                 "                                                             ..           ");
         try {
             Thread.sleep(30);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -821,7 +836,7 @@ public class ASCII {
                 "                                                    */****////.  ");
         try {
             Thread.sleep(30);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -845,7 +860,7 @@ public class ASCII {
                 "                                                .*///.     ");
         try {
             Thread.sleep(30);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -868,7 +883,7 @@ public class ASCII {
                 "              .                  ");
         try {
             Thread.sleep(30);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -891,7 +906,7 @@ public class ASCII {
                 "              .         ");
         try {
             Thread.sleep(30);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -914,7 +929,7 @@ public class ASCII {
                 "              .              ");
         try {
             Thread.sleep(30);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -937,7 +952,7 @@ public class ASCII {
                 "              .        ");
         try {
             Thread.sleep(30);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -960,7 +975,7 @@ public class ASCII {
                 "              .            ");
         try {
             Thread.sleep(30);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -983,7 +998,7 @@ public class ASCII {
                 "              .              ");
         try {
             Thread.sleep(30);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -1006,7 +1021,7 @@ public class ASCII {
                 "              .        ");
         try {
             Thread.sleep(60);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -1029,7 +1044,7 @@ public class ASCII {
                 "              .  ");
         try {
             Thread.sleep(60);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -1052,7 +1067,7 @@ public class ASCII {
                 "              .  ");
         try {
             Thread.sleep(60);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -1075,7 +1090,7 @@ public class ASCII {
                 "              .  ");
         try {
             Thread.sleep(60);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -1098,7 +1113,7 @@ public class ASCII {
                 "              .        ");
         try {
             Thread.sleep(60);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -1121,7 +1136,7 @@ public class ASCII {
                 "              .       ");
         try {
             Thread.sleep(60);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -1144,7 +1159,7 @@ public class ASCII {
                 "              .  ");
         try {
             Thread.sleep(60);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -1167,7 +1182,7 @@ public class ASCII {
                 "              .     ");
         try {
             Thread.sleep(60);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -1190,7 +1205,7 @@ public class ASCII {
                 "              .       ");
         try {
             Thread.sleep(60);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -1213,7 +1228,7 @@ public class ASCII {
                 "              .         ");
         try {
             Thread.sleep(60);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -1236,7 +1251,7 @@ public class ASCII {
                 "              .         ");
         try {
             Thread.sleep(60);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -1259,7 +1274,7 @@ public class ASCII {
                 "              .                                                         ");
         try {
             Thread.sleep(60);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -1283,7 +1298,7 @@ public class ASCII {
                 "                                          */****///, ");
         try {
             Thread.sleep(60);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -1311,7 +1326,7 @@ public class ASCII {
                 "                                                ,///////*  ");
         try {
             Thread.sleep(60);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -1344,7 +1359,7 @@ public class ASCII {
                 "                                                         ..                    \n");
         try {
             Thread.sleep(60);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -1381,7 +1396,9 @@ public class ASCII {
                 "                                                            ,*////*            ");
         clearScreen();
     }
-    public static void youWin(){
+
+    public static void youWin() {
+        clearScreen();
         System.out.println("@@@@@@,   %@@@@@@@@@* %@@@@@%#,.   .,#%@@@@@%   ,@@@@@@@%   ,@@@@@@@@@@@@,  ,%@@@@@@@,   ,@@@@@@@%    %@%   ,@@@,   ,@@@@@@@,   ,@@@@,   ,@@@@%    %@@@@*   ,@@\n" +
                 "@@@@@@,   %@@@@@@@.   %@@,    ,#%%%#,    ,@@%   ,@@@@@@@%   ,@@@@@@@@@@@@,  ,%@@@@@@@,   ,@@@@@@@%    %@%   ,@@@,   ,@@@@@@@,   ,@@@@,   ,@@@@%    %@@@@,   ,@@\n" +
                 "@@@@@@,   *&@@@@#     %@@,   ,@@@@@@@,   ,@@%   ,@@@@@@@%   ,@@@@@@@@@@@@,  ,%@@@@@@@,   ,@@@@@@@%    %@%   ,@@@,    *&@@@@@,   ,@@@@,   ,@@@@%    %@@@@,   ,@@\n" +
@@ -1393,7 +1410,7 @@ public class ASCII {
                 "@@@@@@@@@@@@,   %@@@@@@@@@%#,.       .,#&@@@@#          .,*%@@@@@@@@@@@@@@%#,.                    ,#&@@@%   ,@@@,   ,@@@@@@@,   ,@@@@,   ,@@@@%    %@@@@,   ,@@");
         try {
             Thread.sleep(60);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -1408,7 +1425,7 @@ public class ASCII {
                 "@@@@@@@@@@@@,   %@@@@@@@@@%#,.       .,#&@@@@#          .,*%@@@@@@@@@@@@@@%#,.                    ,#&@@@%   ,@@@,   ,@@@@@@@,   ,@@@@,   ,@@@@%    %@@@@,   ,@@");
         try {
             Thread.sleep(60);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -1423,7 +1440,7 @@ public class ASCII {
                 "@@@@@@@@@@@@,   %@@@@@@@@%%*.         .*%&@@@*           ,,#&@@@@@@@@@@@@,.                     .*%&@@%   ,@@@,   ,@@@@@@@,   ,@@@@,   ,@@@@%    %@@@@,   ,@@");
         try {
             Thread.sleep(60);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -1438,7 +1455,7 @@ public class ASCII {
                 "@@@@@@@@@@@@,   %@@@@@@@@@%#,,       ,,#%@@@@#          .,*%&@@@@@@@@@@@@&%*,.                   .,#%&@@%   ,@@@,   ,@@@@@@@,   ,@@@@,   ,@@@@%    %@@@@,   ,@@");
         try {
             Thread.sleep(60);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -1453,7 +1470,7 @@ public class ASCII {
                 "@@@@@@@@@@@@/,,,&@@@@@@@@@@&%%*,,,,,*%%&@@@@@,,,,,,,,*%%%@@@@@@@@@@@@@@@@&%%*,,,,,,,,,,,,,,,,,,#%&@@@@&,,,/@@@/,,,/@@@@@@@/,,,/@@@@/,,,/@@@@&,,,,&@@@@/,,,/@@");
         try {
             Thread.sleep(60);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -1468,7 +1485,7 @@ public class ASCII {
                 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
         try {
             Thread.sleep(60);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -1483,7 +1500,7 @@ public class ASCII {
                 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
         try {
             Thread.sleep(60);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -1498,7 +1515,7 @@ public class ASCII {
                 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
         try {
             Thread.sleep(60);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -1513,7 +1530,7 @@ public class ASCII {
                 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
         try {
             Thread.sleep(60);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -1528,14 +1545,14 @@ public class ASCII {
                 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
         try {
             Thread.sleep(60);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
         System.out.println("");
         try {
             Thread.sleep(60);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -1550,7 +1567,7 @@ public class ASCII {
                 "@@@@@@/,,,&@@@@@@@@@#,&@@@@@%%%*,,,,#%%@@@@@&,,,/@@@@@@@&,,,/@@@@@@@@@@@@/,,/&@@@@@@@/,,,/@@@@@@@&,,,,%@&,,,/@@@/,,,/@@@@@@@/,,,/@@@@/,,,/@@@@&,,,,&@@@@/,,,/@@");
         try {
             Thread.sleep(60);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -1565,7 +1582,7 @@ public class ASCII {
                 "@@@@@@,   %@@@@@@@@#  %@@%#,,.        .,#&@@%   ,@@@@@@@%   ,@@@@@@@@@@@@,  ,%@@@@@@@,   ,@@@@@@@%    %@%   ,@@@,   ,@@@@@@@,   ,@@@@,   ,@@@@%    %@@@@,   ,@@");
         try {
             Thread.sleep(60);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -1580,7 +1597,7 @@ public class ASCII {
                 "@@@@@@,   %@@@@@@@#*  %@@#,             ,#@@%   ,@@@@@@@%   ,@@@@@@@@@@@@,  ,%@@@@@@@,   ,@@@@@@@%    %@%   ,@@@,   ,@@@@@@@,   ,@@@@,   ,@@@@%    %@@@@,   ,@@");
         try {
             Thread.sleep(60);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -1595,7 +1612,7 @@ public class ASCII {
                 "@@@@@@,   %@@@@@@@#*  %@@#,             ,#@@%   ,@@@@@@@%   ,@@@@@@@@@@@@,  ,%@@@@@@@,   ,@@@@@@@%    %@%   ,@@@,   ,@@@@@@@,   ,@@@@,   ,@@@@%    %@@@@,   ,@@");
         try {
             Thread.sleep(60);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -1610,7 +1627,7 @@ public class ASCII {
                 "@@@@@@,   %@@@@@@@@#  %@@%#,   .,,,.   ,#&@@%   ,@@@@@@@%   ,@@@@@@@@@@@@,  ,%@@@@@@@,   ,@@@@@@@%    %@%   ,@@@,   ,@@@@@@@,   ,@@@@,   ,@@@@%    %@@@@,   ,@@");
         try {
             Thread.sleep(60);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -1625,7 +1642,7 @@ public class ASCII {
                 "@@@@@@,   %@@@@@@@@#  %@@%#,   .,,,.   ,#&@@%   ,@@@@@@@%   ,@@@@@@@@@@@@,  ,%@@@@@@@,   ,@@@@@@@%    %@%   ,@@@,   ,@@@@@@@,   ,@@@@,   ,@@@@%    %@@@@,   ,@@");
         try {
             Thread.sleep(60);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -1640,7 +1657,7 @@ public class ASCII {
                 "@@@@@@,   %@@@@@@@#*  %@@#,             ,#@@%   ,@@@@@@@%   ,@@@@@@@@@@@@,  ,%@@@@@@@,   ,@@@@@@@%    %@%   ,@@@,   ,@@@@@@@,   ,@@@@,   ,@@@@%    %@@@@,   ,@@");
         try {
             Thread.sleep(60);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -1655,7 +1672,7 @@ public class ASCII {
                 "@@@@@@,   %@@@@@@@#*  %@@#,             ,#@@%   ,@@@@@@@%   ,@@@@@@@@@@@@,  ,%@@@@@@@,   ,@@@@@@@%    %@%   ,@@@,   ,@@@@@@@,   ,@@@@,   ,@@@@%    %@@@@,   ,@@");
         try {
             Thread.sleep(60);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -1670,7 +1687,7 @@ public class ASCII {
                 "@@@@@@,   %@@@@@@@@#  %@@%#,,.        .,#&@@%   ,@@@@@@@%   ,@@@@@@@@@@@@,  ,%@@@@@@@,   ,@@@@@@@%    %@%   ,@@@,   ,@@@@@@@,   ,@@@@,   ,@@@@%    %@@@@,   ,@@");
         try {
             Thread.sleep(60);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -1685,7 +1702,7 @@ public class ASCII {
                 "@@@@@@/,,,&@@@@@@@@@#,&@@@@@%%%*,,,,#%%@@@@@&,,,/@@@@@@@&,,,/@@@@@@@@@@@@/,,/&@@@@@@@/,,,/@@@@@@@&,,,,%@&,,,/@@@/,,,/@@@@@@@/,,,/@@@@/,,,/@@@@&,,,,&@@@@/,,,/@@");
         try {
             Thread.sleep(60);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -1700,7 +1717,7 @@ public class ASCII {
                 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
         try {
             Thread.sleep(60);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -1715,7 +1732,7 @@ public class ASCII {
                 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
         try {
             Thread.sleep(60);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -1730,7 +1747,7 @@ public class ASCII {
                 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
         try {
             Thread.sleep(60);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -1745,7 +1762,7 @@ public class ASCII {
                 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
         try {
             Thread.sleep(60);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -1760,7 +1777,7 @@ public class ASCII {
                 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
         try {
             Thread.sleep(60);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -1775,7 +1792,7 @@ public class ASCII {
                 "@@@@@@@@@@@@/,,,&@@@@@@@@@@&%%*,,,,,*%%&@@@@@,,,,,,,,*%%%@@@@@@@@@@@@@@@@&%%*,,,,,,,,,,,,,,,,,,#%&@@@@&,,,/@@@/,,,/@@@@@@@/,,,/@@@@/,,,/@@@@&,,,,&@@@@/,,,/@@");
         try {
             Thread.sleep(60);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -1790,7 +1807,7 @@ public class ASCII {
                 "@@@@@@@@@@@@,   %@@@@@@@@@%#,,       ,,#%@@@@#          .,*%&@@@@@@@@@@@@&%*,.                   .,#%&@@%   ,@@@,   ,@@@@@@@,   ,@@@@,   ,@@@@%    %@@@@,   ,@@");
         try {
             Thread.sleep(60);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -1805,7 +1822,7 @@ public class ASCII {
                 "@@@@@@@@@@@@,   %@@@@@@@@%%*.         .*%&@@@*           ,,#&@@@@@@@@@@@@,.                     .*%&@@%   ,@@@,   ,@@@@@@@,   ,@@@@,   ,@@@@%    %@@@@,   ,@@");
         try {
             Thread.sleep(60);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();
@@ -1820,7 +1837,7 @@ public class ASCII {
                 "@@@@@@@@@@@@,   %@@@@@@@@@%#,.       .,#&@@@@#          .,*%@@@@@@@@@@@@@@%#,.                    ,#&@@@%   ,@@@,   ,@@@@@@@,   ,@@@@,   ,@@@@%    %@@@@,   ,@");
         try {
             Thread.sleep(60);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("wow");
         }
         clearScreen();

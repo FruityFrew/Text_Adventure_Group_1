@@ -84,13 +84,11 @@ public class Method implements Serializable {
      * Alex: this method is used to get and store the player name in the beginning of the game
      */
     public void playerName() {
-        myMethod.slowPrint("The cellar of the Vicarage of Borgvattnet ..", 50);
+        myMethod.slowPrint("The cellar of the Vicarage of Borgvattnet ..\n", 50);
         myMethod.threadSleep(500);
         myMethod.slowPrint(" \nDarkness has possessed this lost space, " +
                 " \nin between dimensions, on the border of the living and the dead. \n", 50);
         myMethod.threadSleep(500);
-        myMethod.slowPrint(" \nDarkness has possessed this lost space, " +
-                " \nin between dimensions, on the border of the living and the dead. \n",50);
         myMethod.slowPrint("\nThe space that once served the living is" +
                 " now home of the monsters.\n", 50);
         /**System.out.println("The cellar of the Vicarage of Borgvattnet .." +
@@ -115,9 +113,14 @@ public class Method implements Serializable {
      * method choosePlayerType
      */
     public void choosePlayerType() {
-        myMethod.slowPrint("Hmmm .. " + hero1.getName() + ", what un-ordinary name, maybe fate brought you here ... " +
-                "or maybe just bad luck\n",50);
+        myMethod.slowPrint("Hmmm .. " + hero1.getName(), 50);
         myMethod.threadSleep(500);
+        myMethod.slowPrint(", what un-ordinary name, ",50);
+        myMethod.threadSleep(500);
+        myMethod.slowPrint(" maybe fate brought you here ... ",50);
+        myMethod.threadSleep(500);
+        myMethod.slowPrint("or maybe just bad luck\n",50);
+        myMethod.threadSleep(1000);
         myMethod.slowPrint("\nWhat are you in this life .. \n",50);
         myMethod.threadSleep(1000);
         System.out.println(

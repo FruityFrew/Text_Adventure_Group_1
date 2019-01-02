@@ -533,6 +533,7 @@ public class Room implements Serializable {
         int S = this.S;
         int W = this.W;
         int index = 0;
+        boolean aMatch = false; //Robert: this variable does a specific thing. Leave it as it is.
         while(running){
             System.out.println(" ");
             System.out.println("Changing room");
@@ -569,12 +570,16 @@ public class Room implements Serializable {
                             for (Key key:hero.keyRing){
                                 if (doors.get(0).getType() == key.getType()){
                                     doors.get(0).setLocked(false);
+                                    aMatch = true;
                                     System.out.println("You found a suitable key!");
                                     System.out.println("You are unlocking the door...");
                                     play.unlockingDoor();
                                     hero.addHighScore(100);
                                     break;
                                 }
+                            }
+                            if (aMatch == false){
+                                System.out.println("You found no suitable key");
                             }
                         } else {
                             index = doors.get(0).getRoom();
@@ -595,12 +600,17 @@ public class Room implements Serializable {
                             for (Key key:hero.keyRing){
                                 if (doors.get(1).getType() == key.getType()){
                                     doors.get(1).setLocked(false);
+                                    aMatch = true;
                                     System.out.println("You found a suitable key!");
                                     System.out.println("You are unlocking the door...");
                                     play.unlockingDoor();
                                     hero.addHighScore(100);
                                     break;
                                 }
+
+                            }
+                            if (aMatch == false){
+                                System.out.println("You found no suitable key");
                             }
                         } else {
                             index = doors.get(1).getRoom();
@@ -621,12 +631,17 @@ public class Room implements Serializable {
                             for (Key key:hero.keyRing){
                                 if (doors.get(2).getType() == key.getType()){
                                     doors.get(2).setLocked(false);
+                                    aMatch = true;
                                     System.out.println("You found a suitable key!");
                                     System.out.println("You are unlocking the door...");
                                     play.unlockingDoor();
                                     hero.addHighScore(100);
                                     break;
                                 }
+                            }
+
+                            if (aMatch == false){
+                                System.out.println("You found no suitable key");
                             }
                         } else {
                             index = doors.get(2).getRoom();
@@ -647,12 +662,17 @@ public class Room implements Serializable {
                             for (Key key:hero.keyRing){
                                 if (doors.get(3).getType() == key.getType()){
                                     doors.get(3).setLocked(false);
+                                    aMatch = true;
                                     System.out.println("You found a suitable key!");
                                     System.out.println("You are unlocking the door...");
                                     play.unlockingDoor();
                                     hero.addHighScore(100);
                                     break;
                                 }
+                            }
+
+                            if (aMatch == false){
+                                System.out.println("You found no suitable key");
                             }
                         } else {
                             index = doors.get(3).getRoom();

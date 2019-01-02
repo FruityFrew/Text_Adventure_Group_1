@@ -138,4 +138,5 @@ public class Character implements Serializable {
         System.out.println(points + " subtrackted from your health");
         health = health - points;
     }
+
 }

@@ -3,6 +3,7 @@ package Text_Adventure;
 import Text_Adventure.Characters.Hero;
 import Text_Adventure.Characters.Monster;
 import Text_Adventure.Items.*;
+import Text_Adventure.menuDevelopment.ASCII;
 import Text_Adventure.menuDevelopment.ColorPrint;
 import Text_Adventure.menuDevelopment.Method;
 
@@ -704,6 +705,9 @@ public class Room implements Serializable {
                         System.out.println("Thank you for playing");
                         System.out.println(" =============== ");
                         System.out.println(" ");
+                        for (int i=0;i<5;i++) {
+                            ASCII.youWin();
+                        }
                     }
                     break;
                 default:

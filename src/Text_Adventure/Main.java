@@ -44,7 +44,7 @@ public class Main  implements Serializable {
         //it is because of debugging.
         Play_Sound music = new Play_Sound();
 
-        in.nextLine();
+        //in.nextLine();
         ExecutorService Thread = Executors.newFixedThreadPool(4);
         Thread.submit(new Runnable() {public void run() { music.playSound("sounds/music.wav"); }});
 

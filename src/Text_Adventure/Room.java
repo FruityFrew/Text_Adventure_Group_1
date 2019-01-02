@@ -707,6 +707,7 @@ public class Room implements Serializable {
                     }
                     break;
                 default:
+                    Method.clearScreen();
                     index = positionToIndex(x,y);
                     running = false;
             }

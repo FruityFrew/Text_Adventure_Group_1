@@ -70,7 +70,6 @@ public class Hero extends Character implements Serializable {
     }
 
 
-
     public void viewContentsOfBackpack() {
         play.backpackSound();
         Scanner input = new Scanner(System.in); //I added this line to overcome the conflict between
@@ -283,6 +282,34 @@ public class Hero extends Character implements Serializable {
             }
         } return asd;
 
+    }
+
+    public void makeThief(){
+        setPlayerType("Thief");
+        setHitChance(0.8);
+        setMaxAttack(80);
+        setHealth(300);
+    }
+
+    public void makeTourist(){
+        setPlayerType("Tourist");
+        setHitChance(0.7);
+        setMaxAttack(80);
+        setHealth(350);
+    }
+
+    public void makePriest(){
+        setPlayerType("Priest");
+        setHitChance(0.6);
+        setMaxAttack(80);
+        setHealth(400);
+    }
+
+    public void makeGhostHunter(){
+        setPlayerType("Ghost-Hunter");
+        setHitChance(0.6);
+        setMaxAttack(100);
+        setHealth(300);
     }
 
 

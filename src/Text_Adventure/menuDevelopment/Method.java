@@ -114,23 +114,33 @@ public class Method implements Serializable {
         /**
          * Alex:Sunday the Hero and Character was not functional, so I created this enum for use
          */
+        //Robert: in the Hero Class there were stats that are meant for each different player type.
+        //The problem was that those stats were set only through the constructor.
+        //I bypassed the problem by creating 4 methods one for each class that are arranging the stats
+        //based on the type of the player.
+        //I didn't touch the statistics yet, I am more focused to the constext now
+        //The content can be taken care later.
         switch (Main.choice) {
 
             case 1:
                 play.menuSound();
-                hero1.setPlayerType("Thief");
+                //hero1.setPlayerType("Thief");
+                hero1.makeThief();
                 break;
             case 2:
                 play.menuSound();
-                hero1.setPlayerType("Priest");
+                //hero1.setPlayerType("Priest");
+                hero1.makePriest();
                 break;
             case 3:
                 play.menuSound();
-                hero1.setPlayerType("Ghost Hunter");
+                //hero1.setPlayerType("Ghost Hunter");
+                hero1.makeGhostHunter();
                 break;
             case 4:
                 play.menuSound();
-                hero1.setPlayerType("Tourist");
+                //hero1.setPlayerType("Tourist");
+                hero1.makeTourist();
                 break;
             default:
                 play.menuSound();

@@ -2,10 +2,7 @@ package Text_Adventure;
 
 import Text_Adventure.Characters.Hero;
 import Text_Adventure.Characters.Monster;
-import Text_Adventure.Items.Consumable;
-import Text_Adventure.Items.Item;
-import Text_Adventure.Items.Key;
-import Text_Adventure.Items.Weapon;
+import Text_Adventure.Items.*;
 import Text_Adventure.menuDevelopment.ColorPrint;
 import Text_Adventure.menuDevelopment.Method;
 import Text_Adventure.menuDevelopment.Play_Sound;
@@ -459,6 +456,19 @@ public class Room implements Serializable {
         Consumable randomDrink = consumables[i];
 
         return randomDrink;
+    }
+    //Nemanja: This is a method for random treasure chest
+    public Treasure getRandomTreasure() {
+        Treasure small = new Treasure("Small treasure chest", 100);
+        Treasure medium = new Treasure("Medium treasure chest", 200);
+        Treasure big = new Treasure("Large treasure chest", 350);
+        Treasure[] treasures = {small,medium,big};
+        Random rand = new Random();
+
+        int i = rand.nextInt(3);
+        Treasure randomTreasure = treasures[i];
+
+        return randomTreasure;
     }
 
     //Robert: This method is a copycat of Nemo's method getRandomDrink()

@@ -26,7 +26,7 @@ public class Item implements Serializable {
         return Name;
     }
 
-    public static class Treasure extends Item {
+    public static class Treasure extends Item implements Serializable {
         private int points;
 
         public Treasure(String name, int points) {

@@ -374,6 +374,8 @@ public class Method implements Serializable {
     }
 
     // Ahmed: Fight system that uses already exisisting damage generator in Character-class
+    //Robert: If you wander why the fighting system works is because I did a 5 line patch
+    //that solves the problem. The patch is located in the main constructor of the room class
     public int exchangeAttackWithMonster(Hero hero, Monster monster) {
         //First hero attacks
         int damageHolder = Character.generateDamage(hero.getHitChance(), hero.getMaxAttack(), hero1.weaponDamageModifier);

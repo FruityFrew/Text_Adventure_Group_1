@@ -13,6 +13,8 @@ public class Character implements Serializable {
     private int health;
     private String playerType;
     private boolean dead = false; //Robert: we need that to know when the hero or the monster dies
+    //Robert: If you wander why the fighting system works is because I did a patch
+    //that solves the problem. The patch is located in the main constructor of the room class
 
 
     public Character() {

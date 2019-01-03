@@ -29,7 +29,7 @@ public class Room implements Serializable {
     private Item item;
     public Monster monster;
     private String wall;
-    private int spawnMonsterRate = 25;
+    private int spawnMonsterRate = 100;
     private int spawnItemRate = 90;
     private int index; //this is the way to reffer to the room, (the position does not works. this is not DataBase :) )
     private int dLevel; //Difficulty level. This takes the difficulty level of the Map object for practical reasons.
@@ -290,12 +290,17 @@ public class Room implements Serializable {
     /**
      * Robert: This is the method that describes the monster in the room.
      */
-    public void describeMonster() {
+    public void describeMonster(Hero hero) {
         System.out.println("Monster in the room:");
         if (this.monster != null) {
             //System.out.println("In the shadows you see a figure.");
             System.out.println("It is: " +ColorPrint.ANSI_RED+ monster.getMonsterType()
                     +ColorPrint.ANSI_RESET);
+            if (hero.getWeapon() != null){
+                if (hero.getWeapon().getFavoriteEnemy() == this.monster.getHatedWeapon()){
+                    System.out.println("Your weapon is happy.");
+                }
+            }
         } else {
             System.out.println("No one. Probably just the wind");
         }

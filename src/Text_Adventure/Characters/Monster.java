@@ -12,6 +12,7 @@ public class Monster extends Character implements Serializable {
     private String monsterType;
     private int roomIndex;
     private double monsterHitChance;
+    private int hatedWeapon;
     //Robert: If you wander why the fighting system works is because I did a patch
     //that solves the problem. The patch is located in the main constructor of the room class
 
@@ -33,6 +34,7 @@ public class Monster extends Character implements Serializable {
         this.monsterType=monsterTypeValues[monsterValueType];
         this.monsterAttack= monsterAttackValues[monsterValueAttack];
         this.monsterHitChance= monsterHitValues[monsterValueHitChance];
+        this.hatedWeapon = random.nextInt(3);
         this.roomIndex=roomIndex;
     }
 
@@ -71,5 +73,9 @@ public class Monster extends Character implements Serializable {
 
     public double getMonsterHitChance() {
         return monsterHitChance;
+    }
+
+    public int getHatedWeapon() {
+        return hatedWeapon;
     }
 }

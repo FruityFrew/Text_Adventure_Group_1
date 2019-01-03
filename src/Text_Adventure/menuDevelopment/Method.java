@@ -378,9 +378,18 @@ public class Method implements Serializable {
     //that solves the problem. The patch is located in the main constructor of the room class
     public int exchangeAttackWithMonster(Hero hero, Monster monster) {
         //First hero attacks
+
         int damageHolder = Character.generateDamage(hero.getHitChance(), hero.getMaxAttack(), hero1.weaponDamageModifier);
         monster.setHealth(monster.getHealth() - damageHolder);
         if (monster.getHealth() > 0) {
+            if (hero.getWeapon() != null){
+                //Robert: The following 5 lines of code are implementing the favorite enemy feature.
+                if (hero.getWeapon().getFavoriteEnemy() == monster.getHatedWeapon()){
+                    System.out.println("Your weapon attacks " + ColorPrint.ANSI_RED + monster.getMonsterType() + " successfully.");
+                    monster.setHealth(monster.getHealth() - 20);
+                    System.out.println(ColorPrint.ANSI_RED + monster.getMonsterType() + " loses 20 points of health");
+                }
+            }
             if (damageHolder > 1) {
                 play.kickSound();
                 System.out.printf("You hit " + ColorPrint.ANSI_RED + myMethod.room1.monster.getMonsterType() + ColorPrint.ANSI_RESET + " and "
@@ -584,7 +593,7 @@ public class Method implements Serializable {
         boolean result = true;
         //int newRoom = 0;
         if (myMethod.room1.monster != null) {
-            myMethod.room1.describeMonster();
+            myMethod.room1.describeMonster(myMethod.hero1);
         }
         if (myMethod.room1.monster == null) {
             myMethod.room1.describeRoom();

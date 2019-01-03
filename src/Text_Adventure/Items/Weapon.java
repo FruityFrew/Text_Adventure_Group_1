@@ -1,6 +1,7 @@
 package Text_Adventure.Items;
 
 import java.io.Serializable;
+import java.security.SecureRandom;
 
 /**
  * @author Nemanja Negovanovic
@@ -8,6 +9,8 @@ import java.io.Serializable;
 public class Weapon extends Item implements Serializable {
     private int damage;
     private String HeroType;
+    private int favoriteEnemy;
+    SecureRandom random = new SecureRandom();
 //    Weapon cross = new Weapon("Cross", 100);
 //    Weapon knife = new Weapon("Knife", 100);
 //    Weapon rose = new Weapon("Rose", 100);
@@ -21,6 +24,8 @@ public class Weapon extends Item implements Serializable {
     public Weapon(String name, int damage) {
         super(name);
         this.damage = damage;
+        this.favoriteEnemy = random.nextInt(3);
+
     }
 
     /**
@@ -49,5 +54,9 @@ public class Weapon extends Item implements Serializable {
 
     public void setHeroType(String heroType) {
         HeroType = heroType;
+    }
+
+    public int getFavoriteEnemy() {
+        return favoriteEnemy;
     }
 }

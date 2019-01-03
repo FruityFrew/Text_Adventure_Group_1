@@ -78,6 +78,17 @@ public class Room implements Serializable {
         }
         generateDoors(x, y, level, N, E, S, W);
         generateWalls();
+
+        //Robert: As you may noticed the fight system didn't work at all until now.
+        // That was because the Character class and its child classes Hero and Monster.
+        //weren't properly respected or designed.
+        // The following 5 lines are  handling the issue.
+        if(monster != null){
+            monster.setHealth(monster.getMonsterHealth()); //Robert: small but extremely important patch
+            monster.setMaxAttack(monster.getMonsterAttack()); //Robert: small but extremely important patch
+            monster.setHitChance(monster.getMonsterHitChance()); //Robert: small but extremely important patch
+        }
+
         //I commended the code below because I found a better exit spawning system but I will keep the code
         //bit more for safety reasons.
 //        int exitFactor = random.nextInt(level * level);
@@ -279,12 +290,17 @@ public class Room implements Serializable {
     /**
      * Robert: This is the method that describes the monster in the room.
      */
-    public void describeMonster() {
+    public void describeMonster(Hero hero) {
         System.out.println("Monster in the room:");
         if (this.monster != null) {
             //System.out.println("In the shadows you see a figure.");
             System.out.println("It is: " +ColorPrint.ANSI_RED+ monster.getMonsterType()
                     +ColorPrint.ANSI_RESET);
+            if (hero.getWeapon() != null){
+                if (hero.getWeapon().getFavoriteEnemy() == this.monster.getHatedWeapon()){
+                    System.out.println("Your weapon is happy.");
+                }
+            }
         } else {
             System.out.println("No one. Probably just the wind");
         }

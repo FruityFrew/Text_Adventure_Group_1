@@ -374,11 +374,22 @@ public class Method implements Serializable {
     }
 
     // Ahmed: Fight system that uses already exisisting damage generator in Character-class
+    //Robert: If you wander why the fighting system works is because I did a 5 line patch
+    //that solves the problem. The patch is located in the main constructor of the room class
     public int exchangeAttackWithMonster(Hero hero, Monster monster) {
         //First hero attacks
+
         int damageHolder = Character.generateDamage(hero.getHitChance(), hero.getMaxAttack(), hero1.weaponDamageModifier);
         monster.setHealth(monster.getHealth() - damageHolder);
         if (monster.getHealth() > 0) {
+            if (hero.getWeapon() != null){
+                //Robert: The following 5 lines of code are implementing the favorite enemy feature.
+                if (hero.getWeapon().getFavoriteEnemy() == monster.getHatedWeapon()){
+                    System.out.println("Your weapon attacks " + ColorPrint.ANSI_RED + monster.getMonsterType() + " successfully.");
+                    monster.setHealth(monster.getHealth() - 20);
+                    System.out.println(ColorPrint.ANSI_RED + monster.getMonsterType() + " loses 20 points of health");
+                }
+            }
             if (damageHolder > 1) {
                 play.kickSound();
                 System.out.printf("You hit " + ColorPrint.ANSI_RED + myMethod.room1.monster.getMonsterType() + ColorPrint.ANSI_RESET + " and "
@@ -582,7 +593,7 @@ public class Method implements Serializable {
         boolean result = true;
         //int newRoom = 0;
         if (myMethod.room1.monster != null) {
-            myMethod.room1.describeMonster();
+            myMethod.room1.describeMonster(myMethod.hero1);
         }
         if (myMethod.room1.monster == null) {
             myMethod.room1.describeRoom();
@@ -591,13 +602,16 @@ public class Method implements Serializable {
         System.out.println("***    Choose action   ***");
         if (myMethod.room1.monster != null) {
             System.out.print("[1] Fight " +
-                    ColorPrint.ANSI_RED + myMethod.room1.monster.getMonsterType() + ColorPrint.ANSI_RESET);
+                    ColorPrint.ANSI_RED + myMethod.room1.monster.getMonsterType() + ColorPrint.ANSI_RESET
+            + " ");
         }
-        //Same as pick item. The concept is cool.
-        if (myMethod.room1.monster != null) {
-            System.out.print("| [2] Avoid fight ");
+
+        if(myMethod.hero1.getHealth() >= 50 ){
+            if (myMethod.room1.monster != null) {
+                System.out.print("| [2] Avoid fight ");
+            }
         }
-        System.out.print("|[3] Open backpack| ");
+        System.out.print("| [3] Open backpack| ");
         if (myMethod.room1.monster == null) {
             System.out.print("| [4] Go to a new room ");
         }
@@ -635,13 +649,16 @@ public class Method implements Serializable {
                 }
                 break;
             case 2:
+
                 play.menuSound();
                 if (myMethod.room1.monster != null) {
-                    myMethod.hero1.setHealth(hero1.getHealth() - (hero1.getHealth() / 2));
-                    play.avoidFight();
-                    System.out.println("You lost your half health but you avoided the monster");
-                    myMethod.room1.setMonster(null);
-                    hero1.addHighScore(50);
+                    if(myMethod.hero1.getHealth() >= 50 ){
+                        myMethod.hero1.setHealth(hero1.getHealth() - (hero1.getHealth() / 2));
+                        play.avoidFight();
+                        System.out.println("You lost your half health but you avoided the monster");
+                        myMethod.room1.setMonster(null);
+                        hero1.addHighScore(50);
+                    }
                 }
                 break;
             case 3:

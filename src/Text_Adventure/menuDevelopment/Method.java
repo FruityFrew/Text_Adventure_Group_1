@@ -602,13 +602,16 @@ public class Method implements Serializable {
         System.out.println("***    Choose action   ***");
         if (myMethod.room1.monster != null) {
             System.out.print("[1] Fight " +
-                    ColorPrint.ANSI_RED + myMethod.room1.monster.getMonsterType() + ColorPrint.ANSI_RESET);
+                    ColorPrint.ANSI_RED + myMethod.room1.monster.getMonsterType() + ColorPrint.ANSI_RESET
+            + " ");
         }
-        //Same as pick item. The concept is cool.
-        if (myMethod.room1.monster != null) {
-            System.out.print("| [2] Avoid fight ");
+
+        if(myMethod.hero1.getHealth() >= 50 ){
+            if (myMethod.room1.monster != null) {
+                System.out.print("| [2] Avoid fight ");
+            }
         }
-        System.out.print("|[3] Open backpack| ");
+        System.out.print("| [3] Open backpack| ");
         if (myMethod.room1.monster == null) {
             System.out.print("| [4] Go to a new room ");
         }
@@ -646,13 +649,16 @@ public class Method implements Serializable {
                 }
                 break;
             case 2:
+
                 play.menuSound();
                 if (myMethod.room1.monster != null) {
-                    myMethod.hero1.setHealth(hero1.getHealth() - (hero1.getHealth() / 2));
-                    play.avoidFight();
-                    System.out.println("You lost your half health but you avoided the monster");
-                    myMethod.room1.setMonster(null);
-                    hero1.addHighScore(50);
+                    if(myMethod.hero1.getHealth() >= 50 ){
+                        myMethod.hero1.setHealth(hero1.getHealth() - (hero1.getHealth() / 2));
+                        play.avoidFight();
+                        System.out.println("You lost your half health but you avoided the monster");
+                        myMethod.room1.setMonster(null);
+                        hero1.addHighScore(50);
+                    }
                 }
                 break;
             case 3:

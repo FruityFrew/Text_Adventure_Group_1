@@ -29,7 +29,7 @@ public class Room implements Serializable {
     private Item item;
     public Monster monster;
     private String wall;
-    private int spawnMonsterRate = 100;
+    private int spawnMonsterRate = 25;
     private int spawnItemRate = 90;
     private int index; //this is the way to reffer to the room, (the position does not works. this is not DataBase :) )
     private int dLevel; //Difficulty level. This takes the difficulty level of the Map object for practical reasons.

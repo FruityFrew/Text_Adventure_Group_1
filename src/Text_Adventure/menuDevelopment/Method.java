@@ -53,8 +53,10 @@ public class Method implements Serializable {
     public void chooseGameLevel() {
         //Robert:I added the line of code below me
         diffLevel = 5;
-        System.out.println("\nNow give me your hand to tell you your options! " +
-                "\n\tYou have three paths ... " +
+        myMethod.slowPrint("\nNow give me your hand to tell you your options! \n" +
+                "\n\tYou have three paths ... \n ",50);
+        myMethod.threadSleep(1000);
+        System.out.println(
                 "\n[1]\ta short path " +
                 "\n[2]\tcrossroad with another, longer path" +
                 "\n[3]\tAnd a last one, HA HA HA! This will hurt!  ");

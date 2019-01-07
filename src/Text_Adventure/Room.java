@@ -511,18 +511,36 @@ public class Room implements Serializable {
             if (!lock0) {
                 if ((key.getType() == 0)) {
                     play.unlockingDoor();
+                    System.out.println("You succeded to unlock the lockpad with the number 0");
+                    try {
+                        Thread.sleep(1500);
+                    } catch (Exception e) {
+                        System.out.println("wow");
+                    }
                     lock0 = true;
                 }
             }
             if(!lock1) {
                 if ((key.getType() == 1)) {
                     play.unlockingDoor();
+                    System.out.println("You succeded to unlock the lockpad with the number 1");
+                    try {
+                        Thread.sleep(1500);
+                    } catch (Exception e) {
+                        System.out.println("wow");
+                    }
                     lock1 = true;
                 }
             }
             if(!lock2) {
                 if ((key.getType() == 2)) {
                     play.unlockingDoor();
+                    System.out.println("You succeded to unlock the lockpad with the number 2");
+                    try {
+                        Thread.sleep(1500);
+                    } catch (Exception e) {
+                        System.out.println("wow");
+                    }
                     lock2 = true;
                 }
             }
@@ -713,6 +731,9 @@ public class Room implements Serializable {
                     if (doorToFreedom(hero) == true){
                         hero.addHighScore(1500);
                         play.winSound();
+                        for (int i=0;i<5;i++) {
+                            ASCII.youWin();
+                        }
                         System.out.println(" ");
                         System.out.println(" =============== ");
                         System.out.println("You won the game!");
@@ -721,9 +742,7 @@ public class Room implements Serializable {
                         System.out.println("Thank you for playing");
                         System.out.println(" =============== ");
                         System.out.println(" ");
-                        for (int i=0;i<5;i++) {
-                            ASCII.youWin();
-                        }
+
                     }
                     break;
                 default:

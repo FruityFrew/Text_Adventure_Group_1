@@ -1,6 +1,9 @@
 package Text_Adventure.menuDevelopment;
 
 
+import Text_Adventure.Room;
+
+import static Text_Adventure.Main.myMethod;
 import static Text_Adventure.menuDevelopment.Method.clearScreen;
 
 
@@ -1395,6 +1398,7 @@ public class ASCII {
                 "                                                         ****/*******/         \n" +
                 "                                                            ,*////*            ");
         clearScreen();
+
     }
 
     public static void youWin() {

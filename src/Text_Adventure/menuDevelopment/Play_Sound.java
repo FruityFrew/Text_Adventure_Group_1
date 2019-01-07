@@ -3,8 +3,9 @@ package Text_Adventure.menuDevelopment;
 import java.io.File;
 import javax.sound.sampled.*;
 import java.io.IOException;
+import java.io.Serializable;
 
-public class Play_Sound {
+public class Play_Sound implements Serializable {
 
 
     private AudioInputStream audio_stream;

@@ -930,8 +930,8 @@ public class Method implements Serializable {
 
     public static class Sound_methods implements Serializable {
         public static Play_Sound soundFX = new Play_Sound();
-        public ExecutorService Thread = Executors.newFixedThreadPool(4);
-        public ExecutorService Threads = Executors.newFixedThreadPool(4);
+        public transient ExecutorService Thread = Executors.newFixedThreadPool(4);
+        public transient ExecutorService Threads = Executors.newFixedThreadPool(4);
 
         public void kickSound() {
             Thread.submit(new Runnable() {

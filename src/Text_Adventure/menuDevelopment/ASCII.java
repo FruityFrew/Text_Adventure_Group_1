@@ -3,11 +3,13 @@ package Text_Adventure.menuDevelopment;
 
 import Text_Adventure.Room;
 
+import java.io.Serializable;
+
 import static Text_Adventure.Main.myMethod;
 import static Text_Adventure.menuDevelopment.Method.clearScreen;
 
 
-public class ASCII {
+public class ASCII implements Serializable {
     public static void printGroup1() {
         clearScreen();
         try {

@@ -3,6 +3,7 @@ package Text_Adventure;
 
 import Text_Adventure.menuDevelopment.Method;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
 /**
@@ -15,7 +16,7 @@ import java.util.Scanner;
  * Do not touch the content inside the methods. feel free to copy the methods and implement there
  * you changes. This the best way to changes to someone else's code.
  */
-public class DisplayMap {
+public class DisplayMap implements Serializable {
     public static Method.Sound_methods play = new Method.Sound_methods();
 
     // === BASIC BUILDING BLOCKS OF THE MAP ==========================================================

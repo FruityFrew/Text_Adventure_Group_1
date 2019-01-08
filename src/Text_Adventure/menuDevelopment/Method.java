@@ -164,7 +164,8 @@ public class Method implements Serializable {
                 System.out.println("You just started playing and already shaking your hand!" +
                         "\n\t MAKE A CHOICE BETWEEN 1,2,3 AND 4!");
         }
-        System.out.println("OK... lets see how much a " + hero1.getPlayerType() + " is worth!");
+        myMethod.slowPrint("OK... lets see how much a " + hero1.getPlayerType() + " is worth!",60);
+        threadSleep(2000);
     }
 
     /**
@@ -371,6 +372,8 @@ public class Method implements Serializable {
             System.out.println("Your score will be saved to the list of highscores");
             highScore(myMethod.hero1);
             SortScore();
+            System.out.println("Enter any string to EXIT");
+            String anyString = in.next();
             System.exit(1);
         }
     }

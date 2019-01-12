@@ -1,6 +1,6 @@
 ﻿# Text Adventure by Group 1
 
-![](https://raw.githubusercontent.com/FruityFrew/Text_Adventure_Group_1/master/coverForReadMe.jpg?token=ADzo6QpzpVx_cesgYK7XrSIYDlHQSBkcks5cOCGFwA%3D%3D)
+![](https://raw.githubusercontent.com/FruityFrew/Text_Adventure_Group_1/master/coverForReadMe.jpg?token=ADzo6Zv2gFo8dBT8q643cpF_kiGzRNt_ks5cQmhGwA%3D%3D)
 
 # Stay  Dead!
 
